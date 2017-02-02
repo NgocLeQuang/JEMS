@@ -31,7 +31,7 @@ namespace JEMS
             {
                 temp = false;
                 Frm_Login a = new Frm_Login();
-                a.lb_programName.Text = "           Dự Án JEMS";
+                a.lb_programName.Text = "\n           Dự Án JEMS";
                 a.lb_vision.Text = "Phiên bản :";
                 a.grb_1.Text = "Thông Tin PC";
                 a.lb_machine.Text = "Tên PC :";
@@ -48,9 +48,9 @@ namespace JEMS
                 a.chb_hienthi.Text = "Hiển Thị";
                 a.chb_luu.Text = "Lưu";
                 a.lb_version.Text = @"1.0";
-                a.UrlUpdateVersion = @"\\10.10.10.254\DE_Viet\2017\BAO-CAO-LUONG2017";
-                //a.LoginEvent += a_LoginEvent;
-                //a.ButtonLoginEven += a_ButtonLoginEven;
+                a.UrlUpdateVersion = @"\\10.10.10.254\DE_Viet\2017\...";
+                a.LoginEvent += a_LoginEvent;
+                a.ButtonLoginEven += a_ButtonLoginEven;
                 if (a.ShowDialog() == DialogResult.OK)
                 {
                     Global.StrMachine = a.StrMachine;
@@ -70,6 +70,56 @@ namespace JEMS
             }
             while (temp);
 
+        }
+        private static void a_ButtonLoginEven(int iLogin, string strMachine, string strUserWindow, string strIpAddress, string strUsername, string password, string strBatch, string strRole, string strToken)
+        {
+            if (iLogin == 1)
+            {
+                Global.db_BPO.InsertLoginTime(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken);
+                //Global.deBPO.UpdateToken_TableUser(strUsername, strToken);
+            }
+        }
+        private static void a_LoginEvent(string username, string password, ref string strVersion, ref int iKiemtraLogin, ref string role, ref ComboBox cbb)
+        {
+            try
+            {
+                iKiemtraLogin = Global.db_BPO.KiemTraLogin(username, password);
+                strVersion = (from w in Global.db_BPO.tbl_Versions where w.IDProject == "JEMS" select w.IDVersion).FirstOrDefault();
+                role = (from w in Global.db_BPO.tbl_Users where w.Username == username select w.IDRole).FirstOrDefault();
+                if (!string.IsNullOrEmpty(role))
+                    role = role.ToUpper();
+                //if (iKiemtraLogin == 1 && role == "ADMIN")
+                //{
+
+                //    cbb.DataSource = Global.db_BCL.GetBatch();
+                //    cbb.DisplayMember = "fBatchName";
+                //}
+                //else if (iKiemtraLogin == 1 && role == "DEJP")
+                //{
+                //    cbb.DataSource = Global.db_BCL.GetBatNotFinishDeJP(username);
+                //    cbb.DisplayMember = "fBatchName";
+                //}
+
+                //else if (iKiemtraLogin == 1 && role == "DESO")
+                //{
+                //    cbb.DataSource = Global.db_BCL.GetBatNotFinishDeSo(username);
+                //    cbb.DisplayMember = "fBatchName";
+                //}
+                //else if (iKiemtraLogin == 1 && role == "CHECKERDEJP")
+                //{
+                //    cbb.DataSource = Global.db_BCL.GetBatNotFinishCheckerDeJP(username);
+                //    cbb.DisplayMember = "fBatchName";
+                //}
+                //else if (iKiemtraLogin == 1 && role == "CHECKERDESO")
+                //{
+                //    cbb.DataSource = Global.db_BCL.GetBatNotFinishCheckerDeSo(username);
+                //    cbb.DisplayMember = "fBatchName";
+                //}
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error connecting to server, please check your connection Internet\r\n" + e.Message);
+            }
         }
     }
 }
