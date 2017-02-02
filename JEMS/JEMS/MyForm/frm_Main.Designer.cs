@@ -1,6 +1,6 @@
-﻿namespace JEMS
+﻿namespace JEMS.MyForm
 {
-    partial class Form1
+    partial class frm_Main
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,11 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // frm_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 508);
-            this.Name = "Form1";
-            this.Text = "JEMS";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "frm_Main";
+            this.Load += new System.EventHandler(this.frm_Main_Load);
             this.ResumeLayout(false);
 
         }

@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.cs" />
     <Compile Include="MyForm\frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>

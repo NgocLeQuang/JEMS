@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace JEMS
+namespace JEMS.MyForm
 {
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    public partial class frm_Main : DevExpress.XtraEditors.XtraForm
     {
-        public Form1()
+        public frm_Main()
         {
             InitializeComponent();
+        }
+
+        private void frm_Main_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
