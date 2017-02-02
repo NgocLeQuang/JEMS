@@ -88,33 +88,23 @@ namespace JEMS
                 role = (from w in Global.db_BPO.tbl_Users where w.Username == username select w.IDRole).FirstOrDefault();
                 if (!string.IsNullOrEmpty(role))
                     role = role.ToUpper();
-                //if (iKiemtraLogin == 1 && role == "ADMIN")
-                //{
+                if (iKiemtraLogin == 1 && role == "ADMIN")
+                {
 
-                //    cbb.DataSource = Global.db_BCL.GetBatch();
-                //    cbb.DisplayMember = "fBatchName";
-                //}
-                //else if (iKiemtraLogin == 1 && role == "DEJP")
-                //{
-                //    cbb.DataSource = Global.db_BCL.GetBatNotFinishDeJP(username);
-                //    cbb.DisplayMember = "fBatchName";
-                //}
-
-                //else if (iKiemtraLogin == 1 && role == "DESO")
-                //{
-                //    cbb.DataSource = Global.db_BCL.GetBatNotFinishDeSo(username);
-                //    cbb.DisplayMember = "fBatchName";
-                //}
-                //else if (iKiemtraLogin == 1 && role == "CHECKERDEJP")
-                //{
-                //    cbb.DataSource = Global.db_BCL.GetBatNotFinishCheckerDeJP(username);
-                //    cbb.DisplayMember = "fBatchName";
-                //}
-                //else if (iKiemtraLogin == 1 && role == "CHECKERDESO")
-                //{
-                //    cbb.DataSource = Global.db_BCL.GetBatNotFinishCheckerDeSo(username);
-                //    cbb.DisplayMember = "fBatchName";
-                //}
+                    cbb.DataSource = Global.db_JEMS.GetBatch();
+                    cbb.DisplayMember = "fBatchName";
+                }
+               
+                else if (iKiemtraLogin == 1 && role == "DESO")
+                {
+                    cbb.DataSource = Global.db_JEMS.GetBatNotFinishDeSo(username);
+                    cbb.DisplayMember = "fBatchName";
+                }
+               else if (iKiemtraLogin == 1 && role == "CHECKERDESO")
+                {
+                    cbb.DataSource = Global.db_JEMS.GetBatNotFinishCheckerDeSo(username);
+                    cbb.DisplayMember = "fBatchName";
+                }
             }
             catch (Exception e)
             {

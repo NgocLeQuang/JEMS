@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 25.25" name="JEMS">
+  <DataContextMoniker Name="/JEMSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c2c8ac5b-e652-4df2-a3f7-eeee446c96f8" absoluteBounds="0.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/JEMSDataContext/tbl_Batch" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca2f5859-dd07-4170-ad3a-67360feac90c" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e52fbc6-703e-4578-ba58-13d59d0fcf6d" absoluteBounds="3.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/JEMSDataContext/tbl_MissImage_DESO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c10e1edc-632b-4e24-9af4-82d63fccc76c" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="390badb2-e46c-485f-bd1e-0cdbaa4dfa94" absoluteBounds="3.75, 3.75, 2, 21.193341471354167">
+      <DataClassMoniker Name="/JEMSDataContext/tbl_DeSo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0aaca63-1844-47fc-9dc9-5866c1751782" absoluteBounds="3.765, 4.21, 1.9700000000000002, 20.633341471354164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2e8adc3f-8e60-4008-91f5-ad0055e30fe2" absoluteBounds="6.75, 0.75, 2, 21.193341471354167">
+      <DataClassMoniker Name="/JEMSDataContext/tbl_DeSo_Backup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5a5a599-393a-44a1-8957-a076e1e17cec" absoluteBounds="6.765, 1.21, 1.9700000000000002, 20.633341471354164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5bcf7153-17ca-4117-93a2-003bae856121" absoluteBounds="9.75, 0.75, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/JEMSDataContext/tbl_Image" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46d35d99-90f2-4d0f-a591-db5a688d2ec0" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5faeb39a-94c7-4cb1-86d0-b26df54bb9eb" absoluteBounds="9.75, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/JEMSDataContext/tbl_LogFile" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e7c4e18-0a78-4274-b9fe-51c0ba1dfd83" absoluteBounds="9.765, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bdabe40b-b1a7-4ae0-952d-4b55daa24c10" absoluteBounds="9.75, 6.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/JEMSDataContext/tbl_MissCheck" />
+      <nestedChildShapes>
+        <elementListCompartment Id="785b7fe8-acdd-4855-818b-a48b682ffc6b" absoluteBounds="9.765, 7.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

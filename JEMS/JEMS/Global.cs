@@ -8,7 +8,7 @@ namespace JEMS
     internal class Global
     {
         public static DataEntryBPODataContext db_BPO = new DataEntryBPODataContext();
-        //public static DataBaoCaoLuongDataContext db_BCL = new DataBaoCaoLuongDataContext();
+        public static JEMSDataContext db_JEMS = new JEMSDataContext();
         public static string StrMachine = "";
         public static string StrUserWindow = "";
         public static string StrIpAddress = "";
@@ -18,8 +18,8 @@ namespace JEMS
         public static string Strtoken = "";
         public static string StrIdimage = "";
         public static string StrCheck = "";
-        public static string StrPath = @"\\10.10.10.253\BaoCaoLuong2017$";
-        public static string Webservice = "http://10.10.10.253:8888/BaoCaoLuong2017/";
+        public static string StrPath = @"\\10.10.10.253\ImageJEMS$";
+        public static string Webservice = "http://10.10.10.253:8888/ImageJEMS/";
 
     }
 }

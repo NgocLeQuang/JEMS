@@ -33,5 +33,16 @@ namespace JEMS.Properties {
                 return ((string)(this["DatabaseDataEntryBPOConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.10.10.254\\BPOSERVER;Initial Catalog=JEMS;User ID=sa;Password=BPO@D" +
+            "N#2013")]
+        public string JEMSConnectionString {
+            get {
+                return ((string)(this["JEMSConnectionString"]));
+            }
+        }
     }
 }
