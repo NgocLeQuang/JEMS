@@ -102,11 +102,35 @@
     <Compile Include="MyForm\frm_User.designer.cs">
       <DependentUpon>frm_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControl\uc_ASAHI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_ASAHI.Designer.cs">
+      <DependentUpon>uc_ASAHI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_EZIEN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_EZIEN.designer.cs">
+      <DependentUpon>uc_EZIEN.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControl\uc_PictureBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControl\uc_PictureBox.designer.cs">
       <DependentUpon>uc_PictureBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_YAMAMOTO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_YAMAMOTO.designer.cs">
+      <DependentUpon>uc_YAMAMOTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_YASUDA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_YASUDA.designer.cs">
+      <DependentUpon>uc_YASUDA.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,8 +153,20 @@
     <EmbeddedResource Include="MyForm\frm_User.resx">
       <DependentUpon>frm_User.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_ASAHI.resx">
+      <DependentUpon>uc_ASAHI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_EZIEN.resx">
+      <DependentUpon>uc_EZIEN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\uc_PictureBox.resx">
       <DependentUpon>uc_PictureBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_YAMAMOTO.resx">
+      <DependentUpon>uc_YAMAMOTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_YASUDA.resx">
+      <DependentUpon>uc_YASUDA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

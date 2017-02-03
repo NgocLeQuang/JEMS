@@ -63,6 +63,18 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.xtraTabContro_Main = new DevExpress.XtraTab.XtraTabControl();
+            this.tp_Asahi_Main = new DevExpress.XtraTab.XtraTabPage();
+            this.uc_ASAHI1 = new JEMS.MyUserControl.uc_ASAHI();
+            this.tp_EIZEN_Main = new DevExpress.XtraTab.XtraTabPage();
+            this.uc_EZIEN1 = new JEMS.MyUserControl.uc_EZIEN();
+            this.tp_YAMAMOTO_Main = new DevExpress.XtraTab.XtraTabPage();
+            this.uc_YAMAMOTO4 = new JEMS.MyUserControl.uc_YAMAMOTO();
+            this.uc_YAMAMOTO3 = new JEMS.MyUserControl.uc_YAMAMOTO();
+            this.uc_YAMAMOTO2 = new JEMS.MyUserControl.uc_YAMAMOTO();
+            this.uc_YAMAMOTO1 = new JEMS.MyUserControl.uc_YAMAMOTO();
+            this.tp_YASUDA_Main = new DevExpress.XtraTab.XtraTabPage();
+            this.uc_YASUDA1 = new JEMS.MyUserControl.uc_YASUDA();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Start_Submit = new DevExpress.XtraEditors.SimpleButton();
@@ -72,6 +84,12 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabContro_Main)).BeginInit();
+            this.xtraTabContro_Main.SuspendLayout();
+            this.tp_Asahi_Main.SuspendLayout();
+            this.tp_EIZEN_Main.SuspendLayout();
+            this.tp_YAMAMOTO_Main.SuspendLayout();
+            this.tp_YASUDA_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             this.SuspendLayout();
@@ -361,12 +379,118 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.xtraTabContro_Main);
             this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl2.Location = new System.Drawing.Point(937, 53);
+            this.panelControl2.Location = new System.Drawing.Point(791, 53);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(363, 592);
+            this.panelControl2.Size = new System.Drawing.Size(509, 592);
             this.panelControl2.TabIndex = 5;
+            // 
+            // xtraTabContro_Main
+            // 
+            this.xtraTabContro_Main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabContro_Main.Location = new System.Drawing.Point(2, 2);
+            this.xtraTabContro_Main.Name = "xtraTabContro_Main";
+            this.xtraTabContro_Main.SelectedTabPage = this.tp_Asahi_Main;
+            this.xtraTabContro_Main.Size = new System.Drawing.Size(505, 558);
+            this.xtraTabContro_Main.TabIndex = 1;
+            this.xtraTabContro_Main.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tp_Asahi_Main,
+            this.tp_EIZEN_Main,
+            this.tp_YAMAMOTO_Main,
+            this.tp_YASUDA_Main});
+            // 
+            // tp_Asahi_Main
+            // 
+            this.tp_Asahi_Main.Controls.Add(this.uc_ASAHI1);
+            this.tp_Asahi_Main.Name = "tp_Asahi_Main";
+            this.tp_Asahi_Main.Size = new System.Drawing.Size(499, 530);
+            this.tp_Asahi_Main.Text = "ASAHI";
+            // 
+            // uc_ASAHI1
+            // 
+            this.uc_ASAHI1.AutoScroll = true;
+            this.uc_ASAHI1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_ASAHI1.Location = new System.Drawing.Point(0, 0);
+            this.uc_ASAHI1.Name = "uc_ASAHI1";
+            this.uc_ASAHI1.Size = new System.Drawing.Size(499, 530);
+            this.uc_ASAHI1.TabIndex = 0;
+            // 
+            // tp_EIZEN_Main
+            // 
+            this.tp_EIZEN_Main.Controls.Add(this.uc_EZIEN1);
+            this.tp_EIZEN_Main.Name = "tp_EIZEN_Main";
+            this.tp_EIZEN_Main.Size = new System.Drawing.Size(499, 530);
+            this.tp_EIZEN_Main.Text = "EIZEN";
+            // 
+            // uc_EZIEN1
+            // 
+            this.uc_EZIEN1.AutoScroll = true;
+            this.uc_EZIEN1.AutoSize = true;
+            this.uc_EZIEN1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_EZIEN1.Location = new System.Drawing.Point(0, 0);
+            this.uc_EZIEN1.Name = "uc_EZIEN1";
+            this.uc_EZIEN1.Size = new System.Drawing.Size(499, 530);
+            this.uc_EZIEN1.TabIndex = 0;
+            // 
+            // tp_YAMAMOTO_Main
+            // 
+            this.tp_YAMAMOTO_Main.Controls.Add(this.uc_YAMAMOTO4);
+            this.tp_YAMAMOTO_Main.Controls.Add(this.uc_YAMAMOTO3);
+            this.tp_YAMAMOTO_Main.Controls.Add(this.uc_YAMAMOTO2);
+            this.tp_YAMAMOTO_Main.Controls.Add(this.uc_YAMAMOTO1);
+            this.tp_YAMAMOTO_Main.Name = "tp_YAMAMOTO_Main";
+            this.tp_YAMAMOTO_Main.Size = new System.Drawing.Size(499, 530);
+            this.tp_YAMAMOTO_Main.Text = "YAMAMOTO";
+            // 
+            // uc_YAMAMOTO4
+            // 
+            this.uc_YAMAMOTO4.AutoScroll = true;
+            this.uc_YAMAMOTO4.AutoSize = true;
+            this.uc_YAMAMOTO4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_YAMAMOTO4.Location = new System.Drawing.Point(0, 0);
+            this.uc_YAMAMOTO4.Name = "uc_YAMAMOTO4";
+            this.uc_YAMAMOTO4.Size = new System.Drawing.Size(499, 530);
+            this.uc_YAMAMOTO4.TabIndex = 3;
+            // 
+            // uc_YAMAMOTO3
+            // 
+            this.uc_YAMAMOTO3.Location = new System.Drawing.Point(31, 33);
+            this.uc_YAMAMOTO3.Name = "uc_YAMAMOTO3";
+            this.uc_YAMAMOTO3.Size = new System.Drawing.Size(207, 400);
+            this.uc_YAMAMOTO3.TabIndex = 2;
+            // 
+            // uc_YAMAMOTO2
+            // 
+            this.uc_YAMAMOTO2.Location = new System.Drawing.Point(23, 25);
+            this.uc_YAMAMOTO2.Name = "uc_YAMAMOTO2";
+            this.uc_YAMAMOTO2.Size = new System.Drawing.Size(207, 400);
+            this.uc_YAMAMOTO2.TabIndex = 1;
+            // 
+            // uc_YAMAMOTO1
+            // 
+            this.uc_YAMAMOTO1.Location = new System.Drawing.Point(15, 17);
+            this.uc_YAMAMOTO1.Name = "uc_YAMAMOTO1";
+            this.uc_YAMAMOTO1.Size = new System.Drawing.Size(207, 400);
+            this.uc_YAMAMOTO1.TabIndex = 0;
+            // 
+            // tp_YASUDA_Main
+            // 
+            this.tp_YASUDA_Main.Controls.Add(this.uc_YASUDA1);
+            this.tp_YASUDA_Main.Name = "tp_YASUDA_Main";
+            this.tp_YASUDA_Main.Size = new System.Drawing.Size(499, 530);
+            this.tp_YASUDA_Main.Text = "YASUDA";
+            // 
+            // uc_YASUDA1
+            // 
+            this.uc_YASUDA1.AutoScroll = true;
+            this.uc_YASUDA1.AutoSize = true;
+            this.uc_YASUDA1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_YASUDA1.Location = new System.Drawing.Point(0, 0);
+            this.uc_YASUDA1.Name = "uc_YASUDA1";
+            this.uc_YASUDA1.Size = new System.Drawing.Size(499, 530);
+            this.uc_YASUDA1.TabIndex = 0;
             // 
             // panelControl3
             // 
@@ -375,7 +499,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl3.Location = new System.Drawing.Point(2, 560);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(359, 30);
+            this.panelControl3.Size = new System.Drawing.Size(505, 30);
             this.panelControl3.TabIndex = 0;
             // 
             // btn_Submit_Logout
@@ -401,7 +525,7 @@
             this.uc_PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_PictureBox1.Location = new System.Drawing.Point(0, 53);
             this.uc_PictureBox1.Name = "uc_PictureBox1";
-            this.uc_PictureBox1.Size = new System.Drawing.Size(937, 592);
+            this.uc_PictureBox1.Size = new System.Drawing.Size(791, 592);
             this.uc_PictureBox1.TabIndex = 6;
             // 
             // frm_Main
@@ -426,6 +550,15 @@
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabContro_Main)).EndInit();
+            this.xtraTabContro_Main.ResumeLayout(false);
+            this.tp_Asahi_Main.ResumeLayout(false);
+            this.tp_EIZEN_Main.ResumeLayout(false);
+            this.tp_EIZEN_Main.PerformLayout();
+            this.tp_YAMAMOTO_Main.ResumeLayout(false);
+            this.tp_YAMAMOTO_Main.PerformLayout();
+            this.tp_YASUDA_Main.ResumeLayout(false);
+            this.tp_YASUDA_Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -472,6 +605,18 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraTab.XtraTabControl xtraTabContro_Main;
+        private DevExpress.XtraTab.XtraTabPage tp_Asahi_Main;
+        private DevExpress.XtraTab.XtraTabPage tp_EIZEN_Main;
+        private DevExpress.XtraTab.XtraTabPage tp_YAMAMOTO_Main;
+        private DevExpress.XtraTab.XtraTabPage tp_YASUDA_Main;
+        private MyUserControl.uc_EZIEN uc_EZIEN1;
+        private MyUserControl.uc_ASAHI uc_ASAHI1;
+        private MyUserControl.uc_YAMAMOTO uc_YAMAMOTO4;
+        private MyUserControl.uc_YAMAMOTO uc_YAMAMOTO3;
+        private MyUserControl.uc_YAMAMOTO uc_YAMAMOTO2;
+        private MyUserControl.uc_YAMAMOTO uc_YAMAMOTO1;
+        private MyUserControl.uc_YASUDA uc_YASUDA1;
     }
 }
 
