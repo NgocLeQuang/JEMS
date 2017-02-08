@@ -70,12 +70,48 @@ namespace JEMS
             while (temp);
 
         }
-        private static void a_ButtonLoginEven(int iLogin, string strMachine, string strUserWindow, string strIpAddress, string strUsername, string password, string strBatch, string strRole, string strToken)
+        private static void a_ButtonLoginEven(int iLogin, string strMachine, string strUserWindow, string strIpAddress, string strUsername, string password, string strBatch, string strRole, string strToken, ref bool LoginOk)
         {
             if (iLogin == 1)
             {
-                Global.db_BPO.InsertLoginTime(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken);
-                //Global.deBPO.UpdateToken_TableUser(strUsername, strToken);
+                //Kiểm tra Token
+                bool has = Global.db_BPO.tbl_TokenLogins.Any(w => w.UserName == strUsername && w.IDProject == Global.StrIdProject);
+                if (has)
+                {
+                    var token = (from w in Global.db_BPO.tbl_TokenLogins where w.UserName == strUsername && w.IDProject == Global.StrIdProject select w.Token).FirstOrDefault();
+                    if (token == "")
+                    {
+                        Global.db_BPO.updateToken(strUsername, Global.StrIdProject, strToken);
+                        Global.db_BPO.InsertLoginTime(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken);
+                        LoginOk = true;
+                    }
+                    else
+                    {
+                        if (MessageBox.Show("User này đã đăng nhập ở máy khác. Bạn có muốn tiếp tục đăng nhập?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        {
+                            Global.db_BPO.updateToken(strUsername, Global.StrIdProject, strToken);
+                            Global.db_BPO.InsertLoginTime(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken);
+                            LoginOk = true;
+                        }
+                        else
+                        {
+                            LoginOk = false;
+                        }
+                    }
+                }
+                else
+                {
+                    var token = new tbl_TokenLogin();
+                    token.UserName = strUsername;
+                    token.IDProject = Global.StrIdProject;
+                    token.Token = "";
+                    token.DateLogin = DateTime.Now;
+                    Global.db_BPO.tbl_TokenLogins.InsertOnSubmit(token);
+                    Global.db_BPO.SubmitChanges();
+                    LoginOk = true;
+                    Global.db_BPO.updateToken(strUsername, Global.StrIdProject, strToken);
+                    Global.db_BPO.InsertLoginTime(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken);
+                }
             }
         }
         private static void a_LoginEvent(string username, string password, ref string strVersion, ref int iKiemtraLogin, ref string role, ref ComboBox cbb)

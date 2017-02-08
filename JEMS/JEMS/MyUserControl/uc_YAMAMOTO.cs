@@ -139,6 +139,7 @@ namespace JEMS.MyUserControl
             txt_Truong85.BackColor = Color.White;
             txt_Truong0.BackColor = Color.White;
             txt_Truong86.BackColor = Color.White;
+            chk_qc.Checked = false;
         }
 
         public bool IsEmpty()
@@ -188,13 +189,16 @@ namespace JEMS.MyUserControl
                 string.IsNullOrEmpty(txt_Truong80.Text) &&
                 string.IsNullOrEmpty(txt_Truong85.Text) &&
                 string.IsNullOrEmpty(txt_Truong0.Text) &&
-                string.IsNullOrEmpty(txt_Truong86.Text))
+                string.IsNullOrEmpty(txt_Truong86.Text)&&
+                chk_qc.Checked==false)
                 return true;
             return false;
         }
 
         private void txt_Truong02_EditValueChanged(object sender, EventArgs e)
         {
+            if (txt_Truong02.Text.ToString().IndexOf('?') >= 0)
+                txt_Truong02.Text = "?";
             if (txt_Truong02.Text.Length != 6 && txt_Truong02.Text != "" && txt_Truong02.Text != "?")
             {
                 txt_Truong02.BackColor = Color.Red;
@@ -206,14 +210,14 @@ namespace JEMS.MyUserControl
                 txt_Truong02.ForeColor = Color.Black;
 
             }
-            if (txt_Truong02.Text.ToString().IndexOf('?') >= 0)
-                txt_Truong02.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
         }
 
         private void txt_Truong03_1_EditValueChanged(object sender, EventArgs e)
         {
+            if (txt_Truong03_1.Text.ToString().IndexOf('?') >= 0)
+                txt_Truong03_1.Text = "?";
             if (txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?")
             {
                 if (txt_Truong03_1.Text.Length != 6)
@@ -233,31 +237,41 @@ namespace JEMS.MyUserControl
                 txt_Truong03_1.BackColor = Color.White;
                 txt_Truong03_1.ForeColor = Color.Black;
             }
-            if (txt_Truong03_1.Text.ToString().IndexOf('?') >= 0)
-                txt_Truong03_1.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
         }
 
         private void txt_Truong03_2_EditValueChanged(object sender, EventArgs e)
         {
-            if (txt_Truong03_2.Text.Length != 6 && txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?")
+            if (txt_Truong03_2.Text.ToString().IndexOf('?') >= 0)
+                txt_Truong03_2.Text = "?";
+            if (txt_Truong03_2.Text != "" && txt_Truong03_2.Text != "?")
             {
-                txt_Truong03_2.BackColor = Color.Red;
-                txt_Truong03_2.ForeColor = Color.White;
+                if (txt_Truong03_2.Text.Length != 6)
+                {
+                    txt_Truong03_2.BackColor = Color.Red;
+                    txt_Truong03_2.ForeColor = Color.White;
+                }
+                else
+                {
+                    txt_Truong03_2.BackColor = Color.White;
+                    txt_Truong03_2.ForeColor = Color.Black;
+                }
             }
             else
             {
+                if (txt_Truong03_2.Text.Length == 0)
+                    txt_Truong03_1.Focus();
                 txt_Truong03_2.BackColor = Color.White;
                 txt_Truong03_2.ForeColor = Color.Black;
             }
-            if (txt_Truong03_2.Text.ToString().IndexOf('?') >= 0)
-                txt_Truong03_2.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
         }
         private void Set_txtLengColumn1(object sender, EventArgs e, TextEdit tb)
         {
+            if (tb.Text.ToString().IndexOf('?') >= 0)
+                tb.Text = "?";
             if (tb.Text.Length != 2 && tb.Text != "" && tb.Text != "?")
             {
                 tb.BackColor = Color.Red;
@@ -268,8 +282,6 @@ namespace JEMS.MyUserControl
                 tb.BackColor = Color.White;
                 tb.ForeColor = Color.Black;
             }
-            if (tb.Text.ToString().IndexOf('?') >= 0)
-                tb.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
         }
@@ -589,11 +601,29 @@ namespace JEMS.MyUserControl
         {
             ((TextEdit)sender).SelectAll();
         }
-        public void SaveData_ASAHI(string idImage)
+        public void SaveData_YAMAMOTO(string idImage)
         {
             string txtTruong03 = txt_Truong03_1.Text + txt_Truong03_2.Text;
+            if (txtTruong03.ToString().IndexOf('?') >= 0)
+                txtTruong03 = "?";
             //Save Data
-            //Global.db_BCL.Insert_Loai4_new(idImage, Global.StrBatch, Global.StrUsername, "Loai4",
+            bool qc;
+            if (chk_qc.Checked == true)
+                qc = true;
+            else
+                qc = false;
+            Global.db_JEMS.Insert_YAMAMOTO(  idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,txt_Truong08.Text,
+                                             txt_Truong13.Text, txt_Truong14.Text, txt_Truong15.Text, txt_Truong16.Text,
+                                             txt_Truong21.Text, txt_Truong22.Text, txt_Truong23.Text, txt_Truong24.Text,
+                                             txt_Truong29.Text, txt_Truong30.Text, txt_Truong31.Text, txt_Truong32.Text,
+                                             txt_Truong37.Text, txt_Truong38.Text, txt_Truong39.Text, txt_Truong40.Text,
+                                             txt_Truong45.Text, txt_Truong46.Text, txt_Truong47.Text, txt_Truong48.Text,
+                                             txt_Truong53.Text, txt_Truong54.Text, txt_Truong55.Text, txt_Truong56.Text,
+                                             txt_Truong61.Text, txt_Truong62.Text, txt_Truong63.Text, txt_Truong64.Text,
+                                             txt_Truong69.Text, txt_Truong70.Text, txt_Truong71.Text, txt_Truong72.Text,
+                                             txt_Truong77.Text, txt_Truong78.Text, txt_Truong79.Text, txt_Truong80.Text,
+
+                                             txt_Truong85.Text,txt_Truong86.Text,qc);
         }
     }
 }

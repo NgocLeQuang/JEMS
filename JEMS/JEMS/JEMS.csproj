@@ -47,8 +47,9 @@
     <Reference Include="ImageGlass.ImageBox">
       <HintPath>MyForm\ImageGlass.ImageBox.dll</HintPath>
     </Reference>
-    <Reference Include="LibraryLogin">
-      <HintPath>MyForm\LibraryLogin.dll</HintPath>
+    <Reference Include="LibraryLogin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DuAnBaoCaoLuong\BaoCaoLuong2017\BaoCaoLuong2017\bin\Debug\LibraryLogin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel">
       <HintPath>MyForm\Microsoft.Office.Interop.Excel.dll</HintPath>
@@ -77,6 +78,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataJEMS.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_ChangeZoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_ChangeZoom.designer.cs">
+      <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\frm_CreateBatch.cs">
       <SubType>Form</SubType>
@@ -141,6 +148,9 @@
     <None Include="DataJEMS.dbml.layout">
       <DependentUpon>DataJEMS.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="MyForm\frm_ChangeZoom.resx">
+      <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_CreateBatch.resx">
       <DependentUpon>frm_CreateBatch.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +187,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DataEntryBPO.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -198,7 +209,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\svn_deleted.png" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>

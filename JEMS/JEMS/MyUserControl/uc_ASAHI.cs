@@ -51,6 +51,7 @@ namespace JEMS.MyUserControl
             txt_Truong08.BackColor = Color.White;
             txt_Truong85.BackColor = Color.White;
             txt_Truong0.BackColor = Color.White;
+            chk_qc.Checked = false;
         }
 
         public bool IsEmpty()
@@ -62,13 +63,16 @@ namespace JEMS.MyUserControl
                 string.IsNullOrEmpty(txt_Truong06.Text) &&
                 string.IsNullOrEmpty(txt_Truong08.Text) &&
                 string.IsNullOrEmpty(txt_Truong85.Text) &&
-                string.IsNullOrEmpty(txt_Truong0.Text))
+                string.IsNullOrEmpty(txt_Truong0.Text)&&
+                chk_qc.Checked == false)
                 return true;
             return false;
         }
 
         private void txt_Truong02_EditValueChanged(object sender, EventArgs e)
         {
+            if (txt_Truong02.Text.ToString().IndexOf('?') >= 0)
+                txt_Truong02.Text = "?";
             if (txt_Truong02.Text.Length != 6 && txt_Truong02.Text != "" && txt_Truong02.Text != "?")
             {
                 txt_Truong02.BackColor = Color.Red;
@@ -80,14 +84,14 @@ namespace JEMS.MyUserControl
                 txt_Truong02.ForeColor = Color.Black;
 
             }
-            if (txt_Truong02.Text.ToString().IndexOf('?') >= 0)
-                txt_Truong02.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
         }
 
         private void txt_Truong03_1_EditValueChanged(object sender, EventArgs e)
         {
+            if (txt_Truong03_1.Text.ToString().IndexOf('?') >= 0)
+                txt_Truong03_1.Text = "?";
             if (txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?")
             {
                 if (txt_Truong03_1.Text.Length != 8)
@@ -107,32 +111,42 @@ namespace JEMS.MyUserControl
                 txt_Truong03_1.BackColor = Color.White;
                 txt_Truong03_1.ForeColor = Color.Black;
             }
-            if (txt_Truong03_1.Text.ToString().IndexOf('?') >= 0)
-                txt_Truong03_1.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
         }
 
         private void txt_Truong03_2_EditValueChanged(object sender, EventArgs e)
         {
-            if (txt_Truong03_2.Text.Length != 8 && txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?")
+            if (txt_Truong03_2.Text.ToString().IndexOf('?') >= 0)
+                txt_Truong03_2.Text = "?";
+            if (txt_Truong03_2.Text != "" && txt_Truong03_2.Text != "?")
             {
-                txt_Truong03_2.BackColor = Color.Red;
-                txt_Truong03_2.ForeColor = Color.White;
+                if (txt_Truong03_2.Text.Length != 8)
+                {
+                    txt_Truong03_2.BackColor = Color.Red;
+                    txt_Truong03_2.ForeColor = Color.White;
+                }
+                else
+                {
+                    txt_Truong03_2.BackColor = Color.White;
+                    txt_Truong03_2.ForeColor = Color.Black;
+                }
             }
             else
             {
+                if (txt_Truong03_2.Text.Length == 0)
+                    txt_Truong03_1.Focus();
                 txt_Truong03_2.BackColor = Color.White;
                 txt_Truong03_2.ForeColor = Color.Black;
             }
-            if (txt_Truong03_2.Text.ToString().IndexOf('?') >= 0)
-                txt_Truong03_2.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
         }
 
         private void txt_Truong05_EditValueChanged(object sender, EventArgs e)
         {
+            if (txt_Truong05.Text.ToString().IndexOf('?') >= 0)
+                txt_Truong05.Text = "?";
             if (txt_Truong05.Text.Length != 2 && txt_Truong05.Text != "" && txt_Truong05.Text != "?")
             {
                 txt_Truong05.BackColor = Color.Red;
@@ -143,8 +157,6 @@ namespace JEMS.MyUserControl
                 txt_Truong05.BackColor = Color.White;
                 txt_Truong05.ForeColor = Color.Black;
             }
-            if (txt_Truong05.Text.ToString().IndexOf('?') >= 0)
-                txt_Truong05.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
         }
@@ -202,7 +214,6 @@ namespace JEMS.MyUserControl
             txt_Truong08.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong85.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong0.GotFocus += Txt_Truong02_GotFocus;
-
         }
 
         private void Txt_Truong02_GotFocus(object sender, EventArgs e)
@@ -211,9 +222,17 @@ namespace JEMS.MyUserControl
         }
         public void SaveData_ASAHI(string idImage)
         {
+            
             string txtTruong03 = txt_Truong03_1.Text + txt_Truong03_2.Text;
+            if (txtTruong03.ToString().IndexOf('?') >= 0)
+                txtTruong03 = "?";
             //Save Data
-            //Global.db_BCL.Insert_Loai4_new(idImage, Global.StrBatch, Global.StrUsername, "Loai4",
+            bool qc;
+            if (chk_qc.Checked == true)
+                qc = true;
+            else
+                qc = false;
+            Global.db_JEMS.Insert_ASAHI(idImage, Global.StrBatch, Global.StrUsername,txt_Truong02.Text,txtTruong03,txt_Truong05.Text,txt_Truong06.Text,txt_Truong08.Text,txt_Truong85.Text,qc);
         }
 
     }

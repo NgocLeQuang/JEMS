@@ -49,8 +49,8 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_LoaiPhieu = new DevExpress.XtraEditors.TextEdit();
             this.lb_SoLuongHinh = new DevExpress.XtraEditors.LabelControl();
+            this.txt_LoaiPhieu = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.txt_BatchName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PathFolder.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Location.Properties)).BeginInit();
@@ -58,7 +58,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_DateCreate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ImagePath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_LoaiPhieu.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -217,13 +216,6 @@
             this.labelControl8.TabIndex = 1;
             this.labelControl8.Text = "Loại Phiếu :";
             // 
-            // txt_LoaiPhieu
-            // 
-            this.txt_LoaiPhieu.Location = new System.Drawing.Point(137, 332);
-            this.txt_LoaiPhieu.Name = "txt_LoaiPhieu";
-            this.txt_LoaiPhieu.Size = new System.Drawing.Size(356, 20);
-            this.txt_LoaiPhieu.TabIndex = 2;
-            // 
             // lb_SoLuongHinh
             // 
             this.lb_SoLuongHinh.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
@@ -235,11 +227,20 @@
             this.lb_SoLuongHinh.Size = new System.Drawing.Size(0, 19);
             this.lb_SoLuongHinh.TabIndex = 6;
             // 
+            // txt_LoaiPhieu
+            // 
+            this.txt_LoaiPhieu.FormattingEnabled = true;
+            this.txt_LoaiPhieu.Location = new System.Drawing.Point(137, 330);
+            this.txt_LoaiPhieu.Name = "txt_LoaiPhieu";
+            this.txt_LoaiPhieu.Size = new System.Drawing.Size(174, 21);
+            this.txt_LoaiPhieu.TabIndex = 7;
+            // 
             // frm_CreateBatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 533);
+            this.Controls.Add(this.txt_LoaiPhieu);
             this.Controls.Add(this.lb_SoLuongHinh);
             this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.btn_CreateBatch);
@@ -248,7 +249,6 @@
             this.Controls.Add(this.txt_ImagePath);
             this.Controls.Add(this.txt_DateCreate);
             this.Controls.Add(this.txt_UserCreate);
-            this.Controls.Add(this.txt_LoaiPhieu);
             this.Controls.Add(this.txt_Location);
             this.Controls.Add(this.txt_PathFolder);
             this.Controls.Add(this.txt_BatchName);
@@ -273,7 +273,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_DateCreate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ImagePath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_LoaiPhieu.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,7 +300,7 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit txt_LoaiPhieu;
         private DevExpress.XtraEditors.LabelControl lb_SoLuongHinh;
+        private System.Windows.Forms.ComboBox txt_LoaiPhieu;
     }
 }

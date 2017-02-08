@@ -163,6 +163,148 @@ namespace JEMS
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username);
 			return ((ISingleResult<GetBatNotFinishDeSoResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insert_ASAHI")]
+		public int Insert_ASAHI([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_06", DbType="NVarChar(255)")] string truong_06, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_08", DbType="NVarChar(255)")] string truong_08, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_85", DbType="NVarChar(255)")] string truong_85, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_02, truong_03, truong_05, truong_06, truong_08, truong_85, check_QC);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insert_EIZEN")]
+		public int Insert_EIZEN([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_06", DbType="NVarChar(255)")] string truong_06, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_07", DbType="NVarChar(255)")] string truong_07, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_08", DbType="NVarChar(255)")] string truong_08, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_85", DbType="NVarChar(255)")] string truong_85, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_86", DbType="NVarChar(255)")] string truong_86, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_02, truong_03, truong_05, truong_06, truong_07, truong_08, truong_85, truong_86, check_QC);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insert_YAMAMOTO")]
+		public int Insert_YAMAMOTO(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_06", DbType="NVarChar(255)")] string truong_06, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_07", DbType="NVarChar(255)")] string truong_07, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_08", DbType="NVarChar(255)")] string truong_08, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_13", DbType="NVarChar(255)")] string truong_13, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_14", DbType="NVarChar(255)")] string truong_14, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_15", DbType="NVarChar(255)")] string truong_15, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_16", DbType="NVarChar(255)")] string truong_16, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_21", DbType="NVarChar(255)")] string truong_21, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_22", DbType="NVarChar(255)")] string truong_22, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_23", DbType="NVarChar(255)")] string truong_23, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_24", DbType="NVarChar(255)")] string truong_24, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_29", DbType="NVarChar(255)")] string truong_29, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_30", DbType="NVarChar(255)")] string truong_30, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_31", DbType="NVarChar(255)")] string truong_31, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_32", DbType="NVarChar(255)")] string truong_32, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_37", DbType="NVarChar(255)")] string truong_37, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_38", DbType="NVarChar(255)")] string truong_38, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_39", DbType="NVarChar(255)")] string truong_39, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_40", DbType="NVarChar(255)")] string truong_40, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_45", DbType="NVarChar(255)")] string truong_45, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_46", DbType="NVarChar(255)")] string truong_46, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_47", DbType="NVarChar(255)")] string truong_47, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_48", DbType="NVarChar(255)")] string truong_48, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_53", DbType="NVarChar(255)")] string truong_53, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_54", DbType="NVarChar(255)")] string truong_54, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_55", DbType="NVarChar(255)")] string truong_55, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_56", DbType="NVarChar(255)")] string truong_56, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_61", DbType="NVarChar(255)")] string truong_61, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_62", DbType="NVarChar(255)")] string truong_62, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_63", DbType="NVarChar(255)")] string truong_63, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_64", DbType="NVarChar(255)")] string truong_64, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_69", DbType="NVarChar(255)")] string truong_69, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_70", DbType="NVarChar(255)")] string truong_70, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_71", DbType="NVarChar(255)")] string truong_71, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_72", DbType="NVarChar(255)")] string truong_72, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_77", DbType="NVarChar(255)")] string truong_77, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_78", DbType="NVarChar(255)")] string truong_78, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_79", DbType="NVarChar(255)")] string truong_79, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_80", DbType="NVarChar(255)")] string truong_80, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_85", DbType="NVarChar(255)")] string truong_85, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_86", DbType="NVarChar(255)")] string truong_86, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_02, truong_03, truong_05, truong_06, truong_07, truong_08, truong_13, truong_14, truong_15, truong_16, truong_21, truong_22, truong_23, truong_24, truong_29, truong_30, truong_31, truong_32, truong_37, truong_38, truong_39, truong_40, truong_45, truong_46, truong_47, truong_48, truong_53, truong_54, truong_55, truong_56, truong_61, truong_62, truong_63, truong_64, truong_69, truong_70, truong_71, truong_72, truong_77, truong_78, truong_79, truong_80, truong_85, truong_86, check_QC);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insert_YASUDA")]
+		public int Insert_YASUDA(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_06", DbType="NVarChar(255)")] string truong_06, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_07", DbType="NVarChar(255)")] string truong_07, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_08", DbType="NVarChar(255)")] string truong_08, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_12", DbType="NVarChar(255)")] string truong_12, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_13", DbType="NVarChar(255)")] string truong_13, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_14", DbType="NVarChar(255)")] string truong_14, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_15", DbType="NVarChar(255)")] string truong_15, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_16", DbType="NVarChar(255)")] string truong_16, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_20", DbType="NVarChar(255)")] string truong_20, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_21", DbType="NVarChar(255)")] string truong_21, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_22", DbType="NVarChar(255)")] string truong_22, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_23", DbType="NVarChar(255)")] string truong_23, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_24", DbType="NVarChar(255)")] string truong_24, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_28", DbType="NVarChar(255)")] string truong_28, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_29", DbType="NVarChar(255)")] string truong_29, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_30", DbType="NVarChar(255)")] string truong_30, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_31", DbType="NVarChar(255)")] string truong_31, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_32", DbType="NVarChar(255)")] string truong_32, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_36", DbType="NVarChar(255)")] string truong_36, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_37", DbType="NVarChar(255)")] string truong_37, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_38", DbType="NVarChar(255)")] string truong_38, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_39", DbType="NVarChar(255)")] string truong_39, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_40", DbType="NVarChar(255)")] string truong_40, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_44", DbType="NVarChar(255)")] string truong_44, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_45", DbType="NVarChar(255)")] string truong_45, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_46", DbType="NVarChar(255)")] string truong_46, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_47", DbType="NVarChar(255)")] string truong_47, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_48", DbType="NVarChar(255)")] string truong_48, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_52", DbType="NVarChar(255)")] string truong_52, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_53", DbType="NVarChar(255)")] string truong_53, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_54", DbType="NVarChar(255)")] string truong_54, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_55", DbType="NVarChar(255)")] string truong_55, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_56", DbType="NVarChar(255)")] string truong_56, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_60", DbType="NVarChar(255)")] string truong_60, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_61", DbType="NVarChar(255)")] string truong_61, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_62", DbType="NVarChar(255)")] string truong_62, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_63", DbType="NVarChar(255)")] string truong_63, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_64", DbType="NVarChar(255)")] string truong_64, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_68", DbType="NVarChar(255)")] string truong_68, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_69", DbType="NVarChar(255)")] string truong_69, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_70", DbType="NVarChar(255)")] string truong_70, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_71", DbType="NVarChar(255)")] string truong_71, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_72", DbType="NVarChar(255)")] string truong_72, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_76", DbType="NVarChar(255)")] string truong_76, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_77", DbType="NVarChar(255)")] string truong_77, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_78", DbType="NVarChar(255)")] string truong_78, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_79", DbType="NVarChar(255)")] string truong_79, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_80", DbType="NVarChar(255)")] string truong_80, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_84", DbType="NVarChar(255)")] string truong_84, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_85", DbType="NVarChar(255)")] string truong_85, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_87", DbType="NVarChar(255)")] string truong_87, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_91", DbType="NVarChar(255)")] string truong_91, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_02, truong_03, truong_05, truong_06, truong_07, truong_08, truong_12, truong_13, truong_14, truong_15, truong_16, truong_20, truong_21, truong_22, truong_23, truong_24, truong_28, truong_29, truong_30, truong_31, truong_32, truong_36, truong_37, truong_38, truong_39, truong_40, truong_44, truong_45, truong_46, truong_47, truong_48, truong_52, truong_53, truong_54, truong_55, truong_56, truong_60, truong_61, truong_62, truong_63, truong_64, truong_68, truong_69, truong_70, truong_71, truong_72, truong_76, truong_77, truong_78, truong_79, truong_80, truong_84, truong_85, truong_87, truong_91, check_QC);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayHinhMoi_DeSo")]
+		public ISingleResult<LayHinhMoi_DeSoResult> LayHinhMoi_DeSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fbatchname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string username)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname, username);
+			return ((ISingleResult<LayHinhMoi_DeSoResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Batch")]
@@ -6223,6 +6365,32 @@ namespace JEMS
 				if ((this._fbatchname != value))
 				{
 					this._fbatchname = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LayHinhMoi_DeSoResult
+	{
+		
+		private string _Column1;
+		
+		public LayHinhMoi_DeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="NVarChar(255)")]
+		public string Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
 				}
 			}
 		}

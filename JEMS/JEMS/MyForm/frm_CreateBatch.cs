@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Text;
 using System.Linq;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 namespace JEMS.MyForm
 {
@@ -93,7 +90,16 @@ namespace JEMS.MyForm
         private void frm_CreateBatch_Load(object sender, EventArgs e)
         {
             txt_UserCreate.Text = Global.StrUsername;
-            txt_DateCreate.Text = DateTime.Now.ToShortDateString() + "  -  " + DateTime.Now.ToShortTimeString(); 
+            txt_DateCreate.Text = DateTime.Now.ToShortDateString() + "  -  " + DateTime.Now.ToShortTimeString();
+
+            txt_LoaiPhieu.DisplayMember = "Text";
+            txt_LoaiPhieu.ValueMember = "Value";
+
+            txt_LoaiPhieu.Items.Add(new { Text = "ASAHI", Value = "ASAHI" });
+            txt_LoaiPhieu.Items.Add(new { Text = "EIZEN", Value = "EIZEN" });
+            txt_LoaiPhieu.Items.Add(new { Text = "YAMAMOTO", Value = "YAMAMOTO" });
+            txt_LoaiPhieu.Items.Add(new { Text = "YASUDA", Value = "YASUDA" });
+            txt_LoaiPhieu.SelectedIndex = 0;
         }
 
         public static string[] GetFilesFrom(string searchFolder, string[] filters, bool isRecursive)
@@ -273,7 +279,7 @@ namespace JEMS.MyForm
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (closePending) this.Close();
+            if (closePending) Close();
             closePending = false;
         }
     }

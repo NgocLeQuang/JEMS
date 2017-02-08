@@ -290,4 +290,152 @@
       <Column Name="fbatchname" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.Insert_ASAHI" Method="Insert_ASAHI">
+    <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_02" Parameter="truong_02" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_03" Parameter="truong_03" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_05" Parameter="truong_05" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_06" Parameter="truong_06" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_08" Parameter="truong_08" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_85" Parameter="truong_85" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Check_QC" Parameter="check_QC" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Insert_EIZEN" Method="Insert_EIZEN">
+    <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_02" Parameter="truong_02" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_03" Parameter="truong_03" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_05" Parameter="truong_05" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_06" Parameter="truong_06" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_07" Parameter="truong_07" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_08" Parameter="truong_08" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_85" Parameter="truong_85" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_86" Parameter="truong_86" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Check_QC" Parameter="check_QC" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Insert_YAMAMOTO" Method="Insert_YAMAMOTO">
+    <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_02" Parameter="truong_02" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_03" Parameter="truong_03" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_05" Parameter="truong_05" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_06" Parameter="truong_06" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_07" Parameter="truong_07" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_08" Parameter="truong_08" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_13" Parameter="truong_13" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_14" Parameter="truong_14" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_15" Parameter="truong_15" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_16" Parameter="truong_16" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_21" Parameter="truong_21" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_22" Parameter="truong_22" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_23" Parameter="truong_23" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_24" Parameter="truong_24" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_29" Parameter="truong_29" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_30" Parameter="truong_30" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_31" Parameter="truong_31" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_32" Parameter="truong_32" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_37" Parameter="truong_37" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_38" Parameter="truong_38" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_39" Parameter="truong_39" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_40" Parameter="truong_40" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_45" Parameter="truong_45" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_46" Parameter="truong_46" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_47" Parameter="truong_47" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_48" Parameter="truong_48" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_53" Parameter="truong_53" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_54" Parameter="truong_54" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_55" Parameter="truong_55" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_56" Parameter="truong_56" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_61" Parameter="truong_61" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_62" Parameter="truong_62" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_63" Parameter="truong_63" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_64" Parameter="truong_64" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_69" Parameter="truong_69" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_70" Parameter="truong_70" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_71" Parameter="truong_71" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_72" Parameter="truong_72" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_77" Parameter="truong_77" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_78" Parameter="truong_78" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_79" Parameter="truong_79" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_80" Parameter="truong_80" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_85" Parameter="truong_85" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_86" Parameter="truong_86" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Check_QC" Parameter="check_QC" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Insert_YASUDA" Method="Insert_YASUDA">
+    <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_02" Parameter="truong_02" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_03" Parameter="truong_03" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_05" Parameter="truong_05" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_06" Parameter="truong_06" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_07" Parameter="truong_07" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_08" Parameter="truong_08" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_12" Parameter="truong_12" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_13" Parameter="truong_13" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_14" Parameter="truong_14" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_15" Parameter="truong_15" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_16" Parameter="truong_16" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_20" Parameter="truong_20" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_21" Parameter="truong_21" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_22" Parameter="truong_22" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_23" Parameter="truong_23" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_24" Parameter="truong_24" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_28" Parameter="truong_28" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_29" Parameter="truong_29" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_30" Parameter="truong_30" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_31" Parameter="truong_31" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_32" Parameter="truong_32" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_36" Parameter="truong_36" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_37" Parameter="truong_37" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_38" Parameter="truong_38" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_39" Parameter="truong_39" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_40" Parameter="truong_40" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_44" Parameter="truong_44" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_45" Parameter="truong_45" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_46" Parameter="truong_46" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_47" Parameter="truong_47" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_48" Parameter="truong_48" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_52" Parameter="truong_52" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_53" Parameter="truong_53" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_54" Parameter="truong_54" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_55" Parameter="truong_55" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_56" Parameter="truong_56" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_60" Parameter="truong_60" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_61" Parameter="truong_61" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_62" Parameter="truong_62" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_63" Parameter="truong_63" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_64" Parameter="truong_64" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_68" Parameter="truong_68" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_69" Parameter="truong_69" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_70" Parameter="truong_70" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_71" Parameter="truong_71" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_72" Parameter="truong_72" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_76" Parameter="truong_76" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_77" Parameter="truong_77" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_78" Parameter="truong_78" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_79" Parameter="truong_79" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_80" Parameter="truong_80" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_84" Parameter="truong_84" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_85" Parameter="truong_85" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_87" Parameter="truong_87" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Truong_91" Parameter="truong_91" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Check_QC" Parameter="check_QC" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LayHinhMoi_DeSo" Method="LayHinhMoi_DeSo">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="LayHinhMoi_DeSoResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

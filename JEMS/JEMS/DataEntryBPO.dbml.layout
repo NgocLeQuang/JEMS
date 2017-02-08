@@ -32,5 +32,11 @@
         <elementListCompartment Id="d267a759-3006-45ab-8831-d5c2972123dc" absoluteBounds="6.765, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="cfc7950d-13d7-4e60-889f-63f73512f17c" absoluteBounds="0.75, 5.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataEntryBPODataContext/tbl_TokenLogin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81348667-143d-4d55-8134-45ee77726e4f" absoluteBounds="0.765, 6.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -173,7 +173,7 @@
             // fLoaiPhieu
             // 
             this.fLoaiPhieu.Caption = "Loại phiếu";
-            this.fLoaiPhieu.FieldName = "LoaiPhieu";
+            this.fLoaiPhieu.FieldName = "fLoaiPhieu";
             this.fLoaiPhieu.Name = "fLoaiPhieu";
             this.fLoaiPhieu.Visible = true;
             this.fLoaiPhieu.VisibleIndex = 6;

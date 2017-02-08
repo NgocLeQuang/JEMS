@@ -20,6 +20,7 @@ namespace JEMS
         public static string StrCheck = "";
         public static string StrPath = @"\\10.10.10.253\ImageJEMS$";
         public static string Webservice = "http://10.10.10.253:8888/ImageJEMS/";
-
+        public static string LoaiPhieu = "";
+        public static string StrIdProject = "";
     }
 }
