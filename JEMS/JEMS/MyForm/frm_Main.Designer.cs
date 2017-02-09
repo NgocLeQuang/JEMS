@@ -227,6 +227,7 @@
             this.btn_xuatexcel.Caption = "Xuất &Excel";
             this.btn_xuatexcel.Id = 12;
             this.btn_xuatexcel.Name = "btn_xuatexcel";
+            this.btn_xuatexcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_xuatexcel_ItemClick);
             // 
             // btn_Zoomimage
             // 

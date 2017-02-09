@@ -144,11 +144,11 @@ namespace JEMS
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatch")]
-		public ISingleResult<GetBatchResult> GetBatch()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CheckerFinish")]
+		public int CheckerFinish([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(250)")] string fbatchname)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<GetBatchResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XoaBatch")]
@@ -156,6 +156,27 @@ namespace JEMS
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ExportExcel_ASAHI")]
+		public ISingleResult<ExportExcel_ASAHIResult> ExportExcel_ASAHI([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(250)")] string fbatchname)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
+			return ((ISingleResult<ExportExcel_ASAHIResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ExportExcel_ASAHI_QC")]
+		public ISingleResult<ExportExcel_ASAHI_QCResult> ExportExcel_ASAHI_QC([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(250)")] string fbatchname)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
+			return ((ISingleResult<ExportExcel_ASAHI_QCResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatch")]
+		public ISingleResult<GetBatchResult> GetBatch()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GetBatchResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatNotFinishCheckerDeSo")]
@@ -198,6 +219,13 @@ namespace JEMS
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fBatchName, userName);
 			return ((ISingleResult<ImageCheck_QCResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InputFinish")]
+		public int InputFinish([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(250)")] string fbatchname)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insert_ASAHI")]
@@ -569,9 +597,10 @@ namespace JEMS
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_95", DbType="NVarChar(255)")] string truong_95, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_96", DbType="NVarChar(255)")] string truong_96, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_97", DbType="NVarChar(255)")] string truong_97, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_98", DbType="NVarChar(255)")] string truong_98)
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_98", DbType="NVarChar(255)")] string truong_98, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userSaiIt, userSaiNhieu, idImage, fBatchName, userCheck, truong_02, truong_03, truong_04, truong_05, truong_06, truong_07, truong_08, truong_09, truong_10, truong_11, truong_12, truong_13, truong_14, truong_15, truong_16, truong_17, truong_18, truong_19, truong_20, truong_21, truong_22, truong_23, truong_24, truong_25, truong_26, truong_27, truong_28, truong_29, truong_30, truong_31, truong_32, truong_33, truong_34, truong_35, truong_36, truong_37, truong_38, truong_39, truong_40, truong_41, truong_42, truong_43, truong_44, truong_45, truong_46, truong_47, truong_48, truong_49, truong_50, truong_51, truong_52, truong_53, truong_54, truong_55, truong_56, truong_57, truong_58, truong_59, truong_60, truong_61, truong_62, truong_63, truong_64, truong_65, truong_66, truong_67, truong_68, truong_69, truong_70, truong_71, truong_72, truong_73, truong_74, truong_75, truong_76, truong_77, truong_78, truong_79, truong_80, truong_81, truong_82, truong_83, truong_84, truong_85, truong_86, truong_87, truong_88, truong_89, truong_90, truong_91, truong_92, truong_93, truong_94, truong_95, truong_96, truong_97, truong_98);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userSaiIt, userSaiNhieu, idImage, fBatchName, userCheck, truong_02, truong_03, truong_04, truong_05, truong_06, truong_07, truong_08, truong_09, truong_10, truong_11, truong_12, truong_13, truong_14, truong_15, truong_16, truong_17, truong_18, truong_19, truong_20, truong_21, truong_22, truong_23, truong_24, truong_25, truong_26, truong_27, truong_28, truong_29, truong_30, truong_31, truong_32, truong_33, truong_34, truong_35, truong_36, truong_37, truong_38, truong_39, truong_40, truong_41, truong_42, truong_43, truong_44, truong_45, truong_46, truong_47, truong_48, truong_49, truong_50, truong_51, truong_52, truong_53, truong_54, truong_55, truong_56, truong_57, truong_58, truong_59, truong_60, truong_61, truong_62, truong_63, truong_64, truong_65, truong_66, truong_67, truong_68, truong_69, truong_70, truong_71, truong_72, truong_73, truong_74, truong_75, truong_76, truong_77, truong_78, truong_79, truong_80, truong_81, truong_82, truong_83, truong_84, truong_85, truong_86, truong_87, truong_88, truong_89, truong_90, truong_91, truong_92, truong_93, truong_94, truong_95, truong_96, truong_97, truong_98, check_QC);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -580,34 +609,6 @@ namespace JEMS
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
 			return ((ISingleResult<UserMissImagecheckResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CheckerFinish")]
-		public int CheckerFinish([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(250)")] string fbatchname)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InputFinish")]
-		public int InputFinish([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(250)")] string fbatchname)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ExportExcel_ASAHI")]
-		public ISingleResult<ExportExcel_ASAHIResult> ExportExcel_ASAHI([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(250)")] string fbatchname)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
-			return ((ISingleResult<ExportExcel_ASAHIResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ExportExcel_ASAHI_QC")]
-		public ISingleResult<ExportExcel_ASAHI_QCResult> ExportExcel_ASAHI_QC([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(250)")] string fbatchname)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
-			return ((ISingleResult<ExportExcel_ASAHI_QCResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -6761,240 +6762,6 @@ namespace JEMS
 		}
 	}
 	
-	public partial class GetBatchResult
-	{
-		
-		private string _fBatchName;
-		
-		public GetBatchResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string fBatchName
-		{
-			get
-			{
-				return this._fBatchName;
-			}
-			set
-			{
-				if ((this._fBatchName != value))
-				{
-					this._fBatchName = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetBatNotFinishCheckerDeSoResult
-	{
-		
-		private string _fBatchName;
-		
-		public GetBatNotFinishCheckerDeSoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(255)")]
-		public string fBatchName
-		{
-			get
-			{
-				return this._fBatchName;
-			}
-			set
-			{
-				if ((this._fBatchName != value))
-				{
-					this._fBatchName = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetBatNotFinishDeSoResult
-	{
-		
-		private string _fbatchname;
-		
-		public GetBatNotFinishDeSoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fbatchname", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string fbatchname
-		{
-			get
-			{
-				return this._fbatchname;
-			}
-			set
-			{
-				if ((this._fbatchname != value))
-				{
-					this._fbatchname = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetSoLoi_CheckDeSoResult
-	{
-		
-		private System.Nullable<int> _Column1;
-		
-		public GetSoLoi_CheckDeSoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
-		public System.Nullable<int> Column1
-		{
-			get
-			{
-				return this._Column1;
-			}
-			set
-			{
-				if ((this._Column1 != value))
-				{
-					this._Column1 = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetSoLoi_CheckQCResult
-	{
-		
-		private System.Nullable<int> _Column1;
-		
-		public GetSoLoi_CheckQCResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
-		public System.Nullable<int> Column1
-		{
-			get
-			{
-				return this._Column1;
-			}
-			set
-			{
-				if ((this._Column1 != value))
-				{
-					this._Column1 = value;
-				}
-			}
-		}
-	}
-	
-	public partial class ImageCheck_DeSoResult
-	{
-		
-		private string _Column1;
-		
-		public ImageCheck_DeSoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="NVarChar(250)")]
-		public string Column1
-		{
-			get
-			{
-				return this._Column1;
-			}
-			set
-			{
-				if ((this._Column1 != value))
-				{
-					this._Column1 = value;
-				}
-			}
-		}
-	}
-	
-	public partial class ImageCheck_QCResult
-	{
-		
-		private string _Column1;
-		
-		public ImageCheck_QCResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="NVarChar(250)")]
-		public string Column1
-		{
-			get
-			{
-				return this._Column1;
-			}
-			set
-			{
-				if ((this._Column1 != value))
-				{
-					this._Column1 = value;
-				}
-			}
-		}
-	}
-	
-	public partial class LayHinhMoi_DeSoResult
-	{
-		
-		private string _Column1;
-		
-		public LayHinhMoi_DeSoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="NVarChar(255)")]
-		public string Column1
-		{
-			get
-			{
-				return this._Column1;
-			}
-			set
-			{
-				if ((this._Column1 != value))
-				{
-					this._Column1 = value;
-				}
-			}
-		}
-	}
-	
-	public partial class UserMissImagecheckResult
-	{
-		
-		private string _UserName;
-		
-		public UserMissImagecheckResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(255)")]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this._UserName = value;
-				}
-			}
-		}
-	}
-	
 	public partial class ExportExcel_ASAHIResult
 	{
 		
@@ -7258,6 +7025,240 @@ namespace JEMS
 				if ((this._Truong_85 != value))
 				{
 					this._Truong_85 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetBatchResult
+	{
+		
+		private string _fBatchName;
+		
+		public GetBatchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string fBatchName
+		{
+			get
+			{
+				return this._fBatchName;
+			}
+			set
+			{
+				if ((this._fBatchName != value))
+				{
+					this._fBatchName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetBatNotFinishCheckerDeSoResult
+	{
+		
+		private string _fBatchName;
+		
+		public GetBatNotFinishCheckerDeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(255)")]
+		public string fBatchName
+		{
+			get
+			{
+				return this._fBatchName;
+			}
+			set
+			{
+				if ((this._fBatchName != value))
+				{
+					this._fBatchName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetBatNotFinishDeSoResult
+	{
+		
+		private string _fbatchname;
+		
+		public GetBatNotFinishDeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fbatchname", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string fbatchname
+		{
+			get
+			{
+				return this._fbatchname;
+			}
+			set
+			{
+				if ((this._fbatchname != value))
+				{
+					this._fbatchname = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetSoLoi_CheckDeSoResult
+	{
+		
+		private System.Nullable<int> _Column1;
+		
+		public GetSoLoi_CheckDeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetSoLoi_CheckQCResult
+	{
+		
+		private System.Nullable<int> _Column1;
+		
+		public GetSoLoi_CheckQCResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ImageCheck_DeSoResult
+	{
+		
+		private string _Column1;
+		
+		public ImageCheck_DeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="NVarChar(250)")]
+		public string Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ImageCheck_QCResult
+	{
+		
+		private string _Column1;
+		
+		public ImageCheck_QCResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="NVarChar(250)")]
+		public string Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LayHinhMoi_DeSoResult
+	{
+		
+		private string _Column1;
+		
+		public LayHinhMoi_DeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="NVarChar(255)")]
+		public string Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class UserMissImagecheckResult
+	{
+		
+		private string _UserName;
+		
+		public UserMissImagecheckResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(255)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
 				}
 			}
 		}

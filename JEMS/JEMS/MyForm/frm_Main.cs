@@ -351,5 +351,10 @@ namespace JEMS.MyForm
         {
             Global.db_BPO.ResetToken(Global.StrUsername, Global.StrIdProject);
         }
+
+        private void btn_xuatexcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new frm_ExportExcel().ShowDialog();
+        }
     }
 }

@@ -139,6 +139,36 @@ namespace JEMS.MyForm
                 }
                 TableToExcel_ASAHI_QC(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI_QC.xlsx");
             }
+
+
+            else if (LoaiPhieu == "EIZEN")
+            {
+                //EXport Excel EIZEN
+
+                if (System.IO.File.Exists(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_EIZEN.xlsx"))
+                {
+                    System.IO.File.Delete(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_EIZEN.xlsx");
+                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_EIZEN.xlsx"), Properties.Resources.ExportExcel_EIZEN);
+                }
+                else
+                {
+                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_EIZEN.xlsx"), Properties.Resources.ExportExcel_EIZEN);
+                }
+                TableToExcel_EIZEN(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_EIZEN.xlsx");
+
+                //EXport Excel EIZEN_QC
+
+                if (System.IO.File.Exists(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_EIZEN_QC.xlsx"))
+                {
+                    System.IO.File.Delete(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_EIZEN_QC.xlsx");
+                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_EIZEN_QC.xlsx"), Properties.Resources.ExportExcel_EIZEN);
+                }
+                else
+                {
+                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_EIZEN_QC.xlsx"), Properties.Resources.ExportExcel_EIZEN);
+                }
+                TableToExcel_ASAHI_QC(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_EIZEN_QC.xlsx");
+            }
         }
 
         public bool TableToExcel_ASAHI(String strfilename)
@@ -151,20 +181,21 @@ namespace JEMS.MyForm
                 Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
                 Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
                 Microsoft.Office.Interop.Excel.Worksheet wrksheet = (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
-                int h = 2;
+                int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
 
-                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? ThemKyTubatKyPhiatruoc( dr.Cells[0].Value.ToString(),6," ") : "";   //tên ảnh
-                    wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? ThemKyTubatKyPhiatruoc(dr.Cells[1].Value.ToString(), 16, " ") : "";   //Truong 01
-                    wrksheet.Cells[h, 3] = dr.Cells[2].Value != null ? ThemKyTubatKyPhiatruoc(dr.Cells[2].Value.ToString(), 2, " ") : "";
-                    wrksheet.Cells[h, 4] = dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "";
-                    wrksheet.Cells[h, 5] = dr.Cells[4].Value != null ? dr.Cells[4].Value.ToString() : "";
-                    wrksheet.Cells[h, 6] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";
-                    wrksheet.Cells[h, 86] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";
 
-                    lb_SoDong.Text = (h - 1).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A2", "O" + h);
+                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString() : "";   //tên ảnh
+                    wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : "";   //truong 02
+                    wrksheet.Cells[h, 3] = dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "";    //03
+                    wrksheet.Cells[h, 5] = dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "";   //05
+                    wrksheet.Cells[h, 6] = dr.Cells[4].Value != null ? dr.Cells[4].Value.ToString() : "";   //06
+                    wrksheet.Cells[h, 8] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";   //08
+                    wrksheet.Cells[h, 85] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";  //85
+
+                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
+                    Range rowHead = wrksheet.get_Range("A3", "CG" + h);
                     rowHead.Borders.LineStyle = Constants.xlSolid;
                     h++;
                 }
@@ -200,25 +231,80 @@ namespace JEMS.MyForm
             try
             {
                 dataGridView1.DataSource = null;
+                dataGridView1.DataSource = Global.db.ExportExcel_ASAHI_QC(cbb_Batch.Text);
+                Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
+                Microsoft.Office.Interop.Excel.Worksheet wrksheet = (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
+                int h = 3;
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                {
+
+                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString() : "";   //tên ảnh
+                    wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : "";   //truong 02
+                    wrksheet.Cells[h, 3] = dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "";    //03
+                    wrksheet.Cells[h, 5] = dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "";   //05
+                    wrksheet.Cells[h, 6] = dr.Cells[4].Value != null ? dr.Cells[4].Value.ToString() : "";   //06
+                    wrksheet.Cells[h, 8] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";   //08
+                    wrksheet.Cells[h, 85] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";  //85
+
+                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
+                    Range rowHead = wrksheet.get_Range("A3", "CG" + h);
+                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    h++;
+                }
+                string savePath = "";
+                saveFileDialog1.Title = "Save Excel Files";
+                saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
+                saveFileDialog1.FileName = cbb_Batch.Text+"_QC";
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    book.SaveCopyAs(saveFileDialog1.FileName);
+                    book.Saved = true;
+                    savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                    App.Quit();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi xuất excel!");
+                    return false;
+                }
+                Process.Start(savePath);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public bool TableToExcel_EIZEN(String strfilename)
+        {
+            try
+            {
+                dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Global.db.ExportExcel_ASAHI(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
                 Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
                 Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
                 Microsoft.Office.Interop.Excel.Worksheet wrksheet = (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
-                int h = 2;
+                int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
 
-                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? ThemKyTubatKyPhiatruoc(dr.Cells[0].Value.ToString(), 6, " ") : "";   //tên ảnh
-                    wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? ThemKyTubatKyPhiatruoc(dr.Cells[1].Value.ToString(), 16, " ") : "";   //Truong 01
-                    wrksheet.Cells[h, 3] = dr.Cells[2].Value != null ? ThemKyTubatKyPhiatruoc(dr.Cells[2].Value.ToString(), 2, " ") : "";
-                    wrksheet.Cells[h, 4] = dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "";
-                    wrksheet.Cells[h, 5] = dr.Cells[4].Value != null ? dr.Cells[4].Value.ToString() : "";
-                    wrksheet.Cells[h, 6] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";
-                    wrksheet.Cells[h, 86] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";
 
-                    lb_SoDong.Text = (h - 1).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A2", "O" + h);
+                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString() : "";   //tên ảnh
+                    wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : "";   //truong 02
+                    wrksheet.Cells[h, 3] = dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "";    //03
+                    wrksheet.Cells[h, 5] = dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "";   //05
+                    wrksheet.Cells[h, 6] = dr.Cells[4].Value != null ? dr.Cells[4].Value.ToString() : "";   //06
+                    wrksheet.Cells[h, 8] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";   //08
+                    wrksheet.Cells[h, 85] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";  //85
+
+                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
+                    Range rowHead = wrksheet.get_Range("A3", "CG" + h);
                     rowHead.Borders.LineStyle = Constants.xlSolid;
                     h++;
                 }
@@ -248,6 +334,5 @@ namespace JEMS.MyForm
                 return false;
             }
         }
-
     }
 }

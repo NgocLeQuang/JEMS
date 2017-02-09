@@ -772,7 +772,7 @@ namespace JEMS.MyForm
 
         private string GetImage_DeSo()
         {
-            var temp = (from w in Global.db.tbl_MissChecks
+            var temp = (from w in Global.db.tbl_MissCheck_QCs
                         where w.fBatchName == Global.StrBatch && w.UserName == Global.StrUsername && w.Submit == 0
                         select w.IdImage).FirstOrDefault();
             if (string.IsNullOrEmpty(temp))
@@ -905,7 +905,7 @@ namespace JEMS.MyForm
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", uc_ASAHI1.txt_Truong85.Text, "", "", "",
-                            "", "", "", "", "", "", "", "", "", "");
+                            "", "", "", "", "", "", "", "", "", "", uc_ASAHI1.chk_qc.Checked);
                 }
                 else if (tabcontrol_DeSo1.SelectedTabPage == tp_EIZEN_DeSo1)
                 {
@@ -920,7 +920,7 @@ namespace JEMS.MyForm
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", uc_EZIEN1.txt_Truong85.Text, uc_EZIEN1.txt_Truong86.Text, "", "",
-                            "", "", "", "", "", "", "", "", "", "");
+                            "", "", "", "", "", "", "", "", "", "", uc_EZIEN1.chk_qc.Checked);
                 }
                 else if (tabcontrol_DeSo1.SelectedTabPage == tp_YAMAMOTO_DeSo1)
                 {
@@ -936,7 +936,7 @@ namespace JEMS.MyForm
                             "", "", "", "", uc_YAMAMOTO1.txt_Truong61.Text, uc_YAMAMOTO1.txt_Truong62.Text, uc_YAMAMOTO1.txt_Truong63.Text, uc_YAMAMOTO1.txt_Truong64.Text,
                             "", "", "", "", uc_YAMAMOTO1.txt_Truong69.Text, uc_YAMAMOTO1.txt_Truong70.Text, uc_YAMAMOTO1.txt_Truong71.Text, uc_YAMAMOTO1.txt_Truong72.Text,
                             "", "", "", "", uc_YAMAMOTO1.txt_Truong77.Text, uc_YAMAMOTO1.txt_Truong78.Text, uc_YAMAMOTO1.txt_Truong79.Text, uc_YAMAMOTO1.txt_Truong80.Text,
-                            "", "", "", "", uc_YAMAMOTO1.txt_Truong85.Text, uc_YAMAMOTO1.txt_Truong86.Text, "", "", "", "", "", "", "", "", "", "", "", "");
+                            "", "", "", "", uc_YAMAMOTO1.txt_Truong85.Text, uc_YAMAMOTO1.txt_Truong86.Text, "", "", "", "", "", "", "", "", "", "", "", "", uc_YAMAMOTO1.chk_qc.Checked);
                 }
                 else if (tabcontrol_DeSo1.SelectedTabPage == tp_YASUDA_DeSo1)
                 {
@@ -952,7 +952,7 @@ namespace JEMS.MyForm
                             "", "", "", uc_YASUDA1.txt_Truong60.Text, uc_YASUDA1.txt_Truong61.Text, uc_YASUDA1.txt_Truong62.Text, uc_YASUDA1.txt_Truong63.Text, uc_YASUDA1.txt_Truong64.Text,
                             "", "", "", uc_YASUDA1.txt_Truong69.Text, uc_YASUDA1.txt_Truong69.Text, uc_YASUDA1.txt_Truong70.Text, uc_YASUDA1.txt_Truong71.Text, uc_YASUDA1.txt_Truong72.Text,
                             "", "", "", uc_YASUDA1.txt_Truong76.Text, uc_YASUDA1.txt_Truong77.Text, uc_YASUDA1.txt_Truong78.Text, uc_YASUDA1.txt_Truong79.Text, uc_YASUDA1.txt_Truong80.Text,
-                            "", "", "", uc_YASUDA1.txt_Truong84.Text, uc_YASUDA1.txt_Truong85.Text,"", uc_YASUDA1.txt_Truong87.Text, "", "", "", uc_YASUDA1.txt_Truong91.Text, "", "", "", "", "", "", "");
+                            "", "", "", uc_YASUDA1.txt_Truong84.Text, uc_YASUDA1.txt_Truong85.Text,"", uc_YASUDA1.txt_Truong87.Text, "", "", "", uc_YASUDA1.txt_Truong91.Text, "", "", "", "", "", "", "", uc_YASUDA1.chk_qc.Checked);
                 }
                 ResetData();
 
@@ -993,7 +993,7 @@ namespace JEMS.MyForm
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", uc_ASAHI2.txt_Truong85.Text, "", "", "",
-                            "", "", "", "", "", "", "", "", "", "");
+                            "", "", "", "", "", "", "", "", "", "", uc_ASAHI2.chk_qc.Checked);
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_EIZEN_DeSo2)
                 {
@@ -1008,7 +1008,7 @@ namespace JEMS.MyForm
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", uc_EZIEN2.txt_Truong85.Text, uc_EZIEN2.txt_Truong86.Text, "", "",
-                            "", "", "", "", "", "", "", "", "", "");
+                            "", "", "", "", "", "", "", "", "", "", uc_EZIEN2.chk_qc.Checked);
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_YAMAMOTO_DeSo2)
                 {
@@ -1024,7 +1024,7 @@ namespace JEMS.MyForm
                             "", "", "", "", uc_YAMAMOTO2.txt_Truong61.Text, uc_YAMAMOTO2.txt_Truong62.Text, uc_YAMAMOTO2.txt_Truong63.Text, uc_YAMAMOTO2.txt_Truong64.Text,
                             "", "", "", "", uc_YAMAMOTO2.txt_Truong69.Text, uc_YAMAMOTO2.txt_Truong70.Text, uc_YAMAMOTO2.txt_Truong71.Text, uc_YAMAMOTO2.txt_Truong72.Text,
                             "", "", "", "", uc_YAMAMOTO2.txt_Truong77.Text, uc_YAMAMOTO2.txt_Truong78.Text, uc_YAMAMOTO2.txt_Truong79.Text, uc_YAMAMOTO2.txt_Truong80.Text,
-                            "", "", "", "", uc_YAMAMOTO2.txt_Truong85.Text, uc_YAMAMOTO2.txt_Truong86.Text, "", "", "", "", "", "", "", "", "", "", "", "");
+                            "", "", "", "", uc_YAMAMOTO2.txt_Truong85.Text, uc_YAMAMOTO2.txt_Truong86.Text, "", "", "", "", "", "", "", "", "", "", "", "", uc_YAMAMOTO2.chk_qc.Checked);
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_YASUDA_DeSo2)
                 {
@@ -1040,7 +1040,7 @@ namespace JEMS.MyForm
                             "", "", "", uc_YASUDA2.txt_Truong60.Text, uc_YASUDA2.txt_Truong61.Text, uc_YASUDA2.txt_Truong62.Text, uc_YASUDA2.txt_Truong63.Text, uc_YASUDA2.txt_Truong64.Text,
                             "", "", "", uc_YASUDA2.txt_Truong68.Text, uc_YASUDA2.txt_Truong69.Text, uc_YASUDA2.txt_Truong70.Text, uc_YASUDA2.txt_Truong71.Text, uc_YASUDA2.txt_Truong72.Text,
                             "", "", "", uc_YASUDA2.txt_Truong76.Text, uc_YASUDA2.txt_Truong77.Text, uc_YASUDA2.txt_Truong78.Text, uc_YASUDA2.txt_Truong79.Text, uc_YASUDA2.txt_Truong80.Text,
-                            "", "", "", uc_YASUDA2.txt_Truong84.Text, uc_YASUDA2.txt_Truong85.Text, "", uc_YASUDA2.txt_Truong87.Text, "", "", "", uc_YASUDA2.txt_Truong91.Text, "", "", "", "", "", "", "");
+                            "", "", "", uc_YASUDA2.txt_Truong84.Text, uc_YASUDA2.txt_Truong85.Text, "", uc_YASUDA2.txt_Truong87.Text, "", "", "", uc_YASUDA2.txt_Truong91.Text, "", "", "", "", "", "", "", uc_YASUDA2.chk_qc.Checked);
                 }
                 ResetData();
 

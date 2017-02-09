@@ -281,14 +281,42 @@
       <Column Name="DateCheck" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
-  <Function Name="dbo.GetBatch" Method="GetBatch">
-    <ElementType Name="GetBatchResult">
-      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-    </ElementType>
+  <Function Name="dbo.CheckerFinish" Method="CheckerFinish">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.XoaBatch" Method="XoaBatch">
     <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(255)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ExportExcel_ASAHI" Method="ExportExcel_ASAHI">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
+    <ElementType Name="ExportExcel_ASAHIResult">
+      <Column Name="idimage" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_06" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_85" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ExportExcel_ASAHI_QC" Method="ExportExcel_ASAHI_QC">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
+    <ElementType Name="ExportExcel_ASAHI_QCResult">
+      <Column Name="idimage" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_06" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Truong_85" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetBatch" Method="GetBatch">
+    <ElementType Name="GetBatchResult">
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
   <Function Name="dbo.GetBatNotFinishCheckerDeSo" Method="GetBatNotFinishCheckerDeSo">
     <Parameter Name="username" Type="System.String" DbType="NVarChar(255)" />
@@ -327,6 +355,10 @@
     <ElementType Name="ImageCheck_QCResult">
       <Column Name="" Member="Column1" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.InputFinish" Method="InputFinish">
+    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.Insert_ASAHI" Method="Insert_ASAHI">
     <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
@@ -701,44 +733,13 @@
     <Parameter Name="Truong_96" Parameter="truong_96" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="Truong_97" Parameter="truong_97" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="Truong_98" Parameter="truong_98" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Check_QC" Parameter="check_QC" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.UserMissImagecheck" Method="UserMissImagecheck">
     <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
     <ElementType Name="UserMissImagecheckResult">
       <Column Name="UserName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.CheckerFinish" Method="CheckerFinish">
-    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.InputFinish" Method="InputFinish">
-    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.ExportExcel_ASAHI" Method="ExportExcel_ASAHI">
-    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
-    <ElementType Name="ExportExcel_ASAHIResult">
-      <Column Name="idimage" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Truong_06" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Truong_85" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.ExportExcel_ASAHI_QC" Method="ExportExcel_ASAHI_QC">
-    <Parameter Name="fbatchname" Type="System.String" DbType="NVarChar(250)" />
-    <ElementType Name="ExportExcel_ASAHI_QCResult">
-      <Column Name="idimage" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Truong_02" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Truong_03" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Truong_05" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Truong_06" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Truong_08" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Truong_85" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
