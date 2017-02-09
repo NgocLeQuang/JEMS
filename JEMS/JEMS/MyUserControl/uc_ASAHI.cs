@@ -70,9 +70,28 @@ namespace JEMS.MyUserControl
             return false;
         }
 
+        public bool CheckQC()
+        {
+            if (txt_Truong02.Text=="?" || txt_Truong02.Text== "●" ||
+                txt_Truong03_1.Text == "?" || txt_Truong03_1.Text == "●" ||
+                txt_Truong03_2.Text == "?" || txt_Truong03_2.Text == "●" ||
+                txt_Truong05.Text == "?" || txt_Truong05.Text == "●" ||
+                txt_Truong06.Text == "?" || txt_Truong06.Text == "●" ||
+                txt_Truong08.Text == "?" || txt_Truong08.Text == "●" ||
+                txt_Truong85.Text == "?" || txt_Truong85.Text == "●" ||
+                txt_Truong0.Text == "?" || txt_Truong0.Text == "●" ||
+                chk_qc.Checked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void txt_Truong02_EditValueChanged(object sender, EventArgs e)
         {
-            if (txt_Truong02.Text.ToString().IndexOf('?') >= 0)
+            if (txt_Truong02.Text.IndexOf('?') >= 0)
                 txt_Truong02.Text = "?";
             if (txt_Truong02.Text.Length != 6 && txt_Truong02.Text != "" && txt_Truong02.Text != "?")
             {
@@ -91,7 +110,7 @@ namespace JEMS.MyUserControl
 
         private void txt_Truong03_1_EditValueChanged(object sender, EventArgs e)
         {
-            if (txt_Truong03_1.Text.ToString().IndexOf('?') >= 0)
+            if (txt_Truong03_1.Text.IndexOf('?') >= 0)
                 txt_Truong03_1.Text = "?";
             if (txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?")
             {

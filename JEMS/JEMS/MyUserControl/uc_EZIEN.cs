@@ -75,6 +75,28 @@ namespace JEMS.MyUserControl
                 return true;
             return false;
         }
+        public bool CheckQC()
+        {
+            if (txt_Truong02.Text == "?" || txt_Truong02.Text == "●" ||
+                txt_Truong03_1.Text == "?" || txt_Truong03_1.Text == "●" ||
+                txt_Truong03_2.Text == "?" || txt_Truong03_2.Text == "●" ||
+                txt_Truong05.Text == "?" || txt_Truong05.Text == "●" ||
+                txt_Truong06.Text == "?" || txt_Truong06.Text == "●" ||
+                txt_Truong07.Text == "?" || txt_Truong07.Text == "●" ||
+                txt_Truong08.Text == "?" || txt_Truong08.Text == "●" ||
+                txt_Truong85.Text == "?" || txt_Truong85.Text == "●" ||
+                txt_Truong0.Text == "?" || txt_Truong0.Text == "●" ||
+                txt_Truong86.Text == "?" || txt_Truong86.Text == "●" ||
+                chk_qc.Checked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
         private void txt_Truong02_EditValueChanged(object sender, EventArgs e)
         {

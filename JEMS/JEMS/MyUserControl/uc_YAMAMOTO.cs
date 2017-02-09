@@ -195,7 +195,63 @@ namespace JEMS.MyUserControl
                 return true;
             return false;
         }
-
+        public bool CheckQC()
+        {
+            if (txt_Truong02.Text == "?" || txt_Truong02.Text == "●" ||
+                txt_Truong03_1.Text == "?" || txt_Truong03_1.Text == "●" ||
+                txt_Truong03_2.Text == "?" || txt_Truong03_2.Text == "●" ||
+                txt_Truong05.Text == "?" || txt_Truong05.Text == "●" ||
+                txt_Truong06.Text == "?" || txt_Truong06.Text == "●" ||
+                txt_Truong07.Text == "?" || txt_Truong07.Text == "●" ||
+                txt_Truong08.Text == "?" || txt_Truong08.Text == "●" ||
+                txt_Truong13.Text == "?" || txt_Truong13.Text == "●" ||
+                txt_Truong14.Text == "?" || txt_Truong14.Text == "●" ||
+                txt_Truong15.Text == "?" || txt_Truong15.Text == "●" ||
+                txt_Truong16.Text == "?" || txt_Truong16.Text == "●" ||
+                txt_Truong21.Text == "?" || txt_Truong21.Text == "●" ||
+                txt_Truong22.Text == "?" || txt_Truong22.Text == "●" ||
+                txt_Truong23.Text == "?" || txt_Truong23.Text == "●" ||
+                txt_Truong24.Text == "?" || txt_Truong24.Text == "●" ||
+                txt_Truong29.Text == "?" || txt_Truong29.Text == "●" ||
+                txt_Truong30.Text == "?" || txt_Truong30.Text == "●" ||
+                txt_Truong31.Text == "?" || txt_Truong31.Text == "●" ||
+                txt_Truong32.Text == "?" || txt_Truong32.Text == "●" ||
+                txt_Truong37.Text == "?" || txt_Truong37.Text == "●" ||
+                txt_Truong38.Text == "?" || txt_Truong38.Text == "●" ||
+                txt_Truong39.Text == "?" || txt_Truong39.Text == "●" ||
+                txt_Truong40.Text == "?" || txt_Truong40.Text == "●" ||
+                txt_Truong45.Text == "?" || txt_Truong45.Text == "●" ||
+                txt_Truong46.Text == "?" || txt_Truong46.Text == "●" ||
+                txt_Truong47.Text == "?" || txt_Truong47.Text == "●" ||
+                txt_Truong48.Text == "?" || txt_Truong48.Text == "●" ||
+                txt_Truong53.Text == "?" || txt_Truong53.Text == "●" ||
+                txt_Truong54.Text == "?" || txt_Truong54.Text == "●" ||
+                txt_Truong55.Text == "?" || txt_Truong55.Text == "●" ||
+                txt_Truong56.Text == "?" || txt_Truong56.Text == "●" ||
+                txt_Truong61.Text == "?" || txt_Truong61.Text == "●" ||
+                txt_Truong62.Text == "?" || txt_Truong62.Text == "●" ||
+                txt_Truong63.Text == "?" || txt_Truong63.Text == "●" ||
+                txt_Truong64.Text == "?" || txt_Truong64.Text == "●" ||
+                txt_Truong69.Text == "?" || txt_Truong69.Text == "●" ||
+                txt_Truong70.Text == "?" || txt_Truong70.Text == "●" ||
+                txt_Truong71.Text == "?" || txt_Truong71.Text == "●" ||
+                txt_Truong72.Text == "?" || txt_Truong72.Text == "●" ||
+                txt_Truong77.Text == "?" || txt_Truong77.Text == "●" ||
+                txt_Truong78.Text == "?" || txt_Truong78.Text == "●" ||
+                txt_Truong79.Text == "?" || txt_Truong79.Text == "●" ||
+                txt_Truong80.Text == "?" || txt_Truong80.Text == "●" ||
+                txt_Truong85.Text == "?" || txt_Truong85.Text == "●" ||
+                txt_Truong0.Text == "?" || txt_Truong0.Text == "●" ||
+                txt_Truong86.Text == "?" || txt_Truong86.Text == "●" ||
+                chk_qc.Checked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void txt_Truong02_EditValueChanged(object sender, EventArgs e)
         {
             if (txt_Truong02.Text.ToString().IndexOf('?') >= 0)
