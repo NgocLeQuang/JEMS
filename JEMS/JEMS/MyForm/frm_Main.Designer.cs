@@ -39,6 +39,8 @@
             this.btn_qyanlybatch = new DevExpress.XtraBars.BarButtonItem();
             this.btn_quanlyuser = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
+            this.btn_checkdeso = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_checkqc = new DevExpress.XtraBars.BarButtonItem();
             this.btn_nangsuat = new DevExpress.XtraBars.BarButtonItem();
             this.btn_tiendo = new DevExpress.XtraBars.BarButtonItem();
             this.btn_xuatexcel = new DevExpress.XtraBars.BarButtonItem();
@@ -113,9 +115,11 @@
             this.btn_nangsuat,
             this.btn_tiendo,
             this.btn_xuatexcel,
-            this.btn_Zoomimage});
+            this.btn_Zoomimage,
+            this.btn_checkdeso,
+            this.btn_checkqc});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 15;
+            this.barManager1.MaxItemId = 17;
             // 
             // bar2
             // 
@@ -187,7 +191,24 @@
             // 
             this.barSubItem4.Caption = "&Check";
             this.barSubItem4.Id = 8;
+            this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_checkdeso),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_checkqc)});
             this.barSubItem4.Name = "barSubItem4";
+            // 
+            // btn_checkdeso
+            // 
+            this.btn_checkdeso.Caption = "CheckDeSo";
+            this.btn_checkdeso.Id = 15;
+            this.btn_checkdeso.Name = "btn_checkdeso";
+            this.btn_checkdeso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_checkdeso_ItemClick);
+            // 
+            // btn_checkqc
+            // 
+            this.btn_checkqc.Caption = "Check QC";
+            this.btn_checkqc.Id = 16;
+            this.btn_checkqc.Name = "btn_checkqc";
+            this.btn_checkqc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_checkqc_ItemClick);
             // 
             // btn_nangsuat
             // 
@@ -513,11 +534,14 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JEMS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Main_FormClosing);
             this.Load += new System.EventHandler(this.frm_Main_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_Main_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -588,6 +612,8 @@
         private MyUserControl.uc_YAMAMOTO uc_YAMAMOTO4;
         private MyUserControl.uc_YASUDA uc_YASUDA1;
         private DevExpress.XtraBars.BarButtonItem btn_Zoomimage;
+        private DevExpress.XtraBars.BarButtonItem btn_checkdeso;
+        private DevExpress.XtraBars.BarButtonItem btn_checkqc;
     }
 }
 

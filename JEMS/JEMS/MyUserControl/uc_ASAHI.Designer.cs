@@ -44,6 +44,7 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txt_Truong0 = new DevExpress.XtraEditors.TextEdit();
             this.chk_qc = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong02.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_2.Properties)).BeginInit();
@@ -226,11 +227,24 @@
             this.chk_qc.Properties.Caption = "QC";
             this.chk_qc.Size = new System.Drawing.Size(42, 19);
             this.chk_qc.TabIndex = 9;
+            this.chk_qc.CheckedChanged += new System.EventHandler(this.chk_qc_CheckedChanged);
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseForeColor = true;
+            this.labelControl8.Location = new System.Drawing.Point(170, 163);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(0, 13);
+            this.labelControl8.TabIndex = 10;
             // 
             // uc_ASAHI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.chk_qc);
             this.Controls.Add(this.txt_Truong08);
             this.Controls.Add(this.txt_Truong0);
@@ -248,7 +262,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "uc_ASAHI";
-            this.Size = new System.Drawing.Size(340, 173);
+            this.Size = new System.Drawing.Size(340, 183);
             this.Load += new System.EventHandler(this.uc_ASAHI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong02.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_1.Properties)).EndInit();
@@ -281,6 +295,7 @@
         public DevExpress.XtraEditors.LookUpEdit txt_Truong08;
         public DevExpress.XtraEditors.LabelControl labelControl7;
         public DevExpress.XtraEditors.TextEdit txt_Truong0;
-        private DevExpress.XtraEditors.CheckEdit chk_qc;
+        public DevExpress.XtraEditors.CheckEdit chk_qc;
+        public DevExpress.XtraEditors.LabelControl labelControl8;
     }
 }

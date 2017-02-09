@@ -120,7 +120,7 @@ namespace JEMS.MyForm
             progressBarControl1.Properties.PercentView = true;
             progressBarControl1.Properties.Maximum = _lFileNames.Length;
             progressBarControl1.Properties.Minimum = 0;
-            var batch = (from w in Global.db_JEMS.tbl_Batches.Where(w => w.fBatchName == txt_BatchName.Text)select w.fBatchName).FirstOrDefault();
+            var batch = (from w in Global.db.tbl_Batches.Where(w => w.fBatchName == txt_BatchName.Text)select w.fBatchName).FirstOrDefault();
             if (!string.IsNullOrEmpty(txt_ImagePath.Text))
             {
                 if (string.IsNullOrEmpty(batch))
@@ -134,12 +134,10 @@ namespace JEMS.MyForm
                         fLocation = txt_Location.Text,
                         fSoLuongAnh = soluonghinh.ToString(),
                         fLoaiPhieu = txt_LoaiPhieu.Text
-
-
-
+                        
                     };
-                    Global.db_JEMS.tbl_Batches.InsertOnSubmit(fBatch);
-                    Global.db_JEMS.SubmitChanges();
+                    Global.db.tbl_Batches.InsertOnSubmit(fBatch);
+                    Global.db.SubmitChanges();
                 }
                 else
                 {
@@ -171,10 +169,12 @@ namespace JEMS.MyForm
                     idimage = Path.GetFileName(fi.ToString()),
                     ReadImageDESo = 0,
                     CheckedDESo = 0,
-                    TienDoDESO = "Hình chưa nhập"
+                    Checked_QC = 0,
+                    TienDoDESO = "Hình chưa nhập",
+                    CheckQC = false
                 };
-                Global.db_JEMS.tbl_Images.InsertOnSubmit(tempImage);
-                Global.db_JEMS.SubmitChanges();
+                Global.db.tbl_Images.InsertOnSubmit(tempImage);
+                Global.db.SubmitChanges();
                 string des = temp + @"\" + Path.GetFileName(fi.ToString());
                 fi.CopyTo(des);
                 progressBarControl1.PerformStep();
@@ -210,8 +210,8 @@ namespace JEMS.MyForm
                     fSoLuongAnh = Directory.GetFiles(item).Length.ToString()
 
                 };
-                Global.db_JEMS.tbl_Batches.InsertOnSubmit(fBatch);
-                Global.db_JEMS.SubmitChanges();
+                Global.db.tbl_Batches.InsertOnSubmit(fBatch);
+                Global.db.SubmitChanges();
 
                 string searchFolder = txt_PathFolder.Text + "\\" + new DirectoryInfo(item).Name;
                 var filters = new String[] { "jpg", "jpeg", "png", "gif", "tiff", "bmp" };
@@ -228,10 +228,12 @@ namespace JEMS.MyForm
                         idimage = Path.GetFileName(fi.ToString()),
                         ReadImageDESo = 0,
                         CheckedDESo = 0,
-                        TienDoDESO = "Hình chưa nhập"
+                        Checked_QC = 0,
+                        TienDoDESO = "Hình chưa nhập",
+                        CheckQC = false
                     };
-                    Global.db_JEMS.tbl_Images.InsertOnSubmit(tempImage);
-                    Global.db_JEMS.SubmitChanges();
+                    Global.db.tbl_Images.InsertOnSubmit(tempImage);
+                    Global.db.SubmitChanges();
                     string des = temp + @"\" + Path.GetFileName(fi.ToString());
                     fi.CopyTo(des);
                     progressBarControl1.PerformStep();

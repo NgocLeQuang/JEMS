@@ -142,6 +142,7 @@
             this.labelControl57 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl56 = new DevExpress.XtraEditors.LabelControl();
             this.chk_qc = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl54 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong02.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_2.Properties)).BeginInit();
@@ -1451,11 +1452,24 @@
             this.chk_qc.Properties.Caption = "QC";
             this.chk_qc.Size = new System.Drawing.Size(42, 19);
             this.chk_qc.TabIndex = 58;
+            this.chk_qc.CheckedChanged += new System.EventHandler(this.chk_qc_CheckedChanged);
+            // 
+            // labelControl54
+            // 
+            this.labelControl54.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl54.Appearance.ForeColor = System.Drawing.Color.Green;
+            this.labelControl54.Appearance.Options.UseFont = true;
+            this.labelControl54.Appearance.Options.UseForeColor = true;
+            this.labelControl54.Location = new System.Drawing.Point(170, 381);
+            this.labelControl54.Name = "labelControl54";
+            this.labelControl54.Size = new System.Drawing.Size(0, 13);
+            this.labelControl54.TabIndex = 59;
             // 
             // uc_YASUDA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelControl54);
             this.Controls.Add(this.chk_qc);
             this.Controls.Add(this.txt_Truong91);
             this.Controls.Add(this.txt_Truong84);
@@ -1571,7 +1585,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "uc_YASUDA";
-            this.Size = new System.Drawing.Size(431, 383);
+            this.Size = new System.Drawing.Size(431, 403);
             this.Load += new System.EventHandler(this.uc_ASAHI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong02.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_1.Properties)).EndInit();
@@ -1751,6 +1765,7 @@
         public DevExpress.XtraEditors.TextEdit txt_Truong91;
         public DevExpress.XtraEditors.LabelControl labelControl57;
         public DevExpress.XtraEditors.LabelControl labelControl56;
-        private DevExpress.XtraEditors.CheckEdit chk_qc;
+        public DevExpress.XtraEditors.CheckEdit chk_qc;
+        public DevExpress.XtraEditors.LabelControl labelControl54;
     }
 }

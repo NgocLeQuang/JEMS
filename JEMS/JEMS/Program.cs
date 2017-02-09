@@ -126,18 +126,18 @@ namespace JEMS
                 if (iKiemtraLogin == 1 && role == "ADMIN")
                 {
 
-                    cbb.DataSource = Global.db_JEMS.GetBatch();
+                    cbb.DataSource = Global.db.GetBatch();
                     cbb.DisplayMember = "fBatchName";
                 }
                
                 else if (iKiemtraLogin == 1 && role == "DESO")
                 {
-                    cbb.DataSource = Global.db_JEMS.GetBatNotFinishDeSo(username);
+                    cbb.DataSource = Global.db.GetBatNotFinishDeSo(username);
                     cbb.DisplayMember = "fBatchName";
                 }
                else if (iKiemtraLogin == 1 && role == "CHECKERDESO")
                 {
-                    cbb.DataSource = Global.db_JEMS.GetBatNotFinishCheckerDeSo(username);
+                    cbb.DataSource = Global.db.GetBatNotFinishCheckerDeSo(username);
                     cbb.DisplayMember = "fBatchName";
                 }
             }

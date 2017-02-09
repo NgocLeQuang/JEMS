@@ -61,6 +61,16 @@ namespace JEMS.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ExportExcel_ASAHI {
+            get {
+                object obj = ResourceManager.GetObject("ExportExcel_ASAHI", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap svn_deleted {

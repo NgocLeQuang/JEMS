@@ -8,7 +8,7 @@ namespace JEMS
     internal class Global
     {
         public static DataEntryBPODataContext db_BPO = new DataEntryBPODataContext();
-        public static JEMSDataContext db_JEMS = new JEMSDataContext();
+        public static JEMSDataContext db = new JEMSDataContext();
         public static string StrMachine = "";
         public static string StrUserWindow = "";
         public static string StrIpAddress = "";

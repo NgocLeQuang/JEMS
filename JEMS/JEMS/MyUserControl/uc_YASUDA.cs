@@ -160,6 +160,7 @@ namespace JEMS.MyUserControl
             txt_Truong87.BackColor = Color.White;
             txt_Truong91.BackColor = Color.White;
             chk_qc.Checked = false;
+            txt_Truong02.Focus();
         }
 
         public bool IsEmpty()
@@ -713,7 +714,7 @@ namespace JEMS.MyUserControl
                 qc = true;
             else
                 qc = false;
-            Global.db_JEMS.Insert_YASUDA(idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text,
+            Global.db.Insert_YASUDA(idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text,
                                              txt_Truong12.Text, txt_Truong13.Text, txt_Truong14.Text, txt_Truong15.Text, txt_Truong16.Text,
                                              txt_Truong20.Text, txt_Truong21.Text, txt_Truong22.Text, txt_Truong23.Text, txt_Truong24.Text,
                                              txt_Truong28.Text, txt_Truong29.Text, txt_Truong30.Text, txt_Truong31.Text, txt_Truong32.Text,
@@ -748,6 +749,12 @@ namespace JEMS.MyUserControl
                 txt_Truong91.BackColor = Color.White;
                 txt_Truong91.ForeColor = Color.Black;
             }
+            if (Changed != null)
+                Changed(sender, e);
+        }
+
+        private void chk_qc_CheckedChanged(object sender, EventArgs e)
+        {
             if (Changed != null)
                 Changed(sender, e);
         }

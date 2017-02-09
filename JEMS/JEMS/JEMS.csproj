@@ -85,11 +85,29 @@
     <Compile Include="MyForm\frm_ChangeZoom.designer.cs">
       <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\frm_Check_DeSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_Check_DeSo.designer.cs">
+      <DependentUpon>frm_Check_DeSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_Check_QC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_Check_QC.designer.cs">
+      <DependentUpon>frm_Check_QC.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\frm_CreateBatch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyForm\frm_CreateBatch.designer.cs">
       <DependentUpon>frm_CreateBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_ExportExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_ExportExcel.designer.cs">
+      <DependentUpon>frm_ExportExcel.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\frm_Main.cs">
       <SubType>Form</SubType>
@@ -151,8 +169,17 @@
     <EmbeddedResource Include="MyForm\frm_ChangeZoom.resx">
       <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_Check_DeSo.resx">
+      <DependentUpon>frm_Check_DeSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_Check_QC.resx">
+      <DependentUpon>frm_Check_QC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_CreateBatch.resx">
       <DependentUpon>frm_CreateBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_ExportExcel.resx">
+      <DependentUpon>frm_ExportExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
@@ -210,6 +237,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ExportExcel_ASAHI.xlsx" />
     <None Include="Resources\svn_deleted.png" />
   </ItemGroup>
   <ItemGroup>

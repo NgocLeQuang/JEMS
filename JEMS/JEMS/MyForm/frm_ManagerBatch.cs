@@ -20,7 +20,7 @@ namespace JEMS.MyForm
 
         private void RefreshBatch()
         {
-            var temp = from var in Global.db_JEMS.tbl_Batches select var;
+            var temp = from var in Global.db.tbl_Batches select var;
             gridControl1.DataSource = temp;
         }
 
@@ -40,7 +40,7 @@ namespace JEMS.MyForm
             {
                 try
                 {
-                    Global.db_JEMS.XoaBatch(fbatchname);
+                    Global.db.XoaBatch(fbatchname);
                     Directory.Delete(temp, true);
                     MessageBox.Show("Đã xóa batch thành công!");
 

@@ -56,6 +56,7 @@ namespace JEMS.MyUserControl
             txt_Truong0.BackColor = Color.White;
             txt_Truong86.BackColor = Color.White;
             chk_qc.Checked = false;
+            txt_Truong02.Focus();
         }
 
         public bool IsEmpty()
@@ -275,8 +276,13 @@ namespace JEMS.MyUserControl
                 qc = true;
             else
                 qc = false;
-            Global.db_JEMS.Insert_EIZEN(idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text,txt_Truong07.Text, txt_Truong08.Text, txt_Truong85.Text,txt_Truong86.Text,qc);
+            Global.db.Insert_EIZEN(idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text,txt_Truong07.Text, txt_Truong08.Text, txt_Truong85.Text,txt_Truong86.Text,qc);
         }
-       
+
+        private void chk_qc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Changed != null)
+                Changed(sender, e);
+        }
     }
 }

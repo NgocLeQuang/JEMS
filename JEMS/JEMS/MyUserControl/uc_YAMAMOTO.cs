@@ -140,6 +140,7 @@ namespace JEMS.MyUserControl
             txt_Truong0.BackColor = Color.White;
             txt_Truong86.BackColor = Color.White;
             chk_qc.Checked = false;
+            txt_Truong02.Focus();
         }
 
         public bool IsEmpty()
@@ -595,6 +596,7 @@ namespace JEMS.MyUserControl
             txt_Truong85.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong0.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong86.GotFocus += Txt_Truong02_GotFocus;
+            txt_Truong02.Focus();
         }
 
         private void Txt_Truong02_GotFocus(object sender, EventArgs e)
@@ -612,7 +614,7 @@ namespace JEMS.MyUserControl
                 qc = true;
             else
                 qc = false;
-            Global.db_JEMS.Insert_YAMAMOTO(  idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,txt_Truong08.Text,
+            Global.db.Insert_YAMAMOTO(  idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,txt_Truong08.Text,
                                              txt_Truong13.Text, txt_Truong14.Text, txt_Truong15.Text, txt_Truong16.Text,
                                              txt_Truong21.Text, txt_Truong22.Text, txt_Truong23.Text, txt_Truong24.Text,
                                              txt_Truong29.Text, txt_Truong30.Text, txt_Truong31.Text, txt_Truong32.Text,
@@ -624,6 +626,12 @@ namespace JEMS.MyUserControl
                                              txt_Truong77.Text, txt_Truong78.Text, txt_Truong79.Text, txt_Truong80.Text,
 
                                              txt_Truong85.Text,txt_Truong86.Text,qc);
+        }
+
+        private void chk_qc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Changed != null)
+                Changed(sender, e);
         }
     }
 }

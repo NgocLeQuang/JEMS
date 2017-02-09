@@ -16,10 +16,10 @@ namespace JEMS.MyForm
         {
             if (Global.StrRole == "DESO")
             {
-                lb_SoHinhConLai.Text = (from w in Global.db_JEMS.tbl_Images
+                lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images
                                         where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch && w.UserNameDESo != Global.StrUsername
                                         select w.idimage).Count().ToString();
-                lb_SoHinhLamDuoc.Text = (from w in Global.db_JEMS.tbl_MissImage_DESOs
+                lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs
                                          where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
                                          select w.IdImage).Count().ToString();
             }
@@ -29,7 +29,7 @@ namespace JEMS.MyForm
         {
             if (Global.StrRole == "DESO")
             {
-                string temp = (from w in Global.db_JEMS.tbl_MissImage_DESOs
+                string temp = (from w in Global.db.tbl_MissImage_DESOs
                                where w.fBatchName == Global.StrBatch && w.UserName == Global.StrUsername && w.Submit == 0
                                select w.IdImage).FirstOrDefault();
                 if (string.IsNullOrEmpty(temp))
@@ -37,7 +37,7 @@ namespace JEMS.MyForm
                     try
                     {
                         var getFilename =
-                            (from w in Global.db_JEMS.LayHinhMoi_DeSo(Global.StrBatch, Global.StrUsername)
+                            (from w in Global.db.LayHinhMoi_DeSo(Global.StrBatch, Global.StrUsername)
                              select w.Column1).FirstOrDefault();
                         if (string.IsNullOrEmpty(getFilename))
                         {
@@ -85,15 +85,15 @@ namespace JEMS.MyForm
         {
             try
             {
-                Global.LoaiPhieu = (from w in Global.db_JEMS.tbl_Batches where w.fBatchName == Global.StrBatch select w.fLoaiPhieu).FirstOrDefault();
+                Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.fLoaiPhieu).FirstOrDefault();
                 lb_IdImage.Text = "";
                 lb_fBatchName.Text = Global.StrBatch;
                 lb_UserName.Text = Global.StrUsername;
-                lb_TongSoHinh.Text = (from w in Global.db_JEMS.tbl_Images where w.fbatchname == Global.StrBatch select w.idimage).Count().ToString();
-                lb_SoHinhConLai.Text = (from w in Global.db_JEMS.tbl_Images
+                lb_TongSoHinh.Text = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.idimage).Count().ToString();
+                lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images
                                         where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch && (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "")
                                         select w.idimage).Count().ToString();
-                lb_SoHinhLamDuoc.Text = (from w in Global.db_JEMS.tbl_MissImage_DESOs
+                lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs
                                          where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
                                          select w.IdImage).Count().ToString();
 
@@ -104,13 +104,7 @@ namespace JEMS.MyForm
 
                 menu_quanly.Enabled = false;
 
-                if (Global.StrRole == "ADMIN")
-                {
-                    btn_Start_Submit.Enabled = false;
-                    btn_Submit_Logout.Enabled = false;
-                    menu_quanly.Enabled = true;
-                }
-                else
+                if (Global.StrRole == "DESO")
                 {
                     if (Global.LoaiPhieu == "ASAHI")
                         tp_Asahi_Main.PageVisible = true;
@@ -120,6 +114,13 @@ namespace JEMS.MyForm
                         tp_YAMAMOTO_Main.PageVisible = true;
                     else if (Global.LoaiPhieu == "YASUDA")
                         tp_YASUDA_Main.PageVisible = true;
+                    
+                }
+                else
+                {
+                    btn_Start_Submit.Enabled = false;
+                    btn_Submit_Logout.Enabled = false;
+                    menu_quanly.Enabled = true;
                 }
                 setValue();
             }
@@ -137,6 +138,7 @@ namespace JEMS.MyForm
 
         private void btn_logout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            Global.db_BPO.ResetToken(Global.StrUsername, Global.StrIdProject);
             DialogResult = DialogResult.Yes;
         }
 
@@ -325,6 +327,29 @@ namespace JEMS.MyForm
         private void btn_Zoomimage_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             new frm_ChangeZoom().ShowDialog();
+        }
+
+        private void btn_checkdeso_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Global.StrCheck = "CHECKDESO";
+            new frm_Check_DeSo().ShowDialog();
+        }
+
+        private void frm_Main_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Enter)
+                btn_Start_Submit_Click(null, null);
+        }
+
+        private void btn_checkqc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Global.StrCheck = "CHECKQC";
+            new frm_Check_QC().ShowDialog();
+        }
+
+        private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Global.db_BPO.ResetToken(Global.StrUsername, Global.StrIdProject);
         }
     }
 }
