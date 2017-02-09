@@ -229,6 +229,7 @@
             // 
             // txt_LoaiPhieu
             // 
+            this.txt_LoaiPhieu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txt_LoaiPhieu.FormattingEnabled = true;
             this.txt_LoaiPhieu.Location = new System.Drawing.Point(137, 330);
             this.txt_LoaiPhieu.Name = "txt_LoaiPhieu";

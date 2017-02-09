@@ -293,12 +293,8 @@ namespace JEMS.MyUserControl
             if (txtTruong03.ToString().IndexOf('?') >= 0)
                 txtTruong03 = "?";
             //Save Data
-            bool qc;
-            if (chk_qc.Checked == true)
-                qc = true;
-            else
-                qc = false;
-            Global.db.Insert_EIZEN(idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text,txt_Truong07.Text, txt_Truong08.Text, txt_Truong85.Text,txt_Truong86.Text,qc);
+           
+            Global.db.Insert_EIZEN(idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text,txt_Truong07.Text, txt_Truong08.Text, txt_Truong85.Text,txt_Truong86.Text, CheckQC());
         }
 
         private void chk_qc_CheckedChanged(object sender, EventArgs e)

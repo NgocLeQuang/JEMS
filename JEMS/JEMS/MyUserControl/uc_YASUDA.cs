@@ -778,11 +778,7 @@ namespace JEMS.MyUserControl
             if (txtTruong03.ToString().IndexOf('?') >= 0)
             txtTruong03 = "?";
             //Save Data
-            bool qc;
-            if (chk_qc.Checked == true)
-                qc = true;
-            else
-                qc = false;
+            
             Global.db.Insert_YASUDA(idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text,
                                              txt_Truong12.Text, txt_Truong13.Text, txt_Truong14.Text, txt_Truong15.Text, txt_Truong16.Text,
                                              txt_Truong20.Text, txt_Truong21.Text, txt_Truong22.Text, txt_Truong23.Text, txt_Truong24.Text,
@@ -793,7 +789,7 @@ namespace JEMS.MyUserControl
                                              txt_Truong60.Text, txt_Truong61.Text, txt_Truong62.Text, txt_Truong63.Text, txt_Truong64.Text,
                                              txt_Truong68.Text, txt_Truong69.Text, txt_Truong70.Text, txt_Truong71.Text, txt_Truong72.Text,
                                              txt_Truong76.Text, txt_Truong77.Text, txt_Truong78.Text, txt_Truong79.Text, txt_Truong80.Text,
-                                             txt_Truong84.Text, txt_Truong85.Text, txt_Truong87.Text, txt_Truong91.Text,qc);
+                                             txt_Truong84.Text, txt_Truong85.Text, txt_Truong87.Text, txt_Truong91.Text, CheckQC());
         }
 
         private void txt_Truong91_EditValueChanged(object sender, EventArgs e)
