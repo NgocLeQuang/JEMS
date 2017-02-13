@@ -35,7 +35,7 @@ namespace JEMS.MyForm
                 MessageBox.Show("Vui lòng điền tên batch", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+           
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "All Types Image|*.bmp;*.jpg;*.jpeg;*.png;*.tif;*.tiff";
 
@@ -95,6 +95,7 @@ namespace JEMS.MyForm
             txt_LoaiPhieu.DisplayMember = "Text";
             txt_LoaiPhieu.ValueMember = "Value";
 
+            txt_LoaiPhieu.Items.Add(new { Text = "", Value = "" });
             txt_LoaiPhieu.Items.Add(new { Text = "ASAHI", Value = "ASAHI" });
             txt_LoaiPhieu.Items.Add(new { Text = "EIZEN", Value = "EIZEN" });
             txt_LoaiPhieu.Items.Add(new { Text = "YAMAMOTO", Value = "YAMAMOTO" });
@@ -123,6 +124,7 @@ namespace JEMS.MyForm
             var batch = (from w in Global.db.tbl_Batches.Where(w => w.fBatchName == txt_BatchName.Text)select w.fBatchName).FirstOrDefault();
             if (!string.IsNullOrEmpty(txt_ImagePath.Text))
             {
+                
                 if (string.IsNullOrEmpty(batch))
                 {
                     var fBatch = new tbl_Batch
@@ -185,7 +187,8 @@ namespace JEMS.MyForm
             txt_BatchName.Text = "";
             txt_ImagePath.Text = "";
             lb_SoLuongHinh.Text = "";
-            
+            txt_LoaiPhieu.SelectedIndex = 0;
+
         }
         private void UpLoadMulti()
         {
@@ -198,6 +201,7 @@ namespace JEMS.MyForm
             progressBarControl1.Properties.PercentView = true;
             progressBarControl1.Properties.Maximum = lStrBath.Count;
             progressBarControl1.Properties.Minimum = 0;
+
             foreach (string item in lStrBath)
             {
                 var fBatch = new tbl_Batch
@@ -247,10 +251,16 @@ namespace JEMS.MyForm
             txt_BatchName.Text = "";
             txt_ImagePath.Text = "";
             lb_SoLuongHinh.Text = "";
+            txt_LoaiPhieu.SelectedIndex = 0;
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
+            if (string.IsNullOrEmpty(txt_LoaiPhieu.Text))
+            {
+                MessageBox.Show("Vui lòng chọn loại phiếu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (_multi)
             {
                 UpLoadMulti();

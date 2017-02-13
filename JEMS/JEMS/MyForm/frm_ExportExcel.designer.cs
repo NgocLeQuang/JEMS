@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ExportExcel));
             this.cbb_Batch = new System.Windows.Forms.ComboBox();
             this.btn_Export = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -84,8 +85,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_Export);
             this.Controls.Add(this.cbb_Batch);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_ExportExcel";
-            this.Text = "Form1";
+            this.Text = "Export Excel";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

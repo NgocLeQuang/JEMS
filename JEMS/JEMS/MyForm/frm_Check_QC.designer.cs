@@ -414,17 +414,17 @@
             this.lb_Loi.Appearance.Options.UseForeColor = true;
             this.lb_Loi.Location = new System.Drawing.Point(538, 12);
             this.lb_Loi.Name = "lb_Loi";
-            this.lb_Loi.Size = new System.Drawing.Size(75, 13);
+            this.lb_Loi.Size = new System.Drawing.Size(7, 13);
             this.lb_Loi.TabIndex = 11;
-            this.lb_Loi.Text = "labelControl3";
+            this.lb_Loi.Text = "0";
             // 
             // lb_Image
             // 
             this.lb_Image.Location = new System.Drawing.Point(338, 12);
             this.lb_Image.Name = "lb_Image";
-            this.lb_Image.Size = new System.Drawing.Size(63, 13);
+            this.lb_Image.Size = new System.Drawing.Size(6, 13);
             this.lb_Image.TabIndex = 10;
-            this.lb_Image.Text = "labelControl3";
+            this.lb_Image.Text = "0";
             // 
             // labelControl2
             // 
@@ -438,9 +438,9 @@
             // 
             this.lb_fBatchName.Location = new System.Drawing.Point(134, 12);
             this.lb_fBatchName.Name = "lb_fBatchName";
-            this.lb_fBatchName.Size = new System.Drawing.Size(63, 13);
+            this.lb_fBatchName.Size = new System.Drawing.Size(6, 13);
             this.lb_fBatchName.TabIndex = 8;
-            this.lb_fBatchName.Text = "labelControl2";
+            this.lb_fBatchName.Text = "0";
             // 
             // labelControl1
             // 

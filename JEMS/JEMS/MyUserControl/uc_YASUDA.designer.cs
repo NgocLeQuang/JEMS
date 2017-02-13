@@ -219,7 +219,7 @@
             // 
             this.txt_Truong02.Location = new System.Drawing.Point(24, 5);
             this.txt_Truong02.Name = "txt_Truong02";
-            this.txt_Truong02.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong02.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong02.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong02.Size = new System.Drawing.Size(153, 20);
             this.txt_Truong02.TabIndex = 1;
@@ -229,7 +229,7 @@
             // 
             this.txt_Truong03_1.Location = new System.Drawing.Point(24, 261);
             this.txt_Truong03_1.Name = "txt_Truong03_1";
-            this.txt_Truong03_1.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong03_1.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong03_1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong03_1.Size = new System.Drawing.Size(153, 20);
             this.txt_Truong03_1.TabIndex = 52;
@@ -299,7 +299,7 @@
             // 
             this.txt_Truong03_2.Location = new System.Drawing.Point(24, 284);
             this.txt_Truong03_2.Name = "txt_Truong03_2";
-            this.txt_Truong03_2.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong03_2.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong03_2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong03_2.Size = new System.Drawing.Size(153, 20);
             this.txt_Truong03_2.TabIndex = 53;
@@ -309,7 +309,7 @@
             // 
             this.txt_Truong05.Location = new System.Drawing.Point(24, 29);
             this.txt_Truong05.Name = "txt_Truong05";
-            this.txt_Truong05.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong05.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong05.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong05.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong05.TabIndex = 2;
@@ -319,7 +319,7 @@
             // 
             this.txt_Truong06.Location = new System.Drawing.Point(77, 28);
             this.txt_Truong06.Name = "txt_Truong06";
-            this.txt_Truong06.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong06.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong06.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong06.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong06.TabIndex = 3;
@@ -329,7 +329,7 @@
             // 
             this.txt_Truong85.Location = new System.Drawing.Point(24, 307);
             this.txt_Truong85.Name = "txt_Truong85";
-            this.txt_Truong85.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong85.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong85.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong85.Size = new System.Drawing.Size(153, 20);
             this.txt_Truong85.TabIndex = 55;
@@ -344,6 +344,7 @@
             this.txt_Truong08.Properties.NullText = "";
             this.txt_Truong08.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong08.TabIndex = 5;
+            this.txt_Truong08.EditValueChanged += new System.EventHandler(this.txt_Truong08_EditValueChanged);
             // 
             // labelControl7
             // 
@@ -361,7 +362,7 @@
             // 
             this.txt_Truong0.Location = new System.Drawing.Point(24, 331);
             this.txt_Truong0.Name = "txt_Truong0";
-            this.txt_Truong0.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong0.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong0.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong0.Size = new System.Drawing.Size(153, 20);
             this.txt_Truong0.TabIndex = 56;
@@ -383,7 +384,7 @@
             // 
             this.txt_Truong07.Location = new System.Drawing.Point(170, 28);
             this.txt_Truong07.Name = "txt_Truong07";
-            this.txt_Truong07.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong07.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong07.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong07.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong07.TabIndex = 4;
@@ -417,7 +418,7 @@
             // 
             this.txt_Truong13.Location = new System.Drawing.Point(24, 52);
             this.txt_Truong13.Name = "txt_Truong13";
-            this.txt_Truong13.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong13.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong13.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong13.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong13.TabIndex = 7;
@@ -439,7 +440,7 @@
             // 
             this.txt_Truong14.Location = new System.Drawing.Point(77, 51);
             this.txt_Truong14.Name = "txt_Truong14";
-            this.txt_Truong14.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong14.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong14.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong14.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong14.TabIndex = 8;
@@ -461,7 +462,7 @@
             // 
             this.txt_Truong15.Location = new System.Drawing.Point(170, 51);
             this.txt_Truong15.Name = "txt_Truong15";
-            this.txt_Truong15.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong15.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong15.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong15.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong15.TabIndex = 9;
@@ -488,6 +489,7 @@
             this.txt_Truong16.Properties.NullText = "";
             this.txt_Truong16.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong16.TabIndex = 10;
+            this.txt_Truong16.EditValueChanged += new System.EventHandler(this.txt_Truong16_EditValueChanged);
             // 
             // labelControl14
             // 
@@ -541,7 +543,7 @@
             // 
             this.txt_Truong21.Location = new System.Drawing.Point(24, 75);
             this.txt_Truong21.Name = "txt_Truong21";
-            this.txt_Truong21.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong21.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong21.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong21.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong21.TabIndex = 12;
@@ -551,7 +553,7 @@
             // 
             this.txt_Truong22.Location = new System.Drawing.Point(77, 74);
             this.txt_Truong22.Name = "txt_Truong22";
-            this.txt_Truong22.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong22.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong22.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong22.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong22.TabIndex = 13;
@@ -561,7 +563,7 @@
             // 
             this.txt_Truong23.Location = new System.Drawing.Point(170, 75);
             this.txt_Truong23.Name = "txt_Truong23";
-            this.txt_Truong23.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong23.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong23.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong23.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong23.TabIndex = 14;
@@ -576,6 +578,7 @@
             this.txt_Truong24.Properties.NullText = "";
             this.txt_Truong24.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong24.TabIndex = 15;
+            this.txt_Truong24.EditValueChanged += new System.EventHandler(this.txt_Truong24_EditValueChanged);
             // 
             // labelControl18
             // 
@@ -629,7 +632,7 @@
             // 
             this.txt_Truong29.Location = new System.Drawing.Point(24, 98);
             this.txt_Truong29.Name = "txt_Truong29";
-            this.txt_Truong29.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong29.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong29.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong29.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong29.TabIndex = 17;
@@ -639,7 +642,7 @@
             // 
             this.txt_Truong30.Location = new System.Drawing.Point(77, 97);
             this.txt_Truong30.Name = "txt_Truong30";
-            this.txt_Truong30.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong30.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong30.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong30.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong30.TabIndex = 18;
@@ -649,7 +652,7 @@
             // 
             this.txt_Truong31.Location = new System.Drawing.Point(170, 98);
             this.txt_Truong31.Name = "txt_Truong31";
-            this.txt_Truong31.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong31.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong31.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong31.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong31.TabIndex = 19;
@@ -664,6 +667,7 @@
             this.txt_Truong32.Properties.NullText = "";
             this.txt_Truong32.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong32.TabIndex = 20;
+            this.txt_Truong32.EditValueChanged += new System.EventHandler(this.txt_Truong32_EditValueChanged);
             // 
             // labelControl22
             // 
@@ -717,7 +721,7 @@
             // 
             this.txt_Truong37.Location = new System.Drawing.Point(24, 121);
             this.txt_Truong37.Name = "txt_Truong37";
-            this.txt_Truong37.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong37.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong37.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong37.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong37.TabIndex = 22;
@@ -727,7 +731,7 @@
             // 
             this.txt_Truong38.Location = new System.Drawing.Point(77, 121);
             this.txt_Truong38.Name = "txt_Truong38";
-            this.txt_Truong38.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong38.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong38.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong38.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong38.TabIndex = 23;
@@ -737,7 +741,7 @@
             // 
             this.txt_Truong39.Location = new System.Drawing.Point(170, 121);
             this.txt_Truong39.Name = "txt_Truong39";
-            this.txt_Truong39.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong39.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong39.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong39.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong39.TabIndex = 24;
@@ -752,6 +756,7 @@
             this.txt_Truong40.Properties.NullText = "";
             this.txt_Truong40.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong40.TabIndex = 25;
+            this.txt_Truong40.EditValueChanged += new System.EventHandler(this.txt_Truong40_EditValueChanged);
             // 
             // labelControl26
             // 
@@ -805,7 +810,7 @@
             // 
             this.txt_Truong45.Location = new System.Drawing.Point(24, 145);
             this.txt_Truong45.Name = "txt_Truong45";
-            this.txt_Truong45.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong45.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong45.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong45.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong45.TabIndex = 27;
@@ -815,7 +820,7 @@
             // 
             this.txt_Truong46.Location = new System.Drawing.Point(77, 144);
             this.txt_Truong46.Name = "txt_Truong46";
-            this.txt_Truong46.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong46.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong46.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong46.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong46.TabIndex = 28;
@@ -825,7 +830,7 @@
             // 
             this.txt_Truong47.Location = new System.Drawing.Point(170, 144);
             this.txt_Truong47.Name = "txt_Truong47";
-            this.txt_Truong47.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong47.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong47.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong47.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong47.TabIndex = 29;
@@ -840,6 +845,7 @@
             this.txt_Truong48.Properties.NullText = "";
             this.txt_Truong48.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong48.TabIndex = 30;
+            this.txt_Truong48.EditValueChanged += new System.EventHandler(this.txt_Truong48_EditValueChanged);
             // 
             // labelControl30
             // 
@@ -893,7 +899,7 @@
             // 
             this.txt_Truong53.Location = new System.Drawing.Point(24, 168);
             this.txt_Truong53.Name = "txt_Truong53";
-            this.txt_Truong53.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong53.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong53.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong53.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong53.TabIndex = 32;
@@ -903,7 +909,7 @@
             // 
             this.txt_Truong54.Location = new System.Drawing.Point(77, 167);
             this.txt_Truong54.Name = "txt_Truong54";
-            this.txt_Truong54.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong54.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong54.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong54.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong54.TabIndex = 33;
@@ -913,7 +919,7 @@
             // 
             this.txt_Truong55.Location = new System.Drawing.Point(170, 167);
             this.txt_Truong55.Name = "txt_Truong55";
-            this.txt_Truong55.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong55.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong55.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong55.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong55.TabIndex = 34;
@@ -928,6 +934,7 @@
             this.txt_Truong56.Properties.NullText = "";
             this.txt_Truong56.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong56.TabIndex = 35;
+            this.txt_Truong56.EditValueChanged += new System.EventHandler(this.txt_Truong56_EditValueChanged);
             // 
             // labelControl34
             // 
@@ -981,7 +988,7 @@
             // 
             this.txt_Truong61.Location = new System.Drawing.Point(24, 191);
             this.txt_Truong61.Name = "txt_Truong61";
-            this.txt_Truong61.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong61.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong61.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong61.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong61.TabIndex = 37;
@@ -991,7 +998,7 @@
             // 
             this.txt_Truong62.Location = new System.Drawing.Point(77, 190);
             this.txt_Truong62.Name = "txt_Truong62";
-            this.txt_Truong62.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong62.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong62.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong62.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong62.TabIndex = 38;
@@ -1001,7 +1008,7 @@
             // 
             this.txt_Truong63.Location = new System.Drawing.Point(170, 190);
             this.txt_Truong63.Name = "txt_Truong63";
-            this.txt_Truong63.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong63.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong63.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong63.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong63.TabIndex = 39;
@@ -1016,6 +1023,7 @@
             this.txt_Truong64.Properties.NullText = "";
             this.txt_Truong64.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong64.TabIndex = 40;
+            this.txt_Truong64.EditValueChanged += new System.EventHandler(this.txt_Truong64_EditValueChanged);
             // 
             // labelControl38
             // 
@@ -1069,7 +1077,7 @@
             // 
             this.txt_Truong69.Location = new System.Drawing.Point(24, 214);
             this.txt_Truong69.Name = "txt_Truong69";
-            this.txt_Truong69.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong69.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong69.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong69.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong69.TabIndex = 42;
@@ -1079,7 +1087,7 @@
             // 
             this.txt_Truong70.Location = new System.Drawing.Point(77, 213);
             this.txt_Truong70.Name = "txt_Truong70";
-            this.txt_Truong70.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong70.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong70.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong70.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong70.TabIndex = 43;
@@ -1089,7 +1097,7 @@
             // 
             this.txt_Truong71.Location = new System.Drawing.Point(170, 213);
             this.txt_Truong71.Name = "txt_Truong71";
-            this.txt_Truong71.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong71.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong71.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong71.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong71.TabIndex = 44;
@@ -1104,6 +1112,7 @@
             this.txt_Truong72.Properties.NullText = "";
             this.txt_Truong72.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong72.TabIndex = 45;
+            this.txt_Truong72.EditValueChanged += new System.EventHandler(this.txt_Truong72_EditValueChanged);
             // 
             // labelControl42
             // 
@@ -1157,7 +1166,7 @@
             // 
             this.txt_Truong77.Location = new System.Drawing.Point(24, 237);
             this.txt_Truong77.Name = "txt_Truong77";
-            this.txt_Truong77.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong77.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong77.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong77.Size = new System.Drawing.Size(30, 20);
             this.txt_Truong77.TabIndex = 47;
@@ -1167,7 +1176,7 @@
             // 
             this.txt_Truong78.Location = new System.Drawing.Point(77, 237);
             this.txt_Truong78.Name = "txt_Truong78";
-            this.txt_Truong78.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong78.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong78.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong78.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong78.TabIndex = 48;
@@ -1177,7 +1186,7 @@
             // 
             this.txt_Truong79.Location = new System.Drawing.Point(170, 237);
             this.txt_Truong79.Name = "txt_Truong79";
-            this.txt_Truong79.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong79.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong79.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong79.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong79.TabIndex = 49;
@@ -1192,12 +1201,13 @@
             this.txt_Truong80.Properties.NullText = "";
             this.txt_Truong80.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong80.TabIndex = 50;
+            this.txt_Truong80.EditValueChanged += new System.EventHandler(this.txt_Truong80_EditValueChanged);
             // 
             // txt_Truong87
             // 
             this.txt_Truong87.Location = new System.Drawing.Point(23, 355);
             this.txt_Truong87.Name = "txt_Truong87";
-            this.txt_Truong87.Properties.Mask.EditMask = "[ĂÂABCDÊEKLM?]+";
+            this.txt_Truong87.Properties.Mask.EditMask = "[ĂÂABCDÊEKLM?●]+";
             this.txt_Truong87.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong87.Size = new System.Drawing.Size(154, 20);
             this.txt_Truong87.TabIndex = 57;
@@ -1305,7 +1315,7 @@
             // 
             this.txt_Truong12.Location = new System.Drawing.Point(359, 26);
             this.txt_Truong12.Name = "txt_Truong12";
-            this.txt_Truong12.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong12.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong12.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong12.Size = new System.Drawing.Size(67, 20);
             this.txt_Truong12.TabIndex = 6;
@@ -1315,7 +1325,7 @@
             // 
             this.txt_Truong20.Location = new System.Drawing.Point(359, 50);
             this.txt_Truong20.Name = "txt_Truong20";
-            this.txt_Truong20.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong20.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong20.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong20.Size = new System.Drawing.Size(67, 20);
             this.txt_Truong20.TabIndex = 11;
@@ -1325,7 +1335,7 @@
             // 
             this.txt_Truong28.Location = new System.Drawing.Point(359, 75);
             this.txt_Truong28.Name = "txt_Truong28";
-            this.txt_Truong28.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong28.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong28.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong28.Size = new System.Drawing.Size(67, 20);
             this.txt_Truong28.TabIndex = 16;
@@ -1335,7 +1345,7 @@
             // 
             this.txt_Truong36.Location = new System.Drawing.Point(359, 97);
             this.txt_Truong36.Name = "txt_Truong36";
-            this.txt_Truong36.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong36.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong36.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong36.Size = new System.Drawing.Size(67, 20);
             this.txt_Truong36.TabIndex = 21;
@@ -1345,7 +1355,7 @@
             // 
             this.txt_Truong44.Location = new System.Drawing.Point(359, 121);
             this.txt_Truong44.Name = "txt_Truong44";
-            this.txt_Truong44.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong44.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong44.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong44.Size = new System.Drawing.Size(67, 20);
             this.txt_Truong44.TabIndex = 26;
@@ -1355,7 +1365,7 @@
             // 
             this.txt_Truong52.Location = new System.Drawing.Point(359, 145);
             this.txt_Truong52.Name = "txt_Truong52";
-            this.txt_Truong52.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong52.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong52.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong52.Size = new System.Drawing.Size(67, 20);
             this.txt_Truong52.TabIndex = 31;
@@ -1365,7 +1375,7 @@
             // 
             this.txt_Truong60.Location = new System.Drawing.Point(359, 167);
             this.txt_Truong60.Name = "txt_Truong60";
-            this.txt_Truong60.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong60.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong60.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong60.Size = new System.Drawing.Size(67, 20);
             this.txt_Truong60.TabIndex = 36;
@@ -1375,7 +1385,7 @@
             // 
             this.txt_Truong68.Location = new System.Drawing.Point(359, 190);
             this.txt_Truong68.Name = "txt_Truong68";
-            this.txt_Truong68.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong68.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong68.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong68.Size = new System.Drawing.Size(67, 20);
             this.txt_Truong68.TabIndex = 41;
@@ -1385,7 +1395,7 @@
             // 
             this.txt_Truong76.Location = new System.Drawing.Point(359, 213);
             this.txt_Truong76.Name = "txt_Truong76";
-            this.txt_Truong76.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong76.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong76.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong76.Size = new System.Drawing.Size(67, 20);
             this.txt_Truong76.TabIndex = 46;
@@ -1395,7 +1405,7 @@
             // 
             this.txt_Truong84.Location = new System.Drawing.Point(359, 237);
             this.txt_Truong84.Name = "txt_Truong84";
-            this.txt_Truong84.Properties.Mask.EditMask = "[0-9?]+";
+            this.txt_Truong84.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong84.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong84.Size = new System.Drawing.Size(67, 20);
             this.txt_Truong84.TabIndex = 51;
@@ -1417,6 +1427,7 @@
             // 
             this.txt_Truong91.Location = new System.Drawing.Point(215, 285);
             this.txt_Truong91.Name = "txt_Truong91";
+            this.txt_Truong91.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong91.Size = new System.Drawing.Size(100, 20);
             this.txt_Truong91.TabIndex = 54;
             this.txt_Truong91.EditValueChanged += new System.EventHandler(this.txt_Truong91_EditValueChanged);

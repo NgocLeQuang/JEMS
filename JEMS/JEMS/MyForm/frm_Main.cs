@@ -138,7 +138,6 @@ namespace JEMS.MyForm
 
         private void btn_logout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Global.db_BPO.ResetToken(Global.StrUsername, Global.StrIdProject);
             DialogResult = DialogResult.Yes;
         }
 
@@ -349,12 +348,22 @@ namespace JEMS.MyForm
 
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Global.db_BPO.ResetToken(Global.StrUsername, Global.StrIdProject);
+            Global.db_BPO.ResetToken(Global.StrUsername, Global.StrIdProject,Global.Strtoken);
         }
 
         private void btn_xuatexcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             new frm_ExportExcel().ShowDialog();
+        }
+
+        private void btn_nangsuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new frm_NangSuat().ShowDialog();
+        }
+
+        private void btn_tiendo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new frm_TienDo().ShowDialog();
         }
     }
 }

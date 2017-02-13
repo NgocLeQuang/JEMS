@@ -137,6 +137,7 @@
   <Function Name="dbo.ResetToken" Method="ResetToken">
     <Parameter Name="username" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="idproject" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Token" Parameter="token" Type="System.String" DbType="NVarChar(255)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

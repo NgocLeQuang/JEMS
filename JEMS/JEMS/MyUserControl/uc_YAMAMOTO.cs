@@ -32,6 +32,8 @@ namespace JEMS.MyUserControl
             category.Add(new Category() { Set_Value = "kg" });
             category.Add(new Category() { Set_Value = "リットル" });
             category.Add(new Category() { Set_Value = "個・台" });
+            category.Add(new Category() { Set_Value = "?" });
+            category.Add(new Category() { Set_Value = "●" });
         }
         public void ResetData()
         {
@@ -256,7 +258,7 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong02.Text.ToString().IndexOf('?') >= 0)
                 txt_Truong02.Text = "?";
-            if (txt_Truong02.Text.Length != 6 && txt_Truong02.Text != "" && txt_Truong02.Text != "?")
+            if (txt_Truong02.Text.Length != 6 && txt_Truong02.Text != "" && txt_Truong02.Text != "?" && txt_Truong02.Text != "●")
             {
                 txt_Truong02.BackColor = Color.Red;
                 txt_Truong02.ForeColor = Color.White;
@@ -275,7 +277,7 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong03_1.Text.ToString().IndexOf('?') >= 0)
                 txt_Truong03_1.Text = "?";
-            if (txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?")
+            if (txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?" && txt_Truong03_1.Text != "●")
             {
                 if (txt_Truong03_1.Text.Length != 6)
                 {
@@ -302,7 +304,7 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong03_2.Text.ToString().IndexOf('?') >= 0)
                 txt_Truong03_2.Text = "?";
-            if (txt_Truong03_2.Text != "" && txt_Truong03_2.Text != "?")
+            if (txt_Truong03_2.Text != "" && txt_Truong03_2.Text != "?" && txt_Truong03_2.Text != "●")
             {
                 if (txt_Truong03_2.Text.Length != 6)
                 {
@@ -329,7 +331,7 @@ namespace JEMS.MyUserControl
         {
             if (tb.Text.ToString().IndexOf('?') >= 0)
                 tb.Text = "?";
-            if (tb.Text.Length != 2 && tb.Text != "" && tb.Text != "?")
+            if (tb.Text.Length != 2 && tb.Text != "" && tb.Text != "?" && tb.Text != "●")
             {
                 tb.BackColor = Color.Red;
                 tb.ForeColor = Color.White;
@@ -351,6 +353,13 @@ namespace JEMS.MyUserControl
                 Changed(sender, e);
         }
         private void Set_txtLengColumn3(object sender, EventArgs e,TextEdit tb)
+        {
+            if (tb.Text.ToString().IndexOf('?') >= 0)
+                tb.Text = "?";
+            if (Changed != null)
+                Changed(sender, e);
+        }
+        private void Set_txtLengColumn4(object sender, EventArgs e, TextEdit tb)
         {
             if (tb.Text.ToString().IndexOf('?') >= 0)
                 tb.Text = "?";
@@ -514,6 +523,61 @@ namespace JEMS.MyUserControl
                 Changed(sender, e);
         }
 
+        private void chk_qc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Changed != null)
+                Changed(sender, e);
+        }
+
+        private void txt_Truong08_EditValueChanged(object sender, EventArgs e)
+        {
+            Set_txtLengColumn4(sender, e, txt_Truong08);
+        }
+
+        private void txt_Truong16_EditValueChanged(object sender, EventArgs e)
+        {
+            Set_txtLengColumn4(sender, e, txt_Truong16);
+        }
+
+        private void txt_Truong24_EditValueChanged(object sender, EventArgs e)
+        {
+            Set_txtLengColumn4(sender, e, txt_Truong24);
+        }
+
+        private void txt_Truong32_EditValueChanged(object sender, EventArgs e)
+        {
+            Set_txtLengColumn4(sender, e, txt_Truong32);
+        }
+
+        private void txt_Truong40_EditValueChanged(object sender, EventArgs e)
+        {
+            Set_txtLengColumn4(sender, e, txt_Truong40);
+        }
+
+        private void txt_Truong48_EditValueChanged(object sender, EventArgs e)
+        {
+            Set_txtLengColumn4(sender, e, txt_Truong48);
+        }
+
+        private void txt_Truong56_EditValueChanged(object sender, EventArgs e)
+        {
+            Set_txtLengColumn4(sender, e, txt_Truong56);
+        }
+
+        private void txt_Truong64_EditValueChanged(object sender, EventArgs e)
+        {
+            Set_txtLengColumn4(sender, e, txt_Truong64);
+        }
+
+        private void txt_Truong72_EditValueChanged(object sender, EventArgs e)
+        {
+            Set_txtLengColumn4(sender, e, txt_Truong72);
+        }
+
+        private void txt_Truong80_EditValueChanged(object sender, EventArgs e)
+        {
+            Set_txtLengColumn4(sender, e, txt_Truong80);
+        }
         private void txt_Truong0_EditValueChanged(object sender, EventArgs e)
         {
             if (txt_Truong0.Text.ToString().IndexOf('?') >= 0)
@@ -679,11 +743,6 @@ namespace JEMS.MyUserControl
 
                                              txt_Truong85.Text,txt_Truong86.Text, CheckQC());
         }
-
-        private void chk_qc_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Changed != null)
-                Changed(sender, e);
-        }
+        
     }
 }

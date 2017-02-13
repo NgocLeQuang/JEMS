@@ -302,7 +302,7 @@
             // 
             this.tp_EIZEN_DeSo2.Controls.Add(this.uc_EZIEN2);
             this.tp_EIZEN_DeSo2.Name = "tp_EIZEN_DeSo2";
-            this.tp_EIZEN_DeSo2.Size = new System.Drawing.Size(446, 305);
+            this.tp_EIZEN_DeSo2.Size = new System.Drawing.Size(446, 309);
             this.tp_EIZEN_DeSo2.Text = "EIZEN";
             // 
             // uc_EZIEN2
@@ -312,7 +312,7 @@
             this.uc_EZIEN2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_EZIEN2.Location = new System.Drawing.Point(0, 0);
             this.uc_EZIEN2.Name = "uc_EZIEN2";
-            this.uc_EZIEN2.Size = new System.Drawing.Size(446, 305);
+            this.uc_EZIEN2.Size = new System.Drawing.Size(446, 309);
             this.uc_EZIEN2.TabIndex = 0;
             this.uc_EZIEN2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_EZIEN2_Scroll);
             // 
@@ -320,7 +320,7 @@
             // 
             this.tp_YAMAMOTO_DeSo2.Controls.Add(this.uc_YAMAMOTO2);
             this.tp_YAMAMOTO_DeSo2.Name = "tp_YAMAMOTO_DeSo2";
-            this.tp_YAMAMOTO_DeSo2.Size = new System.Drawing.Size(446, 305);
+            this.tp_YAMAMOTO_DeSo2.Size = new System.Drawing.Size(446, 309);
             this.tp_YAMAMOTO_DeSo2.Text = "YAMAMOTO";
             // 
             // uc_YAMAMOTO2
@@ -330,7 +330,7 @@
             this.uc_YAMAMOTO2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_YAMAMOTO2.Location = new System.Drawing.Point(0, 0);
             this.uc_YAMAMOTO2.Name = "uc_YAMAMOTO2";
-            this.uc_YAMAMOTO2.Size = new System.Drawing.Size(446, 305);
+            this.uc_YAMAMOTO2.Size = new System.Drawing.Size(446, 309);
             this.uc_YAMAMOTO2.TabIndex = 0;
             this.uc_YAMAMOTO2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_YAMAMOTO2_Scroll);
             // 
@@ -338,7 +338,7 @@
             // 
             this.tp_YASUDA_DeSo2.Controls.Add(this.uc_YASUDA2);
             this.tp_YASUDA_DeSo2.Name = "tp_YASUDA_DeSo2";
-            this.tp_YASUDA_DeSo2.Size = new System.Drawing.Size(446, 305);
+            this.tp_YASUDA_DeSo2.Size = new System.Drawing.Size(446, 309);
             this.tp_YASUDA_DeSo2.Text = "YASUDA";
             // 
             // uc_YASUDA2
@@ -348,7 +348,7 @@
             this.uc_YASUDA2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_YASUDA2.Location = new System.Drawing.Point(0, 0);
             this.uc_YASUDA2.Name = "uc_YASUDA2";
-            this.uc_YASUDA2.Size = new System.Drawing.Size(446, 305);
+            this.uc_YASUDA2.Size = new System.Drawing.Size(446, 309);
             this.uc_YASUDA2.TabIndex = 0;
             this.uc_YASUDA2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_YASUDA2_Scroll);
             // 
@@ -414,17 +414,17 @@
             this.lb_Loi.Appearance.Options.UseForeColor = true;
             this.lb_Loi.Location = new System.Drawing.Point(538, 12);
             this.lb_Loi.Name = "lb_Loi";
-            this.lb_Loi.Size = new System.Drawing.Size(75, 13);
+            this.lb_Loi.Size = new System.Drawing.Size(7, 13);
             this.lb_Loi.TabIndex = 11;
-            this.lb_Loi.Text = "labelControl3";
+            this.lb_Loi.Text = "0";
             // 
             // lb_Image
             // 
             this.lb_Image.Location = new System.Drawing.Point(338, 12);
             this.lb_Image.Name = "lb_Image";
-            this.lb_Image.Size = new System.Drawing.Size(63, 13);
+            this.lb_Image.Size = new System.Drawing.Size(6, 13);
             this.lb_Image.TabIndex = 10;
-            this.lb_Image.Text = "labelControl3";
+            this.lb_Image.Text = "0";
             // 
             // labelControl2
             // 
@@ -438,9 +438,9 @@
             // 
             this.lb_fBatchName.Location = new System.Drawing.Point(134, 12);
             this.lb_fBatchName.Name = "lb_fBatchName";
-            this.lb_fBatchName.Size = new System.Drawing.Size(63, 13);
+            this.lb_fBatchName.Size = new System.Drawing.Size(6, 13);
             this.lb_fBatchName.TabIndex = 8;
-            this.lb_fBatchName.Text = "labelControl2";
+            this.lb_fBatchName.Text = "0";
             // 
             // labelControl1
             // 

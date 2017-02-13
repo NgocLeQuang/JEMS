@@ -215,12 +215,14 @@
             this.btn_nangsuat.Caption = "&Năng suất";
             this.btn_nangsuat.Id = 10;
             this.btn_nangsuat.Name = "btn_nangsuat";
+            this.btn_nangsuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_nangsuat_ItemClick);
             // 
             // btn_tiendo
             // 
             this.btn_tiendo.Caption = "&Tiến độ";
             this.btn_tiendo.Id = 11;
             this.btn_tiendo.Name = "btn_tiendo";
+            this.btn_tiendo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_tiendo_ItemClick);
             // 
             // btn_xuatexcel
             // 
@@ -353,9 +355,9 @@
             // 
             this.lb_IdImage.Location = new System.Drawing.Point(862, 10);
             this.lb_IdImage.Name = "lb_IdImage";
-            this.lb_IdImage.Size = new System.Drawing.Size(40, 13);
+            this.lb_IdImage.Size = new System.Drawing.Size(6, 13);
             this.lb_IdImage.TabIndex = 7;
-            this.lb_IdImage.Text = "IdImage";
+            this.lb_IdImage.Text = "0";
             // 
             // labelControl5
             // 

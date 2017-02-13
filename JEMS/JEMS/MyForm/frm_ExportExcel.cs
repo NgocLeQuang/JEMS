@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 
@@ -15,6 +11,7 @@ namespace JEMS.MyForm
     public partial class frm_ExportExcel : Form
     {
         string LoaiPhieu = "";
+       
         public frm_ExportExcel()
         {
             InitializeComponent();
@@ -38,8 +35,7 @@ namespace JEMS.MyForm
 
             return input.Insert(0, getcharacter(iByte - input.Length, str));
         }
-
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             cbb_Batch.Items.Clear();
@@ -115,89 +111,116 @@ namespace JEMS.MyForm
             {
                 //EXport Excel ASAHI
 
-                if (System.IO.File.Exists(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI.xlsx"))
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI.xlsx"))
                 {
-                    System.IO.File.Delete(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI.xlsx");
-                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_ASAHI.xlsx"), Properties.Resources.ExportExcel_ASAHI);
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_ASAHI.xlsx"), Properties.Resources.ExportExcel_ASAHI);
                 }
                 else
                 {
-                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_ASAHI.xlsx"), Properties.Resources.ExportExcel_ASAHI);
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_ASAHI.xlsx"), Properties.Resources.ExportExcel_ASAHI);
                 }
-                TableToExcel_ASAHI(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI.xlsx");
+                TableToExcel_ASAHI(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI.xlsx");
 
                 //EXport Excel ASAHI_QC
 
-                if (System.IO.File.Exists(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI_QC.xlsx"))
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI_QC.xlsx"))
                 {
-                    System.IO.File.Delete(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI_QC.xlsx");
-                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_ASAHI_QC.xlsx"), Properties.Resources.ExportExcel_ASAHI);
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI_QC.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_ASAHI_QC.xlsx"), Properties.Resources.ExportExcel_ASAHI);
                 }
                 else
                 {
-                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_ASAHI_QC.xlsx"), Properties.Resources.ExportExcel_ASAHI);
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_ASAHI_QC.xlsx"), Properties.Resources.ExportExcel_ASAHI);
                 }
-                TableToExcel_ASAHI_QC(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI_QC.xlsx");
+                TableToExcel_ASAHI_QC(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_ASAHI_QC.xlsx");
             }
 
+            if (LoaiPhieu == "EIZEN")
+            {
+                //EXport Excel EIZEN
 
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_EIZEN.xlsx"))
+                {
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_EIZEN.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_EIZEN.xlsx"), Properties.Resources.ExportExcel_EIZEN);
+                }
+                else
+                {
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_EIZEN.xlsx"), Properties.Resources.ExportExcel_EIZEN);
+                }
+                TableToExcel_EIZEN(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_EIZEN.xlsx");
+
+                //EXport Excel EIZEN_QC
+
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_EIZEN_QC.xlsx"))
+                {
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_EIZEN_QC.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_EIZEN_QC.xlsx"), Properties.Resources.ExportExcel_EIZEN);
+                }
+                else
+                {
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_EIZEN_QC.xlsx"), Properties.Resources.ExportExcel_EIZEN);
+                }
+                TableToExcel_EIZEN_QC(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_EIZEN_QC.xlsx");
+            }
 
             else if (LoaiPhieu == "YAMAMOTO")
             {
                 //EXport Excel YAMAMOTO
 
-                if (System.IO.File.Exists(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO.xlsx"))
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO.xlsx"))
                 {
-                    System.IO.File.Delete(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO.xlsx");
-                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YAMAMOTO.xlsx"), Properties.Resources.ExportExcel_YAMAMOTO);
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YAMAMOTO.xlsx"), Properties.Resources.ExportExcel_YAMAMOTO);
                 }
                 else
                 {
-                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YAMAMOTO.xlsx"), Properties.Resources.ExportExcel_YAMAMOTO);
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YAMAMOTO.xlsx"), Properties.Resources.ExportExcel_YAMAMOTO);
                 }
-                TableToExcel_YAMAMOTO(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO.xlsx");
+                TableToExcel_YAMAMOTO(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO.xlsx");
 
                 //EXport Excel YAMAMOTO_QC
 
-                if (System.IO.File.Exists(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO_QC.xlsx"))
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO_QC.xlsx"))
                 {
-                    System.IO.File.Delete(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO_QC.xlsx");
-                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YAMAMOTO_QC.xlsx"), Properties.Resources.ExportExcel_YAMAMOTO);
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO_QC.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YAMAMOTO_QC.xlsx"), Properties.Resources.ExportExcel_YAMAMOTO);
                 }
                 else
                 {
-                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YAMAMOTO_QC.xlsx"), Properties.Resources.ExportExcel_YAMAMOTO);
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YAMAMOTO_QC.xlsx"), Properties.Resources.ExportExcel_YAMAMOTO);
                 }
-                TableToExcel_YAMAMOTO_QC(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO_QC.xlsx");
+                TableToExcel_YAMAMOTO_QC(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO_QC.xlsx");
             }
 
             else if (LoaiPhieu == "YASUDA")
             {
                 //EXport Excel YASUDA
 
-                if (System.IO.File.Exists(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA.xlsx"))
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA.xlsx"))
                 {
-                    System.IO.File.Delete(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA.xlsx");
-                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YASUDA.xlsx"), Properties.Resources.ExportExcel_YASUDA);
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YASUDA.xlsx"), Properties.Resources.ExportExcel_YASUDA);
                 }
                 else
                 {
-                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YASUDA.xlsx"), Properties.Resources.ExportExcel_YASUDA);
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YASUDA.xlsx"), Properties.Resources.ExportExcel_YASUDA);
                 }
-                TableToExcel_YASUDA(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA.xlsx");
+                TableToExcel_YASUDA(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA.xlsx");
 
                 //EXport Excel YASUDA_QC
 
-                if (System.IO.File.Exists(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA_QC.xlsx"))
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA_QC.xlsx"))
                 {
-                    System.IO.File.Delete(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA_QC.xlsx");
-                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YASUDA_QC.xlsx"), Properties.Resources.ExportExcel_YASUDA);
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA_QC.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YASUDA_QC.xlsx"), Properties.Resources.ExportExcel_YASUDA);
                 }
                 else
                 {
-                    System.IO.File.WriteAllBytes((System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YASUDA_QC.xlsx"), Properties.Resources.ExportExcel_YASUDA);
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_YASUDA_QC.xlsx"), Properties.Resources.ExportExcel_YASUDA);
                 }
-                TableToExcel_YASUDA_QC(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA_QC.xlsx");
+                TableToExcel_YASUDA_QC(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA_QC.xlsx");
             }
 
         }
@@ -209,9 +232,9 @@ namespace JEMS.MyForm
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Global.db.ExportExcel_ASAHI(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-                Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
-                Microsoft.Office.Interop.Excel.Worksheet wrksheet = (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Sheets _sheet = book.Sheets;
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
@@ -264,9 +287,9 @@ namespace JEMS.MyForm
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Global.db.ExportExcel_ASAHI_QC(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-                Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
-                Microsoft.Office.Interop.Excel.Worksheet wrksheet = (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Sheets _sheet = book.Sheets;
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
@@ -318,9 +341,9 @@ namespace JEMS.MyForm
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Global.db.ExportExcel_EIZEN(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-                Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
-                Microsoft.Office.Interop.Excel.Worksheet wrksheet = (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Sheets _sheet = book.Sheets;
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
@@ -334,7 +357,87 @@ namespace JEMS.MyForm
                     wrksheet.Cells[h, 7] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";   //07
                     wrksheet.Cells[h, 8] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";   //08
                     wrksheet.Cells[h, 85] = dr.Cells[7].Value != null ? dr.Cells[7].Value.ToString() : "";  //85
-                    wrksheet.Cells[h, 86] = dr.Cells[8].Value != null ? dr.Cells[8].Value.ToString() : "";  //86
+
+                    string Truong_86="";
+                    if(!string.IsNullOrEmpty(dr.Cells[8].Value != null ? dr.Cells[8].Value.ToString() : ""))
+                    {
+                        for (int i = 0; i < dr.Cells[8].Value.ToString().Length; i++)
+                        {
+                            string temp = dr.Cells[8].Value.ToString().Substring(i, 1);
+                            if (i < dr.Cells[8].Value.ToString().Length - 1)
+                            {
+                                switch (temp)
+                                {
+                                    case "F":
+                                        Truong_86 += "廃プラ" + "、";
+                                        break;
+                                    case "G":
+                                        Truong_86 += "紙くず" + "、";
+                                        break;
+                                    case "H":
+                                        Truong_86 += "木くず" + "、";
+                                        break;
+                                    case "I":
+                                        Truong_86 += "繊維くず" + "、";
+                                        break;
+                                    case "J":
+                                        Truong_86 += "動物性残渣" + "、";
+                                        break;
+                                    case "K":
+                                        Truong_86 += "ゴムくず" + "、";
+                                        break;
+                                    case "L":
+                                        Truong_86 += "金属くず" + "、";
+                                        break;
+                                    case "M":
+                                        Truong_86 += "ガラコン陶" + "、";
+                                        break;
+                                    case "O":
+                                        Truong_86 += "瓦礫類" + "、";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                switch (temp)
+                                {
+                                    case "F":
+                                        Truong_86 += "廃プラ";
+                                        break;
+                                    case "G":
+                                        Truong_86 += "紙くず";
+                                        break;
+                                    case "H":
+                                        Truong_86 += "木くず";
+                                        break;
+                                    case "I":
+                                        Truong_86 += "繊維くず";
+                                        break;
+                                    case "J":
+                                        Truong_86 += "動物性残渣";
+                                        break;
+                                    case "K":
+                                        Truong_86 += "ゴムくず";
+                                        break;
+                                    case "L":
+                                        Truong_86 += "金属くず";
+                                        break;
+                                    case "M":
+                                        Truong_86 += "ガラコン陶";
+                                        break;
+                                    case "O":
+                                        Truong_86 += "瓦礫類";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+
+                    wrksheet.Cells[h, 86] = Truong_86;  //86
 
                     lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
                     Range rowHead = wrksheet.get_Range("A3", "CH" + h);
@@ -375,9 +478,9 @@ namespace JEMS.MyForm
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Global.db.ExportExcel_EIZEN_QC(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-                Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
-                Microsoft.Office.Interop.Excel.Worksheet wrksheet = (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Sheets _sheet = book.Sheets;
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
@@ -391,7 +494,85 @@ namespace JEMS.MyForm
                     wrksheet.Cells[h, 7] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";   //07
                     wrksheet.Cells[h, 8] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";   //08
                     wrksheet.Cells[h, 85] = dr.Cells[7].Value != null ? dr.Cells[7].Value.ToString() : "";  //85
-                    wrksheet.Cells[h, 86] = dr.Cells[8].Value != null ? dr.Cells[8].Value.ToString() : "";  //86
+                    string Truong_86 = "";
+                    if (!string.IsNullOrEmpty(dr.Cells[8].Value != null ? dr.Cells[8].Value.ToString() : ""))
+                    {
+                        for (int i = 0; i < dr.Cells[8].Value.ToString().Length; i++)
+                        {
+                            string temp = dr.Cells[8].Value.ToString().Substring(i, 1);
+                            if (i < dr.Cells[8].Value.ToString().Length - 1)
+                            {
+                                switch (temp)
+                                {
+                                    case "F":
+                                        Truong_86 += "廃プラ" + "、";
+                                        break;
+                                    case "G":
+                                        Truong_86 += "紙くず" + "、";
+                                        break;
+                                    case "H":
+                                        Truong_86 += "木くず" + "、";
+                                        break;
+                                    case "I":
+                                        Truong_86 += "繊維くず" + "、";
+                                        break;
+                                    case "J":
+                                        Truong_86 += "動物性残渣" + "、";
+                                        break;
+                                    case "K":
+                                        Truong_86 += "ゴムくず" + "、";
+                                        break;
+                                    case "L":
+                                        Truong_86 += "金属くず" + "、";
+                                        break;
+                                    case "M":
+                                        Truong_86 += "ガラコン陶" + "、";
+                                        break;
+                                    case "O":
+                                        Truong_86 += "瓦礫類" + "、";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                switch (temp)
+                                {
+                                    case "F":
+                                        Truong_86 += "廃プラ";
+                                        break;
+                                    case "G":
+                                        Truong_86 += "紙くず";
+                                        break;
+                                    case "H":
+                                        Truong_86 += "木くず";
+                                        break;
+                                    case "I":
+                                        Truong_86 += "繊維くず";
+                                        break;
+                                    case "J":
+                                        Truong_86 += "動物性残渣";
+                                        break;
+                                    case "K":
+                                        Truong_86 += "ゴムくず";
+                                        break;
+                                    case "L":
+                                        Truong_86 += "金属くず";
+                                        break;
+                                    case "M":
+                                        Truong_86 += "ガラコン陶";
+                                        break;
+                                    case "O":
+                                        Truong_86 += "瓦礫類";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+                    wrksheet.Cells[h, 86] = Truong_86;  //86
 
                     lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
                     Range rowHead = wrksheet.get_Range("A3", "CH" + h);
@@ -432,9 +613,9 @@ namespace JEMS.MyForm
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Global.db.ExportExcel_YAMAMOTO(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-                Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
-                Microsoft.Office.Interop.Excel.Worksheet wrksheet = (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Sheets _sheet = book.Sheets;
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
@@ -500,7 +681,147 @@ namespace JEMS.MyForm
 
 
                     wrksheet.Cells[h, 85] = dr.Cells[84].Value != null ? dr.Cells[84].Value.ToString() : "";  //85
-                    wrksheet.Cells[h, 86] = dr.Cells[85].Value != null ? dr.Cells[85].Value.ToString() : "";  //86
+
+                    string Truong_86 = "";
+                    if (!string.IsNullOrEmpty(dr.Cells[85].Value != null ? dr.Cells[85].Value.ToString() : ""))
+                    {
+                        for (int i = 0; i < dr.Cells[85].Value.ToString().Length; i++)
+                        {
+                            string temp = dr.Cells[85].Value.ToString().Substring(i, 1);
+                            if (i < dr.Cells[85].Value.ToString().Length - 1)
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        Truong_86 += "燃え殻" + "、";
+                                        break;
+                                    case "B":
+                                        Truong_86 += "汚泥" + "、";
+                                        break;
+                                    case "C":
+                                        Truong_86 += "廃油" + "、";
+                                        break;
+                                    case "D":
+                                        Truong_86 += "廃酸" + "、";
+                                        break;
+                                    case "E":
+                                        Truong_86 += "廃アルカリ" + "、";
+                                        break;
+                                    case "F":
+                                        Truong_86 += "廃プラ" + "、";
+                                        break;
+                                    case "G":
+                                        Truong_86 += "紙くず" + "、";
+                                        break;
+                                    case "H":
+                                        Truong_86 += "木くず" + "、";
+                                        break;
+                                    case "I":
+                                        Truong_86 += "繊維くず" + "、";
+                                        break;
+                                    case "J":
+                                        Truong_86 += "動物性残渣" + "、";
+                                        break;
+                                    case "K":
+                                        Truong_86 += "ゴムくず" + "、";
+                                        break;
+                                    case "L":
+                                        Truong_86 += "金属くず" + "、";
+                                        break;
+                                    case "M":
+                                        Truong_86 += "ガラコン陶" + "、";
+                                        break;
+                                    case "N":
+                                        Truong_86 += "鉱さい" + "、";
+                                        break;
+                                    case "O":
+                                        Truong_86 += "瓦礫類" + "、";
+                                        break;
+                                    case "P":
+                                        Truong_86 += "動物の糞尿" + "、";
+                                        break;
+                                    case "Q":
+                                        Truong_86 += "動物の死体" + "、";
+                                        break;
+                                    case "R":
+                                        Truong_86 += "ばいじん" + "、";
+                                        break;
+                                    case "S":
+                                        Truong_86 += "動物性不要物" + "、";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        Truong_86 += "燃え殻";
+                                        break;
+                                    case "B":
+                                        Truong_86 += "汚泥";
+                                        break;
+                                    case "C":
+                                        Truong_86 += "廃油";
+                                        break;
+                                    case "D":
+                                        Truong_86 += "廃酸";
+                                        break;
+                                    case "E":
+                                        Truong_86 += "廃アルカリ";
+                                        break;
+                                    case "F":
+                                        Truong_86 += "廃プラ";
+                                        break;
+                                    case "G":
+                                        Truong_86 += "紙くず";
+                                        break;
+                                    case "H":
+                                        Truong_86 += "木くず";
+                                        break;
+                                    case "I":
+                                        Truong_86 += "繊維くず";
+                                        break;
+                                    case "J":
+                                        Truong_86 += "動物性残渣";
+                                        break;
+                                    case "K":
+                                        Truong_86 += "ゴムくず";
+                                        break;
+                                    case "L":
+                                        Truong_86 += "金属くず";
+                                        break;
+                                    case "M":
+                                        Truong_86 += "ガラコン陶";
+                                        break;
+                                    case "N":
+                                        Truong_86 += "鉱さい";
+                                        break;
+                                    case "O":
+                                        Truong_86 += "瓦礫類";
+                                        break;
+                                    case "P":
+                                        Truong_86 += "動物の糞尿";
+                                        break;
+                                    case "Q":
+                                        Truong_86 += "動物の死体";
+                                        break;
+                                    case "R":
+                                        Truong_86 += "ばいじん";
+                                        break;
+                                    case "S":
+                                        Truong_86 += "動物性不要物";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+
+                    wrksheet.Cells[h, 86] = Truong_86;  //86
 
                     lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
                     Range rowHead = wrksheet.get_Range("A3", "CH" + h);
@@ -540,9 +861,9 @@ namespace JEMS.MyForm
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Global.db.ExportExcel_YAMAMOTO_QC(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-                Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
-                Microsoft.Office.Interop.Excel.Worksheet wrksheet = (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Sheets _sheet = book.Sheets;
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
@@ -608,7 +929,147 @@ namespace JEMS.MyForm
 
 
                     wrksheet.Cells[h, 85] = dr.Cells[84].Value != null ? dr.Cells[84].Value.ToString() : "";  //85
-                    wrksheet.Cells[h, 86] = dr.Cells[85].Value != null ? dr.Cells[85].Value.ToString() : "";  //86
+
+                    string Truong_86 = "";
+                    if (!string.IsNullOrEmpty(dr.Cells[85].Value != null ? dr.Cells[85].Value.ToString() : ""))
+                    {
+                        for (int i = 0; i < dr.Cells[85].Value.ToString().Length; i++)
+                        {
+                            string temp = dr.Cells[85].Value.ToString().Substring(i, 1);
+                            if (i < dr.Cells[85].Value.ToString().Length - 1)
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        Truong_86 += "燃え殻" + "、";
+                                        break;
+                                    case "B":
+                                        Truong_86 += "汚泥" + "、";
+                                        break;
+                                    case "C":
+                                        Truong_86 += "廃油" + "、";
+                                        break;
+                                    case "D":
+                                        Truong_86 += "廃酸" + "、";
+                                        break;
+                                    case "E":
+                                        Truong_86 += "廃アルカリ" + "、";
+                                        break;
+                                    case "F":
+                                        Truong_86 += "廃プラ" + "、";
+                                        break;
+                                    case "G":
+                                        Truong_86 += "紙くず" + "、";
+                                        break;
+                                    case "H":
+                                        Truong_86 += "木くず" + "、";
+                                        break;
+                                    case "I":
+                                        Truong_86 += "繊維くず" + "、";
+                                        break;
+                                    case "J":
+                                        Truong_86 += "動物性残渣" + "、";
+                                        break;
+                                    case "K":
+                                        Truong_86 += "ゴムくず" + "、";
+                                        break;
+                                    case "L":
+                                        Truong_86 += "金属くず" + "、";
+                                        break;
+                                    case "M":
+                                        Truong_86 += "ガラコン陶" + "、";
+                                        break;
+                                    case "N":
+                                        Truong_86 += "鉱さい" + "、";
+                                        break;
+                                    case "O":
+                                        Truong_86 += "瓦礫類" + "、";
+                                        break;
+                                    case "P":
+                                        Truong_86 += "動物の糞尿" + "、";
+                                        break;
+                                    case "Q":
+                                        Truong_86 += "動物の死体" + "、";
+                                        break;
+                                    case "R":
+                                        Truong_86 += "ばいじん" + "、";
+                                        break;
+                                    case "S":
+                                        Truong_86 += "動物性不要物" + "、";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        Truong_86 += "燃え殻";
+                                        break;
+                                    case "B":
+                                        Truong_86 += "汚泥";
+                                        break;
+                                    case "C":
+                                        Truong_86 += "廃油";
+                                        break;
+                                    case "D":
+                                        Truong_86 += "廃酸";
+                                        break;
+                                    case "E":
+                                        Truong_86 += "廃アルカリ";
+                                        break;
+                                    case "F":
+                                        Truong_86 += "廃プラ";
+                                        break;
+                                    case "G":
+                                        Truong_86 += "紙くず";
+                                        break;
+                                    case "H":
+                                        Truong_86 += "木くず";
+                                        break;
+                                    case "I":
+                                        Truong_86 += "繊維くず";
+                                        break;
+                                    case "J":
+                                        Truong_86 += "動物性残渣";
+                                        break;
+                                    case "K":
+                                        Truong_86 += "ゴムくず";
+                                        break;
+                                    case "L":
+                                        Truong_86 += "金属くず";
+                                        break;
+                                    case "M":
+                                        Truong_86 += "ガラコン陶";
+                                        break;
+                                    case "N":
+                                        Truong_86 += "鉱さい";
+                                        break;
+                                    case "O":
+                                        Truong_86 += "瓦礫類";
+                                        break;
+                                    case "P":
+                                        Truong_86 += "動物の糞尿";
+                                        break;
+                                    case "Q":
+                                        Truong_86 += "動物の死体";
+                                        break;
+                                    case "R":
+                                        Truong_86 += "ばいじん";
+                                        break;
+                                    case "S":
+                                        Truong_86 += "動物性不要物";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+
+                    wrksheet.Cells[h, 86] = Truong_86;  //86
 
                     lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
                     Range rowHead = wrksheet.get_Range("A3", "CH" + h);
@@ -649,9 +1110,9 @@ namespace JEMS.MyForm
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Global.db.ExportExcel_YAMAMOTO(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-                Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
-                Microsoft.Office.Interop.Excel.Worksheet wrksheet = (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Sheets _sheet = book.Sheets;
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
@@ -727,7 +1188,82 @@ namespace JEMS.MyForm
 
                     wrksheet.Cells[h, 84] = dr.Cells[83].Value != null ? dr.Cells[83].Value.ToString() : "";  //84
                     wrksheet.Cells[h, 85] = dr.Cells[84].Value != null ? dr.Cells[84].Value.ToString() : "";  //85
-                    wrksheet.Cells[h, 87] = dr.Cells[86].Value != null ? dr.Cells[86].Value.ToString() : "";  //87
+
+
+                    string Truong_87 = "";
+                    if (!string.IsNullOrEmpty(dr.Cells[86].Value != null ? dr.Cells[86].Value.ToString() : ""))
+                    {
+                        for (int i = 0; i < dr.Cells[86].Value.ToString().Length; i++)
+                        {
+                            string temp = dr.Cells[86].Value.ToString().Substring(i, 1);
+                            if (i < dr.Cells[86].Value.ToString().Length - 1)
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        Truong_87 += "廃プラ" + "、";
+                                        break;
+                                    case "B":
+                                        Truong_87 += "ゴムくず" + "、";
+                                        break;
+                                    case "C":
+                                        Truong_87 += "金属くず" + "、";
+                                        break;
+                                    case "D":
+                                        Truong_87 += "ガラコン陶" + "、";
+                                        break;
+                                    case "E":
+                                        Truong_87 += "がれき類" + "、";
+                                        break;
+                                    case "K":
+                                        Truong_87 += "紙くず" + "、";
+                                        break;
+                                    case "L":
+                                        Truong_87 += "木くず" + "、";
+                                        break;
+                                    case "M":
+                                        Truong_87 += "繊維くず" + "、";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        Truong_87 += "廃プラ";
+                                        break;
+                                    case "B":
+                                        Truong_87 += "ゴムくず";
+                                        break;
+                                    case "C":
+                                        Truong_87 += "金属くず";
+                                        break;
+                                    case "D":
+                                        Truong_87 += "ガラコン陶";
+                                        break;
+                                    case "E":
+                                        Truong_87 += "がれき類";
+                                        break;
+                                    case "K":
+                                        Truong_87 += "紙くず";
+                                        break;
+                                    case "L":
+                                        Truong_87 += "木くず";
+                                        break;
+                                    case "M":
+                                        Truong_87 += "繊維くず";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+
+                    wrksheet.Cells[h, 87] = Truong_87;  //87
                     wrksheet.Cells[h, 91] = dr.Cells[90].Value != null ? dr.Cells[90].Value.ToString() : "";  //91
 
                     lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
@@ -769,9 +1305,9 @@ namespace JEMS.MyForm
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Global.db.ExportExcel_YAMAMOTO_QC(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-                Microsoft.Office.Interop.Excel.Sheets _sheet = (Microsoft.Office.Interop.Excel.Sheets)book.Sheets;
-                Microsoft.Office.Interop.Excel.Worksheet wrksheet = (Microsoft.Office.Interop.Excel.Worksheet)book.ActiveSheet;
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Sheets _sheet = book.Sheets;
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
@@ -847,7 +1383,83 @@ namespace JEMS.MyForm
 
                     wrksheet.Cells[h, 84] = dr.Cells[83].Value != null ? dr.Cells[83].Value.ToString() : "";  //84
                     wrksheet.Cells[h, 85] = dr.Cells[84].Value != null ? dr.Cells[84].Value.ToString() : "";  //85
-                    wrksheet.Cells[h, 87] = dr.Cells[86].Value != null ? dr.Cells[86].Value.ToString() : "";  //87
+
+
+                    string Truong_87 = "";
+                    if (!string.IsNullOrEmpty(dr.Cells[86].Value != null ? dr.Cells[86].Value.ToString() : ""))
+                    {
+                        for (int i = 0; i < dr.Cells[86].Value.ToString().Length; i++)
+                        {
+                            string temp = dr.Cells[86].Value.ToString().Substring(i, 1);
+                            if (i < dr.Cells[86].Value.ToString().Length - 1)
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        Truong_87 += "廃プラ" + "、";
+                                        break;
+                                    case "B":
+                                        Truong_87 += "ゴムくず" + "、";
+                                        break;
+                                    case "C":
+                                        Truong_87 += "金属くず" + "、";
+                                        break;
+                                    case "D":
+                                        Truong_87 += "ガラコン陶" + "、";
+                                        break;
+                                    case "E":
+                                        Truong_87 += "がれき類" + "、";
+                                        break;
+                                    case "K":
+                                        Truong_87 += "紙くず" + "、";
+                                        break;
+                                    case "L":
+                                        Truong_87 += "木くず" + "、";
+                                        break;
+                                    case "M":
+                                        Truong_87 += "繊維くず" + "、";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        Truong_87 += "廃プラ";
+                                        break;
+                                    case "B":
+                                        Truong_87 += "ゴムくず";
+                                        break;
+                                    case "C":
+                                        Truong_87 += "金属くず";
+                                        break;
+                                    case "D":
+                                        Truong_87 += "ガラコン陶";
+                                        break;
+                                    case "E":
+                                        Truong_87 += "がれき類";
+                                        break;
+                                    case "K":
+                                        Truong_87 += "紙くず";
+                                        break;
+                                    case "L":
+                                        Truong_87 += "木くず";
+                                        break;
+                                    case "M":
+                                        Truong_87 += "繊維くず";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+
+                    wrksheet.Cells[h, 87] = Truong_87;  //87
+
                     wrksheet.Cells[h, 91] = dr.Cells[90].Value != null ? dr.Cells[90].Value.ToString() : "";  //91
 
                     lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();

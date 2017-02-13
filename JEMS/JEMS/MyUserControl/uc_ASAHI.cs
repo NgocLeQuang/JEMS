@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
@@ -31,6 +27,8 @@ namespace JEMS.MyUserControl
             category.Add(new Category() { Set_Value = "kg" });
             category.Add(new Category() { Set_Value = "リットル" });
             category.Add(new Category() { Set_Value = "個・台" });
+            category.Add(new Category() { Set_Value = "?" });
+            category.Add(new Category() { Set_Value = "●" });
         }
         public void ResetData()
         {
@@ -252,6 +250,12 @@ namespace JEMS.MyUserControl
         }
 
         private void chk_qc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Changed != null)
+                Changed(sender, e);
+        }
+
+        private void txt_Truong08_EditValueChanged(object sender, EventArgs e)
         {
             if (Changed != null)
                 Changed(sender, e);
