@@ -302,7 +302,7 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong02.Text.ToString().IndexOf('?') >= 0)
                 txt_Truong02.Text = "?";
-            if (txt_Truong02.Text.Length != 6 && txt_Truong02.Text != "" && txt_Truong02.Text != "?" && txt_Truong02.Text != "●")
+            if (txt_Truong02.Text.Length != 6 && txt_Truong02.Text != "" && txt_Truong02.Text != "?" && txt_Truong02.Text.ToString().IndexOf('●') < 0)
             {
                 txt_Truong02.BackColor = Color.Red;
                 txt_Truong02.ForeColor = Color.White;
@@ -321,7 +321,7 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong03_1.Text.ToString().IndexOf('?') >= 0)
                 txt_Truong03_1.Text = "?";
-            if (txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?" && txt_Truong03_1.Text != "●")
+            if (txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?" && txt_Truong03_1.Text.ToString().IndexOf('●') < 0)
             {
                 if (txt_Truong03_1.Text.Length != 6)
                 {
@@ -332,7 +332,6 @@ namespace JEMS.MyUserControl
                 {
                     txt_Truong03_1.BackColor = Color.White;
                     txt_Truong03_1.ForeColor = Color.Black;
-                    txt_Truong03_2.Focus();
                 }
             }
             else
@@ -348,7 +347,7 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong03_2.Text.ToString().IndexOf('?') >= 0)
                 txt_Truong03_2.Text = "?";
-            if (txt_Truong03_2.Text != "" && txt_Truong03_2.Text != "?" && txt_Truong03_2.Text != "●")
+            if (txt_Truong03_2.Text != "" && txt_Truong03_2.Text != "?" && txt_Truong03_2.Text.ToString().IndexOf('●') < 0)
             {
                 if (txt_Truong03_2.Text.Length != 6)
                 {
@@ -363,8 +362,6 @@ namespace JEMS.MyUserControl
             }
             else
             {
-                if (txt_Truong03_2.Text.Length == 0)
-                    txt_Truong03_1.Focus();
                 txt_Truong03_2.BackColor = Color.White;
                 txt_Truong03_2.ForeColor = Color.Black;
             }
@@ -375,7 +372,7 @@ namespace JEMS.MyUserControl
         {
             if (tb.Text.ToString().IndexOf('?') >= 0)
                 tb.Text = "?";
-            if (tb.Text.Length != 2 && tb.Text != "" && tb.Text != "?" && tb.Text != "●")
+            if (tb.Text.Length != 2 && tb.Text != "" && tb.Text != "?" && tb.Text.ToString().IndexOf('●') < 0)
             {
                 tb.BackColor = Color.Red;
                 tb.ForeColor = Color.White;
@@ -679,7 +676,7 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong0.Text.ToString().IndexOf('?') >= 0)
                 txt_Truong0.Text = "?";
-            if (txt_Truong0.Text != txt_Truong02.Text && txt_Truong0.Text != "" && txt_Truong0.Text != "?")
+            if (txt_Truong0.Text != txt_Truong02.Text && txt_Truong0.Text != "" && txt_Truong0.Text != "?" && txt_Truong0.Text.ToString().IndexOf('●') < 0)
             {
                 txt_Truong0.BackColor = Color.Red;
                 txt_Truong0.ForeColor = Color.White;
@@ -838,7 +835,7 @@ namespace JEMS.MyUserControl
             txtTruong03 = "?";
             //Save Data
             
-            Global.db.Insert_YASUDA(idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text,
+            Global.db.Insert_YASUDA(idImage, Global.StrBatch, Global.StrUsername, txt_Truong0.Text, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text,
                                              txt_Truong12.Text, txt_Truong13.Text, txt_Truong14.Text, txt_Truong15.Text, txt_Truong16.Text,
                                              txt_Truong20.Text, txt_Truong21.Text, txt_Truong22.Text, txt_Truong23.Text, txt_Truong24.Text,
                                              txt_Truong28.Text, txt_Truong29.Text, txt_Truong30.Text, txt_Truong31.Text, txt_Truong32.Text,
@@ -855,7 +852,7 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong91.Text.ToString().IndexOf('?') >= 0)
                 txt_Truong91.Text = "?";
-            if (txt_Truong91.Text != "" && txt_Truong91.Text != "?" && txt_Truong91.Text != "●")
+            if (txt_Truong91.Text != "" && txt_Truong91.Text != "?" && txt_Truong91.Text.ToString().IndexOf('●') < 0)
             {
                 if (txt_Truong91.Text.Length != 6)
                 {

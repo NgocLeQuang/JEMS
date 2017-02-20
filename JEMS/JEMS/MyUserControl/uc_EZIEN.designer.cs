@@ -269,6 +269,7 @@
             this.txt_Truong86.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong86.Size = new System.Drawing.Size(153, 20);
             this.txt_Truong86.TabIndex = 10;
+            this.txt_Truong86.EditValueChanged += new System.EventHandler(this.txt_Truong86_EditValueChanged);
             this.txt_Truong86.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Truong86_KeyDown);
             this.txt_Truong86.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Truong86_KeyPress);
             // 

@@ -30,12 +30,12 @@ namespace JEMS
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Inserttbl_MissImage_DESO(tbl_MissImage_DESO instance);
-    partial void Updatetbl_MissImage_DESO(tbl_MissImage_DESO instance);
-    partial void Deletetbl_MissImage_DESO(tbl_MissImage_DESO instance);
     partial void Inserttbl_Batch(tbl_Batch instance);
     partial void Updatetbl_Batch(tbl_Batch instance);
     partial void Deletetbl_Batch(tbl_Batch instance);
+    partial void Inserttbl_MissImage_DESO(tbl_MissImage_DESO instance);
+    partial void Updatetbl_MissImage_DESO(tbl_MissImage_DESO instance);
+    partial void Deletetbl_MissImage_DESO(tbl_MissImage_DESO instance);
     partial void Inserttbl_DeSo(tbl_DeSo instance);
     partial void Updatetbl_DeSo(tbl_DeSo instance);
     partial void Deletetbl_DeSo(tbl_DeSo instance);
@@ -80,19 +80,19 @@ namespace JEMS
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<tbl_MissImage_DESO> tbl_MissImage_DESOs
-		{
-			get
-			{
-				return this.GetTable<tbl_MissImage_DESO>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tbl_Batch> tbl_Batches
 		{
 			get
 			{
 				return this.GetTable<tbl_Batch>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_MissImage_DESO> tbl_MissImage_DESOs
+		{
+			get
+			{
+				return this.GetTable<tbl_MissImage_DESO>();
 			}
 		}
 		
@@ -285,16 +285,16 @@ namespace JEMS
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insert_ASAHI")]
-		public int Insert_ASAHI([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_06", DbType="NVarChar(255)")] string truong_06, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_08", DbType="NVarChar(255)")] string truong_08, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_85", DbType="NVarChar(255)")] string truong_85, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
+		public int Insert_ASAHI([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_0", DbType="NVarChar(255)")] string truong_0, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_06", DbType="NVarChar(255)")] string truong_06, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_08", DbType="NVarChar(255)")] string truong_08, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_85", DbType="NVarChar(255)")] string truong_85, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_02, truong_03, truong_05, truong_06, truong_08, truong_85, check_QC);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_0, truong_02, truong_03, truong_05, truong_06, truong_08, truong_85, check_QC);
 			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Insert_EIZEN")]
-		public int Insert_EIZEN([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_06", DbType="NVarChar(255)")] string truong_06, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_07", DbType="NVarChar(255)")] string truong_07, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_08", DbType="NVarChar(255)")] string truong_08, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_85", DbType="NVarChar(255)")] string truong_85, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_86", DbType="NVarChar(255)")] string truong_86, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
+		public int Insert_EIZEN([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_0", DbType="NVarChar(255)")] string truong_0, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_06", DbType="NVarChar(255)")] string truong_06, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_07", DbType="NVarChar(255)")] string truong_07, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_08", DbType="NVarChar(255)")] string truong_08, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_85", DbType="NVarChar(255)")] string truong_85, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_86", DbType="NVarChar(255)")] string truong_86, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_02, truong_03, truong_05, truong_06, truong_07, truong_08, truong_85, truong_86, check_QC);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_0, truong_02, truong_03, truong_05, truong_06, truong_07, truong_08, truong_85, truong_86, check_QC);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -303,6 +303,7 @@ namespace JEMS
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_0", DbType="NVarChar(255)")] string truong_0, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, 
@@ -349,7 +350,7 @@ namespace JEMS
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_86", DbType="NVarChar(255)")] string truong_86, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_02, truong_03, truong_05, truong_06, truong_07, truong_08, truong_13, truong_14, truong_15, truong_16, truong_21, truong_22, truong_23, truong_24, truong_29, truong_30, truong_31, truong_32, truong_37, truong_38, truong_39, truong_40, truong_45, truong_46, truong_47, truong_48, truong_53, truong_54, truong_55, truong_56, truong_61, truong_62, truong_63, truong_64, truong_69, truong_70, truong_71, truong_72, truong_77, truong_78, truong_79, truong_80, truong_85, truong_86, check_QC);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_0, truong_02, truong_03, truong_05, truong_06, truong_07, truong_08, truong_13, truong_14, truong_15, truong_16, truong_21, truong_22, truong_23, truong_24, truong_29, truong_30, truong_31, truong_32, truong_37, truong_38, truong_39, truong_40, truong_45, truong_46, truong_47, truong_48, truong_53, truong_54, truong_55, truong_56, truong_61, truong_62, truong_63, truong_64, truong_69, truong_70, truong_71, truong_72, truong_77, truong_78, truong_79, truong_80, truong_85, truong_86, check_QC);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -358,6 +359,7 @@ namespace JEMS
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_0", DbType="NVarChar(255)")] string truong_0, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, 
@@ -415,7 +417,7 @@ namespace JEMS
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_91", DbType="NVarChar(255)")] string truong_91, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_02, truong_03, truong_05, truong_06, truong_07, truong_08, truong_12, truong_13, truong_14, truong_15, truong_16, truong_20, truong_21, truong_22, truong_23, truong_24, truong_28, truong_29, truong_30, truong_31, truong_32, truong_36, truong_37, truong_38, truong_39, truong_40, truong_44, truong_45, truong_46, truong_47, truong_48, truong_52, truong_53, truong_54, truong_55, truong_56, truong_60, truong_61, truong_62, truong_63, truong_64, truong_68, truong_69, truong_70, truong_71, truong_72, truong_76, truong_77, truong_78, truong_79, truong_80, truong_84, truong_85, truong_87, truong_91, check_QC);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_0, truong_02, truong_03, truong_05, truong_06, truong_07, truong_08, truong_12, truong_13, truong_14, truong_15, truong_16, truong_20, truong_21, truong_22, truong_23, truong_24, truong_28, truong_29, truong_30, truong_31, truong_32, truong_36, truong_37, truong_38, truong_39, truong_40, truong_44, truong_45, truong_46, truong_47, truong_48, truong_52, truong_53, truong_54, truong_55, truong_56, truong_60, truong_61, truong_62, truong_63, truong_64, truong_68, truong_69, truong_70, truong_71, truong_72, truong_76, truong_77, truong_78, truong_79, truong_80, truong_84, truong_85, truong_87, truong_91, check_QC);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -454,6 +456,7 @@ namespace JEMS
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserCheck", DbType="NVarChar(255)")] string userCheck, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_0", DbType="NVarChar(255)")] string truong_0, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_04", DbType="NVarChar(255)")] string truong_04, 
@@ -553,7 +556,7 @@ namespace JEMS
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_98", DbType="NVarChar(255)")] string truong_98, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userSaiIt, userSaiNhieu, idImage, fBatchName, userCheck, truong_02, truong_03, truong_04, truong_05, truong_06, truong_07, truong_08, truong_09, truong_10, truong_11, truong_12, truong_13, truong_14, truong_15, truong_16, truong_17, truong_18, truong_19, truong_20, truong_21, truong_22, truong_23, truong_24, truong_25, truong_26, truong_27, truong_28, truong_29, truong_30, truong_31, truong_32, truong_33, truong_34, truong_35, truong_36, truong_37, truong_38, truong_39, truong_40, truong_41, truong_42, truong_43, truong_44, truong_45, truong_46, truong_47, truong_48, truong_49, truong_50, truong_51, truong_52, truong_53, truong_54, truong_55, truong_56, truong_57, truong_58, truong_59, truong_60, truong_61, truong_62, truong_63, truong_64, truong_65, truong_66, truong_67, truong_68, truong_69, truong_70, truong_71, truong_72, truong_73, truong_74, truong_75, truong_76, truong_77, truong_78, truong_79, truong_80, truong_81, truong_82, truong_83, truong_84, truong_85, truong_86, truong_87, truong_88, truong_89, truong_90, truong_91, truong_92, truong_93, truong_94, truong_95, truong_96, truong_97, truong_98, check_QC);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userSaiIt, userSaiNhieu, idImage, fBatchName, userCheck, truong_0, truong_02, truong_03, truong_04, truong_05, truong_06, truong_07, truong_08, truong_09, truong_10, truong_11, truong_12, truong_13, truong_14, truong_15, truong_16, truong_17, truong_18, truong_19, truong_20, truong_21, truong_22, truong_23, truong_24, truong_25, truong_26, truong_27, truong_28, truong_29, truong_30, truong_31, truong_32, truong_33, truong_34, truong_35, truong_36, truong_37, truong_38, truong_39, truong_40, truong_41, truong_42, truong_43, truong_44, truong_45, truong_46, truong_47, truong_48, truong_49, truong_50, truong_51, truong_52, truong_53, truong_54, truong_55, truong_56, truong_57, truong_58, truong_59, truong_60, truong_61, truong_62, truong_63, truong_64, truong_65, truong_66, truong_67, truong_68, truong_69, truong_70, truong_71, truong_72, truong_73, truong_74, truong_75, truong_76, truong_77, truong_78, truong_79, truong_80, truong_81, truong_82, truong_83, truong_84, truong_85, truong_86, truong_87, truong_88, truong_89, truong_90, truong_91, truong_92, truong_93, truong_94, truong_95, truong_96, truong_97, truong_98, check_QC);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -564,6 +567,7 @@ namespace JEMS
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserCheck", DbType="NVarChar(255)")] string userCheck, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_0", DbType="NVarChar(255)")] string truong_0, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_04", DbType="NVarChar(255)")] string truong_04, 
@@ -663,7 +667,7 @@ namespace JEMS
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_98", DbType="NVarChar(255)")] string truong_98, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userSaiIt, userSaiNhieu, idImage, fBatchName, userCheck, truong_02, truong_03, truong_04, truong_05, truong_06, truong_07, truong_08, truong_09, truong_10, truong_11, truong_12, truong_13, truong_14, truong_15, truong_16, truong_17, truong_18, truong_19, truong_20, truong_21, truong_22, truong_23, truong_24, truong_25, truong_26, truong_27, truong_28, truong_29, truong_30, truong_31, truong_32, truong_33, truong_34, truong_35, truong_36, truong_37, truong_38, truong_39, truong_40, truong_41, truong_42, truong_43, truong_44, truong_45, truong_46, truong_47, truong_48, truong_49, truong_50, truong_51, truong_52, truong_53, truong_54, truong_55, truong_56, truong_57, truong_58, truong_59, truong_60, truong_61, truong_62, truong_63, truong_64, truong_65, truong_66, truong_67, truong_68, truong_69, truong_70, truong_71, truong_72, truong_73, truong_74, truong_75, truong_76, truong_77, truong_78, truong_79, truong_80, truong_81, truong_82, truong_83, truong_84, truong_85, truong_86, truong_87, truong_88, truong_89, truong_90, truong_91, truong_92, truong_93, truong_94, truong_95, truong_96, truong_97, truong_98, check_QC);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userSaiIt, userSaiNhieu, idImage, fBatchName, userCheck, truong_0, truong_02, truong_03, truong_04, truong_05, truong_06, truong_07, truong_08, truong_09, truong_10, truong_11, truong_12, truong_13, truong_14, truong_15, truong_16, truong_17, truong_18, truong_19, truong_20, truong_21, truong_22, truong_23, truong_24, truong_25, truong_26, truong_27, truong_28, truong_29, truong_30, truong_31, truong_32, truong_33, truong_34, truong_35, truong_36, truong_37, truong_38, truong_39, truong_40, truong_41, truong_42, truong_43, truong_44, truong_45, truong_46, truong_47, truong_48, truong_49, truong_50, truong_51, truong_52, truong_53, truong_54, truong_55, truong_56, truong_57, truong_58, truong_59, truong_60, truong_61, truong_62, truong_63, truong_64, truong_65, truong_66, truong_67, truong_68, truong_69, truong_70, truong_71, truong_72, truong_73, truong_74, truong_75, truong_76, truong_77, truong_78, truong_79, truong_80, truong_81, truong_82, truong_83, truong_84, truong_85, truong_86, truong_87, truong_88, truong_89, truong_90, truong_91, truong_92, truong_93, truong_94, truong_95, truong_96, truong_97, truong_98, check_QC);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -679,164 +683,6 @@ namespace JEMS
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
 			return ((ISingleResult<UserMissImagecheckResult>)(result.ReturnValue));
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_MissImage_DESO")]
-	public partial class tbl_MissImage_DESO : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _IdImage;
-		
-		private string _fBatchName;
-		
-		private string _UserName;
-		
-		private System.Nullable<int> _Submit;
-		
-		private System.Nullable<System.DateTime> _DateInput;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdImageChanging(string value);
-    partial void OnIdImageChanged();
-    partial void OnfBatchNameChanging(string value);
-    partial void OnfBatchNameChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnSubmitChanging(System.Nullable<int> value);
-    partial void OnSubmitChanged();
-    partial void OnDateInputChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateInputChanged();
-    #endregion
-		
-		public tbl_MissImage_DESO()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string IdImage
-		{
-			get
-			{
-				return this._IdImage;
-			}
-			set
-			{
-				if ((this._IdImage != value))
-				{
-					this.OnIdImageChanging(value);
-					this.SendPropertyChanging();
-					this._IdImage = value;
-					this.SendPropertyChanged("IdImage");
-					this.OnIdImageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string fBatchName
-		{
-			get
-			{
-				return this._fBatchName;
-			}
-			set
-			{
-				if ((this._fBatchName != value))
-				{
-					this.OnfBatchNameChanging(value);
-					this.SendPropertyChanging();
-					this._fBatchName = value;
-					this.SendPropertyChanged("fBatchName");
-					this.OnfBatchNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Submit", DbType="Int")]
-		public System.Nullable<int> Submit
-		{
-			get
-			{
-				return this._Submit;
-			}
-			set
-			{
-				if ((this._Submit != value))
-				{
-					this.OnSubmitChanging(value);
-					this.SendPropertyChanging();
-					this._Submit = value;
-					this.SendPropertyChanged("Submit");
-					this.OnSubmitChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateInput", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateInput
-		{
-			get
-			{
-				return this._DateInput;
-			}
-			set
-			{
-				if ((this._DateInput != value))
-				{
-					this.OnDateInputChanging(value);
-					this.SendPropertyChanging();
-					this._DateInput = value;
-					this.SendPropertyChanged("DateInput");
-					this.OnDateInputChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -1070,6 +916,164 @@ namespace JEMS
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_MissImage_DESO")]
+	public partial class tbl_MissImage_DESO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _IdImage;
+		
+		private string _fBatchName;
+		
+		private string _UserName;
+		
+		private System.Nullable<int> _Submit;
+		
+		private System.Nullable<System.DateTime> _DateInput;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdImageChanging(string value);
+    partial void OnIdImageChanged();
+    partial void OnfBatchNameChanging(string value);
+    partial void OnfBatchNameChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnSubmitChanging(System.Nullable<int> value);
+    partial void OnSubmitChanged();
+    partial void OnDateInputChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInputChanged();
+    #endregion
+		
+		public tbl_MissImage_DESO()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string IdImage
+		{
+			get
+			{
+				return this._IdImage;
+			}
+			set
+			{
+				if ((this._IdImage != value))
+				{
+					this.OnIdImageChanging(value);
+					this.SendPropertyChanging();
+					this._IdImage = value;
+					this.SendPropertyChanged("IdImage");
+					this.OnIdImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string fBatchName
+		{
+			get
+			{
+				return this._fBatchName;
+			}
+			set
+			{
+				if ((this._fBatchName != value))
+				{
+					this.OnfBatchNameChanging(value);
+					this.SendPropertyChanging();
+					this._fBatchName = value;
+					this.SendPropertyChanged("fBatchName");
+					this.OnfBatchNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Submit", DbType="Int")]
+		public System.Nullable<int> Submit
+		{
+			get
+			{
+				return this._Submit;
+			}
+			set
+			{
+				if ((this._Submit != value))
+				{
+					this.OnSubmitChanging(value);
+					this.SendPropertyChanging();
+					this._Submit = value;
+					this.SendPropertyChanged("Submit");
+					this.OnSubmitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateInput", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateInput
+		{
+			get
+			{
+				return this._DateInput;
+			}
+			set
+			{
+				if ((this._DateInput != value))
+				{
+					this.OnDateInputChanging(value);
+					this.SendPropertyChanging();
+					this._DateInput = value;
+					this.SendPropertyChanged("DateInput");
+					this.OnDateInputChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_DeSo")]
 	public partial class tbl_DeSo : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1083,6 +1087,8 @@ namespace JEMS
 		private string _fBatchName;
 		
 		private string _UserName;
+		
+		private string _Truong_0;
 		
 		private string _Truong_02;
 		
@@ -1300,6 +1306,8 @@ namespace JEMS
     partial void OnfBatchNameChanged();
     partial void OnUserNameChanging(string value);
     partial void OnUserNameChanged();
+    partial void OnTruong_0Changing(string value);
+    partial void OnTruong_0Changed();
     partial void OnTruong_02Changing(string value);
     partial void OnTruong_02Changed();
     partial void OnTruong_03Changing(string value);
@@ -1587,6 +1595,26 @@ namespace JEMS
 					this._UserName = value;
 					this.SendPropertyChanged("UserName");
 					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Truong_0", DbType="NVarChar(255)")]
+		public string Truong_0
+		{
+			get
+			{
+				return this._Truong_0;
+			}
+			set
+			{
+				if ((this._Truong_0 != value))
+				{
+					this.OnTruong_0Changing(value);
+					this.SendPropertyChanging();
+					this._Truong_0 = value;
+					this.SendPropertyChanged("Truong_0");
+					this.OnTruong_0Changed();
 				}
 			}
 		}
@@ -3666,6 +3694,8 @@ namespace JEMS
 		
 		private string _UserName;
 		
+		private string _Truong_0;
+		
 		private string _Truong_02;
 		
 		private string _Truong_03;
@@ -3882,6 +3912,8 @@ namespace JEMS
     partial void OnfBatchNameChanged();
     partial void OnUserNameChanging(string value);
     partial void OnUserNameChanged();
+    partial void OnTruong_0Changing(string value);
+    partial void OnTruong_0Changed();
     partial void OnTruong_02Changing(string value);
     partial void OnTruong_02Changed();
     partial void OnTruong_03Changing(string value);
@@ -4169,6 +4201,26 @@ namespace JEMS
 					this._UserName = value;
 					this.SendPropertyChanged("UserName");
 					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Truong_0", DbType="NVarChar(255)")]
+		public string Truong_0
+		{
+			get
+			{
+				return this._Truong_0;
+			}
+			set
+			{
+				if ((this._Truong_0 != value))
+				{
+					this.OnTruong_0Changing(value);
+					this.SendPropertyChanging();
+					this._Truong_0 = value;
+					this.SendPropertyChanged("Truong_0");
+					this.OnTruong_0Changed();
 				}
 			}
 		}
