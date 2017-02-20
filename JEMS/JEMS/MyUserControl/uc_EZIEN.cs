@@ -79,16 +79,16 @@ namespace JEMS.MyUserControl
         }
         public bool CheckQC()
         {
-            if (txt_Truong02.Text == "?" || txt_Truong02.Text == "●" ||
-                txt_Truong03_1.Text == "?" || txt_Truong03_1.Text == "●" ||
-                txt_Truong03_2.Text == "?" || txt_Truong03_2.Text == "●" ||
-                txt_Truong05.Text == "?" || txt_Truong05.Text == "●" ||
-                txt_Truong06.Text == "?" || txt_Truong06.Text == "●" ||
-                txt_Truong07.Text == "?" || txt_Truong07.Text == "●" ||
-                txt_Truong08.Text == "?" || txt_Truong08.Text == "●" ||
-                txt_Truong85.Text == "?" || txt_Truong85.Text == "●" ||
-                txt_Truong0.Text == "?" || txt_Truong0.Text == "●" ||
-                txt_Truong86.Text == "?" || txt_Truong86.Text == "●" ||
+            if (txt_Truong02.Text.ToString().IndexOf('?') >= 0 || txt_Truong02.Text.ToString().IndexOf('●') >= 0 ||
+                txt_Truong03_1.Text.ToString().IndexOf('?') >= 0 || txt_Truong03_1.Text.ToString().IndexOf('●') >= 0 ||
+                txt_Truong03_2.Text.ToString().IndexOf('?') >= 0 || txt_Truong03_2.Text.ToString().IndexOf('●') >= 0 ||
+                txt_Truong05.Text.ToString().IndexOf('?') >= 0 || txt_Truong05.Text.ToString().IndexOf('●') >= 0 ||
+                txt_Truong06.Text.ToString().IndexOf('?') >= 0 || txt_Truong06.Text.ToString().IndexOf('●') >= 0 ||
+                txt_Truong07.Text.ToString().IndexOf('?') >= 0 || txt_Truong07.Text.ToString().IndexOf('●') >= 0 ||
+                txt_Truong08.Text.ToString().IndexOf('?') >= 0 || txt_Truong08.Text.ToString().IndexOf('●') >= 0 ||
+                txt_Truong85.Text.ToString().IndexOf('?') >= 0 || txt_Truong85.Text.ToString().IndexOf('●') >= 0 ||
+                txt_Truong0.Text.ToString().IndexOf('?') >= 0 || txt_Truong0.Text.ToString().IndexOf('●') >= 0 ||
+                txt_Truong86.Text.ToString().IndexOf('?') >= 0 || txt_Truong86.Text.ToString().IndexOf('●') >= 0 ||
                 chk_qc.Checked)
             {
                 return true;

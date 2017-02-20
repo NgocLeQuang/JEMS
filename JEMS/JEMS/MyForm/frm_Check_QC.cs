@@ -343,10 +343,10 @@ namespace JEMS.MyForm
             {
                 tabcontrol_DeSo1.SelectedTabPage = tp_EIZEN_DeSo1;
                 uc_EZIEN1.txt_Truong02.Text = deso[0].Truong_02;
-                if (deso[0].Truong_03.Length > 8)
+                if (deso[0].Truong_03.Length > 6)
                 {
-                    uc_EZIEN1.txt_Truong03_1.Text = deso[0].Truong_03?.Substring(0, 8);
-                    uc_EZIEN1.txt_Truong03_2.Text = deso[0].Truong_03?.Substring(8, deso[0].Truong_03.Length - 8);
+                    uc_EZIEN1.txt_Truong03_1.Text = deso[0].Truong_03?.Substring(0, 6);
+                    uc_EZIEN1.txt_Truong03_2.Text = deso[0].Truong_03?.Substring(6, deso[0].Truong_03.Length - 6);
                 }
                 else
                 {
@@ -365,10 +365,10 @@ namespace JEMS.MyForm
 
                 tabcontrol_DeSo2.SelectedTabPage = tp_EIZEN_DeSo2;
                 uc_EZIEN2.txt_Truong02.Text = deso[1].Truong_02;
-                if (deso[1].Truong_03.Length > 8)
+                if (deso[1].Truong_03.Length > 6)
                 {
-                    uc_EZIEN2.txt_Truong03_1.Text = deso[1].Truong_03?.Substring(0, 8);
-                    uc_EZIEN2.txt_Truong03_2.Text = deso[1].Truong_03?.Substring(8, deso[1].Truong_03.Length - 8);
+                    uc_EZIEN2.txt_Truong03_1.Text = deso[1].Truong_03?.Substring(0, 6);
+                    uc_EZIEN2.txt_Truong03_2.Text = deso[1].Truong_03?.Substring(6, deso[1].Truong_03.Length - 6);
                 }
                 else
                 {
@@ -389,10 +389,10 @@ namespace JEMS.MyForm
                 tabcontrol_DeSo1.SelectedTabPage = tp_YAMAMOTO_DeSo1;
 
                 uc_YAMAMOTO1.txt_Truong02.Text = deso[0].Truong_02;
-                if (deso[0].Truong_03.Length > 8)
+                if (deso[0].Truong_03.Length > 6)
                 {
-                    uc_YAMAMOTO1.txt_Truong03_1.Text = deso[0].Truong_03?.Substring(0, 8);
-                    uc_YAMAMOTO1.txt_Truong03_2.Text = deso[0].Truong_03?.Substring(8, deso[0].Truong_03.Length - 8);
+                    uc_YAMAMOTO1.txt_Truong03_1.Text = deso[0].Truong_03?.Substring(0, 6);
+                    uc_YAMAMOTO1.txt_Truong03_2.Text = deso[0].Truong_03?.Substring(6, deso[0].Truong_03.Length - 6);
                 }
                 else
                 {
@@ -447,10 +447,10 @@ namespace JEMS.MyForm
 
                 tabcontrol_DeSo2.SelectedTabPage = tp_YAMAMOTO_DeSo2;
                 uc_YAMAMOTO2.txt_Truong02.Text = deso[1].Truong_02;
-                if (deso[1].Truong_03.Length > 8)
+                if (deso[1].Truong_03.Length > 6)
                 {
-                    uc_YAMAMOTO2.txt_Truong03_1.Text = deso[1].Truong_03?.Substring(0, 8);
-                    uc_YAMAMOTO2.txt_Truong03_2.Text = deso[1].Truong_03?.Substring(8, deso[1].Truong_03.Length - 8);
+                    uc_YAMAMOTO2.txt_Truong03_1.Text = deso[1].Truong_03?.Substring(0, 6);
+                    uc_YAMAMOTO2.txt_Truong03_2.Text = deso[1].Truong_03?.Substring(6, deso[1].Truong_03.Length - 6);
                 }
                 else
                 {
@@ -507,10 +507,10 @@ namespace JEMS.MyForm
                 tabcontrol_DeSo1.SelectedTabPage = tp_YASUDA_DeSo1;
 
                 uc_YASUDA1.txt_Truong02.Text = deso[0].Truong_02;
-                if (deso[0].Truong_03.Length > 8)
+                if (deso[0].Truong_03.Length > 6)
                 {
-                    uc_YASUDA1.txt_Truong03_1.Text = deso[0].Truong_03?.Substring(0, 8);
-                    uc_YASUDA1.txt_Truong03_2.Text = deso[0].Truong_03?.Substring(8, deso[0].Truong_03.Length - 8);
+                    uc_YASUDA1.txt_Truong03_1.Text = deso[0].Truong_03?.Substring(0, 6);
+                    uc_YASUDA1.txt_Truong03_2.Text = deso[0].Truong_03?.Substring(6, deso[0].Truong_03.Length - 6);
                 }
                 else
                 {
@@ -577,10 +577,10 @@ namespace JEMS.MyForm
 
                 tabcontrol_DeSo2.SelectedTabPage = tp_YASUDA_DeSo2;
                 uc_YASUDA2.txt_Truong02.Text = deso[1].Truong_02;
-                if (deso[1].Truong_03.Length > 8)
+                if (deso[1].Truong_03.Length > 6)
                 {
-                    uc_YASUDA2.txt_Truong03_1.Text = deso[1].Truong_03?.Substring(0, 8);
-                    uc_YASUDA2.txt_Truong03_2.Text = deso[1].Truong_03?.Substring(8, deso[1].Truong_03.Length - 8);
+                    uc_YASUDA2.txt_Truong03_1.Text = deso[1].Truong_03?.Substring(0, 6);
+                    uc_YASUDA2.txt_Truong03_2.Text = deso[1].Truong_03?.Substring(6, deso[1].Truong_03.Length - 6);
                 }
                 else
                 {
