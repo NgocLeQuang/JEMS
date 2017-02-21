@@ -205,6 +205,7 @@ namespace JEMS.MyForm
                         where w.fBatchName == strBatch && w.IdImage == idimage
                         select new
                         { w.UserName,
+                            w.Truong_0,
                             w.Truong_02,
                             w.Truong_03,
                             w.Truong_05,
@@ -298,6 +299,7 @@ namespace JEMS.MyForm
             if (Global.LoaiPhieu == "ASAHI")
             {
                 tabcontrol_DeSo1.SelectedTabPage = tp_ASAHI_DeSo1;
+                uc_ASAHI1.txt_Truong0.Text = deso[0].Truong_0;
                 uc_ASAHI1.txt_Truong02.Text = deso[0].Truong_02;
                 if (deso[0].Truong_03.Length > 8)
                 {
@@ -316,6 +318,7 @@ namespace JEMS.MyForm
 
 
                 tabcontrol_DeSo2.SelectedTabPage = tp_ASAHI_DeSo2;
+                uc_ASAHI2.txt_Truong0.Text = deso[1].Truong_0;
                 uc_ASAHI2.txt_Truong02.Text = deso[1].Truong_02;
                 if (deso[1].Truong_03.Length > 8)
                 {
@@ -337,6 +340,7 @@ namespace JEMS.MyForm
             {
                 tabcontrol_DeSo1.SelectedTabPage = tp_EIZEN_DeSo1;
 
+                uc_EZIEN1.txt_Truong0.Text = deso[0].Truong_0;
                 uc_EZIEN1.txt_Truong02.Text = deso[0].Truong_02;
                 if (deso[0].Truong_03.Length > 6)
                 {
@@ -357,6 +361,7 @@ namespace JEMS.MyForm
 
                 tabcontrol_DeSo2.SelectedTabPage = tp_EIZEN_DeSo2;
 
+                uc_EZIEN2.txt_Truong0.Text = deso[1].Truong_0;
                 uc_EZIEN2.txt_Truong02.Text = deso[1].Truong_02;
                 if (deso[1].Truong_03.Length > 6)
                 {
@@ -378,7 +383,7 @@ namespace JEMS.MyForm
             else if (Global.LoaiPhieu == "YAMAMOTO")
             {
                 tabcontrol_DeSo1.SelectedTabPage = tp_YAMAMOTO_DeSo1;
-
+                
                 uc_YAMAMOTO1.txt_Truong02.Text = deso[0].Truong_02;
                 if (deso[0].Truong_03.Length > 6)
                 {
@@ -434,7 +439,7 @@ namespace JEMS.MyForm
                 uc_YAMAMOTO1.txt_Truong86.Text = deso[0].Truong_86;
 
                 tabcontrol_DeSo2.SelectedTabPage = tp_YAMAMOTO_DeSo2;
-
+                
                 uc_YAMAMOTO2.txt_Truong02.Text = deso[1].Truong_02;
                 if (deso[1].Truong_03.Length > 6)
                 {
@@ -494,6 +499,7 @@ namespace JEMS.MyForm
             {
                 tabcontrol_DeSo1.SelectedTabPage = tp_YASUDA_DeSo1;
 
+                uc_YASUDA1.txt_Truong0.Text = deso[0].Truong_0;
                 uc_YASUDA1.txt_Truong02.Text = deso[0].Truong_02;
                 if (deso[0].Truong_03.Length > 6)
                 {
@@ -561,6 +567,7 @@ namespace JEMS.MyForm
 
                 tabcontrol_DeSo2.SelectedTabPage = tp_YASUDA_DeSo2;
 
+                uc_YASUDA2.txt_Truong0.Text = deso[1].Truong_0;
                 uc_YASUDA2.txt_Truong02.Text = deso[1].Truong_02;
                 if (deso[1].Truong_03.Length > 6)
                 {
@@ -914,7 +921,7 @@ namespace JEMS.MyForm
                 {
                     string txTtruong03 = uc_YAMAMOTO1.txt_Truong03_1.Text + uc_YAMAMOTO1.txt_Truong03_2.Text;
                     Global.db.SuaVaLuu_deso(lb_username1.Text, lb_username2.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
-                            uc_YAMAMOTO1.txt_Truong0.Text, uc_YAMAMOTO1.txt_Truong02.Text, txTtruong03, "", uc_YAMAMOTO1.txt_Truong05.Text, uc_YAMAMOTO1.txt_Truong06.Text, uc_YAMAMOTO1.txt_Truong07.Text, uc_YAMAMOTO1.txt_Truong08.Text,
+                            "", uc_YAMAMOTO1.txt_Truong02.Text, txTtruong03, "", uc_YAMAMOTO1.txt_Truong05.Text, uc_YAMAMOTO1.txt_Truong06.Text, uc_YAMAMOTO1.txt_Truong07.Text, uc_YAMAMOTO1.txt_Truong08.Text,
                             "", "", "", "", uc_YAMAMOTO1.txt_Truong13.Text, uc_YAMAMOTO1.txt_Truong14.Text, uc_YAMAMOTO1.txt_Truong15.Text, uc_YAMAMOTO1.txt_Truong16.Text,
                             "", "", "", "", uc_YAMAMOTO1.txt_Truong21.Text, uc_YAMAMOTO1.txt_Truong22.Text, uc_YAMAMOTO1.txt_Truong23.Text, uc_YAMAMOTO1.txt_Truong24.Text,
                             "", "", "", "", uc_YAMAMOTO1.txt_Truong29.Text, uc_YAMAMOTO1.txt_Truong30.Text, uc_YAMAMOTO1.txt_Truong31.Text, uc_YAMAMOTO1.txt_Truong32.Text,
@@ -1002,7 +1009,7 @@ namespace JEMS.MyForm
                 {
                     string txTtruong03 = uc_YAMAMOTO2.txt_Truong03_1.Text + uc_YAMAMOTO2.txt_Truong03_2.Text;
                     Global.db.SuaVaLuu_deso(lb_username2.Text, lb_username1.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
-                            uc_YAMAMOTO2.txt_Truong0.Text, uc_YAMAMOTO2.txt_Truong02.Text, txTtruong03, "", uc_YAMAMOTO2.txt_Truong05.Text, uc_YAMAMOTO2.txt_Truong06.Text, uc_YAMAMOTO2.txt_Truong07.Text, uc_YAMAMOTO2.txt_Truong08.Text,
+                            "", uc_YAMAMOTO2.txt_Truong02.Text, txTtruong03, "", uc_YAMAMOTO2.txt_Truong05.Text, uc_YAMAMOTO2.txt_Truong06.Text, uc_YAMAMOTO2.txt_Truong07.Text, uc_YAMAMOTO2.txt_Truong08.Text,
                             "", "", "", "", uc_YAMAMOTO2.txt_Truong13.Text, uc_YAMAMOTO2.txt_Truong14.Text, uc_YAMAMOTO2.txt_Truong15.Text, uc_YAMAMOTO2.txt_Truong16.Text,
                             "", "", "", "", uc_YAMAMOTO2.txt_Truong21.Text, uc_YAMAMOTO2.txt_Truong22.Text, uc_YAMAMOTO2.txt_Truong23.Text, uc_YAMAMOTO2.txt_Truong24.Text,
                             "", "", "", "", uc_YAMAMOTO2.txt_Truong29.Text, uc_YAMAMOTO2.txt_Truong30.Text, uc_YAMAMOTO2.txt_Truong31.Text, uc_YAMAMOTO2.txt_Truong32.Text,

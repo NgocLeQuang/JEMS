@@ -89,6 +89,8 @@ namespace JEMS.MyUserControl
                 txt_Truong85.Text.ToString().IndexOf('?') >= 0 || txt_Truong85.Text.ToString().IndexOf('●') >= 0 ||
                 txt_Truong0.Text.ToString().IndexOf('?') >= 0 || txt_Truong0.Text.ToString().IndexOf('●') >= 0 ||
                 txt_Truong86.Text.ToString().IndexOf('?') >= 0 || txt_Truong86.Text.ToString().IndexOf('●') >= 0 ||
+                (txt_Truong05.Text.ToString() == "" && (txt_Truong06.Text.ToString() != "" || txt_Truong07.Text.ToString() != "" || txt_Truong08.Text.ToString() != "")) ||
+                (txt_Truong05.Text.ToString() != "" && (txt_Truong06.Text.ToString() == "" && txt_Truong07.Text.ToString() == "" && txt_Truong08.Text.ToString() == "")) ||
                 chk_qc.Checked)
             {
                 return true;

@@ -853,7 +853,6 @@
     <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="Truong_0" Parameter="truong_0" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="Truong_02" Parameter="truong_02" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="Truong_03" Parameter="truong_03" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="Truong_05" Parameter="truong_05" Type="System.String" DbType="NVarChar(255)" />
@@ -972,14 +971,6 @@
     </ElementType>
   </Function>
   <Function Name="dbo.LuuDESo" Method="LuuDESo">
-    <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="UserNameDung" Parameter="userNameDung" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="UserNameSai" Parameter="userNameSai" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="UserChecker" Parameter="userChecker" Type="System.String" DbType="NVarChar(255)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.LuuDESo_QC" Method="LuuDESo_QC">
     <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="UserNameDung" Parameter="userNameDung" Type="System.String" DbType="NVarChar(255)" />
@@ -1225,5 +1216,14 @@
     <ElementType Name="UserMissImagecheckResult">
       <Column Name="UserName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.LuuDESo_QC" Method="LuuDESo_QC">
+    <Parameter Name="IdImage" Parameter="idImage" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="fBatchName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="UserNameDung" Parameter="userNameDung" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="UserNameSai" Parameter="userNameSai" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="UserChecker" Parameter="userChecker" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Check_QC" Parameter="check_QC" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

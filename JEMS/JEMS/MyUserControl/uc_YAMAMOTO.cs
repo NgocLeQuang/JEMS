@@ -92,7 +92,6 @@ namespace JEMS.MyUserControl
             txt_Truong80.ItemIndex = 0;
             
             txt_Truong85.Text = "";
-            txt_Truong0.Text = "";
             txt_Truong86.Text = "";
 
             txt_Truong02.BackColor = Color.White;
@@ -139,7 +138,6 @@ namespace JEMS.MyUserControl
             txt_Truong79.BackColor = Color.White;
             txt_Truong80.BackColor = Color.White;
             txt_Truong85.BackColor = Color.White;
-            txt_Truong0.BackColor = Color.White;
             txt_Truong86.BackColor = Color.White;
             chk_qc.Checked = false;
             txt_Truong02.Focus();
@@ -191,7 +189,6 @@ namespace JEMS.MyUserControl
                 string.IsNullOrEmpty(txt_Truong79.Text) &&
                 string.IsNullOrEmpty(txt_Truong80.Text) &&
                 string.IsNullOrEmpty(txt_Truong85.Text) &&
-                string.IsNullOrEmpty(txt_Truong0.Text) &&
                 string.IsNullOrEmpty(txt_Truong86.Text)&&
                 chk_qc.Checked==false)
                 return true;
@@ -243,8 +240,27 @@ namespace JEMS.MyUserControl
                 txt_Truong79.Text.ToString().IndexOf('?') >= 0 || txt_Truong79.Text.ToString().IndexOf('●') >= 0  ||
                 txt_Truong80.Text.ToString().IndexOf('?') >= 0 || txt_Truong80.Text.ToString().IndexOf('●') >= 0  ||
                 txt_Truong85.Text.ToString().IndexOf('?') >= 0 || txt_Truong85.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong0.Text.ToString().IndexOf('?') >= 0 || txt_Truong0.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong86.Text.ToString().IndexOf('?') >= 0 || txt_Truong86.Text.ToString().IndexOf('●') >= 0  ||
+                txt_Truong86.Text.ToString().IndexOf('?') >= 0 || txt_Truong86.Text.ToString().IndexOf('●') >= 0 ||
+                (txt_Truong05.Text.ToString() == "" && (txt_Truong06.Text.ToString() != "" || txt_Truong07.Text.ToString() != "" || txt_Truong08.Text.ToString() != "")) ||
+                (txt_Truong05.Text.ToString() != "" && (txt_Truong06.Text.ToString() == "" && txt_Truong07.Text.ToString() == "" && txt_Truong08.Text.ToString() == "")) ||
+                (txt_Truong13.Text.ToString() == "" && (txt_Truong14.Text.ToString() != "" || txt_Truong15.Text.ToString() != "" || txt_Truong16.Text.ToString() != "")) ||
+                (txt_Truong13.Text.ToString() != "" && (txt_Truong14.Text.ToString() == "" && txt_Truong15.Text.ToString() == "" && txt_Truong16.Text.ToString() == "")) ||
+                (txt_Truong21.Text.ToString() == "" && (txt_Truong22.Text.ToString() != "" || txt_Truong23.Text.ToString() != "" || txt_Truong24.Text.ToString() != "")) ||
+                (txt_Truong21.Text.ToString() != "" && (txt_Truong22.Text.ToString() == "" && txt_Truong23.Text.ToString() == "" && txt_Truong24.Text.ToString() == "")) ||
+                (txt_Truong29.Text.ToString() == "" && (txt_Truong30.Text.ToString() != "" || txt_Truong31.Text.ToString() != "" || txt_Truong32.Text.ToString() != "")) ||
+                (txt_Truong29.Text.ToString() != "" && (txt_Truong30.Text.ToString() == "" && txt_Truong31.Text.ToString() == "" && txt_Truong32.Text.ToString() == "")) ||
+                (txt_Truong37.Text.ToString() == "" && (txt_Truong38.Text.ToString() != "" || txt_Truong39.Text.ToString() != "" || txt_Truong40.Text.ToString() != "")) ||
+                (txt_Truong37.Text.ToString() != "" && (txt_Truong38.Text.ToString() == "" && txt_Truong39.Text.ToString() == "" && txt_Truong40.Text.ToString() == "")) ||
+                (txt_Truong45.Text.ToString() == "" && (txt_Truong46.Text.ToString() != "" || txt_Truong47.Text.ToString() != "" || txt_Truong48.Text.ToString() != "")) ||
+                (txt_Truong45.Text.ToString() != "" && (txt_Truong46.Text.ToString() == "" && txt_Truong47.Text.ToString() == "" && txt_Truong48.Text.ToString() == "")) ||
+                (txt_Truong53.Text.ToString() == "" && (txt_Truong54.Text.ToString() != "" || txt_Truong55.Text.ToString() != "" || txt_Truong56.Text.ToString() != "")) ||
+                (txt_Truong53.Text.ToString() != "" && (txt_Truong54.Text.ToString() == "" && txt_Truong55.Text.ToString() == "" && txt_Truong56.Text.ToString() == "")) ||
+                (txt_Truong61.Text.ToString() == "" && (txt_Truong62.Text.ToString() != "" || txt_Truong63.Text.ToString() != "" || txt_Truong64.Text.ToString() != "")) ||
+                (txt_Truong61.Text.ToString() != "" && (txt_Truong62.Text.ToString() == "" && txt_Truong63.Text.ToString() == "" && txt_Truong64.Text.ToString() == "")) ||
+                (txt_Truong69.Text.ToString() == "" && (txt_Truong70.Text.ToString() != "" || txt_Truong71.Text.ToString() != "" || txt_Truong72.Text.ToString() != "")) ||
+                (txt_Truong69.Text.ToString() != "" && (txt_Truong70.Text.ToString() == "" && txt_Truong71.Text.ToString() == "" && txt_Truong72.Text.ToString() == "")) ||
+                (txt_Truong77.Text.ToString() == "" && (txt_Truong78.Text.ToString() != "" || txt_Truong79.Text.ToString() != "" || txt_Truong80.Text.ToString() != "")) ||
+                (txt_Truong77.Text.ToString() != "" && (txt_Truong78.Text.ToString() == "" && txt_Truong79.Text.ToString() == "" && txt_Truong80.Text.ToString() == "")) ||
                 chk_qc.Checked)
             {
                 return true;
@@ -575,28 +591,6 @@ namespace JEMS.MyUserControl
         {
             Set_txtLengColumn4(sender, e, txt_Truong80);
         }
-        private void txt_Truong0_EditValueChanged(object sender, EventArgs e)
-        {
-            if (txt_Truong0.Text.ToString().IndexOf('?') >= 0)
-                txt_Truong0.Text = "?";
-            if (txt_Truong0.Text != txt_Truong02.Text && txt_Truong0.Text != "" && txt_Truong0.Text != "?" && txt_Truong0.Text.ToString().IndexOf('●') < 0)
-            {
-                txt_Truong0.BackColor = Color.Red;
-                txt_Truong0.ForeColor = Color.White;
-                txt_Truong02.BackColor = Color.Red;
-                txt_Truong02.ForeColor = Color.White;
-            }
-            else
-            {
-                txt_Truong0.BackColor = Color.White;
-                txt_Truong0.ForeColor = Color.Black;
-                txt_Truong02.BackColor = Color.White;
-                txt_Truong02.ForeColor = Color.Black;
-            }
-            if (Changed != null)
-                Changed(sender, e);
-        }
-        
         private void txt_Truong86_EditValueChanged(object sender, EventArgs e)
         {
             if (txt_Truong86.Text.ToString().IndexOf('?') >= 0)
@@ -711,7 +705,6 @@ namespace JEMS.MyUserControl
             txt_Truong79.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong80.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong85.GotFocus += Txt_Truong02_GotFocus;
-            txt_Truong0.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong86.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong02.Focus();
         }
@@ -727,7 +720,7 @@ namespace JEMS.MyUserControl
                 txtTruong03 = "?";
             //Save Data
             
-            Global.db.Insert_YAMAMOTO(  idImage, Global.StrBatch, Global.StrUsername, txt_Truong0.Text, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,txt_Truong08.Text,
+            Global.db.Insert_YAMAMOTO(  idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,txt_Truong08.Text,
                                              txt_Truong13.Text, txt_Truong14.Text, txt_Truong15.Text, txt_Truong16.Text,
                                              txt_Truong21.Text, txt_Truong22.Text, txt_Truong23.Text, txt_Truong24.Text,
                                              txt_Truong29.Text, txt_Truong30.Text, txt_Truong31.Text, txt_Truong32.Text,

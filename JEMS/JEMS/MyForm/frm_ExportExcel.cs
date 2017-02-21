@@ -643,10 +643,10 @@ namespace JEMS.MyForm
                     wrksheet.Cells[h, 31] = dr.Cells[30].Value != null ? dr.Cells[30].Value.ToString() : "";
                     wrksheet.Cells[h, 32] = dr.Cells[31].Value != null ? dr.Cells[31].Value.ToString() : "";
 
-                    wrksheet.Cells[h, 37] = dr.Cells[36].Value != null ? dr.Cells[35].Value.ToString() : "";
-                    wrksheet.Cells[h, 38] = dr.Cells[37].Value != null ? dr.Cells[36].Value.ToString() : "";
-                    wrksheet.Cells[h, 39] = dr.Cells[38].Value != null ? dr.Cells[37].Value.ToString() : "";
-                    wrksheet.Cells[h, 40] = dr.Cells[39].Value != null ? dr.Cells[38].Value.ToString() : "";
+                    wrksheet.Cells[h, 37] = dr.Cells[36].Value != null ? dr.Cells[36].Value.ToString() : "";
+                    wrksheet.Cells[h, 38] = dr.Cells[37].Value != null ? dr.Cells[37].Value.ToString() : "";
+                    wrksheet.Cells[h, 39] = dr.Cells[38].Value != null ? dr.Cells[38].Value.ToString() : "";
+                    wrksheet.Cells[h, 40] = dr.Cells[39].Value != null ? dr.Cells[39].Value.ToString() : "";
 
                     wrksheet.Cells[h, 45] = dr.Cells[44].Value != null ? dr.Cells[44].Value.ToString() : "";
                     wrksheet.Cells[h, 46] = dr.Cells[45].Value != null ? dr.Cells[45].Value.ToString() : "";
@@ -891,10 +891,10 @@ namespace JEMS.MyForm
                     wrksheet.Cells[h, 31] = dr.Cells[30].Value != null ? dr.Cells[30].Value.ToString() : "";
                     wrksheet.Cells[h, 32] = dr.Cells[31].Value != null ? dr.Cells[31].Value.ToString() : "";
 
-                    wrksheet.Cells[h, 37] = dr.Cells[36].Value != null ? dr.Cells[35].Value.ToString() : "";
-                    wrksheet.Cells[h, 38] = dr.Cells[37].Value != null ? dr.Cells[36].Value.ToString() : "";
-                    wrksheet.Cells[h, 39] = dr.Cells[38].Value != null ? dr.Cells[37].Value.ToString() : "";
-                    wrksheet.Cells[h, 40] = dr.Cells[39].Value != null ? dr.Cells[38].Value.ToString() : "";
+                    wrksheet.Cells[h, 37] = dr.Cells[36].Value != null ? dr.Cells[36].Value.ToString() : "";
+                    wrksheet.Cells[h, 38] = dr.Cells[37].Value != null ? dr.Cells[37].Value.ToString() : "";
+                    wrksheet.Cells[h, 39] = dr.Cells[38].Value != null ? dr.Cells[38].Value.ToString() : "";
+                    wrksheet.Cells[h, 40] = dr.Cells[39].Value != null ? dr.Cells[39].Value.ToString() : "";
 
                     wrksheet.Cells[h, 45] = dr.Cells[44].Value != null ? dr.Cells[44].Value.ToString() : "";
                     wrksheet.Cells[h, 46] = dr.Cells[45].Value != null ? dr.Cells[45].Value.ToString() : "";

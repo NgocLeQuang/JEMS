@@ -287,7 +287,27 @@ namespace JEMS.MyUserControl
                 txt_Truong85.Text.ToString().IndexOf('?') >= 0  || txt_Truong85.Text.ToString().IndexOf('●') >= 0  ||
                 txt_Truong0.Text.ToString().IndexOf('?') >= 0  || txt_Truong0.Text.ToString().IndexOf('●') >= 0  ||
                 txt_Truong87.Text.ToString().IndexOf('?') >= 0  || txt_Truong87.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong91.Text.ToString().IndexOf('?') >= 0  || txt_Truong91.Text.ToString().IndexOf('●') >= 0  ||
+                txt_Truong91.Text.ToString().IndexOf('?') >= 0  || txt_Truong91.Text.ToString().IndexOf('●') >= 0 ||
+                (txt_Truong05.Text.ToString() == "" && (txt_Truong06.Text.ToString() != "" || txt_Truong07.Text.ToString() != "" || txt_Truong08.Text.ToString() != "")) ||
+                (txt_Truong05.Text.ToString() != "" && (txt_Truong06.Text.ToString() == "" && txt_Truong07.Text.ToString() == "" && txt_Truong08.Text.ToString() == "")) ||
+                (txt_Truong13.Text.ToString() == "" && (txt_Truong14.Text.ToString() != "" || txt_Truong15.Text.ToString() != "" || txt_Truong16.Text.ToString() != "")) ||
+                (txt_Truong13.Text.ToString() != "" && (txt_Truong14.Text.ToString() == "" && txt_Truong15.Text.ToString() == "" && txt_Truong16.Text.ToString() == "")) ||
+                (txt_Truong21.Text.ToString() == "" && (txt_Truong22.Text.ToString() != "" || txt_Truong23.Text.ToString() != "" || txt_Truong24.Text.ToString() != "")) ||
+                (txt_Truong21.Text.ToString() != "" && (txt_Truong22.Text.ToString() == "" && txt_Truong23.Text.ToString() == "" && txt_Truong24.Text.ToString() == "")) ||
+                (txt_Truong29.Text.ToString() == "" && (txt_Truong30.Text.ToString() != "" || txt_Truong31.Text.ToString() != "" || txt_Truong32.Text.ToString() != "")) ||
+                (txt_Truong29.Text.ToString() != "" && (txt_Truong30.Text.ToString() == "" && txt_Truong31.Text.ToString() == "" && txt_Truong32.Text.ToString() == "")) ||
+                (txt_Truong37.Text.ToString() == "" && (txt_Truong38.Text.ToString() != "" || txt_Truong39.Text.ToString() != "" || txt_Truong40.Text.ToString() != "")) ||
+                (txt_Truong37.Text.ToString() != "" && (txt_Truong38.Text.ToString() == "" && txt_Truong39.Text.ToString() == "" && txt_Truong40.Text.ToString() == "")) ||
+                (txt_Truong45.Text.ToString() == "" && (txt_Truong46.Text.ToString() != "" || txt_Truong47.Text.ToString() != "" || txt_Truong48.Text.ToString() != "")) ||
+                (txt_Truong45.Text.ToString() != "" && (txt_Truong46.Text.ToString() == "" && txt_Truong47.Text.ToString() == "" && txt_Truong48.Text.ToString() == "")) ||
+                (txt_Truong53.Text.ToString() == "" && (txt_Truong54.Text.ToString() != "" || txt_Truong55.Text.ToString() != "" || txt_Truong56.Text.ToString() != "")) ||
+                (txt_Truong53.Text.ToString() != "" && (txt_Truong54.Text.ToString() == "" && txt_Truong55.Text.ToString() == "" && txt_Truong56.Text.ToString() == "")) ||
+                (txt_Truong61.Text.ToString() == "" && (txt_Truong62.Text.ToString() != "" || txt_Truong63.Text.ToString() != "" || txt_Truong64.Text.ToString() != "")) ||
+                (txt_Truong61.Text.ToString() != "" && (txt_Truong62.Text.ToString() == "" && txt_Truong63.Text.ToString() == "" && txt_Truong64.Text.ToString() == "")) ||
+                (txt_Truong69.Text.ToString() == "" && (txt_Truong70.Text.ToString() != "" || txt_Truong71.Text.ToString() != "" || txt_Truong72.Text.ToString() != "")) ||
+                (txt_Truong69.Text.ToString() != "" && (txt_Truong70.Text.ToString() == "" && txt_Truong71.Text.ToString() == "" && txt_Truong72.Text.ToString() == "")) ||
+                (txt_Truong77.Text.ToString() == "" && (txt_Truong78.Text.ToString() != "" || txt_Truong79.Text.ToString() != "" || txt_Truong80.Text.ToString() != "")) ||
+                (txt_Truong77.Text.ToString() != "" && (txt_Truong78.Text.ToString() == "" && txt_Truong79.Text.ToString() == "" && txt_Truong80.Text.ToString() == "")) ||
                 chk_qc.Checked)
             {
                 return true;

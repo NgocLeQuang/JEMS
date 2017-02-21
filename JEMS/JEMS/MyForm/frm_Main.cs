@@ -17,7 +17,7 @@ namespace JEMS.MyForm
             if (Global.StrRole == "DESO")
             {
                 lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images
-                                        where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch && w.UserNameDESo != Global.StrUsername
+                                        where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch &&( w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "")
                                         select w.idimage).Count().ToString();
                 lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs
                                          where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch

@@ -303,7 +303,6 @@ namespace JEMS
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_0", DbType="NVarChar(255)")] string truong_0, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_02", DbType="NVarChar(255)")] string truong_02, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_03", DbType="NVarChar(255)")] string truong_03, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_05", DbType="NVarChar(255)")] string truong_05, 
@@ -350,7 +349,7 @@ namespace JEMS
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Truong_86", DbType="NVarChar(255)")] string truong_86, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_0, truong_02, truong_03, truong_05, truong_06, truong_07, truong_08, truong_13, truong_14, truong_15, truong_16, truong_21, truong_22, truong_23, truong_24, truong_29, truong_30, truong_31, truong_32, truong_37, truong_38, truong_39, truong_40, truong_45, truong_46, truong_47, truong_48, truong_53, truong_54, truong_55, truong_56, truong_61, truong_62, truong_63, truong_64, truong_69, truong_70, truong_71, truong_72, truong_77, truong_78, truong_79, truong_80, truong_85, truong_86, check_QC);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_02, truong_03, truong_05, truong_06, truong_07, truong_08, truong_13, truong_14, truong_15, truong_16, truong_21, truong_22, truong_23, truong_24, truong_29, truong_30, truong_31, truong_32, truong_37, truong_38, truong_39, truong_40, truong_45, truong_46, truong_47, truong_48, truong_53, truong_54, truong_55, truong_56, truong_61, truong_62, truong_63, truong_64, truong_69, truong_70, truong_71, truong_72, truong_77, truong_78, truong_79, truong_80, truong_85, truong_86, check_QC);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -430,13 +429,6 @@ namespace JEMS
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LuuDESo")]
 		public int LuuDESo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNameDung", DbType="NVarChar(255)")] string userNameDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNameSai", DbType="NVarChar(255)")] string userNameSai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserChecker", DbType="NVarChar(255)")] string userChecker)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userNameDung, userNameSai, userChecker);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LuuDESo_QC")]
-		public int LuuDESo_QC([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNameDung", DbType="NVarChar(255)")] string userNameDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNameSai", DbType="NVarChar(255)")] string userNameSai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserChecker", DbType="NVarChar(255)")] string userChecker)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userNameDung, userNameSai, userChecker);
 			return ((int)(result.ReturnValue));
@@ -683,6 +675,13 @@ namespace JEMS
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fbatchname);
 			return ((ISingleResult<UserMissImagecheckResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LuuDESo_QC")]
+		public int LuuDESo_QC([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdImage", DbType="NVarChar(255)")] string idImage, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string fBatchName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNameDung", DbType="NVarChar(255)")] string userNameDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNameSai", DbType="NVarChar(255)")] string userNameSai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserChecker", DbType="NVarChar(255)")] string userChecker, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Check_QC", DbType="Bit")] System.Nullable<bool> check_QC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userNameDung, userNameSai, userChecker, check_QC);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
