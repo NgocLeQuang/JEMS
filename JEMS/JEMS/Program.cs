@@ -48,8 +48,8 @@ namespace JEMS
                 a.btn_thoat.Text = "Thoát";
                 a.chb_hienthi.Text = "Hiển Thị";
                 a.chb_luu.Text = "Lưu";
-                a.lb_version.Text = @"1.0";
-                a.UrlUpdateVersion = @"\\10.10.10.254\DE_Viet\2017\...";
+                a.lb_version.Text = @"1.0.1";
+                a.UrlUpdateVersion = @"\\10.10.10.254\DE_Viet\2017\JEMS\Tools";
                 a.LoginEvent += a_LoginEvent;
                 a.ButtonLoginEven += a_ButtonLoginEven;
                 if (a.ShowDialog() == DialogResult.OK)
