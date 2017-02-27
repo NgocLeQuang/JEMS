@@ -25,6 +25,7 @@ namespace JEMS.MyForm
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.ZoomImage = Convert.ToInt32(trackBarControl1.EditValue);
+            Properties.Settings.Default.Save();
             MessageBox.Show("Thay đổi Zoom thành công!");
             this.Close();
         }

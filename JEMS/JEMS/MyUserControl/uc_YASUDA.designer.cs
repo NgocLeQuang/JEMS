@@ -138,7 +138,7 @@
             this.txt_Truong76 = new DevExpress.XtraEditors.TextEdit();
             this.txt_Truong84 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl55 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_Truong91 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_Truong92 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl57 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl56 = new DevExpress.XtraEditors.LabelControl();
             this.chk_qc = new DevExpress.XtraEditors.CheckEdit();
@@ -199,7 +199,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong68.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong76.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong84.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong91.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong92.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_qc.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1031,7 +1031,7 @@
             this.labelControl38.Appearance.ForeColor = System.Drawing.Color.Green;
             this.labelControl38.Appearance.Options.UseFont = true;
             this.labelControl38.Appearance.Options.UseForeColor = true;
-            this.labelControl38.Location = new System.Drawing.Point(5, 221);
+            this.labelControl38.Location = new System.Drawing.Point(5, 217);
             this.labelControl38.Name = "labelControl38";
             this.labelControl38.Size = new System.Drawing.Size(17, 13);
             this.labelControl38.TabIndex = 0;
@@ -1120,7 +1120,7 @@
             this.labelControl42.Appearance.ForeColor = System.Drawing.Color.Green;
             this.labelControl42.Appearance.Options.UseFont = true;
             this.labelControl42.Appearance.Options.UseForeColor = true;
-            this.labelControl42.Location = new System.Drawing.Point(5, 244);
+            this.labelControl42.Location = new System.Drawing.Point(5, 241);
             this.labelControl42.Name = "labelControl42";
             this.labelControl42.Size = new System.Drawing.Size(17, 13);
             this.labelControl42.TabIndex = 0;
@@ -1423,14 +1423,14 @@
             this.labelControl55.TabIndex = 0;
             this.labelControl55.Text = "7.";
             // 
-            // txt_Truong91
+            // txt_Truong92
             // 
-            this.txt_Truong91.Location = new System.Drawing.Point(215, 285);
-            this.txt_Truong91.Name = "txt_Truong91";
-            this.txt_Truong91.Properties.Mask.EditMask = "[0-9?●]+";
-            this.txt_Truong91.Size = new System.Drawing.Size(100, 20);
-            this.txt_Truong91.TabIndex = 54;
-            this.txt_Truong91.EditValueChanged += new System.EventHandler(this.txt_Truong91_EditValueChanged);
+            this.txt_Truong92.Location = new System.Drawing.Point(215, 285);
+            this.txt_Truong92.Name = "txt_Truong92";
+            this.txt_Truong92.Properties.Mask.EditMask = "[0-9?●]+";
+            this.txt_Truong92.Size = new System.Drawing.Size(100, 20);
+            this.txt_Truong92.TabIndex = 54;
+            this.txt_Truong92.EditValueChanged += new System.EventHandler(this.txt_Truong91_EditValueChanged);
             // 
             // labelControl57
             // 
@@ -1442,7 +1442,7 @@
             this.labelControl57.Name = "labelControl57";
             this.labelControl57.Size = new System.Drawing.Size(17, 13);
             this.labelControl57.TabIndex = 0;
-            this.labelControl57.Text = "91.";
+            this.labelControl57.Text = "92.";
             // 
             // labelControl56
             // 
@@ -1482,7 +1482,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelControl54);
             this.Controls.Add(this.chk_qc);
-            this.Controls.Add(this.txt_Truong91);
+            this.Controls.Add(this.txt_Truong92);
             this.Controls.Add(this.txt_Truong84);
             this.Controls.Add(this.txt_Truong76);
             this.Controls.Add(this.txt_Truong68);
@@ -1654,7 +1654,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong68.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong76.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong84.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong91.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong92.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_qc.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1773,7 +1773,7 @@
         public DevExpress.XtraEditors.TextEdit txt_Truong76;
         public DevExpress.XtraEditors.TextEdit txt_Truong84;
         public DevExpress.XtraEditors.LabelControl labelControl55;
-        public DevExpress.XtraEditors.TextEdit txt_Truong91;
+        public DevExpress.XtraEditors.TextEdit txt_Truong92;
         public DevExpress.XtraEditors.LabelControl labelControl57;
         public DevExpress.XtraEditors.LabelControl labelControl56;
         public DevExpress.XtraEditors.CheckEdit chk_qc;

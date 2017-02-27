@@ -344,7 +344,7 @@ namespace JEMS.MyUserControl
         {
             if (tb.Text.ToString().IndexOf('?') >= 0)
                 tb.Text = "?";
-            if (tb.Text.Length != 2 && tb.Text != "" && tb.Text != "?" && tb.Text.ToString().IndexOf('●') < 0)
+            if ((tb.Text.Length < 2 || tb.Text.Length > 3) && tb.Text != "" && tb.Text != "?" && tb.Text.ToString().IndexOf('●') < 0)
             {
                 tb.BackColor = Color.Red;
                 tb.ForeColor = Color.White;
@@ -374,8 +374,6 @@ namespace JEMS.MyUserControl
         }
         private void Set_txtLengColumn4(object sender, EventArgs e, TextEdit tb)
         {
-            if (tb.Text.ToString().IndexOf('?') >= 0)
-                tb.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
         }

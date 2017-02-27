@@ -563,7 +563,7 @@ namespace JEMS.MyForm
                 uc_YASUDA1.txt_Truong84.Text = deso[0].Truong_84;
                 uc_YASUDA1.txt_Truong85.Text = deso[0].Truong_85;
                 uc_YASUDA1.txt_Truong87.Text = deso[0].Truong_87;
-                uc_YASUDA1.txt_Truong91.Text = deso[0].Truong_91;
+                uc_YASUDA1.txt_Truong92.Text = deso[0].Truong_91;
 
                 tabcontrol_DeSo2.SelectedTabPage = tp_YASUDA_DeSo2;
 
@@ -631,7 +631,7 @@ namespace JEMS.MyForm
                 uc_YASUDA2.txt_Truong84.Text = deso[1].Truong_84;
                 uc_YASUDA2.txt_Truong85.Text = deso[1].Truong_85;
                 uc_YASUDA2.txt_Truong87.Text = deso[1].Truong_87;
-                uc_YASUDA2.txt_Truong91.Text = deso[1].Truong_91;
+                uc_YASUDA2.txt_Truong92.Text = deso[1].Truong_91;
             }
 
             Compare_TextBox(uc_ASAHI1.txt_Truong02, uc_ASAHI2.txt_Truong02);
@@ -756,7 +756,7 @@ namespace JEMS.MyForm
             Compare_TextBox(uc_YASUDA1.txt_Truong84, uc_YASUDA2.txt_Truong84);
             Compare_TextBox(uc_YASUDA1.txt_Truong85, uc_YASUDA2.txt_Truong85);
             Compare_TextBox(uc_YASUDA1.txt_Truong87, uc_YASUDA2.txt_Truong87);
-            Compare_TextBox(uc_YASUDA1.txt_Truong91, uc_YASUDA2.txt_Truong91);
+            Compare_TextBox(uc_YASUDA1.txt_Truong92, uc_YASUDA2.txt_Truong92);
 
 
 
@@ -945,9 +945,9 @@ namespace JEMS.MyForm
                             "", "", "", uc_YASUDA1.txt_Truong44.Text, uc_YASUDA1.txt_Truong45.Text, uc_YASUDA1.txt_Truong46.Text, uc_YASUDA1.txt_Truong47.Text, uc_YASUDA1.txt_Truong48.Text,
                             "", "", "", uc_YASUDA1.txt_Truong52.Text, uc_YASUDA1.txt_Truong53.Text, uc_YASUDA1.txt_Truong54.Text, uc_YASUDA1.txt_Truong55.Text, uc_YASUDA1.txt_Truong56.Text,
                             "", "", "", uc_YASUDA1.txt_Truong60.Text, uc_YASUDA1.txt_Truong61.Text, uc_YASUDA1.txt_Truong62.Text, uc_YASUDA1.txt_Truong63.Text, uc_YASUDA1.txt_Truong64.Text,
-                            "", "", "", uc_YASUDA1.txt_Truong69.Text, uc_YASUDA1.txt_Truong69.Text, uc_YASUDA1.txt_Truong70.Text, uc_YASUDA1.txt_Truong71.Text, uc_YASUDA1.txt_Truong72.Text,
+                            "", "", "", uc_YASUDA1.txt_Truong68.Text, uc_YASUDA1.txt_Truong69.Text, uc_YASUDA1.txt_Truong70.Text, uc_YASUDA1.txt_Truong71.Text, uc_YASUDA1.txt_Truong72.Text,
                             "", "", "", uc_YASUDA1.txt_Truong76.Text, uc_YASUDA1.txt_Truong77.Text, uc_YASUDA1.txt_Truong78.Text, uc_YASUDA1.txt_Truong79.Text, uc_YASUDA1.txt_Truong80.Text,
-                            "", "", "", uc_YASUDA1.txt_Truong84.Text, uc_YASUDA1.txt_Truong85.Text,"", uc_YASUDA1.txt_Truong87.Text, "", "", "", uc_YASUDA1.txt_Truong91.Text, "", "", "", "", "", "", "", uc_YASUDA1.CheckQC());
+                            "", "", "", uc_YASUDA1.txt_Truong84.Text, uc_YASUDA1.txt_Truong85.Text,"", uc_YASUDA1.txt_Truong87.Text, "", "", "", uc_YASUDA1.txt_Truong92.Text, "", "", "", "", "", "", "", uc_YASUDA1.CheckQC());
                 }
                 ResetData();
 
@@ -1035,7 +1035,7 @@ namespace JEMS.MyForm
                             "", "", "", uc_YASUDA2.txt_Truong60.Text, uc_YASUDA2.txt_Truong61.Text, uc_YASUDA2.txt_Truong62.Text, uc_YASUDA2.txt_Truong63.Text, uc_YASUDA2.txt_Truong64.Text,
                             "", "", "", uc_YASUDA2.txt_Truong68.Text, uc_YASUDA2.txt_Truong69.Text, uc_YASUDA2.txt_Truong70.Text, uc_YASUDA2.txt_Truong71.Text, uc_YASUDA2.txt_Truong72.Text,
                             "", "", "", uc_YASUDA2.txt_Truong76.Text, uc_YASUDA2.txt_Truong77.Text, uc_YASUDA2.txt_Truong78.Text, uc_YASUDA2.txt_Truong79.Text, uc_YASUDA2.txt_Truong80.Text,
-                            "", "", "", uc_YASUDA2.txt_Truong84.Text, uc_YASUDA2.txt_Truong85.Text, "", uc_YASUDA2.txt_Truong87.Text, "", "", "", uc_YASUDA2.txt_Truong91.Text, "", "", "", "", "", "", "", uc_YASUDA2.CheckQC());
+                            "", "", "", uc_YASUDA2.txt_Truong84.Text, uc_YASUDA2.txt_Truong85.Text, "", uc_YASUDA2.txt_Truong87.Text, "", "", "", uc_YASUDA2.txt_Truong92.Text, "", "", "", "", "", "", "", uc_YASUDA2.CheckQC());
                 }
                 ResetData();
 

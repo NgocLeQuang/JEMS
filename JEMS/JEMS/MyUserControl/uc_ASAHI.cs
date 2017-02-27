@@ -164,7 +164,7 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong05.Text.ToString().IndexOf('?') >= 0)
                 txt_Truong05.Text = "?";
-            if (txt_Truong05.Text.Length != 2 && txt_Truong05.Text != "" && txt_Truong05.Text != "?" && txt_Truong05.Text.ToString().IndexOf('●') < 0)
+            if ((txt_Truong05.Text.Length < 2|| txt_Truong05.Text.Length >3) && txt_Truong05.Text != "" && txt_Truong05.Text != "?" && txt_Truong05.Text.ToString().IndexOf('●') < 0)
             {
                 txt_Truong05.BackColor = Color.Red;
                 txt_Truong05.ForeColor = Color.White;

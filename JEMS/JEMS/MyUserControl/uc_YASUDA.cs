@@ -103,6 +103,7 @@ namespace JEMS.MyUserControl
             txt_Truong85.Text = "";
             txt_Truong0.Text = "";
             txt_Truong87.Text = "";
+            txt_Truong92.Text = "";
 
             txt_Truong02.BackColor = Color.White;
             txt_Truong03_1.BackColor = Color.White;
@@ -160,7 +161,7 @@ namespace JEMS.MyUserControl
             txt_Truong85.BackColor = Color.White;
             txt_Truong0.BackColor = Color.White;
             txt_Truong87.BackColor = Color.White;
-            txt_Truong91.BackColor = Color.White;
+            txt_Truong92.BackColor = Color.White;
             chk_qc.Checked = false;
             txt_Truong02.Focus();
         }
@@ -223,7 +224,7 @@ namespace JEMS.MyUserControl
                 string.IsNullOrEmpty(txt_Truong85.Text) &&
                 string.IsNullOrEmpty(txt_Truong0.Text) &&
                 string.IsNullOrEmpty(txt_Truong87.Text) &&
-                string.IsNullOrEmpty(txt_Truong91.Text)&&
+                string.IsNullOrEmpty(txt_Truong92.Text)&&
                 chk_qc.Checked==false)
                 return true;
             return false;
@@ -287,7 +288,7 @@ namespace JEMS.MyUserControl
                 txt_Truong85.Text.ToString().IndexOf('?') >= 0  || txt_Truong85.Text.ToString().IndexOf('●') >= 0  ||
                 txt_Truong0.Text.ToString().IndexOf('?') >= 0  || txt_Truong0.Text.ToString().IndexOf('●') >= 0  ||
                 txt_Truong87.Text.ToString().IndexOf('?') >= 0  || txt_Truong87.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong91.Text.ToString().IndexOf('?') >= 0  || txt_Truong91.Text.ToString().IndexOf('●') >= 0 ||
+                txt_Truong92.Text.ToString().IndexOf('?') >= 0  || txt_Truong92.Text.ToString().IndexOf('●') >= 0 ||
                 (txt_Truong05.Text.ToString() == "" && (txt_Truong06.Text.ToString() != "" || txt_Truong07.Text.ToString() != "" || txt_Truong08.Text.ToString() != "")) ||
                 (txt_Truong05.Text.ToString() != "" && (txt_Truong06.Text.ToString() == "" && txt_Truong07.Text.ToString() == "" && txt_Truong08.Text.ToString() == "")) ||
                 (txt_Truong13.Text.ToString() == "" && (txt_Truong14.Text.ToString() != "" || txt_Truong15.Text.ToString() != "" || txt_Truong16.Text.ToString() != "")) ||
@@ -392,7 +393,7 @@ namespace JEMS.MyUserControl
         {
             if (tb.Text.ToString().IndexOf('?') >= 0)
                 tb.Text = "?";
-            if (tb.Text.Length != 2 && tb.Text != "" && tb.Text != "?" && tb.Text.ToString().IndexOf('●') < 0)
+            if ((tb.Text.Length < 2 || tb.Text.Length > 3) && tb.Text != "" && tb.Text != "?" && tb.Text.ToString().IndexOf('●') < 0)
             {
                 tb.BackColor = Color.Red;
                 tb.ForeColor = Color.White;
@@ -422,8 +423,6 @@ namespace JEMS.MyUserControl
         }
         private void Set_txtLengColumn4(object sender, EventArgs e, TextEdit tb)
         {
-            if (tb.Text.ToString().IndexOf('?') >= 0)
-                tb.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
         }
@@ -841,7 +840,7 @@ namespace JEMS.MyUserControl
             txt_Truong85.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong0.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong87.GotFocus += Txt_Truong02_GotFocus;
-            txt_Truong91.GotFocus += Txt_Truong02_GotFocus;
+            txt_Truong92.GotFocus += Txt_Truong02_GotFocus;
         }
 
         private void Txt_Truong02_GotFocus(object sender, EventArgs e)
@@ -865,30 +864,30 @@ namespace JEMS.MyUserControl
                                              txt_Truong60.Text, txt_Truong61.Text, txt_Truong62.Text, txt_Truong63.Text, txt_Truong64.Text,
                                              txt_Truong68.Text, txt_Truong69.Text, txt_Truong70.Text, txt_Truong71.Text, txt_Truong72.Text,
                                              txt_Truong76.Text, txt_Truong77.Text, txt_Truong78.Text, txt_Truong79.Text, txt_Truong80.Text,
-                                             txt_Truong84.Text, txt_Truong85.Text, txt_Truong87.Text, txt_Truong91.Text, CheckQC());
+                                             txt_Truong84.Text, txt_Truong85.Text, txt_Truong87.Text, txt_Truong92.Text, CheckQC());
         }
 
         private void txt_Truong91_EditValueChanged(object sender, EventArgs e)
         {
-            if (txt_Truong91.Text.ToString().IndexOf('?') >= 0)
-                txt_Truong91.Text = "?";
-            if (txt_Truong91.Text != "" && txt_Truong91.Text != "?" && txt_Truong91.Text.ToString().IndexOf('●') < 0)
+            if (txt_Truong92.Text.ToString().IndexOf('?') >= 0)
+                txt_Truong92.Text = "?";
+            if (txt_Truong92.Text != "" && txt_Truong92.Text != "?" && txt_Truong92.Text.ToString().IndexOf('●') < 0)
             {
-                if (txt_Truong91.Text.Length != 6)
+                if (txt_Truong92.Text.Length != 6)
                 {
-                    txt_Truong91.BackColor = Color.Red;
-                    txt_Truong91.ForeColor = Color.White;
+                    txt_Truong92.BackColor = Color.Red;
+                    txt_Truong92.ForeColor = Color.White;
                 }
                 else
                 {
-                    txt_Truong91.BackColor = Color.White;
-                    txt_Truong91.ForeColor = Color.Black;
+                    txt_Truong92.BackColor = Color.White;
+                    txt_Truong92.ForeColor = Color.Black;
                 }
             }
             else
             {
-                txt_Truong91.BackColor = Color.White;
-                txt_Truong91.ForeColor = Color.Black;
+                txt_Truong92.BackColor = Color.White;
+                txt_Truong92.ForeColor = Color.Black;
             }
             if (Changed != null)
                 Changed(sender, e);

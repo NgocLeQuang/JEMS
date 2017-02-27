@@ -852,6 +852,7 @@ namespace JEMS.MyForm
                 return false;
             }
         }
+
         public bool TableToExcel_YAMAMOTO_QC(String strfilename)
         {
             try
@@ -927,7 +928,7 @@ namespace JEMS.MyForm
 
 
                     wrksheet.Cells[h, 85] = dr.Cells[84].Value != null ? dr.Cells[84].Value.ToString() : "";  //85
-
+                    
                     string Truong_86 = "";
                     if (!string.IsNullOrEmpty(dr.Cells[85].Value != null ? dr.Cells[85].Value.ToString() : ""))
                     {
@@ -1262,7 +1263,7 @@ namespace JEMS.MyForm
                     }
 
                     wrksheet.Cells[h, 87] = Truong_87;  //87
-                    wrksheet.Cells[h, 91] = dr.Cells[90].Value != null ? dr.Cells[90].Value.ToString() : "";  //91
+                    wrksheet.Cells[h, 92] = dr.Cells[90].Value != null ? dr.Cells[90].Value.ToString() : "";  //91
 
                     lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
                     Range rowHead = wrksheet.get_Range("A3", "CN" + h);
@@ -1458,7 +1459,7 @@ namespace JEMS.MyForm
 
                     wrksheet.Cells[h, 87] = Truong_87;  //87
 
-                    wrksheet.Cells[h, 91] = dr.Cells[90].Value != null ? dr.Cells[90].Value.ToString() : "";  //91
+                    wrksheet.Cells[h, 92] = dr.Cells[90].Value != null ? dr.Cells[90].Value.ToString() : "";  //91
 
                     lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
                     Range rowHead = wrksheet.get_Range("A3", "CN" + h);

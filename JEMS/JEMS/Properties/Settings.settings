@@ -21,5 +21,11 @@
     <Setting Name="ZoomImage" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">40</Value>
     </Setting>
+    <Setting Name="Zoom_Ngang" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1750</Value>
+    </Setting>
+    <Setting Name="Zoom_Doc" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1150</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
