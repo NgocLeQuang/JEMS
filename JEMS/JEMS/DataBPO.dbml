@@ -133,15 +133,6 @@
     <Parameter Name="token" Type="System.String" DbType="NVarChar(255)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.InsertLoginTime" Method="InsertLoginTime">
-    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="TimeLogin" Parameter="timeLogin" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="WindowUser" Parameter="windowUser" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="MachineName" Parameter="machineName" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="IPAddress" Parameter="iPAddress" Type="System.String" DbType="NVarChar(100)" />
-    <Parameter Name="Token" Parameter="token" Type="System.String" DbType="NVarChar(100)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.KiemTraLogin" Method="KiemTraLogin">
     <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(100)" />
     <Parameter Name="password" Type="System.String" DbType="NVarChar(100)" />
@@ -201,6 +192,16 @@
   </Function>
   <Function Name="dbo.UpdateTimeLastRequest" Method="UpdateTimeLastRequest">
     <Parameter Name="Token" Parameter="token" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertLoginTime_new" Method="InsertLoginTime_new">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="TimeLogin" Parameter="timeLogin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="WindowUser" Parameter="windowUser" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="MachineName" Parameter="machineName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="IPAddress" Parameter="iPAddress" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Token" Parameter="token" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="project" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

@@ -132,7 +132,13 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "Thời gian";
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn5.Caption = "Thời gian (h)";
             this.gridColumn5.FieldName = "ThoiGian";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;

@@ -47,15 +47,14 @@ namespace JEMS
                 a.btn_thoat.Text = "Thoát";
                 a.chb_hienthi.Text = "Hiển Thị";
                 a.chb_luu.Text = "Lưu";
-                a.lb_version.Text = @"1.0.7";
+                a.lb_version.Text = @"1.0.8";
                 a.UrlUpdateVersion = @"\\10.10.10.254\DE_Viet\2017\JEMS\Tools";
                 a.LoginEvent += a_LoginEvent;
                 a.ButtonLoginEven += a_ButtonLoginEven;
                 if (a.ShowDialog() == DialogResult.OK)
                 {
                     Global.StrMachine = a.StrMachine;
-                    Global.StrUserWindow = a.StrUserWindow;
-                    Global.StrIpAddress = a.StrIpAddress;
+                    Global.StrUserWindow = a.StrUserWindow;Global.StrIpAddress = a.StrIpAddress;
                     Global.StrUsername = a.StrUserName;
                     Global.StrBatch = a.StrBatch;
                     Global.StrRole = a.StrRole;
@@ -83,7 +82,7 @@ namespace JEMS
                     if (token == "")
                     {
                         Global.db_BPO.updateToken(strUsername, Global.StrIdProject, strToken);
-                        Global.db_BPO.InsertLoginTime(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken);
+                        Global.db_BPO.InsertLoginTime_new(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken, Global.StrIdProject);
                         LoginOk = true;
                     }
                     else
@@ -91,7 +90,7 @@ namespace JEMS
                         if (MessageBox.Show("User này đã đăng nhập ở máy khác. Bạn có muốn tiếp tục đăng nhập?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
                             Global.db_BPO.updateToken(strUsername, Global.StrIdProject, strToken);
-                            Global.db_BPO.InsertLoginTime(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken);
+                            Global.db_BPO.InsertLoginTime_new(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken, Global.StrIdProject);
                             LoginOk = true;
                         }
                         else
@@ -111,7 +110,7 @@ namespace JEMS
                     Global.db_BPO.SubmitChanges();
                     LoginOk = true;
                     Global.db_BPO.updateToken(strUsername, Global.StrIdProject, strToken);
-                    Global.db_BPO.InsertLoginTime(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken);
+                    Global.db_BPO.InsertLoginTime_new(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken,Global.StrIdProject);
                 }
             }
         }
