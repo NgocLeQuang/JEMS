@@ -77,7 +77,7 @@ namespace JEMS.MyUserControl
             imageBox1.AllowZoom = false;
         }
 
-        private void btn_Xoaytrai_Click(object sender, EventArgs e)
+        public void btn_Xoaytrai_Click(object sender, EventArgs e)
         {
            // MessageBox.Show(trackBar_Ngang.Value.ToString() + "/" + trackBar_Doc.Value.ToString());
             if (imageBox1.Image != null)
@@ -91,7 +91,7 @@ namespace JEMS.MyUserControl
             }
         }
 
-        private void btn_xoayphai_Click(object sender, EventArgs e)
+        public void btn_xoayphai_Click(object sender, EventArgs e)
         {
             if (imageBox1.Image != null)
             {

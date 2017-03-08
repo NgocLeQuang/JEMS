@@ -53,6 +53,7 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_delete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_grouplevel.Properties)).BeginInit();
@@ -235,7 +236,8 @@
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn5,
-            this.gridColumn6});
+            this.gridColumn6,
+            this.gridColumn7});
             this.gridView1.GridControl = this.dgv_listuser;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
@@ -310,6 +312,12 @@
             this.btn_delete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_delete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btn_delete_ButtonClick);
             // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "NotGoodUser";
+            this.gridColumn7.FieldName = "NotGoodUser";
+            this.gridColumn7.Name = "gridColumn7";
+            // 
             // frm_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,5 +372,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_delete;
         private DevExpress.XtraEditors.TextEdit txt_FullName;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
     }
 }

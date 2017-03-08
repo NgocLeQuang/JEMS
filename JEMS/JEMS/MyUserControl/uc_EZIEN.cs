@@ -41,8 +41,7 @@ namespace JEMS.MyUserControl
             txt_Truong03_2.Text = "";
             txt_Truong05.Text = "";
             txt_Truong06.Text = "";
-            txt_Truong07.Text = "";
-            txt_Truong08.ItemIndex = 0;
+            txt_Truong07.Text = "";txt_Truong08.ItemIndex = 0;
             txt_Truong85.Text = "";
             txt_Truong0.Text = "";
             txt_Truong86.Text = "";

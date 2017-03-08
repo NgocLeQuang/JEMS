@@ -254,7 +254,7 @@ namespace JEMS.MyForm
                 }
                 string savePath = "";
                 saveFileDialog1.Title = "Save Excel Files";
-                saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
+                saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
                 saveFileDialog1.FileName = cbb_Batch.Text;
                 saveFileDialog1.RestoreDirectory = true;
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -286,47 +286,57 @@ namespace JEMS.MyForm
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Global.db.ExportExcel_ASAHI_QC(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
-                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "",
+                    true, false, 0, true, false, false);
                 Sheets _sheet = book.Sheets;
-                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
+                Worksheet wrksheet = (Worksheet) book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    int ii = Convert.ToInt32(dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().IndexOf(".").ToString() : "0");
-                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().Substring(0, ii) : "";   //tên ảnh
-                    wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : "";   //truong 02
-                    wrksheet.Cells[h, 3] = dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "";    //03
-                    wrksheet.Cells[h, 5] = dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "";   //05
-                    wrksheet.Cells[h, 6] = dr.Cells[4].Value != null ? dr.Cells[4].Value.ToString() : "";   //06
-                    wrksheet.Cells[h, 8] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";   //08
-                    wrksheet.Cells[h, 85] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";  //85
+                    int ii =
+                        Convert.ToInt32(dr.Cells[0].Value != null
+                            ? dr.Cells[0].Value.ToString().IndexOf(".").ToString()
+                            : "0");
+                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null
+                        ? dr.Cells[0].Value.ToString().Substring(0, ii)
+                        : ""; //tên ảnh
+                    wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : ""; //truong 02
+                    wrksheet.Cells[h, 3] = dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : ""; //03
+                    wrksheet.Cells[h, 5] = dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : ""; //05
+                    wrksheet.Cells[h, 6] = dr.Cells[4].Value != null ? dr.Cells[4].Value.ToString() : ""; //06
+                    wrksheet.Cells[h, 8] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : ""; //08
+                    wrksheet.Cells[h, 85] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : ""; //85
 
                     lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
                     Range rowHead = wrksheet.get_Range("A3", "CG" + h);
                     rowHead.Borders.LineStyle = Constants.xlSolid;
                     h++;
                 }
-                string savePath = "";
-                saveFileDialog1.Title = "Save Excel Files";
-                saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
-                saveFileDialog1.FileName = cbb_Batch.Text+"_QC";
-                saveFileDialog1.RestoreDirectory = true;
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                if (dataGridView1.Rows.Count >= 1)
                 {
-                    book.SaveCopyAs(saveFileDialog1.FileName);
-                    book.Saved = true;
-                    savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
-                    App.Quit();
+                    string savePath = "";
+                    saveFileDialog1.Title = "Save Excel Files";
+                    saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
+                    saveFileDialog1.FileName = cbb_Batch.Text + "_QC";
+                    saveFileDialog1.RestoreDirectory = true;
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        book.SaveCopyAs(saveFileDialog1.FileName);
+                        book.Saved = true;
+                        savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                        App.Quit();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi xuất excel!");
+                        return false;
+                    }
+                    Process.Start(savePath);
                 }
-                else
-                {
-                    MessageBox.Show("Lỗi khi xuất excel!");
-                    return false;
-                }
-                Process.Start(savePath);
                 return true;
             }
-            catch (Exception ex)
+            catch
+                (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return false;
@@ -445,7 +455,7 @@ namespace JEMS.MyForm
                 }
                 string savePath = "";
                 saveFileDialog1.Title = "Save Excel Files";
-                saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
+                saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
                 saveFileDialog1.FileName = cbb_Batch.Text;
                 saveFileDialog1.RestoreDirectory = true;
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -578,24 +588,27 @@ namespace JEMS.MyForm
                     rowHead.Borders.LineStyle = Constants.xlSolid;
                     h++;
                 }
-                string savePath = "";
-                saveFileDialog1.Title = "Save Excel Files";
-                saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
-                saveFileDialog1.FileName = cbb_Batch.Text+"_QC";
-                saveFileDialog1.RestoreDirectory = true;
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                if (dataGridView1.Rows.Count >= 1)
                 {
-                    book.SaveCopyAs(saveFileDialog1.FileName);
-                    book.Saved = true;
-                    savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
-                    App.Quit();
+                    string savePath = "";
+                    saveFileDialog1.Title = "Save Excel Files";
+                    saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
+                    saveFileDialog1.FileName = cbb_Batch.Text + "_QC";
+                    saveFileDialog1.RestoreDirectory = true;
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        book.SaveCopyAs(saveFileDialog1.FileName);
+                        book.Saved = true;
+                        savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                        App.Quit();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi xuất excel!");
+                        return false;
+                    }
+                    Process.Start(savePath);
                 }
-                else
-                {
-                    MessageBox.Show("Lỗi khi xuất excel!");
-                    return false;
-                }
-                Process.Start(savePath);
                 return true;
             }
             catch (Exception ex)
@@ -828,7 +841,7 @@ namespace JEMS.MyForm
                 }
                 string savePath = "";
                 saveFileDialog1.Title = "Save Excel Files";
-                saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
+                saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
                 saveFileDialog1.FileName = cbb_Batch.Text;
                 saveFileDialog1.RestoreDirectory = true;
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -1075,24 +1088,27 @@ namespace JEMS.MyForm
                     rowHead.Borders.LineStyle = Constants.xlSolid;
                     h++;
                 }
-                string savePath = "";
-                saveFileDialog1.Title = "Save Excel Files";
-                saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
-                saveFileDialog1.FileName = cbb_Batch.Text+"_QC";
-                saveFileDialog1.RestoreDirectory = true;
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                if (dataGridView1.Rows.Count >= 1)
                 {
-                    book.SaveCopyAs(saveFileDialog1.FileName);
-                    book.Saved = true;
-                    savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
-                    App.Quit();
+                    string savePath = "";
+                    saveFileDialog1.Title = "Save Excel Files";
+                    saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
+                    saveFileDialog1.FileName = cbb_Batch.Text + "_QC";
+                    saveFileDialog1.RestoreDirectory = true;
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        book.SaveCopyAs(saveFileDialog1.FileName);
+                        book.Saved = true;
+                        savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                        App.Quit();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi xuất excel!");
+                        return false;
+                    }
+                    Process.Start(savePath);
                 }
-                else
-                {
-                    MessageBox.Show("Lỗi khi xuất excel!");
-                    return false;
-                }
-                Process.Start(savePath);
                 return true;
             }
             catch (Exception ex)
@@ -1272,7 +1288,7 @@ namespace JEMS.MyForm
                 }
                 string savePath = "";
                 saveFileDialog1.Title = "Save Excel Files";
-                saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
+                saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
                 saveFileDialog1.FileName = cbb_Batch.Text;
                 saveFileDialog1.RestoreDirectory = true;
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -1466,25 +1482,27 @@ namespace JEMS.MyForm
                     rowHead.Borders.LineStyle = Constants.xlSolid;
                     h++;
                 }
-                string savePath = "";
-                saveFileDialog1.Title = "Save Excel Files";
-                saveFileDialog1.Filter = "Excel files (*.xls)|*.xls";
-                saveFileDialog1.FileName = cbb_Batch.Text+"_QC";
-                saveFileDialog1.RestoreDirectory = true;
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                if (dataGridView1.Rows.Count >= 1)
                 {
-                    book.SaveCopyAs(saveFileDialog1.FileName);
-                    book.Saved = true;
-                    savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
-                    App.Quit();
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi khi xuất excel!");
-                    return false;
-                }
-                Process.Start(savePath);
-                return true;
+                    string savePath = "";
+                    saveFileDialog1.Title = "Save Excel Files";
+                    saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
+                    saveFileDialog1.FileName = cbb_Batch.Text + "_QC";
+                    saveFileDialog1.RestoreDirectory = true;
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        book.SaveCopyAs(saveFileDialog1.FileName);
+                        book.Saved = true;
+                        savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                        App.Quit();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi xuất excel!");
+                        return false;
+                    }
+                    Process.Start(savePath);
+                }return true;
             }
             catch (Exception ex)
             {

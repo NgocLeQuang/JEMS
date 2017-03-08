@@ -2,6 +2,7 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using DevExpress.LookAndFeel;
 using JEMS.Properties;
 
 namespace JEMS.MyForm
@@ -145,6 +146,7 @@ namespace JEMS.MyForm
         {
             try
             {
+                Global.db_BPO.UpdateTimeLastRequest(Global.Strtoken);
                 //Kiểm tra token
                 var token = (from w in Global.db_BPO.tbl_TokenLogins
                              where w.UserName == Global.StrUsername && w.IDProject == Global.StrIdProject
@@ -253,7 +255,7 @@ namespace JEMS.MyForm
         {
             try
             {
-                //Kiểm tra token
+                Global.db_BPO.UpdateTimeLastRequest(Global.Strtoken);//Kiểm tra token
                 var token = (from w in Global.db_BPO.tbl_TokenLogins
                              where w.UserName == Global.StrUsername && w.IDProject == Global.StrIdProject
                              select w.Token).FirstOrDefault();
@@ -338,6 +340,17 @@ namespace JEMS.MyForm
         {
             if (e.Control && e.KeyCode == Keys.Enter)
                 btn_Start_Submit_Click(null, null);
+            if (e.Control && e.KeyCode == Keys.PageUp)
+                uc_PictureBox1.btn_Xoaytrai_Click(null, null);
+            if (e.Control && e.KeyCode == Keys.PageDown)
+                uc_PictureBox1.btn_xoayphai_Click(null, null);
+            if (e.KeyCode == Keys.Escape)
+            {
+                new frm_FreeTime().ShowDialog();
+                Global.db_BPO.UpdateTimeFree(Global.Strtoken, Global.FreeTime);
+            }
+            //if (e.KeyCode == Keys.Enter && tabControl_Main.SelectedTabPage == tp_YASUDA_Main)
+            //    uc_YASUDA1.txt_Truong03_1.Focus();
         }
 
         private void btn_checkqc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -348,7 +361,9 @@ namespace JEMS.MyForm
 
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Global.db_BPO.ResetToken(Global.StrUsername, Global.StrIdProject,Global.Strtoken);
+            Global.db_BPO.UpdateTimeLastRequest(Global.Strtoken);Global.db_BPO.UpdateTimeLogout(Global.Strtoken);
+            Global.db_BPO.ResetToken(Global.StrUsername, Global.StrIdProject, Global.Strtoken);
+            Settings.Default.Save();
         }
 
         private void btn_xuatexcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -363,7 +378,12 @@ namespace JEMS.MyForm
 
         private void btn_tiendo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            new frm_TienDo().ShowDialog();
+            new frm_TienDo().ShowDialog();}
+
+        private void btn_Pause_Click(object sender, EventArgs e)
+        {
+            new frm_FreeTime().ShowDialog();
+            Global.db_BPO.UpdateTimeFree(Global.Strtoken, Global.FreeTime);
         }
     }
 }

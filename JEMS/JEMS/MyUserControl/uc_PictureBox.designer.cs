@@ -171,13 +171,13 @@
         #endregion
 
         public ImageGlass.ImageBox imageBox1;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton btn_xoayphai;
-        private DevExpress.XtraEditors.SimpleButton btn_Xoaytrai;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
         public System.Windows.Forms.TrackBar trackBar_Ngang;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
-        private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.TrackBar trackBar_Doc;
+        public DevExpress.XtraEditors.PanelControl panelControl1;
+        public DevExpress.XtraEditors.SimpleButton btn_xoayphai;
+        public DevExpress.XtraEditors.SimpleButton btn_Xoaytrai;
+        public DevExpress.XtraEditors.PanelControl panelControl2;
+        public DevExpress.XtraEditors.PanelControl panelControl3;
+        public System.Windows.Forms.Panel panel1;
     }
 }

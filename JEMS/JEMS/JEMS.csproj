@@ -87,17 +87,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataEntryBPO.designer.cs">
+    <Compile Include="DataBPO.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataEntryBPO.dbml</DependentUpon>
+      <DependentUpon>DataBPO.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Global.cs" />
     <Compile Include="DataJEMS.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataJEMS.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="MyForm\frm_ChangeZoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +133,12 @@
     </Compile>
     <Compile Include="MyForm\frm_ExportExcel.designer.cs">
       <DependentUpon>frm_ExportExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\frm_FreeTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_FreeTime.designer.cs">
+      <DependentUpon>frm_FreeTime.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\frm_Main.cs">
       <SubType>Form</SubType>
@@ -197,11 +203,16 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="app.config" />
-    <None Include="DataEntryBPO.dbml.layout">
-      <DependentUpon>DataEntryBPO.dbml</DependentUpon>
+    <None Include="DataBPO.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataBPO.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="DataJEMS.dbml.layout">
       <DependentUpon>DataJEMS.dbml</DependentUpon>
+    </None>
+    <None Include="DataBPO.dbml.layout">
+      <DependentUpon>DataBPO.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="MyForm\frm_ChangeZoom.resx">
       <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
@@ -220,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_ExportExcel.resx">
       <DependentUpon>frm_ExportExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\frm_FreeTime.resx">
+      <DependentUpon>frm_FreeTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
@@ -262,11 +276,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataEntryBPO.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataEntryBPO.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="DataJEMS.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataJEMS.designer.cs</LastGenOutput>

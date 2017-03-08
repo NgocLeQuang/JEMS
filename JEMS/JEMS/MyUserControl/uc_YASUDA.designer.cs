@@ -232,7 +232,7 @@
             this.txt_Truong03_1.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong03_1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong03_1.Size = new System.Drawing.Size(153, 20);
-            this.txt_Truong03_1.TabIndex = 52;
+            this.txt_Truong03_1.TabIndex = 7;
             this.txt_Truong03_1.EditValueChanged += new System.EventHandler(this.txt_Truong03_1_EditValueChanged);
             // 
             // labelControl2
@@ -302,7 +302,7 @@
             this.txt_Truong03_2.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong03_2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong03_2.Size = new System.Drawing.Size(153, 20);
-            this.txt_Truong03_2.TabIndex = 53;
+            this.txt_Truong03_2.TabIndex = 8;
             this.txt_Truong03_2.EditValueChanged += new System.EventHandler(this.txt_Truong03_2_EditValueChanged);
             // 
             // txt_Truong05
@@ -332,7 +332,7 @@
             this.txt_Truong85.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong85.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong85.Size = new System.Drawing.Size(153, 20);
-            this.txt_Truong85.TabIndex = 55;
+            this.txt_Truong85.TabIndex = 10;
             this.txt_Truong85.EditValueChanged += new System.EventHandler(this.txt_Truong85_EditValueChanged);
             // 
             // txt_Truong08
@@ -342,6 +342,7 @@
             this.txt_Truong08.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Truong08.Properties.NullText = "";
+            this.txt_Truong08.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txt_Truong08.Size = new System.Drawing.Size(72, 20);
             this.txt_Truong08.TabIndex = 5;
             this.txt_Truong08.EditValueChanged += new System.EventHandler(this.txt_Truong08_EditValueChanged);
@@ -365,7 +366,7 @@
             this.txt_Truong0.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong0.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong0.Size = new System.Drawing.Size(153, 20);
-            this.txt_Truong0.TabIndex = 56;
+            this.txt_Truong0.TabIndex = 11;
             this.txt_Truong0.EditValueChanged += new System.EventHandler(this.txt_Truong0_EditValueChanged);
             // 
             // labelControl8
@@ -421,7 +422,7 @@
             this.txt_Truong13.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong13.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong13.Size = new System.Drawing.Size(30, 20);
-            this.txt_Truong13.TabIndex = 7;
+            this.txt_Truong13.TabIndex = 14;
             this.txt_Truong13.EditValueChanged += new System.EventHandler(this.txt_Truong13_EditValueChanged);
             // 
             // labelControl11
@@ -443,7 +444,7 @@
             this.txt_Truong14.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong14.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong14.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong14.TabIndex = 8;
+            this.txt_Truong14.TabIndex = 15;
             this.txt_Truong14.EditValueChanged += new System.EventHandler(this.txt_Truong14_EditValueChanged);
             // 
             // labelControl12
@@ -465,7 +466,7 @@
             this.txt_Truong15.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong15.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong15.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong15.TabIndex = 9;
+            this.txt_Truong15.TabIndex = 16;
             this.txt_Truong15.EditValueChanged += new System.EventHandler(this.txt_Truong15_EditValueChanged);
             // 
             // labelControl13
@@ -487,8 +488,9 @@
             this.txt_Truong16.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Truong16.Properties.NullText = "";
+            this.txt_Truong16.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txt_Truong16.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong16.TabIndex = 10;
+            this.txt_Truong16.TabIndex = 17;
             this.txt_Truong16.EditValueChanged += new System.EventHandler(this.txt_Truong16_EditValueChanged);
             // 
             // labelControl14
@@ -546,7 +548,7 @@
             this.txt_Truong21.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong21.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong21.Size = new System.Drawing.Size(30, 20);
-            this.txt_Truong21.TabIndex = 12;
+            this.txt_Truong21.TabIndex = 19;
             this.txt_Truong21.EditValueChanged += new System.EventHandler(this.txt_Truong21_EditValueChanged);
             // 
             // txt_Truong22
@@ -556,7 +558,7 @@
             this.txt_Truong22.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong22.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong22.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong22.TabIndex = 13;
+            this.txt_Truong22.TabIndex = 20;
             this.txt_Truong22.EditValueChanged += new System.EventHandler(this.txt_Truong22_EditValueChanged);
             // 
             // txt_Truong23
@@ -566,7 +568,7 @@
             this.txt_Truong23.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong23.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong23.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong23.TabIndex = 14;
+            this.txt_Truong23.TabIndex = 21;
             this.txt_Truong23.EditValueChanged += new System.EventHandler(this.txt_Truong23_EditValueChanged);
             // 
             // txt_Truong24
@@ -576,8 +578,9 @@
             this.txt_Truong24.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Truong24.Properties.NullText = "";
+            this.txt_Truong24.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txt_Truong24.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong24.TabIndex = 15;
+            this.txt_Truong24.TabIndex = 22;
             this.txt_Truong24.EditValueChanged += new System.EventHandler(this.txt_Truong24_EditValueChanged);
             // 
             // labelControl18
@@ -635,7 +638,7 @@
             this.txt_Truong29.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong29.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong29.Size = new System.Drawing.Size(30, 20);
-            this.txt_Truong29.TabIndex = 17;
+            this.txt_Truong29.TabIndex = 24;
             this.txt_Truong29.EditValueChanged += new System.EventHandler(this.txt_Truong29_EditValueChanged);
             // 
             // txt_Truong30
@@ -645,7 +648,7 @@
             this.txt_Truong30.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong30.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong30.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong30.TabIndex = 18;
+            this.txt_Truong30.TabIndex = 25;
             this.txt_Truong30.EditValueChanged += new System.EventHandler(this.txt_Truong30_EditValueChanged);
             // 
             // txt_Truong31
@@ -655,7 +658,7 @@
             this.txt_Truong31.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong31.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong31.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong31.TabIndex = 19;
+            this.txt_Truong31.TabIndex = 26;
             this.txt_Truong31.EditValueChanged += new System.EventHandler(this.txt_Truong31_EditValueChanged);
             // 
             // txt_Truong32
@@ -665,8 +668,9 @@
             this.txt_Truong32.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Truong32.Properties.NullText = "";
+            this.txt_Truong32.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txt_Truong32.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong32.TabIndex = 20;
+            this.txt_Truong32.TabIndex = 27;
             this.txt_Truong32.EditValueChanged += new System.EventHandler(this.txt_Truong32_EditValueChanged);
             // 
             // labelControl22
@@ -724,7 +728,7 @@
             this.txt_Truong37.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong37.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong37.Size = new System.Drawing.Size(30, 20);
-            this.txt_Truong37.TabIndex = 22;
+            this.txt_Truong37.TabIndex = 29;
             this.txt_Truong37.EditValueChanged += new System.EventHandler(this.txt_Truong37_EditValueChanged);
             // 
             // txt_Truong38
@@ -734,7 +738,7 @@
             this.txt_Truong38.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong38.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong38.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong38.TabIndex = 23;
+            this.txt_Truong38.TabIndex = 30;
             this.txt_Truong38.EditValueChanged += new System.EventHandler(this.txt_Truong38_EditValueChanged);
             // 
             // txt_Truong39
@@ -744,7 +748,7 @@
             this.txt_Truong39.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong39.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong39.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong39.TabIndex = 24;
+            this.txt_Truong39.TabIndex = 31;
             this.txt_Truong39.EditValueChanged += new System.EventHandler(this.txt_Truong39_EditValueChanged);
             // 
             // txt_Truong40
@@ -754,8 +758,9 @@
             this.txt_Truong40.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Truong40.Properties.NullText = "";
+            this.txt_Truong40.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txt_Truong40.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong40.TabIndex = 25;
+            this.txt_Truong40.TabIndex = 32;
             this.txt_Truong40.EditValueChanged += new System.EventHandler(this.txt_Truong40_EditValueChanged);
             // 
             // labelControl26
@@ -813,7 +818,7 @@
             this.txt_Truong45.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong45.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong45.Size = new System.Drawing.Size(30, 20);
-            this.txt_Truong45.TabIndex = 27;
+            this.txt_Truong45.TabIndex = 34;
             this.txt_Truong45.EditValueChanged += new System.EventHandler(this.txt_Truong45_EditValueChanged);
             // 
             // txt_Truong46
@@ -823,7 +828,7 @@
             this.txt_Truong46.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong46.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong46.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong46.TabIndex = 28;
+            this.txt_Truong46.TabIndex = 35;
             this.txt_Truong46.EditValueChanged += new System.EventHandler(this.txt_Truong46_EditValueChanged);
             // 
             // txt_Truong47
@@ -833,7 +838,7 @@
             this.txt_Truong47.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong47.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong47.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong47.TabIndex = 29;
+            this.txt_Truong47.TabIndex = 36;
             this.txt_Truong47.EditValueChanged += new System.EventHandler(this.txt_Truong47_EditValueChanged);
             // 
             // txt_Truong48
@@ -843,8 +848,9 @@
             this.txt_Truong48.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Truong48.Properties.NullText = "";
+            this.txt_Truong48.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txt_Truong48.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong48.TabIndex = 30;
+            this.txt_Truong48.TabIndex = 37;
             this.txt_Truong48.EditValueChanged += new System.EventHandler(this.txt_Truong48_EditValueChanged);
             // 
             // labelControl30
@@ -902,7 +908,7 @@
             this.txt_Truong53.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong53.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong53.Size = new System.Drawing.Size(30, 20);
-            this.txt_Truong53.TabIndex = 32;
+            this.txt_Truong53.TabIndex = 39;
             this.txt_Truong53.EditValueChanged += new System.EventHandler(this.txt_Truong53_EditValueChanged);
             // 
             // txt_Truong54
@@ -912,7 +918,7 @@
             this.txt_Truong54.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong54.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong54.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong54.TabIndex = 33;
+            this.txt_Truong54.TabIndex = 40;
             this.txt_Truong54.EditValueChanged += new System.EventHandler(this.txt_Truong54_EditValueChanged);
             // 
             // txt_Truong55
@@ -922,7 +928,7 @@
             this.txt_Truong55.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong55.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong55.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong55.TabIndex = 34;
+            this.txt_Truong55.TabIndex = 41;
             this.txt_Truong55.EditValueChanged += new System.EventHandler(this.txt_Truong55_EditValueChanged);
             // 
             // txt_Truong56
@@ -932,8 +938,9 @@
             this.txt_Truong56.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Truong56.Properties.NullText = "";
+            this.txt_Truong56.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txt_Truong56.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong56.TabIndex = 35;
+            this.txt_Truong56.TabIndex = 42;
             this.txt_Truong56.EditValueChanged += new System.EventHandler(this.txt_Truong56_EditValueChanged);
             // 
             // labelControl34
@@ -991,7 +998,7 @@
             this.txt_Truong61.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong61.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong61.Size = new System.Drawing.Size(30, 20);
-            this.txt_Truong61.TabIndex = 37;
+            this.txt_Truong61.TabIndex = 44;
             this.txt_Truong61.EditValueChanged += new System.EventHandler(this.txt_Truong61_EditValueChanged);
             // 
             // txt_Truong62
@@ -1001,7 +1008,7 @@
             this.txt_Truong62.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong62.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong62.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong62.TabIndex = 38;
+            this.txt_Truong62.TabIndex = 45;
             this.txt_Truong62.EditValueChanged += new System.EventHandler(this.txt_Truong62_EditValueChanged);
             // 
             // txt_Truong63
@@ -1011,7 +1018,7 @@
             this.txt_Truong63.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong63.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong63.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong63.TabIndex = 39;
+            this.txt_Truong63.TabIndex = 46;
             this.txt_Truong63.EditValueChanged += new System.EventHandler(this.txt_Truong63_EditValueChanged);
             // 
             // txt_Truong64
@@ -1021,8 +1028,9 @@
             this.txt_Truong64.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Truong64.Properties.NullText = "";
+            this.txt_Truong64.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txt_Truong64.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong64.TabIndex = 40;
+            this.txt_Truong64.TabIndex = 47;
             this.txt_Truong64.EditValueChanged += new System.EventHandler(this.txt_Truong64_EditValueChanged);
             // 
             // labelControl38
@@ -1080,7 +1088,7 @@
             this.txt_Truong69.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong69.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong69.Size = new System.Drawing.Size(30, 20);
-            this.txt_Truong69.TabIndex = 42;
+            this.txt_Truong69.TabIndex = 49;
             this.txt_Truong69.EditValueChanged += new System.EventHandler(this.txt_Truong69_EditValueChanged);
             // 
             // txt_Truong70
@@ -1090,7 +1098,7 @@
             this.txt_Truong70.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong70.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong70.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong70.TabIndex = 43;
+            this.txt_Truong70.TabIndex = 50;
             this.txt_Truong70.EditValueChanged += new System.EventHandler(this.txt_Truong70_EditValueChanged);
             // 
             // txt_Truong71
@@ -1100,7 +1108,7 @@
             this.txt_Truong71.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong71.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong71.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong71.TabIndex = 44;
+            this.txt_Truong71.TabIndex = 51;
             this.txt_Truong71.EditValueChanged += new System.EventHandler(this.txt_Truong71_EditValueChanged);
             // 
             // txt_Truong72
@@ -1110,8 +1118,9 @@
             this.txt_Truong72.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Truong72.Properties.NullText = "";
+            this.txt_Truong72.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txt_Truong72.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong72.TabIndex = 45;
+            this.txt_Truong72.TabIndex = 52;
             this.txt_Truong72.EditValueChanged += new System.EventHandler(this.txt_Truong72_EditValueChanged);
             // 
             // labelControl42
@@ -1169,7 +1178,7 @@
             this.txt_Truong77.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong77.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong77.Size = new System.Drawing.Size(30, 20);
-            this.txt_Truong77.TabIndex = 47;
+            this.txt_Truong77.TabIndex = 54;
             this.txt_Truong77.EditValueChanged += new System.EventHandler(this.txt_Truong77_EditValueChanged);
             // 
             // txt_Truong78
@@ -1179,7 +1188,7 @@
             this.txt_Truong78.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong78.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong78.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong78.TabIndex = 48;
+            this.txt_Truong78.TabIndex = 55;
             this.txt_Truong78.EditValueChanged += new System.EventHandler(this.txt_Truong78_EditValueChanged);
             // 
             // txt_Truong79
@@ -1189,7 +1198,7 @@
             this.txt_Truong79.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong79.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong79.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong79.TabIndex = 49;
+            this.txt_Truong79.TabIndex = 56;
             this.txt_Truong79.EditValueChanged += new System.EventHandler(this.txt_Truong79_EditValueChanged);
             // 
             // txt_Truong80
@@ -1199,8 +1208,9 @@
             this.txt_Truong80.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txt_Truong80.Properties.NullText = "";
+            this.txt_Truong80.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txt_Truong80.Size = new System.Drawing.Size(72, 20);
-            this.txt_Truong80.TabIndex = 50;
+            this.txt_Truong80.TabIndex = 57;
             this.txt_Truong80.EditValueChanged += new System.EventHandler(this.txt_Truong80_EditValueChanged);
             // 
             // txt_Truong87
@@ -1210,7 +1220,7 @@
             this.txt_Truong87.Properties.Mask.EditMask = "[ĂÂABCDÊEKLM?●]+";
             this.txt_Truong87.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong87.Size = new System.Drawing.Size(154, 20);
-            this.txt_Truong87.TabIndex = 57;
+            this.txt_Truong87.TabIndex = 12;
             this.txt_Truong87.EditValueChanged += new System.EventHandler(this.txt_Truong87_EditValueChanged);
             this.txt_Truong87.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Truong86_KeyDown);
             this.txt_Truong87.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Truong86_KeyPress);
@@ -1328,7 +1338,7 @@
             this.txt_Truong20.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong20.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong20.Size = new System.Drawing.Size(67, 20);
-            this.txt_Truong20.TabIndex = 11;
+            this.txt_Truong20.TabIndex = 18;
             this.txt_Truong20.EditValueChanged += new System.EventHandler(this.txt_Truong20_EditValueChanged);
             // 
             // txt_Truong28
@@ -1338,7 +1348,7 @@
             this.txt_Truong28.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong28.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong28.Size = new System.Drawing.Size(67, 20);
-            this.txt_Truong28.TabIndex = 16;
+            this.txt_Truong28.TabIndex = 23;
             this.txt_Truong28.EditValueChanged += new System.EventHandler(this.txt_Truong28_EditValueChanged);
             // 
             // txt_Truong36
@@ -1348,7 +1358,7 @@
             this.txt_Truong36.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong36.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong36.Size = new System.Drawing.Size(67, 20);
-            this.txt_Truong36.TabIndex = 21;
+            this.txt_Truong36.TabIndex = 28;
             this.txt_Truong36.EditValueChanged += new System.EventHandler(this.txt_Truong36_EditValueChanged);
             // 
             // txt_Truong44
@@ -1358,7 +1368,7 @@
             this.txt_Truong44.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong44.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong44.Size = new System.Drawing.Size(67, 20);
-            this.txt_Truong44.TabIndex = 26;
+            this.txt_Truong44.TabIndex = 33;
             this.txt_Truong44.EditValueChanged += new System.EventHandler(this.txt_Truong44_EditValueChanged);
             // 
             // txt_Truong52
@@ -1368,7 +1378,7 @@
             this.txt_Truong52.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong52.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong52.Size = new System.Drawing.Size(67, 20);
-            this.txt_Truong52.TabIndex = 31;
+            this.txt_Truong52.TabIndex = 38;
             this.txt_Truong52.EditValueChanged += new System.EventHandler(this.txt_Truong52_EditValueChanged);
             // 
             // txt_Truong60
@@ -1378,7 +1388,7 @@
             this.txt_Truong60.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong60.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong60.Size = new System.Drawing.Size(67, 20);
-            this.txt_Truong60.TabIndex = 36;
+            this.txt_Truong60.TabIndex = 43;
             this.txt_Truong60.EditValueChanged += new System.EventHandler(this.txt_Truong60_EditValueChanged);
             // 
             // txt_Truong68
@@ -1388,7 +1398,7 @@
             this.txt_Truong68.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong68.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong68.Size = new System.Drawing.Size(67, 20);
-            this.txt_Truong68.TabIndex = 41;
+            this.txt_Truong68.TabIndex = 48;
             this.txt_Truong68.EditValueChanged += new System.EventHandler(this.txt_Truong68_EditValueChanged);
             // 
             // txt_Truong76
@@ -1398,7 +1408,7 @@
             this.txt_Truong76.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong76.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong76.Size = new System.Drawing.Size(67, 20);
-            this.txt_Truong76.TabIndex = 46;
+            this.txt_Truong76.TabIndex = 53;
             this.txt_Truong76.EditValueChanged += new System.EventHandler(this.txt_Truong76_EditValueChanged);
             // 
             // txt_Truong84
@@ -1408,7 +1418,7 @@
             this.txt_Truong84.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong84.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong84.Size = new System.Drawing.Size(67, 20);
-            this.txt_Truong84.TabIndex = 51;
+            this.txt_Truong84.TabIndex = 58;
             this.txt_Truong84.EditValueChanged += new System.EventHandler(this.txt_Truong84_EditValueChanged);
             // 
             // labelControl55
@@ -1429,7 +1439,7 @@
             this.txt_Truong92.Name = "txt_Truong92";
             this.txt_Truong92.Properties.Mask.EditMask = "[0-9?●]+";
             this.txt_Truong92.Size = new System.Drawing.Size(100, 20);
-            this.txt_Truong92.TabIndex = 54;
+            this.txt_Truong92.TabIndex = 9;
             this.txt_Truong92.EditValueChanged += new System.EventHandler(this.txt_Truong91_EditValueChanged);
             // 
             // labelControl57
@@ -1462,7 +1472,7 @@
             this.chk_qc.Name = "chk_qc";
             this.chk_qc.Properties.Caption = "QC";
             this.chk_qc.Size = new System.Drawing.Size(42, 19);
-            this.chk_qc.TabIndex = 58;
+            this.chk_qc.TabIndex = 13;
             this.chk_qc.CheckedChanged += new System.EventHandler(this.chk_qc_CheckedChanged);
             // 
             // labelControl54

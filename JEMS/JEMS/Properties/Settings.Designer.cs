@@ -80,5 +80,27 @@ namespace JEMS.Properties {
                 this["Zoom_Doc"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.10.10.248\\BPOSERVER;Initial Catalog=JEMS;Persist Security Info=Tru" +
+            "e;User ID=sa;Password=BPO@DN#2013")]
+        public string JEMSConnectionString1 {
+            get {
+                return ((string)(this["JEMSConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.10.10.248\\BPOSERVER;Initial Catalog=DatabaseDataEntryBPO;Persist S" +
+            "ecurity Info=True;User ID=sa;Password=BPO@DN#2013")]
+        public string DatabaseDataEntryBPOConnectionString1 {
+            get {
+                return ((string)(this["DatabaseDataEntryBPOConnectionString1"]));
+            }
+        }
     }
 }

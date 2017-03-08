@@ -40,7 +40,6 @@ namespace JEMS.MyUserControl
             txt_Truong02.Text = "";
             txt_Truong03_1.Text = "";
             txt_Truong03_2.Text = "";
-
             txt_Truong05.Text = "";
             txt_Truong06.Text = "";
             txt_Truong07.Text = "";
@@ -94,6 +93,7 @@ namespace JEMS.MyUserControl
             txt_Truong71.Text = "";
             txt_Truong72.ItemIndex = 0;
 
+            txt_Truong76.Text = "";
             txt_Truong77.Text = "";
             txt_Truong78.Text = "";
             txt_Truong79.Text = "";

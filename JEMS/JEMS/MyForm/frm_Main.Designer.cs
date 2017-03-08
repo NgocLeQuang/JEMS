@@ -78,6 +78,7 @@
             this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Start_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new JEMS.MyUserControl.uc_PictureBox();
+            this.btn_Pause = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -492,6 +493,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btn_Pause);
             this.panelControl3.Controls.Add(this.btn_Submit_Logout);
             this.panelControl3.Controls.Add(this.btn_Start_Submit);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -525,6 +527,15 @@
             this.uc_PictureBox1.Name = "uc_PictureBox1";
             this.uc_PictureBox1.Size = new System.Drawing.Size(862, 592);
             this.uc_PictureBox1.TabIndex = 6;
+            // 
+            // btn_Pause
+            // 
+            this.btn_Pause.Location = new System.Drawing.Point(315, 4);
+            this.btn_Pause.Name = "btn_Pause";
+            this.btn_Pause.Size = new System.Drawing.Size(95, 23);
+            this.btn_Pause.TabIndex = 11;
+            this.btn_Pause.Text = "Tạm dừng (ESC)";
+            this.btn_Pause.Click += new System.EventHandler(this.btn_Pause_Click);
             // 
             // frm_Main
             // 
@@ -617,6 +628,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_Zoomimage;
         private DevExpress.XtraBars.BarButtonItem btn_checkdeso;
         private DevExpress.XtraBars.BarButtonItem btn_checkqc;
+        private DevExpress.XtraEditors.SimpleButton btn_Pause;
     }
 }
 
