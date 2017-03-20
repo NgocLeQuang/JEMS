@@ -40,6 +40,8 @@
             this.uc_YAMAMOTO1 = new JEMS.MyUserControl.uc_YAMAMOTO();
             this.tp_YASUDA_DeSo1 = new DevExpress.XtraTab.XtraTabPage();
             this.uc_YASUDA1 = new JEMS.MyUserControl.uc_YASUDA();
+            this.tp_AEON_DeSo1 = new DevExpress.XtraTab.XtraTabPage();
+            this.uc_AEON1 = new JEMS.MyUserControl.uc_AEON();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lb_username1 = new System.Windows.Forms.Label();
             this.btn_SuaVaLuu_User1 = new DevExpress.XtraEditors.SimpleButton();
@@ -54,6 +56,8 @@
             this.uc_YAMAMOTO2 = new JEMS.MyUserControl.uc_YAMAMOTO();
             this.tp_YASUDA_DeSo2 = new DevExpress.XtraTab.XtraTabPage();
             this.uc_YASUDA2 = new JEMS.MyUserControl.uc_YASUDA();
+            this.tp_AEON_DeSo2 = new DevExpress.XtraTab.XtraTabPage();
+            this.uc_AEON2 = new JEMS.MyUserControl.uc_AEON();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lb_username2 = new System.Windows.Forms.Label();
             this.btn_SuaVaLuu_User2 = new DevExpress.XtraEditors.SimpleButton();
@@ -81,6 +85,7 @@
             this.tp_EIZEN_DeSo1.SuspendLayout();
             this.tp_YAMAMOTO_DeSo1.SuspendLayout();
             this.tp_YASUDA_DeSo1.SuspendLayout();
+            this.tp_AEON_DeSo1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabcontrol_DeSo2)).BeginInit();
@@ -89,6 +94,7 @@
             this.tp_EIZEN_DeSo2.SuspendLayout();
             this.tp_YAMAMOTO_DeSo2.SuspendLayout();
             this.tp_YASUDA_DeSo2.SuspendLayout();
+            this.tp_AEON_DeSo2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -140,7 +146,8 @@
             this.tp_ASAHI_DeSo1,
             this.tp_EIZEN_DeSo1,
             this.tp_YAMAMOTO_DeSo1,
-            this.tp_YASUDA_DeSo1});
+            this.tp_YASUDA_DeSo1,
+            this.tp_AEON_DeSo1});
             this.tabcontrol_DeSo1.Click += new System.EventHandler(this.tabcontrol_DeSo1_Click);
             // 
             // tp_ASAHI_DeSo1
@@ -215,6 +222,24 @@
             this.uc_YASUDA1.TabIndex = 0;
             this.uc_YASUDA1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_YASUDA1_Scroll);
             // 
+            // tp_AEON_DeSo1
+            // 
+            this.tp_AEON_DeSo1.Controls.Add(this.uc_AEON1);
+            this.tp_AEON_DeSo1.Name = "tp_AEON_DeSo1";
+            this.tp_AEON_DeSo1.Size = new System.Drawing.Size(446, 310);
+            this.tp_AEON_DeSo1.Text = "AEON";
+            // 
+            // uc_AEON1
+            // 
+            this.uc_AEON1.AutoScroll = true;
+            this.uc_AEON1.AutoSize = true;
+            this.uc_AEON1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_AEON1.Location = new System.Drawing.Point(0, 0);
+            this.uc_AEON1.Name = "uc_AEON1";
+            this.uc_AEON1.Size = new System.Drawing.Size(446, 310);
+            this.uc_AEON1.TabIndex = 0;
+            this.uc_AEON1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_AEON1_Scroll);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lb_username1);
@@ -277,7 +302,8 @@
             this.tp_ASAHI_DeSo2,
             this.tp_EIZEN_DeSo2,
             this.tp_YAMAMOTO_DeSo2,
-            this.tp_YASUDA_DeSo2});
+            this.tp_YASUDA_DeSo2,
+            this.tp_AEON_DeSo2});
             this.tabcontrol_DeSo2.Click += new System.EventHandler(this.tabcontrol_DeSo2_Click);
             // 
             // tp_ASAHI_DeSo2
@@ -351,6 +377,24 @@
             this.uc_YASUDA2.Size = new System.Drawing.Size(446, 309);
             this.uc_YASUDA2.TabIndex = 0;
             this.uc_YASUDA2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_YASUDA2_Scroll);
+            // 
+            // tp_AEON_DeSo2
+            // 
+            this.tp_AEON_DeSo2.Controls.Add(this.uc_AEON2);
+            this.tp_AEON_DeSo2.Name = "tp_AEON_DeSo2";
+            this.tp_AEON_DeSo2.Size = new System.Drawing.Size(446, 309);
+            this.tp_AEON_DeSo2.Text = "AEON";
+            // 
+            // uc_AEON2
+            // 
+            this.uc_AEON2.AutoScroll = true;
+            this.uc_AEON2.AutoSize = true;
+            this.uc_AEON2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_AEON2.Location = new System.Drawing.Point(0, 0);
+            this.uc_AEON2.Name = "uc_AEON2";
+            this.uc_AEON2.Size = new System.Drawing.Size(446, 309);
+            this.uc_AEON2.TabIndex = 0;
+            this.uc_AEON2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.uc_AEON2_Scroll);
             // 
             // panel4
             // 
@@ -536,6 +580,8 @@
             this.tp_YAMAMOTO_DeSo1.PerformLayout();
             this.tp_YASUDA_DeSo1.ResumeLayout(false);
             this.tp_YASUDA_DeSo1.PerformLayout();
+            this.tp_AEON_DeSo1.ResumeLayout(false);
+            this.tp_AEON_DeSo1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -549,6 +595,8 @@
             this.tp_YAMAMOTO_DeSo2.PerformLayout();
             this.tp_YASUDA_DeSo2.ResumeLayout(false);
             this.tp_YASUDA_DeSo2.PerformLayout();
+            this.tp_AEON_DeSo2.ResumeLayout(false);
+            this.tp_AEON_DeSo2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -603,5 +651,9 @@
         private MyUserControl.uc_EZIEN uc_EZIEN2;
         private MyUserControl.uc_YAMAMOTO uc_YAMAMOTO2;
         private MyUserControl.uc_YASUDA uc_YASUDA2;
+        private DevExpress.XtraTab.XtraTabPage tp_AEON_DeSo1;
+        private MyUserControl.uc_AEON uc_AEON1;
+        private DevExpress.XtraTab.XtraTabPage tp_AEON_DeSo2;
+        private MyUserControl.uc_AEON uc_AEON2;
     }
 }

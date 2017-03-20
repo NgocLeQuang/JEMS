@@ -33,17 +33,17 @@ namespace JEMS.MyForm
 
         private void GridView1_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {
-            GridView View = sender as GridView;
-            //doi mau row chan
-            if (e.RowHandle >= 0)
-            {
-                if (e.RowHandle % 2 == 0)
-                    e.Appearance.BackColor = Color.LavenderBlush;
-                else
-                {
-                    e.Appearance.BackColor = Color.BlanchedAlmond;
-                }
-            }
+            //GridView View = sender as GridView;
+            ////doi mau row chan
+            //if (e.RowHandle >= 0)
+            //{
+            //    if (e.RowHandle % 2 == 0)
+            //        e.Appearance.BackColor = Color.LavenderBlush;
+            //    else
+            //    {
+            //        e.Appearance.BackColor = Color.BlanchedAlmond;
+            //    }
+            //}
         }
 
         private void dtp_FirstDay_ValueChanged(object sender, EventArgs e)

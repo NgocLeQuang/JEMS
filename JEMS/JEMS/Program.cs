@@ -20,18 +20,16 @@ namespace JEMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            //Application.Run(new Form1());
+            //Application.Run(new frm_CreateBatch());
 
             bool temp;
             do
             {
                 temp = false;
                 Frm_Login a = new Frm_Login();
-                a = new Frm_Login();
                 a.lb_programName.Text = "\n           Dự Án JEMS";
                 a.lb_vision.Text = "Phiên bản :";
                 a.grb_1.Text = "Thông Tin PC";
@@ -48,7 +46,7 @@ namespace JEMS
                 a.btn_thoat.Text = "Thoát";
                 a.chb_hienthi.Text = "Hiển Thị";
                 a.chb_luu.Text = "Lưu";
-                a.lb_version.Text = @"1.0.8";
+                a.lb_version.Text = @"1.1.0";
                 a.UrlUpdateVersion = @"\\10.10.10.254\DE_Viet\2017\JEMS\Tools";
                 a.LoginEvent += a_LoginEvent;
                 a.ButtonLoginEven += a_ButtonLoginEven;
@@ -91,7 +89,7 @@ namespace JEMS
                         if (MessageBox.Show("User này đã đăng nhập ở máy khác. Bạn có muốn tiếp tục đăng nhập?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                         {
                             Global.db_BPO.updateToken(strUsername, Global.StrIdProject, strToken);
-                            Global.db_BPO.InsertLoginTime_new(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken, Global.StrIdProject);
+                            Global.db_BPO.InsertLoginTime_new(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken,Global.StrIdProject);
                             LoginOk = true;
                         }
                         else
@@ -106,12 +104,11 @@ namespace JEMS
                     token.UserName = strUsername;
                     token.IDProject = Global.StrIdProject;
                     token.Token = "";
-                    token.DateLogin = DateTime.Now;
-                    Global.db_BPO.tbl_TokenLogins.InsertOnSubmit(token);
+                    token.DateLogin = DateTime.Now;Global.db_BPO.tbl_TokenLogins.InsertOnSubmit(token);
                     Global.db_BPO.SubmitChanges();
                     LoginOk = true;
                     Global.db_BPO.updateToken(strUsername, Global.StrIdProject, strToken);
-                    Global.db_BPO.InsertLoginTime_new(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken,Global.StrIdProject);
+                    Global.db_BPO.InsertLoginTime_new(strUsername, DateTime.Now, strUserWindow, strMachine, strIpAddress, strToken, Global.StrIdProject);
                 }
             }
         }

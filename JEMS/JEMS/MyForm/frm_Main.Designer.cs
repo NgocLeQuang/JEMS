@@ -74,11 +74,13 @@
             this.uc_YAMAMOTO4 = new JEMS.MyUserControl.uc_YAMAMOTO();
             this.tp_YASUDA_Main = new DevExpress.XtraTab.XtraTabPage();
             this.uc_YASUDA1 = new JEMS.MyUserControl.uc_YASUDA();
+            this.tp_AEON_Main = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_Pause = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Start_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new JEMS.MyUserControl.uc_PictureBox();
-            this.btn_Pause = new DevExpress.XtraEditors.SimpleButton();
+            this.uc_AEON1 = new JEMS.MyUserControl.uc_AEON();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -90,6 +92,7 @@
             this.tp_EIZEN_Main.SuspendLayout();
             this.tp_YAMAMOTO_Main.SuspendLayout();
             this.tp_YASUDA_Main.SuspendLayout();
+            this.tp_AEON_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             this.SuspendLayout();
@@ -422,7 +425,8 @@
             this.tp_Asahi_Main,
             this.tp_EIZEN_Main,
             this.tp_YAMAMOTO_Main,
-            this.tp_YASUDA_Main});
+            this.tp_YASUDA_Main,
+            this.tp_AEON_Main});
             // 
             // tp_Asahi_Main
             // 
@@ -491,6 +495,13 @@
             this.uc_YASUDA1.Size = new System.Drawing.Size(428, 530);
             this.uc_YASUDA1.TabIndex = 0;
             // 
+            // tp_AEON_Main
+            // 
+            this.tp_AEON_Main.Controls.Add(this.uc_AEON1);
+            this.tp_AEON_Main.Name = "tp_AEON_Main";
+            this.tp_AEON_Main.Size = new System.Drawing.Size(428, 530);
+            this.tp_AEON_Main.Text = "AEON";
+            // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.btn_Pause);
@@ -501,6 +512,15 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(434, 30);
             this.panelControl3.TabIndex = 0;
+            // 
+            // btn_Pause
+            // 
+            this.btn_Pause.Location = new System.Drawing.Point(315, 4);
+            this.btn_Pause.Name = "btn_Pause";
+            this.btn_Pause.Size = new System.Drawing.Size(95, 23);
+            this.btn_Pause.TabIndex = 11;
+            this.btn_Pause.Text = "Tạm dừng (ESC)";
+            this.btn_Pause.Click += new System.EventHandler(this.btn_Pause_Click);
             // 
             // btn_Submit_Logout
             // 
@@ -528,14 +548,15 @@
             this.uc_PictureBox1.Size = new System.Drawing.Size(862, 592);
             this.uc_PictureBox1.TabIndex = 6;
             // 
-            // btn_Pause
+            // uc_AEON1
             // 
-            this.btn_Pause.Location = new System.Drawing.Point(315, 4);
-            this.btn_Pause.Name = "btn_Pause";
-            this.btn_Pause.Size = new System.Drawing.Size(95, 23);
-            this.btn_Pause.TabIndex = 11;
-            this.btn_Pause.Text = "Tạm dừng (ESC)";
-            this.btn_Pause.Click += new System.EventHandler(this.btn_Pause_Click);
+            this.uc_AEON1.AutoScroll = true;
+            this.uc_AEON1.AutoSize = true;
+            this.uc_AEON1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_AEON1.Location = new System.Drawing.Point(0, 0);
+            this.uc_AEON1.Name = "uc_AEON1";
+            this.uc_AEON1.Size = new System.Drawing.Size(428, 530);
+            this.uc_AEON1.TabIndex = 0;
             // 
             // frm_Main
             // 
@@ -571,6 +592,8 @@
             this.tp_YAMAMOTO_Main.PerformLayout();
             this.tp_YASUDA_Main.ResumeLayout(false);
             this.tp_YASUDA_Main.PerformLayout();
+            this.tp_AEON_Main.ResumeLayout(false);
+            this.tp_AEON_Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -629,6 +652,8 @@
         private DevExpress.XtraBars.BarButtonItem btn_checkdeso;
         private DevExpress.XtraBars.BarButtonItem btn_checkqc;
         private DevExpress.XtraEditors.SimpleButton btn_Pause;
+        private DevExpress.XtraTab.XtraTabPage tp_AEON_Main;
+        private MyUserControl.uc_AEON uc_AEON1;
     }
 }
 

@@ -70,6 +70,9 @@
             // 
             // dgv_Loai1
             // 
+            this.dgv_Loai1.Appearance.OddRow.BackColor = System.Drawing.Color.SeaShell;
+            this.dgv_Loai1.Appearance.OddRow.BackColor2 = System.Drawing.Color.SeaShell;
+            this.dgv_Loai1.Appearance.OddRow.Options.UseBackColor = true;
             this.dgv_Loai1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
@@ -83,6 +86,7 @@
             this.dgv_Loai1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgv_Loai1.OptionsBehavior.Editable = false;
             this.dgv_Loai1.OptionsFind.AlwaysVisible = true;
+            this.dgv_Loai1.OptionsView.EnableAppearanceOddRow = true;
             this.dgv_Loai1.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1

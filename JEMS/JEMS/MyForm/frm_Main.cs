@@ -35,10 +35,9 @@ namespace JEMS.MyForm
                                select w.IdImage).FirstOrDefault();
                 if (string.IsNullOrEmpty(temp))
                 {
-                    try
-                    {
+                    try{
                         var getFilename =
-                            (from w in Global.db.LayHinhMoi_DeSo(Global.StrBatch, Global.StrUsername)
+                            (from w in Global.db.LayHinhMoi_DeSo_QuanLyDuAn(Global.StrBatch, Global.StrUsername)
                              select w.Column1).FirstOrDefault();
                         if (string.IsNullOrEmpty(getFilename))
                         {
@@ -78,6 +77,8 @@ namespace JEMS.MyForm
                     uc_YAMAMOTO4.txt_Truong02.Focus();
                 else if (tabControl_Main.SelectedTabPage == tp_YASUDA_Main)
                     uc_YASUDA1.txt_Truong02.Focus();
+                else if (tabControl_Main.SelectedTabPage == tp_AEON_Main)
+                    uc_AEON1.txt_Truong02.Focus();
             }
             return "OK";
         }
@@ -98,6 +99,7 @@ namespace JEMS.MyForm
                                          where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
                                          select w.IdImage).Count().ToString();
 
+                tp_AEON_Main.PageVisible = false;
                 tp_Asahi_Main.PageVisible = false;
                 tp_EIZEN_Main.PageVisible = false;
                 tp_YAMAMOTO_Main.PageVisible = false;
@@ -115,7 +117,9 @@ namespace JEMS.MyForm
                         tp_YAMAMOTO_Main.PageVisible = true;
                     else if (Global.LoaiPhieu == "YASUDA")
                         tp_YASUDA_Main.PageVisible = true;
-                    
+                    else if (Global.LoaiPhieu == "AEON")
+                        tp_AEON_Main.PageVisible = true;
+
                 }
                 else
                 {
@@ -176,6 +180,7 @@ namespace JEMS.MyForm
                         MessageBox.Show("Không thể load hình!");
                         btn_logout_ItemClick(null, null);
                     }
+                    uc_AEON1.ResetData();
                     uc_ASAHI1.ResetData();
                     uc_EZIEN1.ResetData();
                     uc_YAMAMOTO4.ResetData();
@@ -225,7 +230,18 @@ namespace JEMS.MyForm
 
                             uc_YASUDA1.SaveData_YASUDA(lb_IdImage.Text);
                         }
+                        else if (tabControl_Main.SelectedTabPage == tp_AEON_Main)
+                        {
+                            if (uc_AEON1.IsEmpty())
+                            {
+                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                    return;
+                            }
 
+                            uc_AEON1.SaveData_AEON(lb_IdImage.Text);
+                        }
+
+                        uc_AEON1.ResetData();
                         uc_ASAHI1.ResetData();
                         uc_EZIEN1.ResetData();
                         uc_YAMAMOTO4.ResetData();
@@ -306,6 +322,16 @@ namespace JEMS.MyForm
 
                         uc_YASUDA1.SaveData_YASUDA(lb_IdImage.Text);
                     }
+                    else if (tabControl_Main.SelectedTabPage == tp_AEON_Main)
+                    {
+                        if (uc_AEON1.IsEmpty())
+                        {
+                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                return;
+                        }
+
+                        uc_AEON1.SaveData_AEON(lb_IdImage.Text);
+                    }
                 }
                 btn_logout_ItemClick(null, null);
             }
@@ -361,7 +387,8 @@ namespace JEMS.MyForm
 
         private void frm_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Global.db_BPO.UpdateTimeLastRequest(Global.Strtoken);Global.db_BPO.UpdateTimeLogout(Global.Strtoken);
+            Global.db_BPO.UpdateTimeLastRequest(Global.Strtoken);
+            Global.db_BPO.UpdateTimeLogout(Global.Strtoken);
             Global.db_BPO.ResetToken(Global.StrUsername, Global.StrIdProject, Global.Strtoken);
             Settings.Default.Save();
         }

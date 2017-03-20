@@ -52,6 +52,7 @@ namespace JEMS.MyForm
 
         private void btn_CreateBatch_Click(object sender, EventArgs e)
         {
+            Global.db_BPO.UpdateTimeLastRequest(Global.Strtoken);
             backgroundWorker1.RunWorkerAsync();
         }
 
@@ -96,11 +97,24 @@ namespace JEMS.MyForm
             txt_LoaiPhieu.ValueMember = "Value";
 
             txt_LoaiPhieu.Items.Add(new { Text = "", Value = "" });
+            txt_LoaiPhieu.Items.Add(new { Text = "AEON", Value = "AEON" });
             txt_LoaiPhieu.Items.Add(new { Text = "ASAHI", Value = "ASAHI" });
             txt_LoaiPhieu.Items.Add(new { Text = "EIZEN", Value = "EIZEN" });
             txt_LoaiPhieu.Items.Add(new { Text = "YAMAMOTO", Value = "YAMAMOTO" });
             txt_LoaiPhieu.Items.Add(new { Text = "YASUDA", Value = "YASUDA" });
             txt_LoaiPhieu.SelectedIndex = 0;
+
+            cbb_loaithoigian.DisplayMember = "Text";
+            cbb_loaithoigian.ValueMember = "Value";
+
+            cbb_loaithoigian.Items.Add(new { Text = "", Value = "" });
+            cbb_loaithoigian.Items.Add(new { Text = "Ngày", Value = "Ngay" });
+            cbb_loaithoigian.Items.Add(new { Text = "Giờ", Value = "Gio" });
+            cbb_loaithoigian.Items.Add(new { Text = "Phút", Value = "Phut" });cbb_loaithoigian.SelectedIndex = 0;
+            dateEdit_ngaybatdau.EditValue = DateTime.Now;
+            timeEdit_ngaybatdau.EditValue = DateTime.Now;
+            timeEdit_ngayketthuc.EditValue = DateTime.Now;
+            dateEdit_ngayketthuc.EditValue = DateTime.Now;
         }
 
         public static string[] GetFilesFrom(string searchFolder, string[] filters, bool isRecursive)
@@ -140,6 +154,39 @@ namespace JEMS.MyForm
                     };
                     Global.db.tbl_Batches.InsertOnSubmit(fBatch);
                     Global.db.SubmitChanges();
+
+
+                    DateTime timeStart = Convert.ToDateTime(dateEdit_ngaybatdau.Text + " " + timeEdit_ngaybatdau.Text);
+                    DateTime timeEnd = Convert.ToDateTime(dateEdit_ngayketthuc.Text + " " + timeEdit_ngayketthuc.Text);
+                    int timeNotificationdeadline = 0;
+                    if (cbb_loaithoigian.Text == "Ngày")
+                    {
+                        timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 24 * 60);
+                    }
+                    else if (cbb_loaithoigian.Text == "Giờ")
+                    {
+                        timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 60);
+                    }
+                    else if (cbb_loaithoigian.Text == "Phút")
+                    {
+                        timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value);
+                    }
+                    var fBatchEntry = new tbl_Batch_Entry()
+                    {
+                        fIDProject = Global.StrIdProject,
+                        fBatchName = txt_BatchName.Text,
+                        fUserCreate = txt_UserCreate.Text,
+                        fDateCreated = DateTime.Now,
+                        fPathPicture = txt_ImagePath.Text,
+                        fLocation = txt_Location.Text,
+                        fSoLuongAnh = soluonghinh.ToString(),
+                        fLoaiPhieu = txt_LoaiPhieu.Text,
+                        fTimeStart = timeStart,
+                        fTimeEnd = timeEnd,
+                        fDeadlineNotificationTime = timeNotificationdeadline
+                    };
+                    Global.db_BPO.tbl_Batch_Entries.InsertOnSubmit(fBatchEntry);
+                    Global.db.SubmitChanges();
                 }
                 else
                 {
@@ -153,15 +200,22 @@ namespace JEMS.MyForm
                 return;
             }
             string temp = Global.StrPath + "\\" + txt_BatchName.Text;
-            if (!Directory.Exists(temp))
+            try
             {
-                Directory.CreateDirectory(temp);
+                if (!Directory.Exists(temp))
+                {
+                    Directory.CreateDirectory(temp);
+                }
+                else
+                {
+                    MessageBox.Show("Bị trùng tên batch!");
+                    return;
+                }
             }
-            else
+            catch (Exception e)
             {
-                MessageBox.Show("Bị trùng tên batch!");
-                return;
-            }
+                MessageBox.Show(e.Message);}
+           
             foreach (string i in _lFileNames)
             {
                 FileInfo fi = new FileInfo(i);
@@ -177,8 +231,30 @@ namespace JEMS.MyForm
                 };
                 Global.db.tbl_Images.InsertOnSubmit(tempImage);
                 Global.db.SubmitChanges();
+
+                tbl_TienDo tempTblTienDo = new tbl_TienDo
+                {
+                    IDProject = "JEMS",
+                    fBatchName = txt_BatchName.Text,
+                    Idimage = Path.GetFileName(fi.ToString()),
+                    TienDoDeSo = "Hình chưa nhập",
+                    UserCheckDeSo = "",
+                    DateCreate = DateTime.Now
+                };
+                Global.db_BPO.tbl_TienDos.InsertOnSubmit(tempTblTienDo);
+                Global.db_BPO.SubmitChanges();
+
                 string des = temp + @"\" + Path.GetFileName(fi.ToString());
-                fi.CopyTo(des);
+                try
+                {
+                    MessageBox.Show(des);
+                    fi.CopyTo(des);
+                }
+                catch (Exception ee)
+                {
+
+                    MessageBox.Show(ee.Message);
+                }
                 progressBarControl1.PerformStep();
                 progressBarControl1.Update();
             }
@@ -192,8 +268,6 @@ namespace JEMS.MyForm
         }
         private void UpLoadMulti()
         {
-            
-
             List<string> lStrBath = new List<string>();
             lStrBath.AddRange(Directory.GetDirectories(txt_PathFolder.Text));
             progressBarControl1.EditValue = 0;
@@ -217,6 +291,40 @@ namespace JEMS.MyForm
                 Global.db.tbl_Batches.InsertOnSubmit(fBatch);
                 Global.db.SubmitChanges();
 
+
+                DateTime timeStart = Convert.ToDateTime(dateEdit_ngaybatdau.Text + " " + timeEdit_ngaybatdau.Text);
+                DateTime timeEnd = Convert.ToDateTime(dateEdit_ngayketthuc.Text + " " + timeEdit_ngayketthuc.Text);
+                int timeNotificationdeadline = 0;
+                if (cbb_loaithoigian.Text == "Ngày")
+                {
+                    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 24 * 60);
+                }
+                else if (cbb_loaithoigian.Text == "Giờ")
+                {
+                    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 60);
+                }
+                else if (cbb_loaithoigian.Text == "Phút")
+                {
+                    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value);
+                }
+                var fBatchEntry = new tbl_Batch_Entry()
+                {
+                    fIDProject = Global.StrIdProject,
+                    fBatchName = txt_BatchName.Text,
+                    fUserCreate = txt_UserCreate.Text,
+                    fDateCreated = DateTime.Now,
+                    fPathPicture = txt_ImagePath.Text,
+                    fLocation = txt_Location.Text,
+                    fSoLuongAnh = soluonghinh.ToString(),
+                    fLoaiPhieu = txt_LoaiPhieu.Text,
+                    fTimeStart = timeStart,
+                    fTimeEnd = timeEnd,
+                    fDeadlineNotificationTime = timeNotificationdeadline
+                };
+                Global.db_BPO.tbl_Batch_Entries.InsertOnSubmit(fBatchEntry);
+                Global.db.SubmitChanges();
+
+
                 string searchFolder = txt_PathFolder.Text + "\\" + new DirectoryInfo(item).Name;
                 var filters = new String[] { "jpg", "jpeg", "png", "gif", "tiff", "bmp" };
                 string[] tmp = GetFilesFrom(searchFolder, filters, false);
@@ -238,8 +346,30 @@ namespace JEMS.MyForm
                     };
                     Global.db.tbl_Images.InsertOnSubmit(tempImage);
                     Global.db.SubmitChanges();
+
+                    tbl_TienDo tempTblTienDo = new tbl_TienDo
+                    {
+                        IDProject = "JEMS",
+                        fBatchName = txt_BatchName.Text,
+                        Idimage = Path.GetFileName(fi.ToString()),
+                        TienDoDeSo = "Hình chưa nhập",
+                        UserCheckDeSo = "",
+                        DateCreate = DateTime.Now
+                    };
+                    Global.db_BPO.tbl_TienDos.InsertOnSubmit(tempTblTienDo);
+                    Global.db_BPO.SubmitChanges();
+
                     string des = temp + @"\" + Path.GetFileName(fi.ToString());
-                    fi.CopyTo(des);
+                    try
+                    {
+                        MessageBox.Show(des);
+                        fi.CopyTo(des);
+                    }
+                    catch (Exception ee)
+                    {
+
+                        MessageBox.Show(ee.Message);}
+                  
                     progressBarControl1.PerformStep();
                     progressBarControl1.Update();
                 }
@@ -260,6 +390,10 @@ namespace JEMS.MyForm
             {
                 MessageBox.Show("Vui lòng chọn loại phiếu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
+            if((nud_songaylam.Value!=0||nud_sogiolam.Value!=0||nud_sophutlam.Value!=0)&&(nud_thoigiandeadline.Value==0))
+            {
+                if(MessageBox.Show("Bạn chưa chọn thời gian thông báo deadline. Bạn vẫn tiếp tục","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.No)return;
             }
             if (_multi)
             {
@@ -293,6 +427,150 @@ namespace JEMS.MyForm
         {
             if (closePending) Close();
             closePending = false;
+        }
+
+        private bool flag = false;
+        public void HandlingTimeWork()
+        {
+            try
+            {
+                if (!flag) return;
+                DateTime timeStart = Convert.ToDateTime(dateEdit_ngaybatdau.Text + " " + timeEdit_ngaybatdau.Text);
+                TimeSpan timeAdd = new TimeSpan(Convert.ToInt32(nud_songaylam.Value),Convert.ToInt32(nud_sogiolam.Value), Convert.ToInt32(nud_sophutlam.Value), 0);
+                DateTime timeEnd = timeStart.Add(timeAdd);
+                dateEdit_ngayketthuc.EditValue = timeEnd;
+                timeEdit_ngayketthuc.EditValue = timeEnd;
+            }
+            catch{}
+        }
+
+        public void HandlingTimeWork_1()
+        {
+            try
+            {
+                if (flag) return;
+                DateTime timeStart = Convert.ToDateTime(dateEdit_ngaybatdau.Text + " " + timeEdit_ngaybatdau.Text);
+                DateTime timeEnd = Convert.ToDateTime(dateEdit_ngayketthuc.Text + " " + timeEdit_ngayketthuc.Text);
+                TimeSpan time = timeEnd.Subtract(timeStart);
+                nud_songaylam.Value = time.Days;
+                nud_sogiolam.Value = time.Hours;
+                nud_sophutlam.Value = time.Minutes;
+            }
+            catch{}
+        }
+        private void dateEdit_ngaybatdau_EditValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork();
+        }
+
+        private void timeEdit_ngaybatdau_EditValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork();
+        }
+
+        private void nud_songaylam_ValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork();
+        }
+
+        private void nud_sogiolam_ValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork();
+        }
+
+        private void nud_sophutlam_ValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork();
+        }
+
+        private void dateEdit_ngayketthuc_EditValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork_1();
+        }
+
+        private void timeEdit_ngayketthuc_EditValueChanged(object sender, EventArgs e)
+        {
+            HandlingTimeWork_1();
+        }
+
+        private void nud_thoigiandeadline_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime timeStart = Convert.ToDateTime(dateEdit_ngaybatdau.Text + " " + timeEdit_ngaybatdau.Text);
+            DateTime timeEnd = Convert.ToDateTime(dateEdit_ngayketthuc.Text + " " + timeEdit_ngayketthuc.Text);
+            TimeSpan time = timeEnd.Subtract(timeStart);
+            if (timeStart > timeEnd)
+            {
+                MessageBox.Show(string.Format("Ngày{0} kết thúc dự án không được trước ngày bắt đầu", ""));
+                return;
+            }
+            if(cbb_loaithoigian.Text=="Ngày")
+            {
+                float ngay = (float)time.Days  + (float)time.Hours/24+(float)time.Minutes/(60*24);
+                if (Convert.ToSingle(nud_thoigiandeadline.Value)>ngay)
+                {
+                    MessageBox.Show(string.Format("Thời{0} gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\n Thời gian tối đa: " + ngay + " ngày{1}", "", ""));
+                    nud_thoigiandeadline.Value = 0;return;
+                }
+            }
+            else if (cbb_loaithoigian.Text == "Giờ")
+            {
+                float gio = (float)time.Days * 24 + (float)time.Hours+ (float)time.Minutes/60;
+                if(Convert.ToSingle(nud_thoigiandeadline.Value)>gio)
+                {
+                    MessageBox.Show(string.Format("Thời{0} gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\n Thời gian tối đa: " + gio + " giờ{1}", "", ""));
+                    nud_thoigiandeadline.Value = 0;
+                    return;
+                }
+            }
+            else if (cbb_loaithoigian.Text == "Phút")
+            {
+                float phut = (float)time.Days * (24*60) + (float)time.Hours*60+ (float)time.Minutes;
+                if (Convert.ToSingle(nud_thoigiandeadline.Value) > phut)
+                {
+                    MessageBox.Show(string.Format("Thời{0} gian thông báo deadline không được lớn hơn thời gian thực hiện dự án\n Thời gian tối đa: " + phut + " phút{1}", "", ""));
+                    nud_thoigiandeadline.Value = 0;
+                    return;
+                }
+            }
+        }
+        private void dateEdit_ngaybatdau_Click(object sender, EventArgs e)
+        {
+            flag = true;
+        }
+
+        private void timeEdit_ngaybatdau_Click(object sender, EventArgs e)
+        {
+            flag = true;
+        }
+
+        private void nud_songaylam_Click(object sender, EventArgs e)
+        {
+            flag = true;
+        }
+
+        private void nud_sogiolam_Click(object sender, EventArgs e)
+        {
+            flag = true;
+        }
+
+        private void nud_sophutlam_Click(object sender, EventArgs e)
+        {
+            flag = true;
+        }
+
+        private void dateEdit_ngayketthuc_Click(object sender, EventArgs e)
+        {
+            flag = false;
+        }
+
+        private void timeEdit_ngayketthuc_Click(object sender, EventArgs e)
+        {
+            flag = false;
+        }
+
+        private void cbb_loaithoigian_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nud_thoigiandeadline_ValueChanged(null, null);
         }
     }
 }

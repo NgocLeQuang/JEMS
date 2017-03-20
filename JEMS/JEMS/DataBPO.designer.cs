@@ -30,12 +30,15 @@ namespace JEMS
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Inserttbl_TienDo(tbl_TienDo instance);
-    partial void Updatetbl_TienDo(tbl_TienDo instance);
-    partial void Deletetbl_TienDo(tbl_TienDo instance);
     partial void Inserttbl_TokenLogin(tbl_TokenLogin instance);
     partial void Updatetbl_TokenLogin(tbl_TokenLogin instance);
     partial void Deletetbl_TokenLogin(tbl_TokenLogin instance);
+    partial void Inserttbl_Batch_Entry(tbl_Batch_Entry instance);
+    partial void Updatetbl_Batch_Entry(tbl_Batch_Entry instance);
+    partial void Deletetbl_Batch_Entry(tbl_Batch_Entry instance);
+    partial void Inserttbl_TienDo(tbl_TienDo instance);
+    partial void Updatetbl_TienDo(tbl_TienDo instance);
+    partial void Deletetbl_TienDo(tbl_TienDo instance);
     #endregion
 		
 		public DataBPODataContext() : 
@@ -81,14 +84,6 @@ namespace JEMS
 			get
 			{
 				return this.GetTable<tbl_Version>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbl_ChiTietTienDo> tbl_ChiTietTienDos
-		{
-			get
-			{
-				return this.GetTable<tbl_ChiTietTienDo>();
 			}
 		}
 		
@@ -148,14 +143,6 @@ namespace JEMS
 			}
 		}
 		
-		public System.Data.Linq.Table<tbl_TienDo> tbl_TienDos
-		{
-			get
-			{
-				return this.GetTable<tbl_TienDo>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tbl_TokenLogin> tbl_TokenLogins
 		{
 			get
@@ -172,17 +159,34 @@ namespace JEMS
 			}
 		}
 		
+		public System.Data.Linq.Table<tbl_Batch_Entry> tbl_Batch_Entries
+		{
+			get
+			{
+				return this.GetTable<tbl_Batch_Entry>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_ChiTietTienDo> tbl_ChiTietTienDos
+		{
+			get
+			{
+				return this.GetTable<tbl_ChiTietTienDo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_TienDo> tbl_TienDos
+		{
+			get
+			{
+				return this.GetTable<tbl_TienDo>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.updateToken")]
 		public int updateToken([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(150)")] string idproject, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string token)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, idproject, token);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.KiemTraLogin")]
-		public int KiemTraLogin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="NVarChar(100)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string password)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -253,6 +257,13 @@ namespace JEMS
 		public int InsertLoginTime_new([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(100)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TimeLogin", DbType="DateTime")] System.Nullable<System.DateTime> timeLogin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WindowUser", DbType="NVarChar(100)")] string windowUser, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MachineName", DbType="NVarChar(100)")] string machineName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IPAddress", DbType="NVarChar(100)")] string iPAddress, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Token", DbType="NVarChar(100)")] string token, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string project)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userName, timeLogin, windowUser, machineName, iPAddress, token, project);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.KiemTraLogin")]
+		public int KiemTraLogin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="NVarChar(100)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -414,123 +425,6 @@ namespace JEMS
 				if ((this._MoTaChucNangMoi != value))
 				{
 					this._MoTaChucNangMoi = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_ChiTietTienDo")]
-	public partial class tbl_ChiTietTienDo
-	{
-		
-		private long _id;
-		
-		private string _IDProject;
-		
-		private string _fBatchName;
-		
-		private string _Idimage;
-		
-		private string _UserDeSo;
-		
-		private string _UserDeJP;
-		
-		public tbl_ChiTietTienDo()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
-		public long id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProject", DbType="NVarChar(150)")]
-		public string IDProject
-		{
-			get
-			{
-				return this._IDProject;
-			}
-			set
-			{
-				if ((this._IDProject != value))
-				{
-					this._IDProject = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150)")]
-		public string fBatchName
-		{
-			get
-			{
-				return this._fBatchName;
-			}
-			set
-			{
-				if ((this._fBatchName != value))
-				{
-					this._fBatchName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Idimage", DbType="NVarChar(150)")]
-		public string Idimage
-		{
-			get
-			{
-				return this._Idimage;
-			}
-			set
-			{
-				if ((this._Idimage != value))
-				{
-					this._Idimage = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserDeSo", DbType="NVarChar(250)")]
-		public string UserDeSo
-		{
-			get
-			{
-				return this._UserDeSo;
-			}
-			set
-			{
-				if ((this._UserDeSo != value))
-				{
-					this._UserDeSo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserDeJP", DbType="NVarChar(250)")]
-		public string UserDeJP
-		{
-			get
-			{
-				return this._UserDeJP;
-			}
-			set
-			{
-				if ((this._UserDeJP != value))
-				{
-					this._UserDeJP = value;
 				}
 			}
 		}
@@ -1337,236 +1231,6 @@ namespace JEMS
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_TienDo")]
-	public partial class tbl_TienDo : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _id;
-		
-		private string _IDProject;
-		
-		private string _fBatchName;
-		
-		private string _Idimage;
-		
-		private string _TienDoDeSo;
-		
-		private string _TienDoDeJP;
-		
-		private string _UserCheckDeSo;
-		
-		private string _UserCheckDeJP;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(long value);
-    partial void OnidChanged();
-    partial void OnIDProjectChanging(string value);
-    partial void OnIDProjectChanged();
-    partial void OnfBatchNameChanging(string value);
-    partial void OnfBatchNameChanged();
-    partial void OnIdimageChanging(string value);
-    partial void OnIdimageChanged();
-    partial void OnTienDoDeSoChanging(string value);
-    partial void OnTienDoDeSoChanged();
-    partial void OnTienDoDeJPChanging(string value);
-    partial void OnTienDoDeJPChanged();
-    partial void OnUserCheckDeSoChanging(string value);
-    partial void OnUserCheckDeSoChanged();
-    partial void OnUserCheckDeJPChanging(string value);
-    partial void OnUserCheckDeJPChanged();
-    #endregion
-		
-		public tbl_TienDo()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
-		public long id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProject", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string IDProject
-		{
-			get
-			{
-				return this._IDProject;
-			}
-			set
-			{
-				if ((this._IDProject != value))
-				{
-					this.OnIDProjectChanging(value);
-					this.SendPropertyChanging();
-					this._IDProject = value;
-					this.SendPropertyChanged("IDProject");
-					this.OnIDProjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string fBatchName
-		{
-			get
-			{
-				return this._fBatchName;
-			}
-			set
-			{
-				if ((this._fBatchName != value))
-				{
-					this.OnfBatchNameChanging(value);
-					this.SendPropertyChanging();
-					this._fBatchName = value;
-					this.SendPropertyChanged("fBatchName");
-					this.OnfBatchNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Idimage", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Idimage
-		{
-			get
-			{
-				return this._Idimage;
-			}
-			set
-			{
-				if ((this._Idimage != value))
-				{
-					this.OnIdimageChanging(value);
-					this.SendPropertyChanging();
-					this._Idimage = value;
-					this.SendPropertyChanged("Idimage");
-					this.OnIdimageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienDoDeSo", DbType="NVarChar(250)")]
-		public string TienDoDeSo
-		{
-			get
-			{
-				return this._TienDoDeSo;
-			}
-			set
-			{
-				if ((this._TienDoDeSo != value))
-				{
-					this.OnTienDoDeSoChanging(value);
-					this.SendPropertyChanging();
-					this._TienDoDeSo = value;
-					this.SendPropertyChanged("TienDoDeSo");
-					this.OnTienDoDeSoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienDoDeJP", DbType="NVarChar(250)")]
-		public string TienDoDeJP
-		{
-			get
-			{
-				return this._TienDoDeJP;
-			}
-			set
-			{
-				if ((this._TienDoDeJP != value))
-				{
-					this.OnTienDoDeJPChanging(value);
-					this.SendPropertyChanging();
-					this._TienDoDeJP = value;
-					this.SendPropertyChanged("TienDoDeJP");
-					this.OnTienDoDeJPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCheckDeSo", DbType="NVarChar(250)")]
-		public string UserCheckDeSo
-		{
-			get
-			{
-				return this._UserCheckDeSo;
-			}
-			set
-			{
-				if ((this._UserCheckDeSo != value))
-				{
-					this.OnUserCheckDeSoChanging(value);
-					this.SendPropertyChanging();
-					this._UserCheckDeSo = value;
-					this.SendPropertyChanged("UserCheckDeSo");
-					this.OnUserCheckDeSoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCheckDeJP", DbType="NVarChar(250)")]
-		public string UserCheckDeJP
-		{
-			get
-			{
-				return this._UserCheckDeJP;
-			}
-			set
-			{
-				if ((this._UserCheckDeJP != value))
-				{
-					this.OnUserCheckDeJPChanging(value);
-					this.SendPropertyChanging();
-					this._UserCheckDeJP = value;
-					this.SendPropertyChanged("UserCheckDeJP");
-					this.OnUserCheckDeJPChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_TokenLogin")]
 	public partial class tbl_TokenLogin : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1856,6 +1520,721 @@ namespace JEMS
 				{
 					this._NotGoodUser = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Batch_Entry")]
+	public partial class tbl_Batch_Entry : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IDBatch;
+		
+		private string _fIDProject;
+		
+		private string _fBatchName;
+		
+		private System.Nullable<System.DateTime> _fDateCreated;
+		
+		private string _fUserCreate;
+		
+		private string _fPathPicture;
+		
+		private string _fLocation;
+		
+		private string _fLoaiPhieu;
+		
+		private string _fSoLuongAnh;
+		
+		private System.Nullable<System.DateTime> _fTimeStart;
+		
+		private System.Nullable<System.DateTime> _fTimeEnd;
+		
+		private System.Nullable<long> _fDeadlineNotificationTime;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDBatchChanging(int value);
+    partial void OnIDBatchChanged();
+    partial void OnfIDProjectChanging(string value);
+    partial void OnfIDProjectChanged();
+    partial void OnfBatchNameChanging(string value);
+    partial void OnfBatchNameChanged();
+    partial void OnfDateCreatedChanging(System.Nullable<System.DateTime> value);
+    partial void OnfDateCreatedChanged();
+    partial void OnfUserCreateChanging(string value);
+    partial void OnfUserCreateChanged();
+    partial void OnfPathPictureChanging(string value);
+    partial void OnfPathPictureChanged();
+    partial void OnfLocationChanging(string value);
+    partial void OnfLocationChanged();
+    partial void OnfLoaiPhieuChanging(string value);
+    partial void OnfLoaiPhieuChanged();
+    partial void OnfSoLuongAnhChanging(string value);
+    partial void OnfSoLuongAnhChanged();
+    partial void OnfTimeStartChanging(System.Nullable<System.DateTime> value);
+    partial void OnfTimeStartChanged();
+    partial void OnfTimeEndChanging(System.Nullable<System.DateTime> value);
+    partial void OnfTimeEndChanged();
+    partial void OnfDeadlineNotificationTimeChanging(System.Nullable<long> value);
+    partial void OnfDeadlineNotificationTimeChanged();
+    #endregion
+		
+		public tbl_Batch_Entry()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDBatch", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int IDBatch
+		{
+			get
+			{
+				return this._IDBatch;
+			}
+			set
+			{
+				if ((this._IDBatch != value))
+				{
+					this.OnIDBatchChanging(value);
+					this.SendPropertyChanging();
+					this._IDBatch = value;
+					this.SendPropertyChanged("IDBatch");
+					this.OnIDBatchChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fIDProject", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string fIDProject
+		{
+			get
+			{
+				return this._fIDProject;
+			}
+			set
+			{
+				if ((this._fIDProject != value))
+				{
+					this.OnfIDProjectChanging(value);
+					this.SendPropertyChanging();
+					this._fIDProject = value;
+					this.SendPropertyChanged("fIDProject");
+					this.OnfIDProjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string fBatchName
+		{
+			get
+			{
+				return this._fBatchName;
+			}
+			set
+			{
+				if ((this._fBatchName != value))
+				{
+					this.OnfBatchNameChanging(value);
+					this.SendPropertyChanging();
+					this._fBatchName = value;
+					this.SendPropertyChanged("fBatchName");
+					this.OnfBatchNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fDateCreated", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fDateCreated
+		{
+			get
+			{
+				return this._fDateCreated;
+			}
+			set
+			{
+				if ((this._fDateCreated != value))
+				{
+					this.OnfDateCreatedChanging(value);
+					this.SendPropertyChanging();
+					this._fDateCreated = value;
+					this.SendPropertyChanged("fDateCreated");
+					this.OnfDateCreatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fUserCreate", DbType="NVarChar(200)")]
+		public string fUserCreate
+		{
+			get
+			{
+				return this._fUserCreate;
+			}
+			set
+			{
+				if ((this._fUserCreate != value))
+				{
+					this.OnfUserCreateChanging(value);
+					this.SendPropertyChanging();
+					this._fUserCreate = value;
+					this.SendPropertyChanged("fUserCreate");
+					this.OnfUserCreateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fPathPicture", DbType="NVarChar(200)")]
+		public string fPathPicture
+		{
+			get
+			{
+				return this._fPathPicture;
+			}
+			set
+			{
+				if ((this._fPathPicture != value))
+				{
+					this.OnfPathPictureChanging(value);
+					this.SendPropertyChanging();
+					this._fPathPicture = value;
+					this.SendPropertyChanged("fPathPicture");
+					this.OnfPathPictureChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fLocation", DbType="NVarChar(200)")]
+		public string fLocation
+		{
+			get
+			{
+				return this._fLocation;
+			}
+			set
+			{
+				if ((this._fLocation != value))
+				{
+					this.OnfLocationChanging(value);
+					this.SendPropertyChanging();
+					this._fLocation = value;
+					this.SendPropertyChanged("fLocation");
+					this.OnfLocationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fLoaiPhieu", DbType="NVarChar(200)")]
+		public string fLoaiPhieu
+		{
+			get
+			{
+				return this._fLoaiPhieu;
+			}
+			set
+			{
+				if ((this._fLoaiPhieu != value))
+				{
+					this.OnfLoaiPhieuChanging(value);
+					this.SendPropertyChanging();
+					this._fLoaiPhieu = value;
+					this.SendPropertyChanged("fLoaiPhieu");
+					this.OnfLoaiPhieuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fSoLuongAnh", DbType="NVarChar(200)")]
+		public string fSoLuongAnh
+		{
+			get
+			{
+				return this._fSoLuongAnh;
+			}
+			set
+			{
+				if ((this._fSoLuongAnh != value))
+				{
+					this.OnfSoLuongAnhChanging(value);
+					this.SendPropertyChanging();
+					this._fSoLuongAnh = value;
+					this.SendPropertyChanged("fSoLuongAnh");
+					this.OnfSoLuongAnhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fTimeStart", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fTimeStart
+		{
+			get
+			{
+				return this._fTimeStart;
+			}
+			set
+			{
+				if ((this._fTimeStart != value))
+				{
+					this.OnfTimeStartChanging(value);
+					this.SendPropertyChanging();
+					this._fTimeStart = value;
+					this.SendPropertyChanged("fTimeStart");
+					this.OnfTimeStartChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fTimeEnd", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fTimeEnd
+		{
+			get
+			{
+				return this._fTimeEnd;
+			}
+			set
+			{
+				if ((this._fTimeEnd != value))
+				{
+					this.OnfTimeEndChanging(value);
+					this.SendPropertyChanging();
+					this._fTimeEnd = value;
+					this.SendPropertyChanged("fTimeEnd");
+					this.OnfTimeEndChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fDeadlineNotificationTime", DbType="BigInt")]
+		public System.Nullable<long> fDeadlineNotificationTime
+		{
+			get
+			{
+				return this._fDeadlineNotificationTime;
+			}
+			set
+			{
+				if ((this._fDeadlineNotificationTime != value))
+				{
+					this.OnfDeadlineNotificationTimeChanging(value);
+					this.SendPropertyChanging();
+					this._fDeadlineNotificationTime = value;
+					this.SendPropertyChanged("fDeadlineNotificationTime");
+					this.OnfDeadlineNotificationTimeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_ChiTietTienDo")]
+	public partial class tbl_ChiTietTienDo
+	{
+		
+		private long _id;
+		
+		private string _IDProject;
+		
+		private string _fBatchName;
+		
+		private string _Idimage;
+		
+		private string _UserDeSo;
+		
+		private string _UserDeJP;
+		
+		private System.Nullable<System.DateTime> _DateCreate;
+		
+		public tbl_ChiTietTienDo()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
+		public long id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProject", DbType="NVarChar(150)")]
+		public string IDProject
+		{
+			get
+			{
+				return this._IDProject;
+			}
+			set
+			{
+				if ((this._IDProject != value))
+				{
+					this._IDProject = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150)")]
+		public string fBatchName
+		{
+			get
+			{
+				return this._fBatchName;
+			}
+			set
+			{
+				if ((this._fBatchName != value))
+				{
+					this._fBatchName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Idimage", DbType="NVarChar(150)")]
+		public string Idimage
+		{
+			get
+			{
+				return this._Idimage;
+			}
+			set
+			{
+				if ((this._Idimage != value))
+				{
+					this._Idimage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserDeSo", DbType="NVarChar(250)")]
+		public string UserDeSo
+		{
+			get
+			{
+				return this._UserDeSo;
+			}
+			set
+			{
+				if ((this._UserDeSo != value))
+				{
+					this._UserDeSo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserDeJP", DbType="NVarChar(250)")]
+		public string UserDeJP
+		{
+			get
+			{
+				return this._UserDeJP;
+			}
+			set
+			{
+				if ((this._UserDeJP != value))
+				{
+					this._UserDeJP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateCreate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateCreate
+		{
+			get
+			{
+				return this._DateCreate;
+			}
+			set
+			{
+				if ((this._DateCreate != value))
+				{
+					this._DateCreate = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_TienDo")]
+	public partial class tbl_TienDo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _id;
+		
+		private string _IDProject;
+		
+		private string _fBatchName;
+		
+		private string _Idimage;
+		
+		private string _TienDoDeSo;
+		
+		private string _TienDoDeJP;
+		
+		private string _UserCheckDeSo;
+		
+		private string _UserCheckDeJP;
+		
+		private System.Nullable<System.DateTime> _DateCreate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(long value);
+    partial void OnidChanged();
+    partial void OnIDProjectChanging(string value);
+    partial void OnIDProjectChanged();
+    partial void OnfBatchNameChanging(string value);
+    partial void OnfBatchNameChanged();
+    partial void OnIdimageChanging(string value);
+    partial void OnIdimageChanged();
+    partial void OnTienDoDeSoChanging(string value);
+    partial void OnTienDoDeSoChanged();
+    partial void OnTienDoDeJPChanging(string value);
+    partial void OnTienDoDeJPChanged();
+    partial void OnUserCheckDeSoChanging(string value);
+    partial void OnUserCheckDeSoChanged();
+    partial void OnUserCheckDeJPChanging(string value);
+    partial void OnUserCheckDeJPChanged();
+    partial void OnDateCreateChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateCreateChanged();
+    #endregion
+		
+		public tbl_TienDo()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="BigInt NOT NULL IDENTITY", IsDbGenerated=true)]
+		public long id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDProject", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string IDProject
+		{
+			get
+			{
+				return this._IDProject;
+			}
+			set
+			{
+				if ((this._IDProject != value))
+				{
+					this.OnIDProjectChanging(value);
+					this.SendPropertyChanging();
+					this._IDProject = value;
+					this.SendPropertyChanged("IDProject");
+					this.OnIDProjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string fBatchName
+		{
+			get
+			{
+				return this._fBatchName;
+			}
+			set
+			{
+				if ((this._fBatchName != value))
+				{
+					this.OnfBatchNameChanging(value);
+					this.SendPropertyChanging();
+					this._fBatchName = value;
+					this.SendPropertyChanged("fBatchName");
+					this.OnfBatchNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Idimage", DbType="NVarChar(150) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Idimage
+		{
+			get
+			{
+				return this._Idimage;
+			}
+			set
+			{
+				if ((this._Idimage != value))
+				{
+					this.OnIdimageChanging(value);
+					this.SendPropertyChanging();
+					this._Idimage = value;
+					this.SendPropertyChanged("Idimage");
+					this.OnIdimageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienDoDeSo", DbType="NVarChar(250)")]
+		public string TienDoDeSo
+		{
+			get
+			{
+				return this._TienDoDeSo;
+			}
+			set
+			{
+				if ((this._TienDoDeSo != value))
+				{
+					this.OnTienDoDeSoChanging(value);
+					this.SendPropertyChanging();
+					this._TienDoDeSo = value;
+					this.SendPropertyChanged("TienDoDeSo");
+					this.OnTienDoDeSoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TienDoDeJP", DbType="NVarChar(250)")]
+		public string TienDoDeJP
+		{
+			get
+			{
+				return this._TienDoDeJP;
+			}
+			set
+			{
+				if ((this._TienDoDeJP != value))
+				{
+					this.OnTienDoDeJPChanging(value);
+					this.SendPropertyChanging();
+					this._TienDoDeJP = value;
+					this.SendPropertyChanged("TienDoDeJP");
+					this.OnTienDoDeJPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCheckDeSo", DbType="NVarChar(250)")]
+		public string UserCheckDeSo
+		{
+			get
+			{
+				return this._UserCheckDeSo;
+			}
+			set
+			{
+				if ((this._UserCheckDeSo != value))
+				{
+					this.OnUserCheckDeSoChanging(value);
+					this.SendPropertyChanging();
+					this._UserCheckDeSo = value;
+					this.SendPropertyChanged("UserCheckDeSo");
+					this.OnUserCheckDeSoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserCheckDeJP", DbType="NVarChar(250)")]
+		public string UserCheckDeJP
+		{
+			get
+			{
+				return this._UserCheckDeJP;
+			}
+			set
+			{
+				if ((this._UserCheckDeJP != value))
+				{
+					this.OnUserCheckDeJPChanging(value);
+					this.SendPropertyChanging();
+					this._UserCheckDeJP = value;
+					this.SendPropertyChanged("UserCheckDeJP");
+					this.OnUserCheckDeJPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateCreate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateCreate
+		{
+			get
+			{
+				return this._DateCreate;
+			}
+			set
+			{
+				if ((this._DateCreate != value))
+				{
+					this.OnDateCreateChanging(value);
+					this.SendPropertyChanging();
+					this._DateCreate = value;
+					this.SendPropertyChanged("DateCreate");
+					this.OnDateCreateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

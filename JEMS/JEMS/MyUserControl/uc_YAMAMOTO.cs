@@ -718,7 +718,7 @@ namespace JEMS.MyUserControl
                 txtTruong03 = "?";
             //Save Data
             
-            Global.db.Insert_YAMAMOTO(  idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,txt_Truong08.Text,
+            Global.db.Insert_YAMAMOTO_QuanLyDuAn(  idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,txt_Truong08.Text,
                                              txt_Truong13.Text, txt_Truong14.Text, txt_Truong15.Text, txt_Truong16.Text,
                                              txt_Truong21.Text, txt_Truong22.Text, txt_Truong23.Text, txt_Truong24.Text,
                                              txt_Truong29.Text, txt_Truong30.Text, txt_Truong31.Text, txt_Truong32.Text,

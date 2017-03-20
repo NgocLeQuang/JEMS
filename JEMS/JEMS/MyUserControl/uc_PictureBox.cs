@@ -11,7 +11,7 @@ namespace JEMS.MyUserControl
 {
     public partial class uc_PictureBox : UserControl
     {
-        Image temp_ ;
+        Image _temp ;
         public int iZoomMinimum = 10;
         public int iZoomMax = 500;
         public uc_PictureBox()
@@ -22,22 +22,22 @@ namespace JEMS.MyUserControl
         {
             imageBox1.AllowZoom = b;
         }
-        public String LoadImage(String strURL, String strFileName, int iZoomValue)
+        public string LoadImage(string strUrl, string strFileName, int iZoomValue)
         {
             try
             {
                 PictureBox temp = new PictureBox();
-                temp.Load(strURL);
-                this.imageBox1.Image = temp.Image;
+                temp.Load(strUrl);
+                imageBox1.Image = temp.Image;
                 temp.Dispose();
                 imageBox1.SizeMode = ImageGlass.ImageBoxSizeMode.Normal;
-                this.imageBox1.Image.Tag = strFileName;
+                imageBox1.Image.Tag = strFileName;
 
                 Bitmap bmap = new Bitmap(imageBox1.Image, new Size(Properties.Settings.Default.Zoom_Doc, Properties.Settings.Default.Zoom_Ngang));
                 Bitmap newmap = bmap.Clone(new Rectangle(0, 0, bmap.Width, bmap.Height), System.Drawing.Imaging.PixelFormat.DontCare);
                 bmap.Dispose();
                 imageBox1.Image = null;
-                imageBox1.Image = temp_= newmap;
+                imageBox1.Image = _temp= newmap;
                 imageBox1.Zoom = iZoomValue;
                 imageBox1.ZoomChanged += imageBox1_ZoomChanged;
             }
@@ -87,7 +87,7 @@ namespace JEMS.MyUserControl
 
                 Bitmap bmp = new Bitmap(imageBox1.Image);
                 bmp.RotateFlip(RotateFlipType.Rotate90FlipXY);
-                imageBox1.Image = temp_= bmp;
+                imageBox1.Image = _temp= bmp;
             }
         }
 
@@ -100,7 +100,7 @@ namespace JEMS.MyUserControl
 
                 Bitmap bmp = new Bitmap(imageBox1.Image);
                 bmp.RotateFlip(RotateFlipType.Rotate90FlipNone);
-                imageBox1.Image =temp_=  bmp;
+                imageBox1.Image =_temp=  bmp;
             }
         }
 
@@ -113,7 +113,7 @@ namespace JEMS.MyUserControl
                 Properties.Settings.Default.Zoom_Ngang = Convert.ToInt32(trackBar_Ngang.Value);
                 Properties.Settings.Default.Save();
 
-                Bitmap bmap = new Bitmap(temp_, new Size(Convert.ToInt32(trackBar_Ngang.Value), Convert.ToInt32(trackBar_Doc.Value)));
+                Bitmap bmap = new Bitmap(_temp, new Size(Convert.ToInt32(trackBar_Ngang.Value), Convert.ToInt32(trackBar_Doc.Value)));
                 Bitmap newmap = bmap.Clone(new Rectangle(0, 0, bmap.Width, bmap.Height), System.Drawing.Imaging.PixelFormat.DontCare);
                 bmap.Dispose();
                 imageBox1.Image = null;
@@ -137,7 +137,7 @@ private void uc_PictureBox_Load(object sender, EventArgs e)
                     return;
                 Properties.Settings.Default.Zoom_Doc = Convert.ToInt32(trackBar_Doc.Value);
                 Properties.Settings.Default.Save();
-                Bitmap bmap = new Bitmap(temp_, new Size(Convert.ToInt32(trackBar_Ngang.Value), Convert.ToInt32(trackBar_Doc.Value)));
+                Bitmap bmap = new Bitmap(_temp, new Size(Convert.ToInt32(trackBar_Ngang.Value), Convert.ToInt32(trackBar_Doc.Value)));
                 Bitmap newmap = bmap.Clone(new Rectangle(0, 0, bmap.Width, bmap.Height), System.Drawing.Imaging.PixelFormat.DontCare);
                 bmap.Dispose();
                 imageBox1.Image = null;
