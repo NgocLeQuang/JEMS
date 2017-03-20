@@ -230,6 +230,9 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.OddRow.BackColor = System.Drawing.Color.FloralWhite;
+            this.gridView1.Appearance.OddRow.BackColor2 = System.Drawing.Color.FloralWhite;
+            this.gridView1.Appearance.OddRow.Options.UseBackColor = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn4,
@@ -241,6 +244,7 @@
             this.gridView1.GridControl = this.dgv_listuser;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsView.EnableAppearanceOddRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.GotFocus += new System.EventHandler(this.gridView1_GotFocus);
             // 

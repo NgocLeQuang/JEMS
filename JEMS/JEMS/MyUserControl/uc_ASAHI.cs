@@ -215,7 +215,6 @@ namespace JEMS.MyUserControl
             if (Changed != null)
                 Changed(sender, e);
         }
-
         private void uc_ASAHI_Load(object sender, EventArgs e)
         {
             SetDataLookUpEdit();
@@ -245,7 +244,7 @@ namespace JEMS.MyUserControl
                 txtTruong03 = "?";
             //Save Data
             
-            Global.db.Insert_ASAHI(idImage, Global.StrBatch, Global.StrUsername,txt_Truong0.Text,txt_Truong02.Text,txtTruong03,txt_Truong05.Text,txt_Truong06.Text,txt_Truong08.Text,txt_Truong85.Text, CheckQC());
+            Global.db.Insert_ASAHI_QuanLyDuAn(idImage, Global.StrBatch, Global.StrUsername,txt_Truong0.Text,txt_Truong02.Text,txtTruong03,txt_Truong05.Text,txt_Truong06.Text,txt_Truong08.Text,txt_Truong85.Text, CheckQC());
         }
 
         private void chk_qc_CheckedChanged(object sender, EventArgs e)

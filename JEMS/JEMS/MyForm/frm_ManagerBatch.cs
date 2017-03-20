@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace JEMS.MyForm
 {
@@ -17,10 +19,24 @@ namespace JEMS.MyForm
         {
             RefreshBatch();
         }
+        public bool Cal(int width, GridView view)
+        {
+            view.IndicatorWidth = view.IndicatorWidth < width ? width : view.IndicatorWidth;
+            return true;
+        }
+
+        private void LoadSttGridView(RowIndicatorCustomDrawEventArgs e, GridView dgv)
+        {
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
+            SizeF size = e.Graphics.MeasureString(e.Info.DisplayText, e.Appearance.Font);
+            int width = Convert.ToInt32(size.Width) + 20;
+            BeginInvoke(new MethodInvoker(delegate { Cal(width, dgv); }));
+        }
 
         private void RefreshBatch()
         {
-            var temp = from var in Global.db.tbl_Batches select var;
+            var temp = (from var in Global.db.tbl_Batches orderby var.fDateCreated descending select var);
             gridControl1.DataSource = temp;
         }
 
@@ -40,7 +56,7 @@ namespace JEMS.MyForm
             {
                 try
                 {
-                    Global.db.XoaBatch(fbatchname);
+                    Global.db.XoaBatch_QuanLyDuAn(fbatchname,Global.StrIdProject);
                     Directory.Delete(temp, true);
                     MessageBox.Show("Đã xóa batch thành công!");
 
@@ -54,6 +70,11 @@ namespace JEMS.MyForm
 
         }
             RefreshBatch();
+        }
+
+        private void gridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            LoadSttGridView(e,gridView1);
         }
     }
 }

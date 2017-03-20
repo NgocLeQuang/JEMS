@@ -31,7 +31,7 @@ namespace JEMS.MyForm
 
         private void GridView1_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {
-            GridView View = sender as GridView;
+            GridView view = sender as GridView;
             //doi mau row chan
             //if (e.RowHandle >= 0)
             //{
@@ -42,7 +42,7 @@ namespace JEMS.MyForm
             //Doi mau cell cua colummn Status, neu co gia tri Actived thi co mau xanh, neu co gia tri N/A thi co mau hong`
             if (e.Column.FieldName == "ThongTin")
             {
-                string category = View.GetRowCellDisplayText(e.RowHandle, View.Columns["ThongTin"]);
+                string category = view.GetRowCellDisplayText(e.RowHandle, view.Columns["ThongTin"]);
                 if (category == "Hình đang nhập")
                     e.Appearance.BackColor = Color.HotPink;
                 else if (category == "Hình chờ check")

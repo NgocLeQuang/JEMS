@@ -53,6 +53,7 @@ namespace JEMS.MyForm
 
         private void btn_Export_Click(object sender, EventArgs e)
         {
+            Global.db_BPO.UpdateTimeLastRequest(Global.Strtoken);
             if (string.IsNullOrEmpty(cbb_Batch.Text))
             {
                 MessageBox.Show("Chưa chọn batch.");
@@ -222,7 +223,34 @@ namespace JEMS.MyForm
                 }
                 TableToExcel_YASUDA_QC(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YASUDA_QC.xlsx");
             }
+            if (LoaiPhieu == "AEON")
+            {
+                //EXport Excel AEON
 
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_AEON.xlsx"))
+                {
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_AEON.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_AEON.xlsx"), Properties.Resources.ExportExcel_AEON);
+                }
+                else
+                {
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_AEON.xlsx"), Properties.Resources.ExportExcel_AEON);
+                }
+                TableToExcel_AEON(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_AEON.xlsx");
+
+                //EXport Excel AEON_QC
+
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_AEON_QC.xlsx"))
+                {
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_AEON_QC.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_AEON_QC.xlsx"), Properties.Resources.ExportExcel_AEON);
+                }
+                else
+                {
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_AEON_QC.xlsx"), Properties.Resources.ExportExcel_AEON);
+                }
+                TableToExcel_AEON_QC(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_AEON_QC.xlsx");
+            }
         }
 
         public bool TableToExcel_ASAHI(String strfilename)
@@ -293,13 +321,8 @@ namespace JEMS.MyForm
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    int ii =
-                        Convert.ToInt32(dr.Cells[0].Value != null
-                            ? dr.Cells[0].Value.ToString().IndexOf(".").ToString()
-                            : "0");
-                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null
-                        ? dr.Cells[0].Value.ToString().Substring(0, ii)
-                        : ""; //tên ảnh
+                    int ii =Convert.ToInt32(dr.Cells[0].Value != null? dr.Cells[0].Value.ToString().IndexOf(".").ToString(): "0");
+                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null? dr.Cells[0].Value.ToString().Substring(0, ii): ""; //tên ảnh
                     wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : ""; //truong 02
                     wrksheet.Cells[h, 3] = dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : ""; //03
                     wrksheet.Cells[h, 5] = dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : ""; //05
@@ -731,7 +754,7 @@ namespace JEMS.MyForm
                                         Truong_86 += "繊維くず" + "、";
                                         break;
                                     case "J":
-                                        Truong_86 += "動物性残渣" + "、";
+                                        Truong_86 += "動植物性残さ" + "、";
                                         break;
                                     case "K":
                                         Truong_86 += "ゴムくず" + "、";
@@ -746,7 +769,7 @@ namespace JEMS.MyForm
                                         Truong_86 += "鉱さい" + "、";
                                         break;
                                     case "O":
-                                        Truong_86 += "瓦礫類" + "、";
+                                        Truong_86 += "がれき類" + "、";
                                         break;
                                     case "P":
                                         Truong_86 += "動物の糞尿" + "、";
@@ -796,7 +819,7 @@ namespace JEMS.MyForm
                                         Truong_86 += "繊維くず";
                                         break;
                                     case "J":
-                                        Truong_86 += "動物性残渣";
+                                        Truong_86 += "動植物性残さ";
                                         break;
                                     case "K":
                                         Truong_86 += "ゴムくず";
@@ -811,7 +834,7 @@ namespace JEMS.MyForm
                                         Truong_86 += "鉱さい";
                                         break;
                                     case "O":
-                                        Truong_86 += "瓦礫類";
+                                        Truong_86 += "がれき類";
                                         break;
                                     case "P":
                                         Truong_86 += "動物の糞尿";
@@ -866,8 +889,7 @@ namespace JEMS.MyForm
             }
         }
 
-        public bool TableToExcel_YAMAMOTO_QC(String strfilename)
-        {
+        public bool TableToExcel_YAMAMOTO_QC(String strfilename){
             try
             {
                 dataGridView1.DataSource = null;
@@ -980,7 +1002,7 @@ namespace JEMS.MyForm
                                         Truong_86 += "繊維くず" + "、";
                                         break;
                                     case "J":
-                                        Truong_86 += "動物性残渣" + "、";
+                                        Truong_86 += "動植物性残さ" + "、";
                                         break;
                                     case "K":
                                         Truong_86 += "ゴムくず" + "、";
@@ -995,7 +1017,7 @@ namespace JEMS.MyForm
                                         Truong_86 += "鉱さい" + "、";
                                         break;
                                     case "O":
-                                        Truong_86 += "瓦礫類" + "、";
+                                        Truong_86 += "がれき類" + "、";
                                         break;
                                     case "P":
                                         Truong_86 += "動物の糞尿" + "、";
@@ -1045,7 +1067,7 @@ namespace JEMS.MyForm
                                         Truong_86 += "繊維くず";
                                         break;
                                     case "J":
-                                        Truong_86 += "動物性残渣";
+                                        Truong_86 += "動植物性残さ";
                                         break;
                                     case "K":
                                         Truong_86 += "ゴムくず";
@@ -1060,7 +1082,7 @@ namespace JEMS.MyForm
                                         Truong_86 += "鉱さい";
                                         break;
                                     case "O":
-                                        Truong_86 += "瓦礫類";
+                                        Truong_86 += "がれき類";
                                         break;
                                     case "P":
                                         Truong_86 += "動物の糞尿";
@@ -1510,5 +1532,247 @@ namespace JEMS.MyForm
                 return false;
             }
         }
+        
+        public string ChonGiaTri(string s)
+        {
+            string kq = "";
+            switch (s)
+            {
+                case "t":
+                    kq= "1";
+                    break;
+                case "m3":
+                    kq = "2";
+                    break;
+                case "kg":
+                    kq= "3";
+                    break;
+                case "リットル（ℓ）":
+                    kq = "4";
+                    break;
+                case "個・台":
+                    kq = "5";
+                    break;
+                case "●":
+                    kq = "●";
+                    break;
+                case "?":
+                    kq = "?";
+                    break;
+                case "":
+                    kq = "";
+                    break;
+            }
+            return kq;
+        }
+
+        public bool TableToExcel_AEON(String strfilename)
+        {
+            try
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = Global.db.ExportExcel_AEON(cbb_Batch.Text);
+                Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Sheets _sheet = book.Sheets;
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
+                int h = 3;
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                {
+                    int ii = Convert.ToInt32(dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().IndexOf(".").ToString() : "0");
+                    string truong_03 = dr.Cells[2].Value != null? dr.Cells[2].Value.ToString(): "" + 
+                                        dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().Substring(0, ii) : "";   //tên ảnh
+                    wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : "";   //truong 02
+                    wrksheet.Cells[h, 3] = truong_03;    //03
+                    if ((dr.Cells[4].Value != null ? dr.Cells[4].Value.ToString() : "") == "1") //04
+                    {
+                        wrksheet.Cells[h, 4] = "あり";
+                    }
+                    else
+                    {
+                        wrksheet.Cells[h, 4] = "なし";
+                    }
+                    wrksheet.Cells[h, 5] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";   //05
+                    wrksheet.Cells[h, 6] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";   //06
+                    wrksheet.Cells[h, 7] = dr.Cells[7].Value != null ? dr.Cells[7].Value.ToString() : "";   //07
+                    wrksheet.Cells[h, 8] = ChonGiaTri(dr.Cells[8].Value != null ? dr.Cells[8].Value.ToString() : "");   //08
+
+
+                    wrksheet.Cells[h, 13] = dr.Cells[13].Value != null ? dr.Cells[13].Value.ToString() : "";
+                    wrksheet.Cells[h, 14] = dr.Cells[14].Value != null ? dr.Cells[14].Value.ToString() : "";
+                    wrksheet.Cells[h, 15] = dr.Cells[15].Value != null ? dr.Cells[15].Value.ToString() : "";
+                    wrksheet.Cells[h, 16] = ChonGiaTri(dr.Cells[16].Value != null ? dr.Cells[16].Value.ToString() : "");
+
+                    wrksheet.Cells[h, 21] = dr.Cells[21].Value != null ? dr.Cells[21].Value.ToString() : "";
+                    wrksheet.Cells[h, 22] = dr.Cells[22].Value != null ? dr.Cells[22].Value.ToString() : "";
+                    wrksheet.Cells[h, 23] = dr.Cells[23].Value != null ? dr.Cells[23].Value.ToString() : "";
+                    wrksheet.Cells[h, 24] = ChonGiaTri(dr.Cells[24].Value != null ? dr.Cells[24].Value.ToString() : "");
+
+
+                    wrksheet.Cells[h, 29] = dr.Cells[29].Value != null ? dr.Cells[29].Value.ToString() : "";
+                    wrksheet.Cells[h, 30] = dr.Cells[30].Value != null ? dr.Cells[30].Value.ToString() : "";
+                    wrksheet.Cells[h, 31] = dr.Cells[31].Value != null ? dr.Cells[31].Value.ToString() : "";
+                    wrksheet.Cells[h, 32] = ChonGiaTri(dr.Cells[32].Value != null ? dr.Cells[32].Value.ToString() : "");
+
+                    wrksheet.Cells[h, 37] = dr.Cells[37].Value != null ? dr.Cells[37].Value.ToString() : "";
+                    wrksheet.Cells[h, 38] = dr.Cells[38].Value != null ? dr.Cells[38].Value.ToString() : "";
+                    wrksheet.Cells[h, 39] = dr.Cells[39].Value != null ? dr.Cells[39].Value.ToString() : "";
+                    wrksheet.Cells[h, 40] = ChonGiaTri(dr.Cells[40].Value != null ? dr.Cells[40].Value.ToString() : "");
+
+                    wrksheet.Cells[h, 45] = dr.Cells[45].Value != null ? dr.Cells[45].Value.ToString() : "";
+                    wrksheet.Cells[h, 46] = dr.Cells[46].Value != null ? dr.Cells[46].Value.ToString() : "";
+                    wrksheet.Cells[h, 47] = dr.Cells[47].Value != null ? dr.Cells[47].Value.ToString() : "";
+                    wrksheet.Cells[h, 48] = ChonGiaTri(dr.Cells[48].Value != null ? dr.Cells[48].Value.ToString() : "");
+
+
+                    wrksheet.Cells[h, 53] = dr.Cells[53].Value != null ? dr.Cells[53].Value.ToString() : "";
+                    wrksheet.Cells[h, 54] = dr.Cells[54].Value != null ? dr.Cells[54].Value.ToString() : "";
+                    wrksheet.Cells[h, 55] = dr.Cells[55].Value != null ? dr.Cells[55].Value.ToString() : "";
+                    wrksheet.Cells[h, 56] = ChonGiaTri(dr.Cells[56].Value != null ? dr.Cells[56].Value.ToString() : "");
+
+                    wrksheet.Cells[h, 61] = dr.Cells[61].Value != null ? dr.Cells[61].Value.ToString() : "";
+                    wrksheet.Cells[h, 62] = dr.Cells[62].Value != null ? dr.Cells[62].Value.ToString() : "";
+                    wrksheet.Cells[h, 63] = dr.Cells[63].Value != null ? dr.Cells[63].Value.ToString() : "";
+                    wrksheet.Cells[h, 64] = ChonGiaTri(dr.Cells[64].Value != null ? dr.Cells[64].Value.ToString() : "");
+
+                    
+                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
+                    Range rowHead = wrksheet.get_Range("A3", "CH" + h);
+                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    h++;
+                }
+                string savePath = "";
+                saveFileDialog1.Title = "Save Excel Files";
+                saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
+                saveFileDialog1.FileName = cbb_Batch.Text;
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    book.SaveCopyAs(saveFileDialog1.FileName);
+                    book.Saved = true;
+                    savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                    App.Quit();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi xuất excel!");
+                    return false;
+                }
+                Process.Start(savePath);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public bool TableToExcel_AEON_QC(String strfilename)
+        {
+            try
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = Global.db.ExportExcel_AEON_QC(cbb_Batch.Text);
+                Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Sheets _sheet = book.Sheets;
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
+                int h = 3;
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                {
+                    int ii = Convert.ToInt32(dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().IndexOf(".").ToString() : "0");
+                    string truong_03 = dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "" +
+                                        dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().Substring(0, ii) : "";   //tên ảnh
+                    wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : "";   //truong 02
+                    wrksheet.Cells[h, 3] = truong_03;    //03
+                    if ((dr.Cells[4].Value != null ? dr.Cells[4].Value.ToString() : "") == "1") //04
+                    {
+                        wrksheet.Cells[h, 4] = "あり";
+                    }
+                    else
+                    {
+                        wrksheet.Cells[h, 4] = "なし";
+                    }
+                    wrksheet.Cells[h, 5] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";   //05
+                    wrksheet.Cells[h, 6] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";   //06
+                    wrksheet.Cells[h, 7] = dr.Cells[7].Value != null ? dr.Cells[7].Value.ToString() : "";   //07
+                    wrksheet.Cells[h, 8] = ChonGiaTri(dr.Cells[8].Value != null ? dr.Cells[8].Value.ToString() : "");   //08
+
+
+                    wrksheet.Cells[h, 13] = dr.Cells[13].Value != null ? dr.Cells[13].Value.ToString() : "";
+                    wrksheet.Cells[h, 14] = dr.Cells[14].Value != null ? dr.Cells[14].Value.ToString() : "";
+                    wrksheet.Cells[h, 15] = dr.Cells[15].Value != null ? dr.Cells[15].Value.ToString() : "";
+                    wrksheet.Cells[h, 16] = ChonGiaTri(dr.Cells[16].Value != null ? dr.Cells[16].Value.ToString() : "");
+
+                    wrksheet.Cells[h, 21] = dr.Cells[21].Value != null ? dr.Cells[21].Value.ToString() : "";
+                    wrksheet.Cells[h, 22] = dr.Cells[22].Value != null ? dr.Cells[22].Value.ToString() : "";
+                    wrksheet.Cells[h, 23] = dr.Cells[23].Value != null ? dr.Cells[23].Value.ToString() : "";
+                    wrksheet.Cells[h, 24] = ChonGiaTri(dr.Cells[24].Value != null ? dr.Cells[24].Value.ToString() : "");
+
+
+                    wrksheet.Cells[h, 29] = dr.Cells[29].Value != null ? dr.Cells[29].Value.ToString() : "";
+                    wrksheet.Cells[h, 30] = dr.Cells[30].Value != null ? dr.Cells[30].Value.ToString() : "";
+                    wrksheet.Cells[h, 31] = dr.Cells[31].Value != null ? dr.Cells[31].Value.ToString() : "";
+                    wrksheet.Cells[h, 32] = ChonGiaTri(dr.Cells[32].Value != null ? dr.Cells[32].Value.ToString() : "");
+
+                    wrksheet.Cells[h, 37] = dr.Cells[37].Value != null ? dr.Cells[37].Value.ToString() : "";
+                    wrksheet.Cells[h, 38] = dr.Cells[38].Value != null ? dr.Cells[38].Value.ToString() : "";
+                    wrksheet.Cells[h, 39] = dr.Cells[39].Value != null ? dr.Cells[39].Value.ToString() : "";
+                    wrksheet.Cells[h, 40] = ChonGiaTri(dr.Cells[40].Value != null ? dr.Cells[40].Value.ToString() : "");
+
+                    wrksheet.Cells[h, 45] = dr.Cells[45].Value != null ? dr.Cells[45].Value.ToString() : "";
+                    wrksheet.Cells[h, 46] = dr.Cells[46].Value != null ? dr.Cells[46].Value.ToString() : "";
+                    wrksheet.Cells[h, 47] = dr.Cells[47].Value != null ? dr.Cells[47].Value.ToString() : "";
+                    wrksheet.Cells[h, 48] = ChonGiaTri(dr.Cells[48].Value != null ? dr.Cells[48].Value.ToString() : "");
+
+
+                    wrksheet.Cells[h, 53] = dr.Cells[53].Value != null ? dr.Cells[53].Value.ToString() : "";
+                    wrksheet.Cells[h, 54] = dr.Cells[54].Value != null ? dr.Cells[54].Value.ToString() : "";
+                    wrksheet.Cells[h, 55] = dr.Cells[55].Value != null ? dr.Cells[55].Value.ToString() : "";
+                    wrksheet.Cells[h, 56] = ChonGiaTri(dr.Cells[56].Value != null ? dr.Cells[56].Value.ToString() : "");
+
+                    wrksheet.Cells[h, 61] = dr.Cells[61].Value != null ? dr.Cells[61].Value.ToString() : "";
+                    wrksheet.Cells[h, 62] = dr.Cells[62].Value != null ? dr.Cells[62].Value.ToString() : "";
+                    wrksheet.Cells[h, 63] = dr.Cells[63].Value != null ? dr.Cells[63].Value.ToString() : "";
+                    wrksheet.Cells[h, 64] = ChonGiaTri(dr.Cells[64].Value != null ? dr.Cells[64].Value.ToString() : "");
+
+
+                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
+                    Range rowHead = wrksheet.get_Range("A3", "CH" + h);
+                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    h++;
+                }
+                string savePath = "";
+                saveFileDialog1.Title = "Save Excel Files";
+                saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
+                saveFileDialog1.FileName = cbb_Batch.Text + "_QC";
+                saveFileDialog1.RestoreDirectory = true;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    book.SaveCopyAs(saveFileDialog1.FileName);
+                    book.Saved = true;
+                    savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                    App.Quit();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi xuất excel!");
+                    return false;
+                }
+                Process.Start(savePath);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
     }
 }

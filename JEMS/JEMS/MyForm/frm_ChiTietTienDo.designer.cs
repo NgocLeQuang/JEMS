@@ -54,8 +54,8 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -242,6 +242,9 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.OddRow.BackColor = System.Drawing.Color.FloralWhite;
+            this.gridView1.Appearance.OddRow.BackColor2 = System.Drawing.Color.FloralWhite;
+            this.gridView1.Appearance.OddRow.Options.UseBackColor = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn5,
@@ -329,15 +332,6 @@
             this.gridColumn2.VisibleIndex = 2;
             this.gridColumn2.Width = 218;
             // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Thông tin";
-            this.gridColumn3.FieldName = "ThongTin";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 4;
-            this.gridColumn3.Width = 226;
-            // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "User Name Check_QC";
@@ -346,6 +340,15 @@
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;
             this.gridColumn6.Width = 233;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Thông tin";
+            this.gridColumn3.FieldName = "ThongTin";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 4;
+            this.gridColumn3.Width = 226;
             // 
             // frm_ChiTietTienDo
             // 
