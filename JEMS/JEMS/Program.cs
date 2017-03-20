@@ -30,7 +30,8 @@ namespace JEMS
             do
             {
                 temp = false;
-                Frm_Login a = new Frm_Login();a = new Frm_Login();
+                Frm_Login a = new Frm_Login();
+                a = new Frm_Login();
                 a.lb_programName.Text = "\n           Dự Án JEMS";
                 a.lb_vision.Text = "Phiên bản :";
                 a.grb_1.Text = "Thông Tin PC";
