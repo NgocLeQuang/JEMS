@@ -420,11 +420,32 @@ namespace JEMS.MyUserControl
         private void txt_Truong69_EditValueChanged(object sender, EventArgs e)
         {
             Set_txtLengColumn1(sender, e, txt_Truong69);
+            if (txt_Truong69.Text!="" || txt_Truong77.Text != "")
+            {
+                txt_Truong86.Visible = true;
+                labelControl9.Visible = true;
+            }
+            else
+            {
+                txt_Truong86.Visible = false;
+                labelControl9.Visible = false;
+                txt_Truong86.Text = "";
+            }
         }
-
         private void txt_Truong77_EditValueChanged(object sender, EventArgs e)
         {
             Set_txtLengColumn1(sender, e, txt_Truong77);
+            if (txt_Truong69.Text != "" || txt_Truong77.Text != "")
+            {
+                txt_Truong86.Visible = true;
+                labelControl9.Visible = true;
+            }
+            else
+            {
+                txt_Truong86.Visible = false;
+                labelControl9.Visible = false;
+                txt_Truong86.Text = "";
+            }
         }
 
         private void txt_Truong06_EditValueChanged(object sender, EventArgs e)
@@ -618,6 +639,9 @@ namespace JEMS.MyUserControl
         }
         private void uc_ASAHI_Load(object sender, EventArgs e)
         {
+            txt_Truong86.Visible = false;
+            labelControl9.Visible = false;
+            txt_Truong86.Text = "";
             SetDataLookUpEdit();
             txt_Truong08.Properties.DataSource = category;
             txt_Truong08.Properties.DisplayMember = "Set_Value";

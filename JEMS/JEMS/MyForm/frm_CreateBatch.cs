@@ -110,11 +110,12 @@ namespace JEMS.MyForm
             cbb_loaithoigian.Items.Add(new { Text = "", Value = "" });
             cbb_loaithoigian.Items.Add(new { Text = "Ngày", Value = "Ngay" });
             cbb_loaithoigian.Items.Add(new { Text = "Giờ", Value = "Gio" });
-            cbb_loaithoigian.Items.Add(new { Text = "Phút", Value = "Phut" });cbb_loaithoigian.SelectedIndex = 0;
-            dateEdit_ngaybatdau.EditValue = DateTime.Now;
-            timeEdit_ngaybatdau.EditValue = DateTime.Now;
-            timeEdit_ngayketthuc.EditValue = DateTime.Now;
-            dateEdit_ngayketthuc.EditValue = DateTime.Now;
+            cbb_loaithoigian.Items.Add(new { Text = "Phút", Value = "Phut" });
+            cbb_loaithoigian.SelectedIndex = 0;
+            dateEdit_ngaybatdau.DateTime = DateTime.Now;
+            timeEdit_ngaybatdau.Time = DateTime.Now;
+            timeEdit_ngayketthuc.Time = DateTime.Now;
+            dateEdit_ngayketthuc.DateTime = DateTime.Now;
         }
 
         public static string[] GetFilesFrom(string searchFolder, string[] filters, bool isRecursive)
@@ -156,8 +157,8 @@ namespace JEMS.MyForm
                     Global.db.SubmitChanges();
 
 
-                    DateTime timeStart = Convert.ToDateTime(dateEdit_ngaybatdau.Text + " " + timeEdit_ngaybatdau.Text);
-                    DateTime timeEnd = Convert.ToDateTime(dateEdit_ngayketthuc.Text + " " + timeEdit_ngayketthuc.Text);
+                    DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Ticks + timeEdit_ngaybatdau.Time.Ticks);
+                    DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Ticks + timeEdit_ngayketthuc.Time.Ticks);
                     int timeNotificationdeadline = 0;
                     if (cbb_loaithoigian.Text == "Ngày")
                     {
@@ -200,22 +201,15 @@ namespace JEMS.MyForm
                 return;
             }
             string temp = Global.StrPath + "\\" + txt_BatchName.Text;
-            try
+            if (!Directory.Exists(temp))
             {
-                if (!Directory.Exists(temp))
-                {
-                    Directory.CreateDirectory(temp);
-                }
-                else
-                {
-                    MessageBox.Show("Bị trùng tên batch!");
-                    return;
-                }
+                Directory.CreateDirectory(temp);
             }
-            catch (Exception e)
+            else
             {
-                MessageBox.Show(e.Message);}
-           
+                MessageBox.Show("Bị trùng tên batch!");
+                return;
+            }
             foreach (string i in _lFileNames)
             {
                 FileInfo fi = new FileInfo(i);
@@ -245,16 +239,7 @@ namespace JEMS.MyForm
                 Global.db_BPO.SubmitChanges();
 
                 string des = temp + @"\" + Path.GetFileName(fi.ToString());
-                try
-                {
-                    MessageBox.Show(des);
-                    fi.CopyTo(des);
-                }
-                catch (Exception ee)
-                {
-
-                    MessageBox.Show(ee.Message);
-                }
+                fi.CopyTo(des);
                 progressBarControl1.PerformStep();
                 progressBarControl1.Update();
             }
@@ -279,8 +264,7 @@ namespace JEMS.MyForm
             foreach (string item in lStrBath)
             {
                 var fBatch = new tbl_Batch
-                {
-                    fBatchName = new DirectoryInfo(item).Name,
+                {fBatchName = new DirectoryInfo(item).Name,
                     fUserCreate = txt_UserCreate.Text,
                     fDateCreated = DateTime.Now,
                     fPathPicture = item,
@@ -292,8 +276,8 @@ namespace JEMS.MyForm
                 Global.db.SubmitChanges();
 
 
-                DateTime timeStart = Convert.ToDateTime(dateEdit_ngaybatdau.Text + " " + timeEdit_ngaybatdau.Text);
-                DateTime timeEnd = Convert.ToDateTime(dateEdit_ngayketthuc.Text + " " + timeEdit_ngayketthuc.Text);
+                DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Ticks + timeEdit_ngaybatdau.Time.Ticks);
+                DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Ticks + timeEdit_ngayketthuc.Time.Ticks);
                 int timeNotificationdeadline = 0;
                 if (cbb_loaithoigian.Text == "Ngày")
                 {
@@ -360,16 +344,7 @@ namespace JEMS.MyForm
                     Global.db_BPO.SubmitChanges();
 
                     string des = temp + @"\" + Path.GetFileName(fi.ToString());
-                    try
-                    {
-                        MessageBox.Show(des);
-                        fi.CopyTo(des);
-                    }
-                    catch (Exception ee)
-                    {
-
-                        MessageBox.Show(ee.Message);}
-                  
+                    fi.CopyTo(des);
                     progressBarControl1.PerformStep();
                     progressBarControl1.Update();
                 }
@@ -435,7 +410,7 @@ namespace JEMS.MyForm
             try
             {
                 if (!flag) return;
-                DateTime timeStart = Convert.ToDateTime(dateEdit_ngaybatdau.Text + " " + timeEdit_ngaybatdau.Text);
+                DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Ticks + timeEdit_ngaybatdau.Time.Ticks);
                 TimeSpan timeAdd = new TimeSpan(Convert.ToInt32(nud_songaylam.Value),Convert.ToInt32(nud_sogiolam.Value), Convert.ToInt32(nud_sophutlam.Value), 0);
                 DateTime timeEnd = timeStart.Add(timeAdd);
                 dateEdit_ngayketthuc.EditValue = timeEnd;
@@ -449,8 +424,8 @@ namespace JEMS.MyForm
             try
             {
                 if (flag) return;
-                DateTime timeStart = Convert.ToDateTime(dateEdit_ngaybatdau.Text + " " + timeEdit_ngaybatdau.Text);
-                DateTime timeEnd = Convert.ToDateTime(dateEdit_ngayketthuc.Text + " " + timeEdit_ngayketthuc.Text);
+                DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Ticks + timeEdit_ngaybatdau.Time.Ticks);
+                DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Ticks + timeEdit_ngayketthuc.Time.Ticks);
                 TimeSpan time = timeEnd.Subtract(timeStart);
                 nud_songaylam.Value = time.Days;
                 nud_sogiolam.Value = time.Hours;
@@ -495,8 +470,8 @@ namespace JEMS.MyForm
 
         private void nud_thoigiandeadline_ValueChanged(object sender, EventArgs e)
         {
-            DateTime timeStart = Convert.ToDateTime(dateEdit_ngaybatdau.Text + " " + timeEdit_ngaybatdau.Text);
-            DateTime timeEnd = Convert.ToDateTime(dateEdit_ngayketthuc.Text + " " + timeEdit_ngayketthuc.Text);
+            DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Ticks + timeEdit_ngaybatdau.Time.Ticks);
+            DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Ticks + timeEdit_ngayketthuc.Time.Ticks);
             TimeSpan time = timeEnd.Subtract(timeStart);
             if (timeStart > timeEnd)
             {
