@@ -53,8 +53,7 @@ namespace JEMS
                 if (a.ShowDialog() == DialogResult.OK)
                 {
                     Global.StrMachine = a.StrMachine;
-                    Global.StrUserWindow = a.StrUserWindow;
-                    Global.StrIpAddress = a.StrIpAddress;
+                    Global.StrUserWindow = a.StrUserWindow;Global.StrIpAddress = a.StrIpAddress;
                     Global.StrUsername = a.StrUserName;
                     Global.StrBatch = a.StrBatch;
                     Global.StrRole = a.StrRole;
