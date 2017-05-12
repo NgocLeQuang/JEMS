@@ -11,6 +11,7 @@ namespace JEMS.MyForm
 {
     public partial class frm_Check_DeSo : XtraForm
     {
+        private bool _Flag = false;
         public frm_Check_DeSo()
         {
             InitializeComponent();
@@ -119,7 +120,44 @@ namespace JEMS.MyForm
                     {
                         tp_AEON_DeSo1.PageVisible = true;
                         tp_AEON_DeSo2.PageVisible = true;
-                    }
+                        uc_AEON1.txt_Truong03_1.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong03_1.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong05.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong05.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong13.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong13.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong21.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong21.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong29.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong29.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong37.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong37.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong45.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong45.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong61.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong61.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong53.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong53.Leave += Txt_Truong02_Leave;
+
+
+                        uc_AEON2.txt_Truong03_1.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON2.txt_Truong03_1.Leave += Txt_Truong02_Leave;
+                        uc_AEON2.txt_Truong05.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON2.txt_Truong05.Leave += Txt_Truong02_Leave;
+                        uc_AEON2.txt_Truong13.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON2.txt_Truong13.Leave += Txt_Truong02_Leave;
+                        uc_AEON2.txt_Truong21.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON2.txt_Truong21.Leave += Txt_Truong02_Leave;
+                        uc_AEON2.txt_Truong29.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON2.txt_Truong29.Leave += Txt_Truong02_Leave;
+                        uc_AEON2.txt_Truong37.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON2.txt_Truong37.Leave += Txt_Truong02_Leave;
+                        uc_AEON2.txt_Truong45.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON2.txt_Truong45.Leave += Txt_Truong02_Leave;
+                        uc_AEON2.txt_Truong61.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON2.txt_Truong61.Leave += Txt_Truong02_Leave;
+                        uc_AEON2.txt_Truong53.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON2.txt_Truong53.Leave += Txt_Truong02_Leave;}
 
                     btn_Luu_DeSo1.Visible = false;
                     btn_Luu_DeSo2.Visible = false;
@@ -143,6 +181,16 @@ namespace JEMS.MyForm
             {
                 MessageBox.Show("Lỗi" + i);
             }
+        }
+
+        private void Txt_Truong02_Leave(object sender, EventArgs e)
+        {
+            _Flag = false;
+        }
+
+        private void Txt_Truong02_GotFocus(object sender, EventArgs e)
+        {
+            _Flag = true;
         }
 
         private void Uc_ASAHI2_Changed(object sender, EventArgs e)
@@ -350,6 +398,7 @@ namespace JEMS.MyForm
                 uc_ASAHI2.txt_Truong06.Text = deso[1].Truong_06;
                 uc_ASAHI2.txt_Truong08.EditValue = deso[1].Truong_08;
                 uc_ASAHI2.txt_Truong85.Text = deso[1].Truong_85;
+                uc_ASAHI1.txt_Truong02.Focus();
 
             }
             else if (Global.LoaiPhieu == "EIZEN")
@@ -395,6 +444,7 @@ namespace JEMS.MyForm
                 uc_EZIEN2.txt_Truong08.Text = deso[1].Truong_08;
                 uc_EZIEN2.txt_Truong85.Text = deso[1].Truong_85;
                 uc_EZIEN2.txt_Truong86.Text = deso[1].Truong_86;
+                uc_EZIEN1.txt_Truong02.Focus();
             }
             else if (Global.LoaiPhieu == "YAMAMOTO")
             {
@@ -510,6 +560,7 @@ namespace JEMS.MyForm
                 uc_YAMAMOTO2.txt_Truong85.Text = deso[1].Truong_85;
                 uc_YAMAMOTO2.txt_Truong86.Text = deso[1].Truong_86;
 
+                uc_YAMAMOTO1.txt_Truong02.Focus();
             }
             else if (Global.LoaiPhieu == "YASUDA")
             {
@@ -648,6 +699,8 @@ namespace JEMS.MyForm
                 uc_YASUDA2.txt_Truong85.Text = deso[1].Truong_85;
                 uc_YASUDA2.txt_Truong87.Text = deso[1].Truong_87;
                 uc_YASUDA2.txt_Truong92.Text = deso[1].Truong_91;
+
+                uc_YASUDA1.txt_Truong02.Focus();
             }
             else if (Global.LoaiPhieu == "AEON")
             {
@@ -730,6 +783,7 @@ namespace JEMS.MyForm
                 uc_AEON2.txt_Truong63.Text = deso[1].Truong_63;
                 uc_AEON2.txt_Truong64.Text = deso[1].Truong_64;
 
+                uc_AEON1.txt_Truong02.Focus();
             }
 
             Compare_TextBox(uc_ASAHI1.txt_Truong02, uc_ASAHI2.txt_Truong02);
@@ -1333,6 +1387,40 @@ namespace JEMS.MyForm
                 uc_AEON2.HorizontalScroll.Value = e.NewValue;
             else if (e.ScrollOrientation == System.Windows.Forms.ScrollOrientation.VerticalScroll)
                 this.uc_AEON1.VerticalScroll.Value = e.NewValue;
+        }
+
+        private void frm_Check_DeSo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down  && _Flag)
+            {
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+            }
+            if (e.KeyCode == Keys.Up  && _Flag)
+            {
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                SendKeys.Send("{Tab}");
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                SendKeys.Send("+{Tab}");
+            }
+        }
+
+        private void btn_Screen_Click(object sender, EventArgs e)
+        {
+            //Bitmap bmp = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            //Graphics gr = Graphics.FromImage(bmp);
+            //gr.CopyFromScreen(0, 0, 0, 0, bmp.Size);
+            //bmp.Save("img.png", System.Drawing.Imaging.ImageFormat.Png);
         }
     }
 }

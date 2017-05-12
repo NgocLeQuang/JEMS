@@ -47,8 +47,39 @@ namespace JEMS.MyForm
             new frm_CreateBatch().ShowDialog();
             RefreshBatch();
         }
-        
-        private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void gridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            LoadSttGridView(e,gridView1);
+        }
+
+        private void tbn_Xoa_Nhieu_Batch_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            string s = "";
+            foreach (var rowHandle in gridView1.GetSelectedRows())
+            {
+                i += 1;
+                string fbatchname = gridView1.GetRowCellValue(rowHandle, "fBatchName").ToString();
+                s += fbatchname + "\n";
+            }
+            if (i<=0)
+            {
+                MessageBox.Show("Bạn chưa chọn batch. Vui lòng chọn batch trước khi xóa");
+                return;
+            }
+            if(MessageBox.Show("Bạn muốn xóa "+i+" batch sau:\n"+s,"Cảnh báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.No)
+                return;
+            foreach (var rowHandle in gridView1.GetSelectedRows())
+            {
+                string fbatchname = gridView1.GetRowCellValue(rowHandle,"fBatchName").ToString();
+                string temp = Global.StrPath + "\\" + fbatchname;
+                Global.db.XoaBatch_QuanLyDuAn(fbatchname, Global.StrIdProject);
+                Directory.Delete(temp, true);
+            }
+            RefreshBatch();
+        }
+
+        private void repositoryItemButtonEdit2_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             string fbatchname = gridView1.GetFocusedRowCellValue("fBatchName").ToString();
             string temp = Global.StrPath + "\\" + fbatchname;
@@ -56,25 +87,20 @@ namespace JEMS.MyForm
             {
                 try
                 {
-                    Global.db.XoaBatch_QuanLyDuAn(fbatchname,Global.StrIdProject);
+                    Global.db.XoaBatch_QuanLyDuAn(fbatchname, Global.StrIdProject);
                     Directory.Delete(temp, true);
                     MessageBox.Show("Đã xóa batch thành công!");
 
-            }
+                }
                 catch (Exception)
-            {
+                {
 
-                MessageBox.Show("Xóa batch bị lỗi!");
+                    MessageBox.Show("Xóa batch bị lỗi!");
+
+                }
 
             }
-
-        }
             RefreshBatch();
-        }
-
-        private void gridView1_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
-        {
-            LoadSttGridView(e,gridView1);
         }
     }
 }

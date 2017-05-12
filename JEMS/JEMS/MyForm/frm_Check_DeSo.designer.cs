@@ -501,6 +501,7 @@
             this.btn_Screen.Size = new System.Drawing.Size(84, 23);
             this.btn_Screen.TabIndex = 6;
             this.btn_Screen.Text = "Chụp màn hình";
+            this.btn_Screen.Click += new System.EventHandler(this.btn_Screen_Click);
             // 
             // uc_PictureBox1
             // 
@@ -561,11 +562,13 @@
             this.Controls.Add(this.uc_PictureBox1);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
+            this.KeyPreview = true;
             this.Name = "frm_Check_DeSo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Checker";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_Check_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_Check_DeSo_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

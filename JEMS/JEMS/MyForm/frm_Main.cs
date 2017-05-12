@@ -9,6 +9,7 @@ namespace JEMS.MyForm
 {
     public partial class frm_Main : DevExpress.XtraEditors.XtraForm
     {
+        private bool _Flag = false;
         public frm_Main()
         {
             InitializeComponent();
@@ -118,8 +119,25 @@ namespace JEMS.MyForm
                     else if (Global.LoaiPhieu == "YASUDA")
                         tp_YASUDA_Main.PageVisible = true;
                     else if (Global.LoaiPhieu == "AEON")
+                    {
                         tp_AEON_Main.PageVisible = true;
-
+                        uc_AEON1.txt_Truong05.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong05.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong13.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong13.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong21.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong21.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong29.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong29.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong37.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong37.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong45.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong45.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong61.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong61.Leave += Txt_Truong02_Leave;
+                        uc_AEON1.txt_Truong53.GotFocus += Txt_Truong02_GotFocus;
+                        uc_AEON1.txt_Truong53.Leave += Txt_Truong02_Leave;
+                    }
                 }
                 else
                 {
@@ -134,6 +152,16 @@ namespace JEMS.MyForm
                 MessageBox.Show("Lỗi Load Main: " + i.Message);
             }
 
+        }
+
+        private void Txt_Truong02_Leave(object sender, EventArgs e)
+        {
+            _Flag = false;
+        }
+
+        private void Txt_Truong02_GotFocus(object sender, EventArgs e)
+        {
+            _Flag = true;
         }
 
         private void btn_exit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -375,8 +403,41 @@ namespace JEMS.MyForm
                 new frm_FreeTime().ShowDialog();
                 Global.db_BPO.UpdateTimeFree(Global.Strtoken, Global.FreeTime);
             }
-            //if (e.KeyCode == Keys.Enter && tabControl_Main.SelectedTabPage == tp_YASUDA_Main)
-            //    uc_YASUDA1.txt_Truong03_1.Focus();
+            if (!e.Control && e.KeyCode == Keys.Enter)
+            {
+                if (tabControl_Main.SelectedTabPage == tp_AEON_Main)
+                    uc_AEON1.txt_Truong03_1.Focus();
+                else if (tabControl_Main.SelectedTabPage == tp_Asahi_Main)
+                    uc_ASAHI1.txt_Truong03_1.Focus();
+                else if (tabControl_Main.SelectedTabPage == tp_EIZEN_Main)
+                    uc_EZIEN1.txt_Truong03_1.Focus();
+                else if (tabControl_Main.SelectedTabPage == tp_YAMAMOTO_Main)
+                    uc_YAMAMOTO4.txt_Truong03_1.Focus();
+                else if (tabControl_Main.SelectedTabPage == tp_YASUDA_Main)
+                    uc_YASUDA1.txt_Truong03_1.Focus();
+            }
+            if (e.KeyCode == Keys.Down && _Flag)
+            {
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+            }
+            if (e.KeyCode == Keys.Up && _Flag)
+            {
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                SendKeys.Send("{Tab}");
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                SendKeys.Send("+{Tab}");
+            }
         }
 
         private void btn_checkqc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

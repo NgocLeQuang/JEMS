@@ -75,12 +75,12 @@
             this.tp_YASUDA_Main = new DevExpress.XtraTab.XtraTabPage();
             this.uc_YASUDA1 = new JEMS.MyUserControl.uc_YASUDA();
             this.tp_AEON_Main = new DevExpress.XtraTab.XtraTabPage();
+            this.uc_AEON1 = new JEMS.MyUserControl.uc_AEON();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.btn_Pause = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Start_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new JEMS.MyUserControl.uc_PictureBox();
-            this.uc_AEON1 = new JEMS.MyUserControl.uc_AEON();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -247,6 +247,7 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(1300, 20);
             // 
             // barDockControlBottom
@@ -254,6 +255,7 @@
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 645);
+            this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1300, 0);
             // 
             // barDockControlLeft
@@ -261,6 +263,7 @@
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
+            this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 625);
             // 
             // barDockControlRight
@@ -268,6 +271,7 @@
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1300, 20);
+            this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 625);
             // 
             // barButtonItem5
@@ -502,6 +506,16 @@
             this.tp_AEON_Main.Size = new System.Drawing.Size(428, 530);
             this.tp_AEON_Main.Text = "AEON";
             // 
+            // uc_AEON1
+            // 
+            this.uc_AEON1.AutoScroll = true;
+            this.uc_AEON1.AutoSize = true;
+            this.uc_AEON1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_AEON1.Location = new System.Drawing.Point(0, 0);
+            this.uc_AEON1.Name = "uc_AEON1";
+            this.uc_AEON1.Size = new System.Drawing.Size(428, 530);
+            this.uc_AEON1.TabIndex = 0;
+            // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.btn_Pause);
@@ -547,16 +561,6 @@
             this.uc_PictureBox1.Name = "uc_PictureBox1";
             this.uc_PictureBox1.Size = new System.Drawing.Size(862, 592);
             this.uc_PictureBox1.TabIndex = 6;
-            // 
-            // uc_AEON1
-            // 
-            this.uc_AEON1.AutoScroll = true;
-            this.uc_AEON1.AutoSize = true;
-            this.uc_AEON1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_AEON1.Location = new System.Drawing.Point(0, 0);
-            this.uc_AEON1.Name = "uc_AEON1";
-            this.uc_AEON1.Size = new System.Drawing.Size(428, 530);
-            this.uc_AEON1.TabIndex = 0;
             // 
             // frm_Main
             // 

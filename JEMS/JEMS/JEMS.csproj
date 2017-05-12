@@ -55,6 +55,7 @@
     </Reference>
     <Reference Include="DevExpress.XtraEditors.v16.2" />
     <Reference Include="DevExpress.Printing.v16.2.Core" />
+    <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -66,7 +67,7 @@
     </Reference>
     <Reference Include="LibraryLogin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DuAnBaoCaoLuong\BaoCaoLuong2017\BaoCaoLuong2017\bin\Debug\LibraryLogin.dll</HintPath>
+      <HintPath>MyForm\LibraryLogin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel">
       <HintPath>MyForm\Microsoft.Office.Interop.Excel.dll</HintPath>

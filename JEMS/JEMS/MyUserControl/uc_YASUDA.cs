@@ -162,6 +162,66 @@ namespace JEMS.MyUserControl
             txt_Truong0.BackColor = Color.White;
             txt_Truong87.BackColor = Color.White;
             txt_Truong92.BackColor = Color.White;
+
+            txt_Truong02.ForeColor = Color.Black;
+            txt_Truong03_1.ForeColor = Color.Black;
+            txt_Truong03_2.ForeColor = Color.Black;
+            txt_Truong05.ForeColor = Color.Black;
+            txt_Truong06.ForeColor = Color.Black;
+            txt_Truong07.ForeColor = Color.Black;
+            txt_Truong08.ForeColor = Color.Black;
+            txt_Truong12.ForeColor = Color.Black;
+            txt_Truong13.ForeColor = Color.Black;
+            txt_Truong14.ForeColor = Color.Black;
+            txt_Truong15.ForeColor = Color.Black;
+            txt_Truong16.ForeColor = Color.Black;
+            txt_Truong20.ForeColor = Color.Black;
+            txt_Truong21.ForeColor = Color.Black;
+            txt_Truong22.ForeColor = Color.Black;
+            txt_Truong23.ForeColor = Color.Black;
+            txt_Truong24.ForeColor = Color.Black;
+            txt_Truong28.ForeColor = Color.Black;
+            txt_Truong29.ForeColor = Color.Black;
+            txt_Truong30.ForeColor = Color.Black;
+            txt_Truong31.ForeColor = Color.Black;
+            txt_Truong32.ForeColor = Color.Black;
+            txt_Truong36.ForeColor = Color.Black;
+            txt_Truong37.ForeColor = Color.Black;
+            txt_Truong38.ForeColor = Color.Black;
+            txt_Truong39.ForeColor = Color.Black;
+            txt_Truong40.ForeColor = Color.Black;
+            txt_Truong44.ForeColor = Color.Black;
+            txt_Truong45.ForeColor = Color.Black;
+            txt_Truong46.ForeColor = Color.Black;
+            txt_Truong47.ForeColor = Color.Black;
+            txt_Truong48.ForeColor = Color.Black;
+            txt_Truong52.ForeColor = Color.Black;
+            txt_Truong53.ForeColor = Color.Black;
+            txt_Truong54.ForeColor = Color.Black;
+            txt_Truong55.ForeColor = Color.Black;
+            txt_Truong56.ForeColor = Color.Black;
+            txt_Truong60.ForeColor = Color.Black;
+            txt_Truong61.ForeColor = Color.Black;
+            txt_Truong62.ForeColor = Color.Black;
+            txt_Truong63.ForeColor = Color.Black;
+            txt_Truong64.ForeColor = Color.Black;
+            txt_Truong68.ForeColor = Color.Black;
+            txt_Truong69.ForeColor = Color.Black;
+            txt_Truong70.ForeColor = Color.Black;
+            txt_Truong71.ForeColor = Color.Black;
+            txt_Truong72.ForeColor = Color.Black;
+            txt_Truong76.ForeColor = Color.Black;
+            txt_Truong77.ForeColor = Color.Black;
+            txt_Truong78.ForeColor = Color.Black;
+            txt_Truong79.ForeColor = Color.Black;
+            txt_Truong80.ForeColor = Color.Black;
+            txt_Truong84.ForeColor = Color.Black;
+            txt_Truong85.ForeColor = Color.Black;
+            txt_Truong0.ForeColor = Color.Black;
+            txt_Truong87.ForeColor = Color.Black;
+            txt_Truong92.ForeColor = Color.Black;
+
+
             chk_qc.Checked = false;
             txt_Truong02.Focus();
         }
@@ -232,83 +292,83 @@ namespace JEMS.MyUserControl
 
         public bool CheckQC()
         {
-            if (txt_Truong02.Text.ToString().IndexOf('?') >= 0  || txt_Truong02.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong03_1.Text.ToString().IndexOf('?') >= 0  || txt_Truong03_1.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong03_2.Text.ToString().IndexOf('?') >= 0  || txt_Truong03_2.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong05.Text.ToString().IndexOf('?') >= 0  || txt_Truong05.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong06.Text.ToString().IndexOf('?') >= 0  || txt_Truong06.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong07.Text.ToString().IndexOf('?') >= 0  || txt_Truong07.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong08.Text.ToString().IndexOf('?') >= 0  || txt_Truong08.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong12.Text.ToString().IndexOf('?') >= 0  || txt_Truong12.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong13.Text.ToString().IndexOf('?') >= 0  || txt_Truong13.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong14.Text.ToString().IndexOf('?') >= 0  || txt_Truong14.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong15.Text.ToString().IndexOf('?') >= 0  || txt_Truong15.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong16.Text.ToString().IndexOf('?') >= 0  || txt_Truong16.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong20.Text.ToString().IndexOf('?') >= 0  || txt_Truong20.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong21.Text.ToString().IndexOf('?') >= 0  || txt_Truong21.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong22.Text.ToString().IndexOf('?') >= 0  || txt_Truong22.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong23.Text.ToString().IndexOf('?') >= 0  || txt_Truong23.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong24.Text.ToString().IndexOf('?') >= 0  || txt_Truong24.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong28.Text.ToString().IndexOf('?') >= 0  || txt_Truong28.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong29.Text.ToString().IndexOf('?') >= 0  || txt_Truong29.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong30.Text.ToString().IndexOf('?') >= 0  || txt_Truong30.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong31.Text.ToString().IndexOf('?') >= 0  || txt_Truong31.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong32.Text.ToString().IndexOf('?') >= 0  || txt_Truong32.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong36.Text.ToString().IndexOf('?') >= 0  || txt_Truong36.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong37.Text.ToString().IndexOf('?') >= 0  || txt_Truong37.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong38.Text.ToString().IndexOf('?') >= 0  || txt_Truong38.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong39.Text.ToString().IndexOf('?') >= 0  || txt_Truong39.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong40.Text.ToString().IndexOf('?') >= 0  || txt_Truong40.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong44.Text.ToString().IndexOf('?') >= 0  || txt_Truong44.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong45.Text.ToString().IndexOf('?') >= 0  || txt_Truong45.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong46.Text.ToString().IndexOf('?') >= 0  || txt_Truong46.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong47.Text.ToString().IndexOf('?') >= 0  || txt_Truong47.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong48.Text.ToString().IndexOf('?') >= 0  || txt_Truong48.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong52.Text.ToString().IndexOf('?') >= 0  || txt_Truong52.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong53.Text.ToString().IndexOf('?') >= 0  || txt_Truong53.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong54.Text.ToString().IndexOf('?') >= 0  || txt_Truong54.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong55.Text.ToString().IndexOf('?') >= 0  || txt_Truong55.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong56.Text.ToString().IndexOf('?') >= 0  || txt_Truong56.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong60.Text.ToString().IndexOf('?') >= 0  || txt_Truong60.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong61.Text.ToString().IndexOf('?') >= 0  || txt_Truong61.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong62.Text.ToString().IndexOf('?') >= 0  || txt_Truong62.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong63.Text.ToString().IndexOf('?') >= 0  || txt_Truong63.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong64.Text.ToString().IndexOf('?') >= 0  || txt_Truong64.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong68.Text.ToString().IndexOf('?') >= 0  || txt_Truong68.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong69.Text.ToString().IndexOf('?') >= 0  || txt_Truong69.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong70.Text.ToString().IndexOf('?') >= 0  || txt_Truong70.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong71.Text.ToString().IndexOf('?') >= 0  || txt_Truong71.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong72.Text.ToString().IndexOf('?') >= 0  || txt_Truong72.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong76.Text.ToString().IndexOf('?') >= 0  || txt_Truong76.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong77.Text.ToString().IndexOf('?') >= 0  || txt_Truong77.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong78.Text.ToString().IndexOf('?') >= 0  || txt_Truong78.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong79.Text.ToString().IndexOf('?') >= 0  || txt_Truong79.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong80.Text.ToString().IndexOf('?') >= 0  || txt_Truong80.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong84.Text.ToString().IndexOf('?') >= 0  || txt_Truong84.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong85.Text.ToString().IndexOf('?') >= 0  || txt_Truong85.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong0.Text.ToString().IndexOf('?') >= 0  || txt_Truong0.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong87.Text.ToString().IndexOf('?') >= 0  || txt_Truong87.Text.ToString().IndexOf('●') >= 0  ||
-                txt_Truong92.Text.ToString().IndexOf('?') >= 0  || txt_Truong92.Text.ToString().IndexOf('●') >= 0 ||
-                (txt_Truong05.Text.ToString() == "" && (txt_Truong06.Text.ToString() != "" || txt_Truong07.Text.ToString() != "" || txt_Truong08.Text.ToString() != "")) ||
-                (txt_Truong05.Text.ToString() != "" && (txt_Truong06.Text.ToString() == "" && txt_Truong07.Text.ToString() == "" && txt_Truong08.Text.ToString() == "")) ||
-                (txt_Truong13.Text.ToString() == "" && (txt_Truong14.Text.ToString() != "" || txt_Truong15.Text.ToString() != "" || txt_Truong16.Text.ToString() != "")) ||
-                (txt_Truong13.Text.ToString() != "" && (txt_Truong14.Text.ToString() == "" && txt_Truong15.Text.ToString() == "" && txt_Truong16.Text.ToString() == "")) ||
-                (txt_Truong21.Text.ToString() == "" && (txt_Truong22.Text.ToString() != "" || txt_Truong23.Text.ToString() != "" || txt_Truong24.Text.ToString() != "")) ||
-                (txt_Truong21.Text.ToString() != "" && (txt_Truong22.Text.ToString() == "" && txt_Truong23.Text.ToString() == "" && txt_Truong24.Text.ToString() == "")) ||
-                (txt_Truong29.Text.ToString() == "" && (txt_Truong30.Text.ToString() != "" || txt_Truong31.Text.ToString() != "" || txt_Truong32.Text.ToString() != "")) ||
-                (txt_Truong29.Text.ToString() != "" && (txt_Truong30.Text.ToString() == "" && txt_Truong31.Text.ToString() == "" && txt_Truong32.Text.ToString() == "")) ||
-                (txt_Truong37.Text.ToString() == "" && (txt_Truong38.Text.ToString() != "" || txt_Truong39.Text.ToString() != "" || txt_Truong40.Text.ToString() != "")) ||
-                (txt_Truong37.Text.ToString() != "" && (txt_Truong38.Text.ToString() == "" && txt_Truong39.Text.ToString() == "" && txt_Truong40.Text.ToString() == "")) ||
-                (txt_Truong45.Text.ToString() == "" && (txt_Truong46.Text.ToString() != "" || txt_Truong47.Text.ToString() != "" || txt_Truong48.Text.ToString() != "")) ||
-                (txt_Truong45.Text.ToString() != "" && (txt_Truong46.Text.ToString() == "" && txt_Truong47.Text.ToString() == "" && txt_Truong48.Text.ToString() == "")) ||
-                (txt_Truong53.Text.ToString() == "" && (txt_Truong54.Text.ToString() != "" || txt_Truong55.Text.ToString() != "" || txt_Truong56.Text.ToString() != "")) ||
-                (txt_Truong53.Text.ToString() != "" && (txt_Truong54.Text.ToString() == "" && txt_Truong55.Text.ToString() == "" && txt_Truong56.Text.ToString() == "")) ||
-                (txt_Truong61.Text.ToString() == "" && (txt_Truong62.Text.ToString() != "" || txt_Truong63.Text.ToString() != "" || txt_Truong64.Text.ToString() != "")) ||
-                (txt_Truong61.Text.ToString() != "" && (txt_Truong62.Text.ToString() == "" && txt_Truong63.Text.ToString() == "" && txt_Truong64.Text.ToString() == "")) ||
-                (txt_Truong69.Text.ToString() == "" && (txt_Truong70.Text.ToString() != "" || txt_Truong71.Text.ToString() != "" || txt_Truong72.Text.ToString() != "")) ||
-                (txt_Truong69.Text.ToString() != "" && (txt_Truong70.Text.ToString() == "" && txt_Truong71.Text.ToString() == "" && txt_Truong72.Text.ToString() == "")) ||
-                (txt_Truong77.Text.ToString() == "" && (txt_Truong78.Text.ToString() != "" || txt_Truong79.Text.ToString() != "" || txt_Truong80.Text.ToString() != "")) ||
-                (txt_Truong77.Text.ToString() != "" && (txt_Truong78.Text.ToString() == "" && txt_Truong79.Text.ToString() == "" && txt_Truong80.Text.ToString() == "")) ||
+            if (txt_Truong02.Text.IndexOf('?') >= 0  || txt_Truong02.Text.IndexOf('●') >= 0  ||
+                txt_Truong03_1.Text.IndexOf('?') >= 0  || txt_Truong03_1.Text.IndexOf('●') >= 0  ||
+                txt_Truong03_2.Text.IndexOf('?') >= 0  || txt_Truong03_2.Text.IndexOf('●') >= 0  ||
+                txt_Truong05.Text.IndexOf('?') >= 0  || txt_Truong05.Text.IndexOf('●') >= 0  ||
+                txt_Truong06.Text.IndexOf('?') >= 0  || txt_Truong06.Text.IndexOf('●') >= 0  ||
+                txt_Truong07.Text.IndexOf('?') >= 0  || txt_Truong07.Text.IndexOf('●') >= 0  ||
+                txt_Truong08.Text.IndexOf('?') >= 0  || txt_Truong08.Text.IndexOf('●') >= 0  ||
+                txt_Truong12.Text.IndexOf('?') >= 0  || txt_Truong12.Text.IndexOf('●') >= 0  ||
+                txt_Truong13.Text.IndexOf('?') >= 0  || txt_Truong13.Text.IndexOf('●') >= 0  ||
+                txt_Truong14.Text.IndexOf('?') >= 0  || txt_Truong14.Text.IndexOf('●') >= 0  ||
+                txt_Truong15.Text.IndexOf('?') >= 0  || txt_Truong15.Text.IndexOf('●') >= 0  ||
+                txt_Truong16.Text.IndexOf('?') >= 0  || txt_Truong16.Text.IndexOf('●') >= 0  ||
+                txt_Truong20.Text.IndexOf('?') >= 0  || txt_Truong20.Text.IndexOf('●') >= 0  ||
+                txt_Truong21.Text.IndexOf('?') >= 0  || txt_Truong21.Text.IndexOf('●') >= 0  ||
+                txt_Truong22.Text.IndexOf('?') >= 0  || txt_Truong22.Text.IndexOf('●') >= 0  ||
+                txt_Truong23.Text.IndexOf('?') >= 0  || txt_Truong23.Text.IndexOf('●') >= 0  ||
+                txt_Truong24.Text.IndexOf('?') >= 0  || txt_Truong24.Text.IndexOf('●') >= 0  ||
+                txt_Truong28.Text.IndexOf('?') >= 0  || txt_Truong28.Text.IndexOf('●') >= 0  ||
+                txt_Truong29.Text.IndexOf('?') >= 0  || txt_Truong29.Text.IndexOf('●') >= 0  ||
+                txt_Truong30.Text.IndexOf('?') >= 0  || txt_Truong30.Text.IndexOf('●') >= 0  ||
+                txt_Truong31.Text.IndexOf('?') >= 0  || txt_Truong31.Text.IndexOf('●') >= 0  ||
+                txt_Truong32.Text.IndexOf('?') >= 0  || txt_Truong32.Text.IndexOf('●') >= 0  ||
+                txt_Truong36.Text.IndexOf('?') >= 0  || txt_Truong36.Text.IndexOf('●') >= 0  ||
+                txt_Truong37.Text.IndexOf('?') >= 0  || txt_Truong37.Text.IndexOf('●') >= 0  ||
+                txt_Truong38.Text.IndexOf('?') >= 0  || txt_Truong38.Text.IndexOf('●') >= 0  ||
+                txt_Truong39.Text.IndexOf('?') >= 0  || txt_Truong39.Text.IndexOf('●') >= 0  ||
+                txt_Truong40.Text.IndexOf('?') >= 0  || txt_Truong40.Text.IndexOf('●') >= 0  ||
+                txt_Truong44.Text.IndexOf('?') >= 0  || txt_Truong44.Text.IndexOf('●') >= 0  ||
+                txt_Truong45.Text.IndexOf('?') >= 0  || txt_Truong45.Text.IndexOf('●') >= 0  ||
+                txt_Truong46.Text.IndexOf('?') >= 0  || txt_Truong46.Text.IndexOf('●') >= 0  ||
+                txt_Truong47.Text.IndexOf('?') >= 0  || txt_Truong47.Text.IndexOf('●') >= 0  ||
+                txt_Truong48.Text.IndexOf('?') >= 0  || txt_Truong48.Text.IndexOf('●') >= 0  ||
+                txt_Truong52.Text.IndexOf('?') >= 0  || txt_Truong52.Text.IndexOf('●') >= 0  ||
+                txt_Truong53.Text.IndexOf('?') >= 0  || txt_Truong53.Text.IndexOf('●') >= 0  ||
+                txt_Truong54.Text.IndexOf('?') >= 0  || txt_Truong54.Text.IndexOf('●') >= 0  ||
+                txt_Truong55.Text.IndexOf('?') >= 0  || txt_Truong55.Text.IndexOf('●') >= 0  ||
+                txt_Truong56.Text.IndexOf('?') >= 0  || txt_Truong56.Text.IndexOf('●') >= 0  ||
+                txt_Truong60.Text.IndexOf('?') >= 0  || txt_Truong60.Text.IndexOf('●') >= 0  ||
+                txt_Truong61.Text.IndexOf('?') >= 0  || txt_Truong61.Text.IndexOf('●') >= 0  ||
+                txt_Truong62.Text.IndexOf('?') >= 0  || txt_Truong62.Text.IndexOf('●') >= 0  ||
+                txt_Truong63.Text.IndexOf('?') >= 0  || txt_Truong63.Text.IndexOf('●') >= 0  ||
+                txt_Truong64.Text.IndexOf('?') >= 0  || txt_Truong64.Text.IndexOf('●') >= 0  ||
+                txt_Truong68.Text.IndexOf('?') >= 0  || txt_Truong68.Text.IndexOf('●') >= 0  ||
+                txt_Truong69.Text.IndexOf('?') >= 0  || txt_Truong69.Text.IndexOf('●') >= 0  ||
+                txt_Truong70.Text.IndexOf('?') >= 0  || txt_Truong70.Text.IndexOf('●') >= 0  ||
+                txt_Truong71.Text.IndexOf('?') >= 0  || txt_Truong71.Text.IndexOf('●') >= 0  ||
+                txt_Truong72.Text.IndexOf('?') >= 0  || txt_Truong72.Text.IndexOf('●') >= 0  ||
+                txt_Truong76.Text.IndexOf('?') >= 0  || txt_Truong76.Text.IndexOf('●') >= 0  ||
+                txt_Truong77.Text.IndexOf('?') >= 0  || txt_Truong77.Text.IndexOf('●') >= 0  ||
+                txt_Truong78.Text.IndexOf('?') >= 0  || txt_Truong78.Text.IndexOf('●') >= 0  ||
+                txt_Truong79.Text.IndexOf('?') >= 0  || txt_Truong79.Text.IndexOf('●') >= 0  ||
+                txt_Truong80.Text.IndexOf('?') >= 0  || txt_Truong80.Text.IndexOf('●') >= 0  ||
+                txt_Truong84.Text.IndexOf('?') >= 0  || txt_Truong84.Text.IndexOf('●') >= 0  ||
+                txt_Truong85.Text.IndexOf('?') >= 0  || txt_Truong85.Text.IndexOf('●') >= 0  ||
+                txt_Truong0.Text.IndexOf('?') >= 0  || txt_Truong0.Text.IndexOf('●') >= 0  ||
+                txt_Truong87.Text.IndexOf('?') >= 0  || txt_Truong87.Text.IndexOf('●') >= 0  ||
+                txt_Truong92.Text.IndexOf('?') >= 0  || txt_Truong92.Text.IndexOf('●') >= 0 ||
+                (txt_Truong05.Text == "" && (txt_Truong06.Text != "" || txt_Truong07.Text != "" || txt_Truong08.Text != "")) ||
+                (txt_Truong05.Text != "" && (txt_Truong06.Text == "" && txt_Truong07.Text == "" && txt_Truong08.Text == "")) ||
+                (txt_Truong13.Text == "" && (txt_Truong14.Text != "" || txt_Truong15.Text != "" || txt_Truong16.Text != "")) ||
+                (txt_Truong13.Text != "" && (txt_Truong14.Text == "" && txt_Truong15.Text == "" && txt_Truong16.Text == "")) ||
+                (txt_Truong21.Text == "" && (txt_Truong22.Text != "" || txt_Truong23.Text != "" || txt_Truong24.Text != "")) ||
+                (txt_Truong21.Text != "" && (txt_Truong22.Text == "" && txt_Truong23.Text == "" && txt_Truong24.Text == "")) ||
+                (txt_Truong29.Text == "" && (txt_Truong30.Text != "" || txt_Truong31.Text != "" || txt_Truong32.Text != "")) ||
+                (txt_Truong29.Text != "" && (txt_Truong30.Text == "" && txt_Truong31.Text == "" && txt_Truong32.Text == "")) ||
+                (txt_Truong37.Text == "" && (txt_Truong38.Text != "" || txt_Truong39.Text != "" || txt_Truong40.Text != "")) ||
+                (txt_Truong37.Text != "" && (txt_Truong38.Text == "" && txt_Truong39.Text == "" && txt_Truong40.Text == "")) ||
+                (txt_Truong45.Text == "" && (txt_Truong46.Text != "" || txt_Truong47.Text != "" || txt_Truong48.Text != "")) ||
+                (txt_Truong45.Text != "" && (txt_Truong46.Text == "" && txt_Truong47.Text == "" && txt_Truong48.Text == "")) ||
+                (txt_Truong53.Text == "" && (txt_Truong54.Text != "" || txt_Truong55.Text != "" || txt_Truong56.Text != "")) ||
+                (txt_Truong53.Text != "" && (txt_Truong54.Text == "" && txt_Truong55.Text == "" && txt_Truong56.Text == "")) ||
+                (txt_Truong61.Text == "" && (txt_Truong62.Text != "" || txt_Truong63.Text != "" || txt_Truong64.Text != "")) ||
+                (txt_Truong61.Text != "" && (txt_Truong62.Text == "" && txt_Truong63.Text == "" && txt_Truong64.Text == "")) ||
+                (txt_Truong69.Text == "" && (txt_Truong70.Text != "" || txt_Truong71.Text != "" || txt_Truong72.Text != "")) ||
+                (txt_Truong69.Text != "" && (txt_Truong70.Text == "" && txt_Truong71.Text == "" && txt_Truong72.Text == "")) ||
+                (txt_Truong77.Text == "" && (txt_Truong78.Text != "" || txt_Truong79.Text != "" || txt_Truong80.Text != "")) ||
+                (txt_Truong77.Text != "" && (txt_Truong78.Text == "" && txt_Truong79.Text == "" && txt_Truong80.Text == "")) ||
                 chk_qc.Checked)
             {
                 return true;
@@ -321,9 +381,9 @@ namespace JEMS.MyUserControl
 
         private void txt_Truong02_EditValueChanged(object sender, EventArgs e)
         {
-            if (txt_Truong02.Text.ToString().IndexOf('?') >= 0)
+            if (txt_Truong02.Text.IndexOf('?') >= 0)
                 txt_Truong02.Text = "?";
-            if (txt_Truong02.Text.Length != 6 && txt_Truong02.Text != "" && txt_Truong02.Text != "?" && txt_Truong02.Text.ToString().IndexOf('●') < 0)
+            if (txt_Truong02.Text.Length != 6 && txt_Truong02.Text != "" && txt_Truong02.Text != "?" && txt_Truong02.Text.IndexOf('●') < 0)
             {
                 txt_Truong02.BackColor = Color.Red;
                 txt_Truong02.ForeColor = Color.White;
@@ -340,9 +400,9 @@ namespace JEMS.MyUserControl
 
         private void txt_Truong03_1_EditValueChanged(object sender, EventArgs e)
         {
-            if (txt_Truong03_1.Text.ToString().IndexOf('?') >= 0)
+            if (txt_Truong03_1.Text.IndexOf('?') >= 0)
                 txt_Truong03_1.Text = "?";
-            if (txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?" && txt_Truong03_1.Text.ToString().IndexOf('●') < 0)
+            if (txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?" && txt_Truong03_1.Text.IndexOf('●') < 0)
             {
                 if (txt_Truong03_1.Text.Length != 6)
                 {
@@ -366,9 +426,9 @@ namespace JEMS.MyUserControl
 
         private void txt_Truong03_2_EditValueChanged(object sender, EventArgs e)
         {
-            if (txt_Truong03_2.Text.ToString().IndexOf('?') >= 0)
+            if (txt_Truong03_2.Text.IndexOf('?') >= 0)
                 txt_Truong03_2.Text = "?";
-            if (txt_Truong03_2.Text != "" && txt_Truong03_2.Text != "?" && txt_Truong03_2.Text.ToString().IndexOf('●') < 0)
+            if (txt_Truong03_2.Text != "" && txt_Truong03_2.Text != "?" && txt_Truong03_2.Text.IndexOf('●') < 0)
             {
                 if (txt_Truong03_2.Text.Length != 6)
                 {
@@ -391,9 +451,9 @@ namespace JEMS.MyUserControl
         }
         private void Set_txtLengColumn1(object sender, EventArgs e, TextEdit tb)
         {
-            if (tb.Text.ToString().IndexOf('?') >= 0)
+            if (tb.Text.IndexOf('?') >= 0)
                 tb.Text = "?";
-            if ((tb.Text.Length < 2 || tb.Text.Length > 3) && tb.Text != "" && tb.Text != "?" && tb.Text.ToString().IndexOf('●') < 0)
+            if ((tb.Text.Length < 2 || tb.Text.Length > 3) && tb.Text != "" && tb.Text != "?" && tb.Text.IndexOf('●') < 0)
             {
                 tb.BackColor = Color.Red;
                 tb.ForeColor = Color.White;
@@ -409,14 +469,14 @@ namespace JEMS.MyUserControl
 
         private void Set_txtLengColumn2(object sender, EventArgs e,TextEdit tb)
         {
-            if (tb.Text.ToString().IndexOf('?') >= 0)
+            if (tb.Text.IndexOf('?') >= 0)
                 tb.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
         }
         private void Set_txtLengColumn3(object sender, EventArgs e,TextEdit tb)
         {
-            if (tb.Text.ToString().IndexOf('?') >= 0)
+            if (tb.Text.IndexOf('?') >= 0)
                 tb.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
@@ -428,7 +488,7 @@ namespace JEMS.MyUserControl
         }
         private void Set_txtLengColumn5(object sender, EventArgs e, TextEdit tb)
         {
-            if (tb.Text.ToString().IndexOf('?') >= 0)
+            if (tb.Text.IndexOf('?') >= 0)
                 tb.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
@@ -685,7 +745,7 @@ namespace JEMS.MyUserControl
 
         private void txt_Truong85_EditValueChanged(object sender, EventArgs e)
         {
-            if (txt_Truong85.Text.ToString().IndexOf('?') >= 0)
+            if (txt_Truong85.Text.IndexOf('?') >= 0)
                 txt_Truong85.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
@@ -693,9 +753,9 @@ namespace JEMS.MyUserControl
 
         private void txt_Truong0_EditValueChanged(object sender, EventArgs e)
         {
-            if (txt_Truong0.Text.ToString().IndexOf('?') >= 0)
+            if (txt_Truong0.Text.IndexOf('?') >= 0)
                 txt_Truong0.Text = "?";
-            if (txt_Truong0.Text != txt_Truong02.Text && txt_Truong0.Text != "" && txt_Truong0.Text != "?" && txt_Truong0.Text.ToString().IndexOf('●') < 0)
+            if (txt_Truong0.Text != txt_Truong02.Text && txt_Truong0.Text != "" && txt_Truong0.Text != "?" && txt_Truong0.Text.IndexOf('●') < 0)
             {
                 txt_Truong0.BackColor = Color.Red;
                 txt_Truong0.ForeColor = Color.White;
@@ -715,7 +775,7 @@ namespace JEMS.MyUserControl
 
         private void txt_Truong87_EditValueChanged(object sender, EventArgs e)
         {
-            if (txt_Truong87.Text.ToString().IndexOf('?') >= 0)
+            if (txt_Truong87.Text.IndexOf('?') >= 0)
                 txt_Truong87.Text = "?";
             if (Changed != null)
                 Changed(sender, e);
@@ -841,6 +901,28 @@ namespace JEMS.MyUserControl
             txt_Truong0.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong87.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong92.GotFocus += Txt_Truong02_GotFocus;
+
+            txt_Truong05.GotFocus += Txt_TruongSo05_GotFocus;
+            txt_Truong05.Leave += Txt_TruongSo05_Leave;
+            txt_Truong13.GotFocus += Txt_TruongSo05_GotFocus;
+            txt_Truong13.Leave += Txt_TruongSo05_Leave;
+            txt_Truong21.GotFocus += Txt_TruongSo05_GotFocus;
+            txt_Truong21.Leave += Txt_TruongSo05_Leave;
+            txt_Truong29.GotFocus += Txt_TruongSo05_GotFocus;
+            txt_Truong29.Leave += Txt_TruongSo05_Leave;
+            txt_Truong37.GotFocus += Txt_TruongSo05_GotFocus;
+            txt_Truong37.Leave += Txt_TruongSo05_Leave;
+            txt_Truong45.GotFocus += Txt_TruongSo05_GotFocus;
+            txt_Truong45.Leave += Txt_TruongSo05_Leave;
+            txt_Truong53.GotFocus += Txt_TruongSo05_GotFocus;
+            txt_Truong53.Leave += Txt_TruongSo05_Leave;
+            txt_Truong61.GotFocus += Txt_TruongSo05_GotFocus;
+            txt_Truong61.Leave += Txt_TruongSo05_Leave;
+            txt_Truong69.GotFocus += Txt_TruongSo05_GotFocus;
+            txt_Truong69.Leave += Txt_TruongSo05_Leave;
+            txt_Truong77.GotFocus += Txt_TruongSo05_GotFocus;
+            txt_Truong77.Leave += Txt_TruongSo05_Leave;
+
         }
 
         private void Txt_Truong02_GotFocus(object sender, EventArgs e)
@@ -869,9 +951,9 @@ namespace JEMS.MyUserControl
 
         private void txt_Truong91_EditValueChanged(object sender, EventArgs e)
         {
-            if (txt_Truong92.Text.ToString().IndexOf('?') >= 0)
+            if (txt_Truong92.Text.IndexOf('?') >= 0)
                 txt_Truong92.Text = "?";
-            if (txt_Truong92.Text != "" && txt_Truong92.Text != "?" && txt_Truong92.Text.ToString().IndexOf('●') < 0)
+            if (txt_Truong92.Text != "" && txt_Truong92.Text != "?" && txt_Truong92.Text.IndexOf('●') < 0)
             {
                 if (txt_Truong92.Text.Length != 6)
                 {
@@ -898,6 +980,40 @@ namespace JEMS.MyUserControl
             if (Changed != null)
                 Changed(sender, e);
         }
+        private bool _Flag = false;
+        private void Txt_TruongSo05_Leave(object sender, EventArgs e)
+        {
+            _Flag = false;
+        }
 
+        private void Txt_TruongSo05_GotFocus(object sender, EventArgs e)
+        {
+            _Flag = true;
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Down && _Flag)
+            {
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                SendKeys.Send("{Tab}");
+                return true;
+            }
+            if (keyData == Keys.Up && _Flag)
+            {
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                SendKeys.Send("+{Tab}");
+                return true;
+            }
+            else
+            {
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
     }
 }

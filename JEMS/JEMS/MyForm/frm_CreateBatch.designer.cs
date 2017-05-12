@@ -67,6 +67,7 @@
             this.nud_thoigiandeadline = new System.Windows.Forms.NumericUpDown();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.cbb_loaithoigian = new System.Windows.Forms.ComboBox();
+            this.lb_status = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_BatchName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PathFolder.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Location.Properties)).BeginInit();
@@ -213,7 +214,7 @@
             // 
             // btn_CreateBatch
             // 
-            this.btn_CreateBatch.Location = new System.Drawing.Point(221, 457);
+            this.btn_CreateBatch.Location = new System.Drawing.Point(221, 474);
             this.btn_CreateBatch.Name = "btn_CreateBatch";
             this.btn_CreateBatch.Size = new System.Drawing.Size(164, 44);
             this.btn_CreateBatch.TabIndex = 4;
@@ -259,7 +260,7 @@
             this.txt_LoaiPhieu.FormattingEnabled = true;
             this.txt_LoaiPhieu.Location = new System.Drawing.Point(137, 278);
             this.txt_LoaiPhieu.Name = "txt_LoaiPhieu";
-            this.txt_LoaiPhieu.Size = new System.Drawing.Size(174, 21);
+            this.txt_LoaiPhieu.Size = new System.Drawing.Size(100, 21);
             this.txt_LoaiPhieu.TabIndex = 7;
             // 
             // dateEdit_ngaybatdau
@@ -273,7 +274,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit_ngaybatdau.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.dateEdit_ngaybatdau.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.dateEdit_ngaybatdau.Size = new System.Drawing.Size(100, 20);
+            this.dateEdit_ngaybatdau.Size = new System.Drawing.Size(128, 20);
             this.dateEdit_ngaybatdau.TabIndex = 8;
             this.dateEdit_ngaybatdau.EditValueChanged += new System.EventHandler(this.dateEdit_ngaybatdau_EditValueChanged);
             this.dateEdit_ngaybatdau.Click += new System.EventHandler(this.dateEdit_ngaybatdau_Click);
@@ -281,12 +282,12 @@
             // timeEdit_ngaybatdau
             // 
             this.timeEdit_ngaybatdau.EditValue = new System.DateTime(2017, 3, 16, 0, 0, 0, 0);
-            this.timeEdit_ngaybatdau.Location = new System.Drawing.Point(253, 314);
+            this.timeEdit_ngaybatdau.Location = new System.Drawing.Point(271, 314);
             this.timeEdit_ngaybatdau.Name = "timeEdit_ngaybatdau";
             this.timeEdit_ngaybatdau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.timeEdit_ngaybatdau.Properties.Mask.EditMask = "HH:mm:ss";
-            this.timeEdit_ngaybatdau.Size = new System.Drawing.Size(92, 20);
+            this.timeEdit_ngaybatdau.Size = new System.Drawing.Size(109, 20);
             this.timeEdit_ngaybatdau.TabIndex = 9;
             this.timeEdit_ngaybatdau.EditValueChanged += new System.EventHandler(this.timeEdit_ngaybatdau_EditValueChanged);
             this.timeEdit_ngaybatdau.Click += new System.EventHandler(this.timeEdit_ngaybatdau_Click);
@@ -318,7 +319,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit_ngayketthuc.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.dateEdit_ngayketthuc.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.dateEdit_ngayketthuc.Size = new System.Drawing.Size(100, 20);
+            this.dateEdit_ngayketthuc.Size = new System.Drawing.Size(128, 20);
             this.dateEdit_ngayketthuc.TabIndex = 8;
             this.dateEdit_ngayketthuc.EditValueChanged += new System.EventHandler(this.dateEdit_ngayketthuc_EditValueChanged);
             this.dateEdit_ngayketthuc.Click += new System.EventHandler(this.dateEdit_ngayketthuc_Click);
@@ -326,12 +327,12 @@
             // timeEdit_ngayketthuc
             // 
             this.timeEdit_ngayketthuc.EditValue = new System.DateTime(2017, 3, 16, 0, 0, 0, 0);
-            this.timeEdit_ngayketthuc.Location = new System.Drawing.Point(253, 377);
+            this.timeEdit_ngayketthuc.Location = new System.Drawing.Point(271, 377);
             this.timeEdit_ngayketthuc.Name = "timeEdit_ngayketthuc";
             this.timeEdit_ngayketthuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.timeEdit_ngayketthuc.Properties.Mask.EditMask = "HH:mm:ss";
-            this.timeEdit_ngayketthuc.Size = new System.Drawing.Size(92, 20);
+            this.timeEdit_ngayketthuc.Size = new System.Drawing.Size(109, 20);
             this.timeEdit_ngayketthuc.TabIndex = 9;
             this.timeEdit_ngayketthuc.EditValueChanged += new System.EventHandler(this.timeEdit_ngayketthuc_EditValueChanged);
             this.timeEdit_ngayketthuc.Click += new System.EventHandler(this.timeEdit_ngayketthuc_Click);
@@ -353,42 +354,42 @@
             0,
             0});
             this.nud_songaylam.Name = "nud_songaylam";
-            this.nud_songaylam.Size = new System.Drawing.Size(59, 21);
+            this.nud_songaylam.Size = new System.Drawing.Size(45, 21);
             this.nud_songaylam.TabIndex = 10;
             this.nud_songaylam.ValueChanged += new System.EventHandler(this.nud_songaylam_ValueChanged);
             this.nud_songaylam.Click += new System.EventHandler(this.nud_songaylam_Click);
             // 
             // nud_sogiolam
             // 
-            this.nud_sogiolam.Location = new System.Drawing.Point(242, 344);
+            this.nud_sogiolam.Location = new System.Drawing.Point(224, 344);
             this.nud_sogiolam.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.nud_sogiolam.Name = "nud_sogiolam";
-            this.nud_sogiolam.Size = new System.Drawing.Size(59, 21);
+            this.nud_sogiolam.Size = new System.Drawing.Size(45, 21);
             this.nud_sogiolam.TabIndex = 10;
             this.nud_sogiolam.ValueChanged += new System.EventHandler(this.nud_sogiolam_ValueChanged);
             this.nud_sogiolam.Click += new System.EventHandler(this.nud_sogiolam_Click);
             // 
             // nud_sophutlam
             // 
-            this.nud_sophutlam.Location = new System.Drawing.Point(338, 343);
+            this.nud_sophutlam.Location = new System.Drawing.Point(308, 344);
             this.nud_sophutlam.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.nud_sophutlam.Name = "nud_sophutlam";
-            this.nud_sophutlam.Size = new System.Drawing.Size(59, 21);
+            this.nud_sophutlam.Size = new System.Drawing.Size(45, 21);
             this.nud_sophutlam.TabIndex = 10;
             this.nud_sophutlam.ValueChanged += new System.EventHandler(this.nud_sophutlam_ValueChanged);
             this.nud_sophutlam.Click += new System.EventHandler(this.nud_sophutlam_Click);
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(201, 349);
+            this.labelControl12.Location = new System.Drawing.Point(185, 349);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(25, 13);
             this.labelControl12.TabIndex = 1;
@@ -396,7 +397,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(305, 349);
+            this.labelControl13.Location = new System.Drawing.Point(272, 349);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(15, 13);
             this.labelControl13.TabIndex = 1;
@@ -404,7 +405,7 @@
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(400, 348);
+            this.labelControl14.Location = new System.Drawing.Point(356, 349);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(22, 13);
             this.labelControl14.TabIndex = 1;
@@ -420,7 +421,7 @@
             0,
             0});
             this.nud_thoigiandeadline.Name = "nud_thoigiandeadline";
-            this.nud_thoigiandeadline.Size = new System.Drawing.Size(59, 21);
+            this.nud_thoigiandeadline.Size = new System.Drawing.Size(128, 21);
             this.nud_thoigiandeadline.TabIndex = 10;
             this.nud_thoigiandeadline.ValueChanged += new System.EventHandler(this.nud_thoigiandeadline_ValueChanged);
             // 
@@ -436,17 +437,28 @@
             // 
             this.cbb_loaithoigian.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_loaithoigian.FormattingEnabled = true;
-            this.cbb_loaithoigian.Location = new System.Drawing.Point(204, 409);
+            this.cbb_loaithoigian.Location = new System.Drawing.Point(271, 410);
             this.cbb_loaithoigian.Name = "cbb_loaithoigian";
-            this.cbb_loaithoigian.Size = new System.Drawing.Size(93, 21);
+            this.cbb_loaithoigian.Size = new System.Drawing.Size(109, 21);
             this.cbb_loaithoigian.TabIndex = 11;
             this.cbb_loaithoigian.SelectedIndexChanged += new System.EventHandler(this.cbb_loaithoigian_SelectedIndexChanged);
+            // 
+            // lb_status
+            // 
+            this.lb_status.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.lb_status.Appearance.Options.UseForeColor = true;
+            this.lb_status.Location = new System.Drawing.Point(30, 445);
+            this.lb_status.Name = "lb_status";
+            this.lb_status.Size = new System.Drawing.Size(69, 13);
+            this.lb_status.TabIndex = 12;
+            this.lb_status.Text = "labelControl16";
             // 
             // frm_CreateBatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 571);
+            this.Controls.Add(this.lb_status);
             this.Controls.Add(this.cbb_loaithoigian);
             this.Controls.Add(this.nud_sophutlam);
             this.Controls.Add(this.nud_sogiolam);
@@ -483,7 +495,9 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_CreateBatch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo batch mới";
@@ -551,5 +565,6 @@
         private System.Windows.Forms.NumericUpDown nud_thoigiandeadline;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private System.Windows.Forms.ComboBox cbb_loaithoigian;
+        private DevExpress.XtraEditors.LabelControl lb_status;
     }
 }
