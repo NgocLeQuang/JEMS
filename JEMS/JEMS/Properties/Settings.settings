@@ -19,7 +19,7 @@
       <Value Profile="(Default)">Data Source=10.10.10.254\BPOSERVER;Initial Catalog=JEMS;User ID=sa;Password=BPO@DN#2013</Value>
     </Setting>
     <Setting Name="ZoomImage" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">40</Value>
+      <Value Profile="(Default)">60</Value>
     </Setting>
     <Setting Name="Zoom_Ngang" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1750</Value>

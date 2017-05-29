@@ -6,12 +6,10 @@ using DevExpress.XtraEditors;
 
 namespace JEMS.MyUserControl
 {
-    public delegate void AllTextChange(object sender, EventArgs e);
-    public partial class uc_ASAHI : UserControl
+    public partial class uc_ASAHI_Feedback_Item : UserControl
     {
         List<Category> category = new List<Category>();
-        public event AllTextChange Changed;
-        public uc_ASAHI()
+        public uc_ASAHI_Feedback_Item()
         {
             InitializeComponent();
         }
@@ -115,8 +113,6 @@ namespace JEMS.MyUserControl
                 txt_Truong02.ForeColor = Color.Black;
 
             }
-            if (Changed != null)
-                Changed(sender, e);
         }
 
         private void txt_Truong03_1_EditValueChanged(object sender, EventArgs e)
@@ -141,8 +137,6 @@ namespace JEMS.MyUserControl
                 txt_Truong03_1.BackColor = Color.White;
                 txt_Truong03_1.ForeColor = Color.Black;
             }
-            if (Changed != null)
-                Changed(sender, e);
         }
 
         private void txt_Truong03_2_EditValueChanged(object sender, EventArgs e)
@@ -167,8 +161,6 @@ namespace JEMS.MyUserControl
                 txt_Truong03_2.BackColor = Color.White;
                 txt_Truong03_2.ForeColor = Color.Black;
             }
-            if (Changed != null)
-                Changed(sender, e);
         }
 
         private void txt_Truong05_EditValueChanged(object sender, EventArgs e)
@@ -185,24 +177,18 @@ namespace JEMS.MyUserControl
                 txt_Truong05.BackColor = Color.White;
                 txt_Truong05.ForeColor = Color.Black;
             }
-            if (Changed != null)
-                Changed(sender, e);
         }
 
         private void txt_Truong06_EditValueChanged(object sender, EventArgs e)
         {
             if (txt_Truong06.Text.IndexOf('?') >= 0)
                 txt_Truong06.Text = "?";
-            if (Changed != null)
-                Changed(sender, e);
         }
 
         private void txt_Truong85_EditValueChanged(object sender, EventArgs e)
         {
             if (txt_Truong85.Text.IndexOf('?') >= 0)
                 txt_Truong85.Text = "?";
-            if (Changed != null)
-                Changed(sender, e);
         }
 
         private void txt_Truong0_EditValueChanged(object sender, EventArgs e)
@@ -223,8 +209,6 @@ namespace JEMS.MyUserControl
                 txt_Truong02.BackColor = Color.White;
                 txt_Truong02.ForeColor = Color.Black;
             }
-            if (Changed != null)
-                Changed(sender, e);
         }
         private void uc_ASAHI_Load(object sender, EventArgs e)
         {
@@ -232,7 +216,7 @@ namespace JEMS.MyUserControl
             txt_Truong08.Properties.DataSource = category;
             txt_Truong08.Properties.DisplayMember = "Set_Value";
             txt_Truong08.Properties.ValueMember = "Set_Value";
-            ResetData();
+            //ResetData();
             txt_Truong02.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong03_1.GotFocus += Txt_Truong02_GotFocus;
             txt_Truong03_2.GotFocus += Txt_Truong02_GotFocus;
@@ -247,27 +231,57 @@ namespace JEMS.MyUserControl
         {
             ((TextEdit)sender).SelectAll();
         }
-        public void SaveData_ASAHI(string idImage)
-        {
-            
-            string txtTruong03 = txt_Truong03_1.Text + txt_Truong03_2.Text;
-            if (txtTruong03.ToString().IndexOf('?') >= 0)
-                txtTruong03 = "?";
-            //Save Data
-            
-            Global.db.Insert_ASAHI_QuanLyDuAn(idImage, Global.StrBatch, Global.StrUsername,txt_Truong0.Text,txt_Truong02.Text,txtTruong03,txt_Truong05.Text,txt_Truong06.Text,txt_Truong08.Text,txt_Truong85.Text, CheckQC());
-        }
-
+        
         private void chk_qc_CheckedChanged(object sender, EventArgs e)
         {
-            if (Changed != null)
-                Changed(sender, e);
         }
 
         private void txt_Truong08_EditValueChanged(object sender, EventArgs e)
         {
-            if (Changed != null)
-                Changed(sender, e);
+
+        }
+        public void LoadData(tbl_DeSo_Backup data)
+        {
+            lb_user.Text = data.UserName;
+            txt_Truong02.Text = data.Truong_02;
+            txt_Truong05.Text = data.Truong_05;
+            txt_Truong06.Text = data.Truong_06;
+            txt_Truong08.EditValue = data.Truong_08;
+            if (data.Truong_03.Length > 8)
+            {
+                txt_Truong03_1.Text = data.Truong_03?.Substring(0, 8);
+                txt_Truong03_2.Text = data.Truong_03?.Substring(8, data.Truong_03.Length - 8);
+            }
+            else
+            {
+                txt_Truong03_1.Text = string.IsNullOrEmpty(data.Truong_03) ? "" : data.Truong_03;
+                txt_Truong03_2.Text = "";
+            }
+            txt_Truong85.Text = data.Truong_85;
+            txt_Truong0.Text = data.Truong_0;
+            if (data.CheckQC != null) chk_qc.Checked = data.CheckQC.Value;
+        }
+
+        public void LoadDataChecker(tbl_DeSo data)
+        {
+            lb_user.Text = data.UserName;
+            txt_Truong02.Text = data.Truong_02;
+            txt_Truong05.Text = data.Truong_05;
+            txt_Truong06.Text = data.Truong_06;
+            txt_Truong08.EditValue = data.Truong_08;
+            if (data.Truong_03.Length > 8)
+            {
+                txt_Truong03_1.Text = data.Truong_03?.Substring(0, 8);
+                txt_Truong03_2.Text = data.Truong_03?.Substring(8, data.Truong_03.Length - 8);
+            }
+            else
+            {
+                txt_Truong03_1.Text = string.IsNullOrEmpty(data.Truong_03) ? "" : data.Truong_03;
+                txt_Truong03_2.Text = "";
+            }
+            txt_Truong85.Text = data.Truong_85;
+            txt_Truong0.Text = data.Truong_0;
+            if (data.CheckQC != null) chk_qc.Checked = data.CheckQC.Value;
         }
     }
 }

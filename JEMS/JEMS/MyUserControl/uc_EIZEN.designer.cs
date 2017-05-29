@@ -1,6 +1,6 @@
 ﻿namespace JEMS.MyUserControl
 {
-    partial class uc_EZIEN
+    partial class uc_EIZEN
     {
         /// <summary> 
         /// Required designer variable.

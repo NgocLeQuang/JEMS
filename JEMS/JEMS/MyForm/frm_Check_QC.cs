@@ -1318,7 +1318,7 @@ namespace JEMS.MyForm
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_AEON_DeSo2)
                 {
-                    Global.db.SuaVaLuu_deso_QC_QuanLyDuAn_New(lb_username1.Text, lb_username2.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
+                    Global.db.SuaVaLuu_deso_QC_QuanLyDuAn_New(lb_username2.Text, lb_username1.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
                             "", uc_AEON2.txt_Truong02.Text, uc_AEON2.txt_Truong03_1.Text, uc_AEON2.txt_Truong03_2.Text, uc_AEON2.txt_Truong04.Text, uc_AEON2.txt_Truong05.Text, uc_AEON2.txt_Truong06.Text, uc_AEON2.txt_Truong07.Text, uc_AEON2.txt_Truong08.Text,
                             "", "", "", "", uc_AEON2.txt_Truong13.Text, uc_AEON2.txt_Truong14.Text, uc_AEON2.txt_Truong15.Text, uc_AEON2.txt_Truong16.Text,
                             "", "", "", "", uc_AEON2.txt_Truong21.Text, uc_AEON2.txt_Truong22.Text, uc_AEON2.txt_Truong23.Text, uc_AEON2.txt_Truong24.Text,

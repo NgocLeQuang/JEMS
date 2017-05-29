@@ -160,47 +160,47 @@ namespace JEMS.MyForm
                     Global.db.SubmitChanges();
 
 
-                    DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
-                                                dateEdit_ngaybatdau.DateTime.Month,
-                                                dateEdit_ngaybatdau.DateTime.Day,
-                                                timeEdit_ngaybatdau.Time.Hour,
-                                                timeEdit_ngaybatdau.Time.Minute,
-                                                timeEdit_ngaybatdau.Time.Second);
-                    DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Year,
-                                                        dateEdit_ngayketthuc.DateTime.Month,
-                                                        dateEdit_ngayketthuc.DateTime.Day,
-                                                        timeEdit_ngayketthuc.Time.Hour,
-                                                        timeEdit_ngayketthuc.Time.Minute,
-                                                        timeEdit_ngayketthuc.Time.Second);
-                    int timeNotificationdeadline = 0;
-                    if (cbb_loaithoigian.Text == "Ngày")
-                    {
-                        timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 24 * 60);
-                    }
-                    else if (cbb_loaithoigian.Text == "Giờ")
-                    {
-                        timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 60);
-                    }
-                    else if (cbb_loaithoigian.Text == "Phút")
-                    {
-                        timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value);
-                    }
-                    var fBatchEntry = new tbl_Batch_Entry()
-                    {
-                        fIDProject = Global.StrIdProject,
-                        fBatchName = txt_BatchName.Text,
-                        fUserCreate = txt_UserCreate.Text,
-                        fDateCreated = DateTime.Now,
-                        fPathPicture = txt_ImagePath.Text,
-                        fLocation = txt_Location.Text,
-                        fSoLuongAnh = soluonghinh.ToString(),
-                        fLoaiPhieu = txt_LoaiPhieu.Text,
-                        fTimeStart = timeStart,
-                        fTimeEnd = timeEnd,
-                        fDeadlineNotificationTime = timeNotificationdeadline
-                    };
-                    Global.db_BPO.tbl_Batch_Entries.InsertOnSubmit(fBatchEntry);
-                    Global.db.SubmitChanges();
+                    //DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
+                    //                            dateEdit_ngaybatdau.DateTime.Month,
+                    //                            dateEdit_ngaybatdau.DateTime.Day,
+                    //                            timeEdit_ngaybatdau.Time.Hour,
+                    //                            timeEdit_ngaybatdau.Time.Minute,
+                    //                            timeEdit_ngaybatdau.Time.Second);
+                    //DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Year,
+                    //                                    dateEdit_ngayketthuc.DateTime.Month,
+                    //                                    dateEdit_ngayketthuc.DateTime.Day,
+                    //                                    timeEdit_ngayketthuc.Time.Hour,
+                    //                                    timeEdit_ngayketthuc.Time.Minute,
+                    //                                    timeEdit_ngayketthuc.Time.Second);
+                    //int timeNotificationdeadline = 0;
+                    //if (cbb_loaithoigian.Text == "Ngày")
+                    //{
+                    //    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 24 * 60);
+                    //}
+                    //else if (cbb_loaithoigian.Text == "Giờ")
+                    //{
+                    //    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 60);
+                    //}
+                    //else if (cbb_loaithoigian.Text == "Phút")
+                    //{
+                    //    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value);
+                    //}
+                    //var fBatchEntry = new tbl_Batch_Entry()
+                    //{
+                    //    fIDProject = Global.StrIdProject,
+                    //    fBatchName = txt_BatchName.Text,
+                    //    fUserCreate = txt_UserCreate.Text,
+                    //    fDateCreated = DateTime.Now,
+                    //    fPathPicture = txt_ImagePath.Text,
+                    //    fLocation = txt_Location.Text,
+                    //    fSoLuongAnh = soluonghinh.ToString(),
+                    //    fLoaiPhieu = txt_LoaiPhieu.Text,
+                    //    fTimeStart = timeStart,
+                    //    fTimeEnd = timeEnd,
+                    //    fDeadlineNotificationTime = timeNotificationdeadline
+                    //};
+                    //Global.db_BPO.tbl_Batch_Entries.InsertOnSubmit(fBatchEntry);
+                    //Global.db.SubmitChanges();
                 }
                 else
                 {
@@ -288,47 +288,47 @@ namespace JEMS.MyForm
                 Global.db.SubmitChanges();
 
 
-                DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
-                                                 dateEdit_ngaybatdau.DateTime.Month,
-                                                 dateEdit_ngaybatdau.DateTime.Day,
-                                                 timeEdit_ngaybatdau.Time.Hour,
-                                                 timeEdit_ngaybatdau.Time.Minute,
-                                                 timeEdit_ngaybatdau.Time.Second);
-                DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Year,
-                                                    dateEdit_ngayketthuc.DateTime.Month,
-                                                    dateEdit_ngayketthuc.DateTime.Day,
-                                                    timeEdit_ngayketthuc.Time.Hour,
-                                                    timeEdit_ngayketthuc.Time.Minute,
-                                                    timeEdit_ngayketthuc.Time.Second);
-                int timeNotificationdeadline = 0;
-                if (cbb_loaithoigian.Text == "Ngày")
-                {
-                    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 24 * 60);
-                }
-                else if (cbb_loaithoigian.Text == "Giờ")
-                {
-                    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 60);
-                }
-                else if (cbb_loaithoigian.Text == "Phút")
-                {
-                    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value);
-                }
-                var fBatchEntry = new tbl_Batch_Entry()
-                {
-                    fIDProject = Global.StrIdProject,
-                    fBatchName = txt_BatchName.Text,
-                    fUserCreate = txt_UserCreate.Text,
-                    fDateCreated = DateTime.Now,
-                    fPathPicture = txt_ImagePath.Text,
-                    fLocation = txt_Location.Text,
-                    fSoLuongAnh = soluonghinh.ToString(),
-                    fLoaiPhieu = txt_LoaiPhieu.Text,
-                    fTimeStart = timeStart,
-                    fTimeEnd = timeEnd,
-                    fDeadlineNotificationTime = timeNotificationdeadline
-                };
-                Global.db_BPO.tbl_Batch_Entries.InsertOnSubmit(fBatchEntry);
-                Global.db.SubmitChanges();
+                //DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
+                //                                 dateEdit_ngaybatdau.DateTime.Month,
+                //                                 dateEdit_ngaybatdau.DateTime.Day,
+                //                                 timeEdit_ngaybatdau.Time.Hour,
+                //                                 timeEdit_ngaybatdau.Time.Minute,
+                //                                 timeEdit_ngaybatdau.Time.Second);
+                //DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Year,
+                //                                    dateEdit_ngayketthuc.DateTime.Month,
+                //                                    dateEdit_ngayketthuc.DateTime.Day,
+                //                                    timeEdit_ngayketthuc.Time.Hour,
+                //                                    timeEdit_ngayketthuc.Time.Minute,
+                //                                    timeEdit_ngayketthuc.Time.Second);
+                //int timeNotificationdeadline = 0;
+                //if (cbb_loaithoigian.Text == "Ngày")
+                //{
+                //    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 24 * 60);
+                //}
+                //else if (cbb_loaithoigian.Text == "Giờ")
+                //{
+                //    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 60);
+                //}
+                //else if (cbb_loaithoigian.Text == "Phút")
+                //{
+                //    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value);
+                //}
+                //var fBatchEntry = new tbl_Batch_Entry()
+                //{
+                //    fIDProject = Global.StrIdProject,
+                //    fBatchName = txt_BatchName.Text,
+                //    fUserCreate = txt_UserCreate.Text,
+                //    fDateCreated = DateTime.Now,
+                //    fPathPicture = txt_ImagePath.Text,
+                //    fLocation = txt_Location.Text,
+                //    fSoLuongAnh = soluonghinh.ToString(),
+                //    fLoaiPhieu = txt_LoaiPhieu.Text,
+                //    fTimeStart = timeStart,
+                //    fTimeEnd = timeEnd,
+                //    fDeadlineNotificationTime = timeNotificationdeadline
+                //};
+                //Global.db_BPO.tbl_Batch_Entries.InsertOnSubmit(fBatchEntry);
+                //Global.db.SubmitChanges();
 
 
                 string searchFolder = txt_PathFolder.Text + "\\" + new DirectoryInfo(item).Name;
@@ -427,161 +427,161 @@ namespace JEMS.MyForm
         }
 
         private bool flag = false;
-        public void HandlingTimeWork()
-        {
-            try
-            {
-                if (!flag) return;
-                TimeSpan timeAdd = new TimeSpan(Convert.ToInt32(nud_songaylam.Value), Convert.ToInt32(nud_sogiolam.Value), Convert.ToInt32(nud_sophutlam.Value), 0);
-                DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
-                                                    dateEdit_ngaybatdau.DateTime.Month,
-                                                    dateEdit_ngaybatdau.DateTime.Day,
-                                                    timeEdit_ngaybatdau.Time.Hour,
-                                                    timeEdit_ngaybatdau.Time.Minute,
-                                                    timeEdit_ngaybatdau.Time.Second);
-                DateTime timeEnd = timeStart.Add(timeAdd);
-                dateEdit_ngayketthuc.EditValue = timeEnd;
-                timeEdit_ngayketthuc.EditValue = timeEnd;
-                lb_status.Text = "";
-            }
-            catch (Exception i)
-            {
-                lb_status.Text = " Ngày kết thúc không được nhỏ hơn ngày bắt đầu";
-            }
-        }
+        //public void HandlingTimeWork()
+        //{
+        //    try
+        //    {
+        //        if (!flag) return;
+        //        TimeSpan timeAdd = new TimeSpan(Convert.ToInt32(nud_songaylam.Value), Convert.ToInt32(nud_sogiolam.Value), Convert.ToInt32(nud_sophutlam.Value), 0);
+        //        DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
+        //                                            dateEdit_ngaybatdau.DateTime.Month,
+        //                                            dateEdit_ngaybatdau.DateTime.Day,
+        //                                            timeEdit_ngaybatdau.Time.Hour,
+        //                                            timeEdit_ngaybatdau.Time.Minute,
+        //                                            timeEdit_ngaybatdau.Time.Second);
+        //        DateTime timeEnd = timeStart.Add(timeAdd);
+        //        dateEdit_ngayketthuc.EditValue = timeEnd;
+        //        timeEdit_ngayketthuc.EditValue = timeEnd;
+        //        lb_status.Text = "";
+        //    }
+        //    catch (Exception i)
+        //    {
+        //        lb_status.Text = " Ngày kết thúc không được nhỏ hơn ngày bắt đầu";
+        //    }
+        //}
 
-        public void HandlingTimeWork_1()
-        {
+        //public void HandlingTimeWork_1()
+        //{
 
-            if (flag_load)
-                try
-                {
-                    if (flag) return;
-                    DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
-                                                        dateEdit_ngaybatdau.DateTime.Month,
-                                                        dateEdit_ngaybatdau.DateTime.Day,
-                                                        timeEdit_ngaybatdau.Time.Hour,
-                                                        timeEdit_ngaybatdau.Time.Minute,
-                                                        timeEdit_ngaybatdau.Time.Second);
-                    DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Year,
-                                                        dateEdit_ngayketthuc.DateTime.Month,
-                                                        dateEdit_ngayketthuc.DateTime.Day,
-                                                        timeEdit_ngayketthuc.Time.Hour,
-                                                        timeEdit_ngayketthuc.Time.Minute,
-                                                        timeEdit_ngayketthuc.Time.Second);
-                    TimeSpan time = timeEnd.Subtract(timeStart);
-                    nud_songaylam.Value = time.Days;
-                    nud_sogiolam.Value = time.Hours;
-                    nud_sophutlam.Value = time.Minutes;
-                    lb_status.Text = "";
-                }
-                catch (Exception e)
-                {
-                    lb_status.Text = " Ngày kết thúc không được nhỏ hơn ngày bắt đầu";
-                }
-        }
+        //    if (flag_load)
+        //        try
+        //        {
+        //            if (flag) return;
+        //            DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
+        //                                                dateEdit_ngaybatdau.DateTime.Month,
+        //                                                dateEdit_ngaybatdau.DateTime.Day,
+        //                                                timeEdit_ngaybatdau.Time.Hour,
+        //                                                timeEdit_ngaybatdau.Time.Minute,
+        //                                                timeEdit_ngaybatdau.Time.Second);
+        //            DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Year,
+        //                                                dateEdit_ngayketthuc.DateTime.Month,
+        //                                                dateEdit_ngayketthuc.DateTime.Day,
+        //                                                timeEdit_ngayketthuc.Time.Hour,
+        //                                                timeEdit_ngayketthuc.Time.Minute,
+        //                                                timeEdit_ngayketthuc.Time.Second);
+        //            TimeSpan time = timeEnd.Subtract(timeStart);
+        //            nud_songaylam.Value = time.Days;
+        //            nud_sogiolam.Value = time.Hours;
+        //            nud_sophutlam.Value = time.Minutes;
+        //            lb_status.Text = "";
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            lb_status.Text = " Ngày kết thúc không được nhỏ hơn ngày bắt đầu";
+        //        }
+        //}
         private void dateEdit_ngaybatdau_EditValueChanged(object sender, EventArgs e)
         {
-            HandlingTimeWork();
+            //HandlingTimeWork();
         }
 
         private void timeEdit_ngaybatdau_EditValueChanged(object sender, EventArgs e)
         {
-            HandlingTimeWork();
+           // HandlingTimeWork();
         }
 
         private void nud_songaylam_ValueChanged(object sender, EventArgs e)
         {
-            HandlingTimeWork();
+            //HandlingTimeWork();
         }
 
         private void nud_sogiolam_ValueChanged(object sender, EventArgs e)
         {
-            HandlingTimeWork();
+            //HandlingTimeWork();
         }
 
         private void nud_sophutlam_ValueChanged(object sender, EventArgs e)
         {
-            HandlingTimeWork();
+            //HandlingTimeWork();
         }
 
         private void dateEdit_ngayketthuc_EditValueChanged(object sender, EventArgs e)
         {
-            HandlingTimeWork_1();
+            //HandlingTimeWork_1();
         }
 
         private void timeEdit_ngayketthuc_EditValueChanged(object sender, EventArgs e)
         {
-            HandlingTimeWork_1();
+            //HandlingTimeWork_1();
         }
 
         private void nud_thoigiandeadline_ValueChanged(object sender, EventArgs e)
         {
-            if (!flag_load)
-                return;
-            DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
-                dateEdit_ngaybatdau.DateTime.Month,
-                dateEdit_ngaybatdau.DateTime.Day,
-                timeEdit_ngaybatdau.Time.Hour,
-                timeEdit_ngaybatdau.Time.Minute,
-                timeEdit_ngaybatdau.Time.Second);
-            DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Year,
-                dateEdit_ngayketthuc.DateTime.Month,
-                dateEdit_ngayketthuc.DateTime.Day,
-                timeEdit_ngayketthuc.Time.Hour,
-                timeEdit_ngayketthuc.Time.Minute,
-                timeEdit_ngayketthuc.Time.Second);
-            TimeSpan time = timeEnd.Subtract(timeStart);
-            if (cbb_loaithoigian.Text == "")
-            {
-                lb_status.Text = "Bạn chưa chọn kiểu thời gian.Vui lòng chọn kiểu thời gian";
-                return;
-            }
-            if (timeStart > timeEnd)
-            {
-                lb_status.Text = "Ngày kết thúc dự án không được trước ngày bắt đầu";
-                return;
-            }
-            else
-            {
-                lb_status.Text = "";
-            }
-            if (cbb_loaithoigian.Text == "Ngày")
-            {
-                float ngay = (float) time.Days + (float) time.Hours / 24 + (float) time.Minutes / (60 * 24);
-                if (Convert.ToSingle(nud_thoigiandeadline.Value) > ngay)
-                {
-                    lb_status.Text =
-                        "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án. Thời gian tối đa: " +
-                        time.Days + " ngày " + time.Hours + " giờ " + time.Minutes + " Phút";
-                    return;
-                }
-                lb_status.Text = "";
-            }
-            else if (cbb_loaithoigian.Text == "Giờ")
-            {
-                float gio = (float) time.Days * 24 + (float) time.Hours + (float) time.Minutes / 60;
-                if (Convert.ToSingle(nud_thoigiandeadline.Value) > gio)
-                {
-                    lb_status.Text =
-                         "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án. Thời gian tối đa: " +
-                         time.Days + " ngày " + time.Hours + " giờ " + time.Minutes + " Phút";
-                    return;
-                }
-                lb_status.Text = "";
-            }
-            else if (cbb_loaithoigian.Text == "Phút")
-            {
-                float phut = (float) time.Days * (24 * 60) + (float) time.Hours * 60 + (float) time.Minutes;
-                if (Convert.ToSingle(nud_thoigiandeadline.Value) > phut)
-                {
-                    lb_status.Text =
-                        "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án. Thời gian tối đa: " +
-                        time.Days + " ngày " + time.Hours + " giờ " + time.Minutes + " Phút";
-                    return;
-                }
-                lb_status.Text = "";
-            }
+            //if (!flag_load)
+            //    return;
+            //DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
+            //    dateEdit_ngaybatdau.DateTime.Month,
+            //    dateEdit_ngaybatdau.DateTime.Day,
+            //    timeEdit_ngaybatdau.Time.Hour,
+            //    timeEdit_ngaybatdau.Time.Minute,
+            //    timeEdit_ngaybatdau.Time.Second);
+            //DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Year,
+            //    dateEdit_ngayketthuc.DateTime.Month,
+            //    dateEdit_ngayketthuc.DateTime.Day,
+            //    timeEdit_ngayketthuc.Time.Hour,
+            //    timeEdit_ngayketthuc.Time.Minute,
+            //    timeEdit_ngayketthuc.Time.Second);
+            //TimeSpan time = timeEnd.Subtract(timeStart);
+            //if (cbb_loaithoigian.Text == "")
+            //{
+            //    lb_status.Text = "Bạn chưa chọn kiểu thời gian.Vui lòng chọn kiểu thời gian";
+            //    return;
+            //}
+            //if (timeStart > timeEnd)
+            //{
+            //    lb_status.Text = "Ngày kết thúc dự án không được trước ngày bắt đầu";
+            //    return;
+            //}
+            //else
+            //{
+            //    lb_status.Text = "";
+            //}
+            //if (cbb_loaithoigian.Text == "Ngày")
+            //{
+            //    float ngay = (float) time.Days + (float) time.Hours / 24 + (float) time.Minutes / (60 * 24);
+            //    if (Convert.ToSingle(nud_thoigiandeadline.Value) > ngay)
+            //    {
+            //        lb_status.Text =
+            //            "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án. Thời gian tối đa: " +
+            //            time.Days + " ngày " + time.Hours + " giờ " + time.Minutes + " Phút";
+            //        return;
+            //    }
+            //    lb_status.Text = "";
+            //}
+            //else if (cbb_loaithoigian.Text == "Giờ")
+            //{
+            //    float gio = (float) time.Days * 24 + (float) time.Hours + (float) time.Minutes / 60;
+            //    if (Convert.ToSingle(nud_thoigiandeadline.Value) > gio)
+            //    {
+            //        lb_status.Text =
+            //             "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án. Thời gian tối đa: " +
+            //             time.Days + " ngày " + time.Hours + " giờ " + time.Minutes + " Phút";
+            //        return;
+            //    }
+            //    lb_status.Text = "";
+            //}
+            //else if (cbb_loaithoigian.Text == "Phút")
+            //{
+            //    float phut = (float) time.Days * (24 * 60) + (float) time.Hours * 60 + (float) time.Minutes;
+            //    if (Convert.ToSingle(nud_thoigiandeadline.Value) > phut)
+            //    {
+            //        lb_status.Text =
+            //            "Thời gian thông báo deadline không được lớn hơn thời gian thực hiện dự án. Thời gian tối đa: " +
+            //            time.Days + " ngày " + time.Hours + " giờ " + time.Minutes + " Phút";
+            //        return;
+            //    }
+            //    lb_status.Text = "";
+            //}
         }
         private void dateEdit_ngaybatdau_Click(object sender, EventArgs e)
         {
@@ -620,7 +620,7 @@ namespace JEMS.MyForm
 
         private void cbb_loaithoigian_SelectedIndexChanged(object sender, EventArgs e)
         {
-            nud_thoigiandeadline_ValueChanged(null, null);
+            //nud_thoigiandeadline_ValueChanged(null, null);
         }
     }
 }

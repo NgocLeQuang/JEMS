@@ -45,6 +45,7 @@
             this.btn_tiendo = new DevExpress.XtraBars.BarButtonItem();
             this.btn_xuatexcel = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Zoomimage = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Feedback = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -69,7 +70,7 @@
             this.tp_Asahi_Main = new DevExpress.XtraTab.XtraTabPage();
             this.uc_ASAHI1 = new JEMS.MyUserControl.uc_ASAHI();
             this.tp_EIZEN_Main = new DevExpress.XtraTab.XtraTabPage();
-            this.uc_EZIEN1 = new JEMS.MyUserControl.uc_EZIEN();
+            this.uc_EZIEN1 = new JEMS.MyUserControl.uc_EIZEN();
             this.tp_YAMAMOTO_Main = new DevExpress.XtraTab.XtraTabPage();
             this.uc_YAMAMOTO4 = new JEMS.MyUserControl.uc_YAMAMOTO();
             this.tp_YASUDA_Main = new DevExpress.XtraTab.XtraTabPage();
@@ -121,9 +122,10 @@
             this.btn_xuatexcel,
             this.btn_Zoomimage,
             this.btn_checkdeso,
-            this.btn_checkqc});
+            this.btn_checkqc,
+            this.btn_Feedback});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 17;
+            this.barManager1.MaxItemId = 18;
             // 
             // bar2
             // 
@@ -241,6 +243,13 @@
             this.btn_Zoomimage.Id = 13;
             this.btn_Zoomimage.Name = "btn_Zoomimage";
             this.btn_Zoomimage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Zoomimage_ItemClick);
+            // 
+            // btn_Feedback
+            // 
+            this.btn_Feedback.Caption = "Feedback";
+            this.btn_Feedback.Id = 17;
+            this.btn_Feedback.Name = "btn_Feedback";
+            this.btn_Feedback.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Feedback_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -510,6 +519,7 @@
             // 
             this.uc_AEON1.AutoScroll = true;
             this.uc_AEON1.AutoSize = true;
+            this.uc_AEON1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.uc_AEON1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_AEON1.Location = new System.Drawing.Point(0, 0);
             this.uc_AEON1.Name = "uc_AEON1";
@@ -648,7 +658,7 @@
         private DevExpress.XtraTab.XtraTabPage tp_EIZEN_Main;
         private DevExpress.XtraTab.XtraTabPage tp_YAMAMOTO_Main;
         private DevExpress.XtraTab.XtraTabPage tp_YASUDA_Main;
-        private MyUserControl.uc_EZIEN uc_EZIEN1;
+        private MyUserControl.uc_EIZEN uc_EZIEN1;
         private MyUserControl.uc_ASAHI uc_ASAHI1;
         private MyUserControl.uc_YAMAMOTO uc_YAMAMOTO4;
         private MyUserControl.uc_YASUDA uc_YASUDA1;
@@ -658,6 +668,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_Pause;
         private DevExpress.XtraTab.XtraTabPage tp_AEON_Main;
         private MyUserControl.uc_AEON uc_AEON1;
+        private DevExpress.XtraBars.BarButtonItem btn_Feedback;
     }
 }
 

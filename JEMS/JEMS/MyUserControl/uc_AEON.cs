@@ -81,7 +81,7 @@ namespace JEMS.MyUserControl
             txt_Truong62.Text = "";
             txt_Truong63.Text = "";
             txt_Truong64.ItemIndex = 0;
-            
+
             txt_Truong02.BackColor = Color.White;
             txt_Truong03_1.BackColor = Color.White;
             txt_Truong03_2.BackColor = Color.White;
@@ -291,24 +291,7 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong03_1.Text.IndexOf('?') >= 0)
                 txt_Truong03_1.Text = "?";
-            //if (txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?" && txt_Truong03_1.Text.IndexOf('●') < 0)
-            //{
-            //    if (txt_Truong03_1.Text.Length != 6)
-            //    {
-            //        txt_Truong03_1.BackColor = Color.Red;
-            //        txt_Truong03_1.ForeColor = Color.White;
-            //    }
-            //    else
-            //    {
-            //        txt_Truong03_1.BackColor = Color.White;
-            //        txt_Truong03_1.ForeColor = Color.Black;
-            //    }
-            //}
-            //else
-            //{
-            //    txt_Truong03_1.BackColor = Color.White;
-            //    txt_Truong03_1.ForeColor = Color.Black;
-            //}
+            
             if (Changed != null)
                 Changed(sender, e);
         }
@@ -317,24 +300,7 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong03_2.Text.IndexOf('?') >= 0)
                 txt_Truong03_2.Text = "?";
-            //if (txt_Truong03_2.Text != "" && txt_Truong03_2.Text != "?" && txt_Truong03_2.Text != "●" && txt_Truong03_2.Text.IndexOf('●') < 0)
-            //{
-            //    if (txt_Truong03_2.Text.Length != 6)
-            //    {
-            //        txt_Truong03_2.BackColor = Color.Red;
-            //        txt_Truong03_2.ForeColor = Color.White;
-            //    }
-            //    else
-            //    {
-            //        txt_Truong03_2.BackColor = Color.White;
-            //        txt_Truong03_2.ForeColor = Color.Black;
-            //    }
-            //}
-            //else
-            //{
-            //    txt_Truong03_2.BackColor = Color.White;
-            //    txt_Truong03_2.ForeColor = Color.Black;
-            //}
+           
             if (Changed != null)
                 Changed(sender, e);
         }
@@ -578,26 +544,6 @@ namespace JEMS.MyUserControl
             Set_txtLengColumn4(sender, e, txt_Truong64);
         }
         
-        private void txt_Truong86_KeyDown(object sender, KeyEventArgs e)
-        {
-            nonNumberEntered = false;
-
-            if (e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9)
-            {
-                if (e.KeyCode < Keys.NumPad0 || e.KeyCode > Keys.NumPad9)
-                {
-                    nonNumberEntered = true;
-                }
-            }
-        }
-
-        private void txt_Truong86_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (nonNumberEntered == false)
-            {
-                e.Handled = true;
-            }
-        }
         private void uc_ASAHI_Load(object sender, EventArgs e)
         {
             SetDataLookUpEdit();
@@ -688,6 +634,96 @@ namespace JEMS.MyUserControl
                                              txt_Truong53.Text, txt_Truong54.Text, txt_Truong55.Text, txt_Truong56.Text,
                                              txt_Truong61.Text, txt_Truong62.Text, txt_Truong63.Text, txt_Truong64.Text,
                                              CheckQC());
+        }
+
+
+
+
+
+
+
+        public void LoadData(tbl_DeSo_Backup data)
+        {
+            lb_user.Text = data.UserName;
+            txt_Truong02.Text = data.Truong_02;
+            txt_Truong03_1.Text = data.Truong_03;
+            txt_Truong03_2.Text = data.Truong_03_2;
+            txt_Truong04.Text = data.Truong_04;
+            txt_Truong05.Text = data.Truong_05;
+            txt_Truong06.Text = data.Truong_06;
+            txt_Truong07.Text = data.Truong_07;
+            txt_Truong08.EditValue = data.Truong_08;
+            txt_Truong13.Text = data.Truong_13;
+            txt_Truong14.Text = data.Truong_14;
+            txt_Truong15.Text = data.Truong_15;
+            txt_Truong16.EditValue = data.Truong_16;
+            txt_Truong21.Text = data.Truong_21;
+            txt_Truong22.Text = data.Truong_22;
+            txt_Truong23.Text = data.Truong_23;
+            txt_Truong24.EditValue = data.Truong_24;
+            txt_Truong29.Text = data.Truong_29;
+            txt_Truong30.Text = data.Truong_30;
+            txt_Truong31.Text = data.Truong_31;
+            txt_Truong32.EditValue = data.Truong_32;
+            txt_Truong37.Text = data.Truong_37;
+            txt_Truong38.Text = data.Truong_38;
+            txt_Truong39.Text = data.Truong_39;
+            txt_Truong40.EditValue = data.Truong_40;
+            txt_Truong45.Text = data.Truong_45;
+            txt_Truong46.Text = data.Truong_46;
+            txt_Truong47.Text = data.Truong_47;
+            txt_Truong48.EditValue = data.Truong_48;
+            txt_Truong53.Text = data.Truong_53;
+            txt_Truong54.Text = data.Truong_54;
+            txt_Truong55.Text = data.Truong_55;
+            txt_Truong56.EditValue = data.Truong_56;
+            txt_Truong61.Text = data.Truong_61;
+            txt_Truong62.Text = data.Truong_62;
+            txt_Truong63.Text = data.Truong_63;
+            txt_Truong64.EditValue = data.Truong_64;
+            if (data.CheckQC != null) chk_qc.Checked = data.CheckQC.Value;
+        }
+
+        public void LoadDataChecker(tbl_DeSo data)
+        {
+            lb_user.Text = data.UserName;
+            txt_Truong02.Text = data.Truong_02;
+            txt_Truong03_1.Text = data.Truong_03;
+            txt_Truong03_2.Text = data.Truong_03_2;
+            txt_Truong04.Text = data.Truong_04;
+            txt_Truong05.Text = data.Truong_05;
+            txt_Truong06.Text = data.Truong_06;
+            txt_Truong07.Text = data.Truong_07;
+            txt_Truong08.EditValue = data.Truong_08;
+            txt_Truong13.Text = data.Truong_13;
+            txt_Truong14.Text = data.Truong_14;
+            txt_Truong15.Text = data.Truong_15;
+            txt_Truong16.EditValue = data.Truong_16;
+            txt_Truong21.Text = data.Truong_21;
+            txt_Truong22.Text = data.Truong_22;
+            txt_Truong23.Text = data.Truong_23;
+            txt_Truong24.EditValue = data.Truong_24;
+            txt_Truong29.Text = data.Truong_29;
+            txt_Truong30.Text = data.Truong_30;
+            txt_Truong31.Text = data.Truong_31;
+            txt_Truong32.EditValue = data.Truong_32;
+            txt_Truong37.Text = data.Truong_37;
+            txt_Truong38.Text = data.Truong_38;
+            txt_Truong39.Text = data.Truong_39;
+            txt_Truong40.EditValue = data.Truong_40;
+            txt_Truong45.Text = data.Truong_45;
+            txt_Truong46.Text = data.Truong_46;
+            txt_Truong47.Text = data.Truong_47;
+            txt_Truong48.EditValue = data.Truong_48;
+            txt_Truong53.Text = data.Truong_53;
+            txt_Truong54.Text = data.Truong_54;
+            txt_Truong55.Text = data.Truong_55;
+            txt_Truong56.EditValue = data.Truong_56;
+            txt_Truong61.Text = data.Truong_61;
+            txt_Truong62.Text = data.Truong_62;
+            txt_Truong63.Text = data.Truong_63;
+            txt_Truong64.EditValue = data.Truong_64;
+            if (data.CheckQC != null) chk_qc.Checked = data.CheckQC.Value;
         }
     }
 }

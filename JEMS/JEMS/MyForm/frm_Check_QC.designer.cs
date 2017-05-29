@@ -35,7 +35,7 @@
             this.tp_ASAHI_DeSo1 = new DevExpress.XtraTab.XtraTabPage();
             this.uc_ASAHI1 = new JEMS.MyUserControl.uc_ASAHI();
             this.tp_EIZEN_DeSo1 = new DevExpress.XtraTab.XtraTabPage();
-            this.uc_EZIEN1 = new JEMS.MyUserControl.uc_EZIEN();
+            this.uc_EZIEN1 = new JEMS.MyUserControl.uc_EIZEN();
             this.tp_YAMAMOTO_DeSo1 = new DevExpress.XtraTab.XtraTabPage();
             this.uc_YAMAMOTO1 = new JEMS.MyUserControl.uc_YAMAMOTO();
             this.tp_YASUDA_DeSo1 = new DevExpress.XtraTab.XtraTabPage();
@@ -51,7 +51,7 @@
             this.tp_ASAHI_DeSo2 = new DevExpress.XtraTab.XtraTabPage();
             this.uc_ASAHI2 = new JEMS.MyUserControl.uc_ASAHI();
             this.tp_EIZEN_DeSo2 = new DevExpress.XtraTab.XtraTabPage();
-            this.uc_EZIEN2 = new JEMS.MyUserControl.uc_EZIEN();
+            this.uc_EZIEN2 = new JEMS.MyUserControl.uc_EIZEN();
             this.tp_YAMAMOTO_DeSo2 = new DevExpress.XtraTab.XtraTabPage();
             this.uc_YAMAMOTO2 = new JEMS.MyUserControl.uc_YAMAMOTO();
             this.tp_YASUDA_DeSo2 = new DevExpress.XtraTab.XtraTabPage();
@@ -647,11 +647,11 @@
         private DevExpress.XtraEditors.SimpleButton btn_SuaVaLuu_User1;
         private DevExpress.XtraEditors.SimpleButton btn_SuaVaLuu_User2;
         private MyUserControl.uc_ASAHI uc_ASAHI1;
-        private MyUserControl.uc_EZIEN uc_EZIEN1;
+        private MyUserControl.uc_EIZEN uc_EZIEN1;
         private MyUserControl.uc_YAMAMOTO uc_YAMAMOTO1;
         private MyUserControl.uc_YASUDA uc_YASUDA1;
         private MyUserControl.uc_ASAHI uc_ASAHI2;
-        private MyUserControl.uc_EZIEN uc_EZIEN2;
+        private MyUserControl.uc_EIZEN uc_EZIEN2;
         private MyUserControl.uc_YAMAMOTO uc_YAMAMOTO2;
         private MyUserControl.uc_YASUDA uc_YASUDA2;
         private DevExpress.XtraTab.XtraTabPage tp_AEON_DeSo1;

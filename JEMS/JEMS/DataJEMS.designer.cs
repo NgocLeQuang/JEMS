@@ -232,13 +232,6 @@ namespace JEMS
 			return ((ISingleResult<ExportExcel_YASUDA_QCResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatch")]
-		public ISingleResult<GetBatchResult> GetBatch()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<GetBatchResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatNotFinishCheckerDeSo")]
 		public ISingleResult<GetBatNotFinishCheckerDeSoResult> GetBatNotFinishCheckerDeSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string username)
 		{
@@ -992,6 +985,41 @@ namespace JEMS
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idImage, fBatchName, userName, truong_02, truong_03, truong_03_2, truong_04, truong_05, truong_06, truong_07, truong_08, truong_13, truong_14, truong_15, truong_16, truong_21, truong_22, truong_23, truong_24, truong_29, truong_30, truong_31, truong_32, truong_37, truong_38, truong_39, truong_40, truong_45, truong_46, truong_47, truong_48, truong_53, truong_54, truong_55, truong_56, truong_61, truong_62, truong_63, truong_64, check_QC);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserFailDeSo")]
+		public ISingleResult<GetUserFailDeSoResult> GetUserFailDeSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string fBatchname)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fBatchname);
+			return ((ISingleResult<GetUserFailDeSoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetImageFail")]
+		public ISingleResult<GetImageFailResult> GetImageFail([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserNameCheck", DbType="NVarChar(255)")] string userNameCheck, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Batch", DbType="NVarChar(255)")] string batch)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userNameCheck, batch);
+			return ((ISingleResult<GetImageFailResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetImageFailUserDeSo")]
+		public ISingleResult<GetImageFailUserDeSoResult> GetImageFailUserDeSo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(255)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Batch", DbType="NVarChar(255)")] string batch)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userName, batch);
+			return ((ISingleResult<GetImageFailUserDeSoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatch")]
+		public ISingleResult<GetBatchResult> GetBatch()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GetBatchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetBatch_Feedback")]
+		public ISingleResult<GetBatch_FeedbackResult> GetBatch_Feedback()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GetBatch_FeedbackResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -15267,32 +15295,6 @@ namespace JEMS
 		}
 	}
 	
-	public partial class GetBatchResult
-	{
-		
-		private string _fBatchName;
-		
-		public GetBatchResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string fBatchName
-		{
-			get
-			{
-				return this._fBatchName;
-			}
-			set
-			{
-				if ((this._fBatchName != value))
-				{
-					this._fBatchName = value;
-				}
-			}
-		}
-	}
-	
 	public partial class GetBatNotFinishCheckerDeSoResult
 	{
 		
@@ -19254,6 +19256,280 @@ namespace JEMS
 				if ((this._Truong_98 != value))
 				{
 					this._Truong_98 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetUserFailDeSoResult
+	{
+		
+		private string _UserName;
+		
+		public GetUserFailDeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetImageFailResult
+	{
+		
+		private string _IdImage;
+		
+		public GetImageFailResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string IdImage
+		{
+			get
+			{
+				return this._IdImage;
+			}
+			set
+			{
+				if ((this._IdImage != value))
+				{
+					this._IdImage = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetImageFailUserDeSoResult
+	{
+		
+		private string _IdImage;
+		
+		private string _UserName;
+		
+		public GetImageFailUserDeSoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdImage", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string IdImage
+		{
+			get
+			{
+				return this._IdImage;
+			}
+			set
+			{
+				if ((this._IdImage != value))
+				{
+					this._IdImage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetBatchResult
+	{
+		
+		private string _fBatchName;
+		
+		public GetBatchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string fBatchName
+		{
+			get
+			{
+				return this._fBatchName;
+			}
+			set
+			{
+				if ((this._fBatchName != value))
+				{
+					this._fBatchName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetBatch_FeedbackResult
+	{
+		
+		private int _IDBatch;
+		
+		private string _fBatchName;
+		
+		private System.Nullable<System.DateTime> _fDateCreated;
+		
+		private string _fUserCreate;
+		
+		private string _fPathPicture;
+		
+		private string _fLocation;
+		
+		private string _fLoaiPhieu;
+		
+		private string _fSoLuongAnh;
+		
+		public GetBatch_FeedbackResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDBatch", DbType="Int NOT NULL")]
+		public int IDBatch
+		{
+			get
+			{
+				return this._IDBatch;
+			}
+			set
+			{
+				if ((this._IDBatch != value))
+				{
+					this._IDBatch = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fBatchName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string fBatchName
+		{
+			get
+			{
+				return this._fBatchName;
+			}
+			set
+			{
+				if ((this._fBatchName != value))
+				{
+					this._fBatchName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fDateCreated", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fDateCreated
+		{
+			get
+			{
+				return this._fDateCreated;
+			}
+			set
+			{
+				if ((this._fDateCreated != value))
+				{
+					this._fDateCreated = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fUserCreate", DbType="NVarChar(200)")]
+		public string fUserCreate
+		{
+			get
+			{
+				return this._fUserCreate;
+			}
+			set
+			{
+				if ((this._fUserCreate != value))
+				{
+					this._fUserCreate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fPathPicture", DbType="NVarChar(200)")]
+		public string fPathPicture
+		{
+			get
+			{
+				return this._fPathPicture;
+			}
+			set
+			{
+				if ((this._fPathPicture != value))
+				{
+					this._fPathPicture = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fLocation", DbType="NVarChar(200)")]
+		public string fLocation
+		{
+			get
+			{
+				return this._fLocation;
+			}
+			set
+			{
+				if ((this._fLocation != value))
+				{
+					this._fLocation = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fLoaiPhieu", DbType="NVarChar(200)")]
+		public string fLoaiPhieu
+		{
+			get
+			{
+				return this._fLoaiPhieu;
+			}
+			set
+			{
+				if ((this._fLoaiPhieu != value))
+				{
+					this._fLoaiPhieu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fSoLuongAnh", DbType="NVarChar(200)")]
+		public string fSoLuongAnh
+		{
+			get
+			{
+				return this._fSoLuongAnh;
+			}
+			set
+			{
+				if ((this._fSoLuongAnh != value))
+				{
+					this._fSoLuongAnh = value;
 				}
 			}
 		}

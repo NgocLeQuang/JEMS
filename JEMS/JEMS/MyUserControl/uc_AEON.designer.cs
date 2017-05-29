@@ -101,6 +101,7 @@
             this.labelControl46 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txt_Truong04 = new DevExpress.XtraEditors.TextEdit();
+            this.lb_user = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong02.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_2.Properties)).BeginInit();
@@ -948,10 +949,22 @@
             this.txt_Truong04.TabIndex = 2;
             this.txt_Truong04.EditValueChanged += new System.EventHandler(this.txt_Truong04_EditValueChanged);
             // 
+            // lb_user
+            // 
+            this.lb_user.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_user.Appearance.Options.UseFont = true;
+            this.lb_user.Location = new System.Drawing.Point(193, 246);
+            this.lb_user.Name = "lb_user";
+            this.lb_user.Size = new System.Drawing.Size(80, 16);
+            this.lb_user.TabIndex = 49;
+            this.lb_user.Text = "                   .";
+            // 
             // uc_AEON
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.lb_user);
             this.Controls.Add(this.labelControl46);
             this.Controls.Add(this.chk_qc);
             this.Controls.Add(this.txt_Truong64);
@@ -1026,7 +1039,7 @@
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl1);
             this.Name = "uc_AEON";
-            this.Size = new System.Drawing.Size(365, 291);
+            this.Size = new System.Drawing.Size(363, 289);
             this.Load += new System.EventHandler(this.uc_ASAHI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong02.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_1.Properties)).EndInit();
@@ -1145,5 +1158,6 @@
         public DevExpress.XtraEditors.LabelControl labelControl46;
         public DevExpress.XtraEditors.LabelControl labelControl7;
         public DevExpress.XtraEditors.TextEdit txt_Truong04;
+        public DevExpress.XtraEditors.LabelControl lb_user;
     }
 }

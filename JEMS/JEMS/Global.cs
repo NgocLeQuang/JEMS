@@ -24,4 +24,5 @@ namespace JEMS
         public static string StrIdProject = "JEMS";
         public static int FreeTime = 0;
     }
+    
 }

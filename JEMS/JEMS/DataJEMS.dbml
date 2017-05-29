@@ -781,11 +781,6 @@
       <Column Name="Truong_98" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.GetBatch" Method="GetBatch">
-    <ElementType Name="GetBatchResult">
-      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.GetBatNotFinishCheckerDeSo" Method="GetBatNotFinishCheckerDeSo">
     <Parameter Name="username" Type="System.String" DbType="NVarChar(255)" />
     <ElementType Name="GetBatNotFinishCheckerDeSoResult">
@@ -1720,5 +1715,43 @@
     <Parameter Name="Truong_64" Parameter="truong_64" Type="System.String" DbType="NVarChar(255)" />
     <Parameter Name="Check_QC" Parameter="check_QC" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetUserFailDeSo" Method="GetUserFailDeSo">
+    <Parameter Name="fBatchname" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="GetUserFailDeSoResult">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetImageFail" Method="GetImageFail">
+    <Parameter Name="UserNameCheck" Parameter="userNameCheck" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Batch" Parameter="batch" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="GetImageFailResult">
+      <Column Name="IdImage" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetImageFailUserDeSo" Method="GetImageFailUserDeSo">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Batch" Parameter="batch" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="GetImageFailUserDeSoResult">
+      <Column Name="IdImage" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetBatch" Method="GetBatch">
+    <ElementType Name="GetBatchResult">
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetBatch_Feedback" Method="GetBatch_Feedback">
+    <ElementType Name="GetBatch_FeedbackResult">
+      <Column Name="IDBatch" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fBatchName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fDateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fUserCreate" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="fPathPicture" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="fLocation" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="fLoaiPhieu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="fSoLuongAnh" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

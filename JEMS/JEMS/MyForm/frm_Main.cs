@@ -473,5 +473,10 @@ namespace JEMS.MyForm
             new frm_FreeTime().ShowDialog();
             Global.db_BPO.UpdateTimeFree(Global.Strtoken, Global.FreeTime);
         }
+
+        private void btn_Feedback_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //new frm_Feedback().ShowDialog();
+        }
     }
 }

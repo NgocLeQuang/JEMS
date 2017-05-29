@@ -97,6 +97,12 @@
       <DependentUpon>DataJEMS.dbml</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="MyForm\frm_Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_Feedback.designer.cs">
+      <DependentUpon>frm_Feedback.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\frm_ChangeZoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,17 +175,47 @@
     <Compile Include="MyForm\frm_User.designer.cs">
       <DependentUpon>frm_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControl\uc_EIZEN_Feedback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_EIZEN_Feedback.designer.cs">
+      <DependentUpon>uc_EIZEN_Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_ASAHI_Feedback_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_ASAHI_Feedback_Item.designer.cs">
+      <DependentUpon>uc_ASAHI_Feedback_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControl\uc_ASAHI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyUserControl\uc_ASAHI.Designer.cs">
+    <Compile Include="MyUserControl\uc_ASAHI1.Designer.cs">
       <DependentUpon>uc_ASAHI.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyUserControl\uc_EZIEN.cs">
+    <Compile Include="MyUserControl\uc_AEON_Feedback.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyUserControl\uc_EZIEN.designer.cs">
-      <DependentUpon>uc_EZIEN.cs</DependentUpon>
+    <Compile Include="MyUserControl\uc_AEON_Feedback.designer.cs">
+      <DependentUpon>uc_AEON_Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_EIZEN_Feedback_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_EIZEN_Feedback_Item.designer.cs">
+      <DependentUpon>uc_EIZEN_Feedback_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_EIZEN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_EIZEN.designer.cs">
+      <DependentUpon>uc_EIZEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_ASAHI_Feedback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_ASAHI_Feedback.designer.cs">
+      <DependentUpon>uc_ASAHI_Feedback.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControl\uc_PictureBox.cs">
       <SubType>UserControl</SubType>
@@ -219,6 +255,9 @@
     <None Include="DataBPO.dbml.layout">
       <DependentUpon>DataBPO.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="MyForm\frm_Feedback.resx">
+      <DependentUpon>frm_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_ChangeZoom.resx">
       <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,11 +294,26 @@
     <EmbeddedResource Include="MyForm\frm_User.resx">
       <DependentUpon>frm_User.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControl\uc_ASAHI.resx">
+    <EmbeddedResource Include="MyUserControl\uc_EIZEN_Feedback.resx">
+      <DependentUpon>uc_EIZEN_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_ASAHI_Feedback_Item.resx">
+      <DependentUpon>uc_ASAHI_Feedback_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_ASAHI1.resx">
       <DependentUpon>uc_ASAHI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControl\uc_EZIEN.resx">
-      <DependentUpon>uc_EZIEN.cs</DependentUpon>
+    <EmbeddedResource Include="MyUserControl\uc_AEON_Feedback.resx">
+      <DependentUpon>uc_AEON_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_EIZEN_Feedback_Item.resx">
+      <DependentUpon>uc_EIZEN_Feedback_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_EIZEN.resx">
+      <DependentUpon>uc_EIZEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_ASAHI_Feedback.resx">
+      <DependentUpon>uc_ASAHI_Feedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\uc_PictureBox.resx">
       <DependentUpon>uc_PictureBox.cs</DependentUpon>

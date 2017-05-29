@@ -45,6 +45,7 @@
             this.txt_Truong0 = new DevExpress.XtraEditors.TextEdit();
             this.chk_qc = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.lb_user = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong02.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_2.Properties)).BeginInit();
@@ -241,10 +242,21 @@
             this.labelControl8.Size = new System.Drawing.Size(0, 13);
             this.labelControl8.TabIndex = 10;
             // 
+            // lb_user
+            // 
+            this.lb_user.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_user.Appearance.Options.UseFont = true;
+            this.lb_user.Location = new System.Drawing.Point(196, 138);
+            this.lb_user.Name = "lb_user";
+            this.lb_user.Size = new System.Drawing.Size(80, 16);
+            this.lb_user.TabIndex = 11;
+            this.lb_user.Text = "                   .";
+            // 
             // uc_ASAHI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lb_user);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.chk_qc);
             this.Controls.Add(this.txt_Truong08);
@@ -262,7 +274,7 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Name = "uc_ASAHI";
+            this.Name = "uc_ASAHI1";
             this.Size = new System.Drawing.Size(340, 183);
             this.Load += new System.EventHandler(this.uc_ASAHI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong02.Properties)).EndInit();
@@ -298,5 +310,6 @@
         public DevExpress.XtraEditors.TextEdit txt_Truong0;
         public DevExpress.XtraEditors.CheckEdit chk_qc;
         public DevExpress.XtraEditors.LabelControl labelControl8;
+        public DevExpress.XtraEditors.LabelControl lb_user;
     }
 }

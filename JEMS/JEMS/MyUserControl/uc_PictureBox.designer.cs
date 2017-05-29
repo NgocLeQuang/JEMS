@@ -78,9 +78,9 @@
             // trackBar_Ngang
             // 
             this.trackBar_Ngang.Location = new System.Drawing.Point(5, 3);
-            this.trackBar_Ngang.Maximum = 3000;
+            this.trackBar_Ngang.Maximum = 4000;
             this.trackBar_Ngang.Name = "trackBar_Ngang";
-            this.trackBar_Ngang.Size = new System.Drawing.Size(369, 45);
+            this.trackBar_Ngang.Size = new System.Drawing.Size(293, 45);
             this.trackBar_Ngang.TabIndex = 4;
             this.trackBar_Ngang.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar_Ngang.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBar_Ngang_MouseUp);
@@ -135,11 +135,11 @@
             // 
             // trackBar_Doc
             // 
-            this.trackBar_Doc.Location = new System.Drawing.Point(3, 67);
-            this.trackBar_Doc.Maximum = 3000;
+            this.trackBar_Doc.Location = new System.Drawing.Point(3, 73);
+            this.trackBar_Doc.Maximum = 4000;
             this.trackBar_Doc.Name = "trackBar_Doc";
             this.trackBar_Doc.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar_Doc.Size = new System.Drawing.Size(45, 311);
+            this.trackBar_Doc.Size = new System.Drawing.Size(45, 252);
             this.trackBar_Doc.TabIndex = 5;
             this.trackBar_Doc.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar_Doc.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBar_Doc_MouseUp);
