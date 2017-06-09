@@ -427,6 +427,12 @@ namespace JEMS.MyForm
                                     case "O":
                                         Truong_86 += "瓦礫類" + "、";
                                         break;
+                                    case "●":
+                                        Truong_86 += "●" + "、";
+                                        break;
+                                    case "?":
+                                        Truong_86 += "?" + "、";
+                                        break;
                                     default:
                                         break;
                                 }
@@ -461,6 +467,12 @@ namespace JEMS.MyForm
                                         break;
                                     case "O":
                                         Truong_86 += "瓦礫類";
+                                        break;
+                                    case "●":
+                                        Truong_86 += "●";
+                                        break;
+                                    case "?":
+                                        Truong_86 += "?";
                                         break;
                                     default:
                                         break;
@@ -563,6 +575,12 @@ namespace JEMS.MyForm
                                     case "O":
                                         Truong_86 += "瓦礫類" + "、";
                                         break;
+                                    case "●":
+                                        Truong_86 += "●" + "、";
+                                        break;
+                                    case "?":
+                                        Truong_86 += "?" + "、";
+                                        break;
                                     default:
                                         break;
                                 }
@@ -597,6 +615,12 @@ namespace JEMS.MyForm
                                         break;
                                     case "O":
                                         Truong_86 += "瓦礫類";
+                                        break;
+                                    case "●":
+                                        Truong_86 += "●";
+                                        break;
+                                    case "?":
+                                        Truong_86 += "?";
                                         break;
                                     default:
                                         break;
@@ -783,6 +807,12 @@ namespace JEMS.MyForm
                                     case "S":
                                         Truong_86 += "動物性不要物" + "、";
                                         break;
+                                    case "●":
+                                        Truong_86 += "●" + "、";
+                                        break;
+                                    case "?":
+                                        Truong_86 += "?" + "、";
+                                        break;
                                     default:
                                         break;
                                 }
@@ -847,6 +877,12 @@ namespace JEMS.MyForm
                                         break;
                                     case "S":
                                         Truong_86 += "動物性不要物";
+                                        break;
+                                    case "●":
+                                        Truong_86 += "●";
+                                        break;
+                                    case "?":
+                                        Truong_86 += "?";
                                         break;
                                     default:
                                         break;
@@ -1031,6 +1067,12 @@ namespace JEMS.MyForm
                                     case "S":
                                         Truong_86 += "動物性不要物" + "、";
                                         break;
+                                    case "●":
+                                        Truong_86 += "●" + "、";
+                                        break;
+                                    case "?":
+                                        Truong_86 += "?" + "、";
+                                        break;
                                     default:
                                         break;
                                 }
@@ -1096,6 +1138,12 @@ namespace JEMS.MyForm
                                     case "S":
                                         Truong_86 += "動物性不要物";
                                         break;
+                                    case "●":
+                                        Truong_86 += "●";
+                                        break;
+                                    case "?":
+                                        Truong_86 += "?";
+                                        break;
                                     default:
                                         break;
                                 }
@@ -1140,8 +1188,7 @@ namespace JEMS.MyForm
             }
         }
 
-        public bool TableToExcel_YASUDA(String strfilename)
-        {
+        public bool TableToExcel_YASUDA(String strfilename){
             try
             {
                 dataGridView1.DataSource = null;
@@ -1261,6 +1308,12 @@ namespace JEMS.MyForm
                                     case "M":
                                         Truong_87 += "繊維くず" + "、";
                                         break;
+                                    case "●":
+                                        Truong_87 += "●" + "、";
+                                        break;
+                                    case "?":
+                                        Truong_87 += "?" + "、";
+                                        break;
                                     default:
                                         break;
                                 }
@@ -1292,6 +1345,12 @@ namespace JEMS.MyForm
                                         break;
                                     case "M":
                                         Truong_87 += "繊維くず";
+                                        break;
+                                    case "●":
+                                        Truong_87 += "●";
+                                        break;
+                                    case "?":
+                                        Truong_87 += "?";
                                         break;
                                     default:
                                         break;
@@ -1456,6 +1515,12 @@ namespace JEMS.MyForm
                                     case "M":
                                         Truong_87 += "繊維くず" + "、";
                                         break;
+                                    case "●":
+                                        Truong_87 += "●" + "、";
+                                        break;
+                                    case "?":
+                                        Truong_87 += "?" + "、";
+                                        break;
                                     default:
                                         break;
                                 }
@@ -1487,6 +1552,12 @@ namespace JEMS.MyForm
                                         break;
                                     case "M":
                                         Truong_87 += "繊維くず";
+                                        break;
+                                    case "●":
+                                        Truong_87 += "●";
+                                        break;
+                                    case "?":
+                                        Truong_87 += "?";
                                         break;
                                     default:
                                         break;
