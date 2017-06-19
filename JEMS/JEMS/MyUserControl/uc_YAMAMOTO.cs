@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
@@ -188,6 +189,7 @@ namespace JEMS.MyUserControl
 
 
             chk_qc.Checked = false;
+            chk_abc.Checked = false;
             txt_Truong02.Focus();
         }
 
@@ -318,6 +320,45 @@ namespace JEMS.MyUserControl
                 return false;
             }
         }
+
+
+        public bool RegexString(string input)
+        {
+            bool r = false;
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (Regex.IsMatch(input[i].ToString(), @"^[a-zA-Z]+$"))
+                {
+                    r = true;
+                    break;
+                }
+            }
+            return r;
+        }
+
+
+        public bool CheckABC()
+        {
+            if (RegexString(txt_Truong05.Text) ||
+                RegexString(txt_Truong13.Text) ||
+                RegexString(txt_Truong21.Text) ||
+                RegexString(txt_Truong29.Text) ||
+                RegexString(txt_Truong37.Text) ||
+                RegexString(txt_Truong45.Text) ||
+                RegexString(txt_Truong53.Text) ||
+                RegexString(txt_Truong61.Text) ||
+                RegexString(txt_Truong69.Text) ||
+                RegexString(txt_Truong77.Text) ||
+                chk_abc.Checked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void txt_Truong02_EditValueChanged(object sender, EventArgs e)
         {
             if (txt_Truong02.Text.IndexOf('?') >= 0)
@@ -814,7 +855,7 @@ namespace JEMS.MyUserControl
                 txtTruong03 = "?";
             //Save Data
             
-            Global.db.Insert_YAMAMOTO_QuanLyDuAn(  idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,txt_Truong08.Text,
+            Global.db.Insert_YAMAMOTO_New_ABC(  idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txtTruong03, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text,txt_Truong08.Text,
                                              txt_Truong13.Text, txt_Truong14.Text, txt_Truong15.Text, txt_Truong16.Text,
                                              txt_Truong21.Text, txt_Truong22.Text, txt_Truong23.Text, txt_Truong24.Text,
                                              txt_Truong29.Text, txt_Truong30.Text, txt_Truong31.Text, txt_Truong32.Text,
@@ -825,7 +866,7 @@ namespace JEMS.MyUserControl
                                              txt_Truong69.Text, txt_Truong70.Text, txt_Truong71.Text, txt_Truong72.Text,
                                              txt_Truong77.Text, txt_Truong78.Text, txt_Truong79.Text, txt_Truong80.Text,
 
-                                             txt_Truong85.Text,txt_Truong86.Text, CheckQC());
+                                             txt_Truong85.Text,txt_Truong86.Text, CheckQC(), CheckABC());
         }
         private bool _Flag = false;
         private void Txt_TruongSo05_Leave(object sender, EventArgs e)

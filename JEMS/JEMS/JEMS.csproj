@@ -190,7 +190,7 @@
     <Compile Include="MyUserControl\uc_ASAHI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyUserControl\uc_ASAHI1.Designer.cs">
+    <Compile Include="MyUserControl\uc_ASAHI.Designer.cs">
       <DependentUpon>uc_ASAHI.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControl\uc_AEON_Feedback.cs">
@@ -249,11 +249,11 @@
       <LastGenOutput>DataBPO.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataJEMS.dbml.layout">
-      <DependentUpon>DataJEMS.dbml</DependentUpon>
-    </None>
     <None Include="DataBPO.dbml.layout">
       <DependentUpon>DataBPO.dbml</DependentUpon>
+    </None>
+    <None Include="DataJEMS.dbml.layout">
+      <DependentUpon>DataJEMS.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="MyForm\frm_Feedback.resx">
       <DependentUpon>frm_Feedback.cs</DependentUpon>
@@ -294,14 +294,14 @@
     <EmbeddedResource Include="MyForm\frm_User.resx">
       <DependentUpon>frm_User.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_ASAHI.resx">
+      <DependentUpon>uc_ASAHI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\uc_EIZEN_Feedback.resx">
       <DependentUpon>uc_EIZEN_Feedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\uc_ASAHI_Feedback_Item.resx">
       <DependentUpon>uc_ASAHI_Feedback_Item.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControl\uc_ASAHI1.resx">
-      <DependentUpon>uc_ASAHI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\uc_AEON_Feedback.resx">
       <DependentUpon>uc_AEON_Feedback.cs</DependentUpon>

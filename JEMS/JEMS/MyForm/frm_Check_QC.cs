@@ -362,7 +362,8 @@ namespace JEMS.MyForm
                             w.Truong_89,
                             w.Truong_90,
                             w.Truong_91,
-                            w.CheckQC
+                            w.CheckQC,
+                            w.CheckABC
                         }).ToList();
             lb_username1.Text = deso[0].UserName;
             lb_username2.Text = deso[1].UserName;
@@ -387,8 +388,10 @@ namespace JEMS.MyForm
                 uc_ASAHI1.txt_Truong06.Text = deso[0].Truong_06;
                 uc_ASAHI1.txt_Truong08.EditValue = deso[0].Truong_08;
                 uc_ASAHI1.txt_Truong85.Text = deso[0].Truong_85;
-                if(deso[0].CheckQC==true)
-                uc_ASAHI1.chk_qc.Checked = true;
+                if (deso[0].CheckQC == true)
+                    uc_ASAHI1.chk_qc.Checked = true;
+                if (deso[0].CheckABC == true)
+                    uc_ASAHI1.chk_abc.Checked = true;
 
 
                 tabcontrol_DeSo2.SelectedTabPage = tp_ASAHI_DeSo2;
@@ -410,7 +413,8 @@ namespace JEMS.MyForm
                 uc_ASAHI2.txt_Truong85.Text = deso[1].Truong_85;
                 if (deso[1].CheckQC == true)
                     uc_ASAHI2.chk_qc.Checked = true;
-
+                if (deso[1].CheckABC == true)
+                    uc_ASAHI2.chk_abc.Checked = true;
                 uc_ASAHI1.txt_Truong02.Focus();
 
             }
@@ -437,7 +441,8 @@ namespace JEMS.MyForm
                 uc_EZIEN1.txt_Truong86.Text = deso[0].Truong_86;
                 if (deso[0].CheckQC == true)
                     uc_EZIEN1.chk_qc.Checked = true;
-
+                if (deso[0].CheckABC == true)
+                    uc_EZIEN1.chk_abc.Checked = true;
 
                 tabcontrol_DeSo2.SelectedTabPage = tp_EIZEN_DeSo2;
                 uc_EZIEN2.txt_Truong02.Text = deso[1].Truong_02;
@@ -460,6 +465,8 @@ namespace JEMS.MyForm
                 uc_EZIEN2.txt_Truong86.Text = deso[1].Truong_86;
                 if (deso[1].CheckQC == true)
                     uc_EZIEN2.chk_qc.Checked = true;
+                if (deso[1].CheckABC == true)
+                    uc_EZIEN2.chk_abc.Checked = true;
 
                 uc_EZIEN1.txt_Truong02.Focus();
             }
@@ -522,6 +529,8 @@ namespace JEMS.MyForm
                 uc_YAMAMOTO1.txt_Truong86.Text = deso[0].Truong_86;
                 if (deso[0].CheckQC == true)
                     uc_YAMAMOTO1.chk_qc.Checked = true;
+                if (deso[0].CheckABC == true)
+                    uc_YAMAMOTO1.chk_abc.Checked = true;
 
 
                 tabcontrol_DeSo2.SelectedTabPage = tp_YAMAMOTO_DeSo2;
@@ -580,6 +589,8 @@ namespace JEMS.MyForm
                 uc_YAMAMOTO2.txt_Truong86.Text = deso[1].Truong_86;
                 if (deso[1].CheckQC == true)
                     uc_YAMAMOTO2.chk_qc.Checked = true;
+                if (deso[1].CheckABC == true)
+                    uc_YAMAMOTO2.chk_abc.Checked = true;
 
 
                 uc_YAMAMOTO1.txt_Truong02.Focus();
@@ -655,6 +666,8 @@ namespace JEMS.MyForm
                 uc_YASUDA1.txt_Truong92.Text = deso[0].Truong_91;
                 if (deso[0].CheckQC == true)
                     uc_YASUDA1.chk_qc.Checked = true;
+                if (deso[0].CheckABC == true)
+                    uc_YASUDA1.chk_abc.Checked = true;
 
 
 
@@ -726,6 +739,8 @@ namespace JEMS.MyForm
                 uc_YASUDA2.txt_Truong92.Text = deso[1].Truong_91;
                 if (deso[1].CheckQC == true)
                     uc_YASUDA2.chk_qc.Checked = true;
+                if (deso[1].CheckABC == true)
+                    uc_YASUDA2.chk_abc.Checked = true;
 
                 uc_YASUDA1.txt_Truong02.Focus();
             }
@@ -772,6 +787,8 @@ namespace JEMS.MyForm
                 uc_AEON1.txt_Truong64.Text = deso[0].Truong_64;
                 if (deso[0].CheckQC == true)
                     uc_AEON1.chk_qc.Checked = true;
+                if (deso[0].CheckABC == true)
+                    uc_AEON1.chk_abc.Checked = true;
 
 
                 tabcontrol_DeSo2.SelectedTabPage = tp_AEON_DeSo2;
@@ -813,9 +830,8 @@ namespace JEMS.MyForm
                 uc_AEON2.txt_Truong64.Text = deso[1].Truong_64;
                 if (deso[1].CheckQC == true)
                     uc_AEON2.chk_qc.Checked = true;
-
-
-
+                if (deso[1].CheckABC == true)
+                    uc_AEON2.chk_abc.Checked = true;
                 uc_AEON1.txt_Truong02.Focus();
             }
 
@@ -983,9 +999,6 @@ namespace JEMS.MyForm
             Compare_TextBox(uc_AEON1.txt_Truong62, uc_AEON2.txt_Truong62);
             Compare_TextBox(uc_AEON1.txt_Truong63, uc_AEON2.txt_Truong63);
             Compare_TextBox(uc_AEON1.txt_Truong64, uc_AEON2.txt_Truong64);
-
-
-
         }
 
         private string GetImage_DeSo()
@@ -1036,23 +1049,23 @@ namespace JEMS.MyForm
             {
                 if (tabcontrol_DeSo1.SelectedTabPage == tp_ASAHI_DeSo1)
                 {
-                    Global.db.LuuDESo_QC_QuanLyDuAn(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername, uc_ASAHI1.CheckQC());
+                    Global.db.LuuDESo_QC_NewABC(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername, uc_ASAHI1.CheckQC());
                 }
                 else if (tabcontrol_DeSo1.SelectedTabPage == tp_EIZEN_DeSo1)
                 {
-                    Global.db.LuuDESo_QC_QuanLyDuAn(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername, uc_EZIEN1.CheckQC());
+                    Global.db.LuuDESo_QC_NewABC(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername, uc_EZIEN1.CheckQC());
                 }
                 else if (tabcontrol_DeSo1.SelectedTabPage == tp_YAMAMOTO_DeSo1)
                 {
-                    Global.db.LuuDESo_QC_QuanLyDuAn(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername, uc_YAMAMOTO1.CheckQC());
+                    Global.db.LuuDESo_QC_NewABC(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername, uc_YAMAMOTO1.CheckQC());
                 }
                 else if (tabcontrol_DeSo1.SelectedTabPage == tp_YASUDA_DeSo1)
                 {
-                    Global.db.LuuDESo_QC_QuanLyDuAn(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername, uc_YASUDA1.CheckQC());
+                    Global.db.LuuDESo_QC_NewABC(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername, uc_YASUDA1.CheckQC());
                 }
                 else if (tabcontrol_DeSo1.SelectedTabPage == tp_AEON_DeSo1)
                 {
-                    Global.db.LuuDESo_QC_QuanLyDuAn(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername, uc_AEON1.CheckQC());
+                    Global.db.LuuDESo_QC_NewABC(lb_Image.Text, Global.StrBatch, lb_username1.Text, lb_username2.Text, Global.StrUsername, uc_AEON1.CheckQC());
                 }
                 ResetData();
 
@@ -1094,23 +1107,23 @@ namespace JEMS.MyForm
             {
                 if (tabcontrol_DeSo2.SelectedTabPage == tp_ASAHI_DeSo2)
                 {
-                    Global.db.LuuDESo_QC_QuanLyDuAn(lb_Image.Text, Global.StrBatch, lb_username2.Text, lb_username1.Text, Global.StrUsername, uc_ASAHI2.CheckQC());
+                    Global.db.LuuDESo_QC_NewABC(lb_Image.Text, Global.StrBatch, lb_username2.Text, lb_username1.Text, Global.StrUsername, uc_ASAHI2.CheckQC());
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_EIZEN_DeSo2)
                 {
-                    Global.db.LuuDESo_QC_QuanLyDuAn(lb_Image.Text, Global.StrBatch, lb_username2.Text, lb_username1.Text, Global.StrUsername,uc_EZIEN2.CheckQC());
+                    Global.db.LuuDESo_QC_NewABC(lb_Image.Text, Global.StrBatch, lb_username2.Text, lb_username1.Text, Global.StrUsername, uc_EZIEN2.CheckQC());
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_YAMAMOTO_DeSo2)
                 {
-                    Global.db.LuuDESo_QC_QuanLyDuAn(lb_Image.Text, Global.StrBatch, lb_username2.Text, lb_username1.Text, Global.StrUsername,uc_YAMAMOTO2.CheckQC());
+                    Global.db.LuuDESo_QC_NewABC(lb_Image.Text, Global.StrBatch, lb_username2.Text, lb_username1.Text, Global.StrUsername, uc_YAMAMOTO2.CheckQC());
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_YASUDA_DeSo2)
                 {
-                    Global.db.LuuDESo_QC_QuanLyDuAn(lb_Image.Text, Global.StrBatch, lb_username2.Text, lb_username1.Text, Global.StrUsername, uc_YASUDA2.CheckQC());
+                    Global.db.LuuDESo_QC_NewABC(lb_Image.Text, Global.StrBatch, lb_username2.Text, lb_username1.Text, Global.StrUsername, uc_YASUDA2.CheckQC());
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_AEON_DeSo2)
                 {
-                    Global.db.LuuDESo_QC_QuanLyDuAn(lb_Image.Text, Global.StrBatch, lb_username2.Text, lb_username1.Text, Global.StrUsername, uc_AEON2.CheckQC());
+                    Global.db.LuuDESo_QC_NewABC(lb_Image.Text, Global.StrBatch, lb_username2.Text, lb_username1.Text, Global.StrUsername, uc_AEON2.CheckQC());
                 }
 
                 var soloi = (from w in Global.db.GetSoLoi_CheckQC(Global.StrBatch) select w.Column1).FirstOrDefault();
@@ -1153,8 +1166,8 @@ namespace JEMS.MyForm
                 if (tabcontrol_DeSo1.SelectedTabPage == tp_ASAHI_DeSo1)
                 {
                     string txTtruong03 = uc_ASAHI1.txt_Truong03_1.Text + uc_ASAHI1.txt_Truong03_2.Text;
-                    Global.db.SuaVaLuu_deso_QC_QuanLyDuAn(lb_username1.Text, lb_username2.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
-                            uc_ASAHI1.txt_Truong0.Text, uc_ASAHI1.txt_Truong02.Text, txTtruong03, "", uc_ASAHI1.txt_Truong05.Text, uc_ASAHI1.txt_Truong06.Text, "", uc_ASAHI1.txt_Truong08.Text,
+                    Global.db.SuaVaLuu_deso_QC_NewABC(lb_username1.Text, lb_username2.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
+                            uc_ASAHI1.txt_Truong0.Text, uc_ASAHI1.txt_Truong02.Text, txTtruong03,"", "", uc_ASAHI1.txt_Truong05.Text, uc_ASAHI1.txt_Truong06.Text, "", uc_ASAHI1.txt_Truong08.Text,
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
@@ -1163,13 +1176,13 @@ namespace JEMS.MyForm
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", uc_ASAHI1.txt_Truong85.Text, "", "", "",
-                            "", "", "", "", "", "", "", "", "", "", uc_ASAHI1.CheckQC());
+                            "", "", "", "", "", "", "", "", "", "", uc_ASAHI1.CheckQC(), uc_ASAHI1.CheckABC());
                 }
                 else if (tabcontrol_DeSo1.SelectedTabPage == tp_EIZEN_DeSo1)
                 {
                     string txTtruong03 = uc_EZIEN1.txt_Truong03_1.Text + uc_EZIEN1.txt_Truong03_2.Text;
-                    Global.db.SuaVaLuu_deso_QC_QuanLyDuAn(lb_username1.Text, lb_username2.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
-                            uc_EZIEN1.txt_Truong0.Text, uc_EZIEN1.txt_Truong02.Text, txTtruong03, "", uc_EZIEN1.txt_Truong05.Text, uc_EZIEN1.txt_Truong06.Text, uc_EZIEN1.txt_Truong07.Text, uc_EZIEN1.txt_Truong08.Text,
+                    Global.db.SuaVaLuu_deso_QC_NewABC(lb_username1.Text, lb_username2.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
+                            uc_EZIEN1.txt_Truong0.Text, uc_EZIEN1.txt_Truong02.Text, txTtruong03, "","", uc_EZIEN1.txt_Truong05.Text, uc_EZIEN1.txt_Truong06.Text, uc_EZIEN1.txt_Truong07.Text, uc_EZIEN1.txt_Truong08.Text,
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
@@ -1178,13 +1191,13 @@ namespace JEMS.MyForm
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", uc_EZIEN1.txt_Truong85.Text, uc_EZIEN1.txt_Truong86.Text, "", "",
-                            "", "", "", "", "", "", "", "", "", "", uc_EZIEN1.CheckQC());
+                            "", "", "", "", "", "", "", "", "", "", uc_EZIEN1.CheckQC(), uc_EZIEN1.CheckABC());
                 }
                 else if (tabcontrol_DeSo1.SelectedTabPage == tp_YAMAMOTO_DeSo1)
                 {
                     string txTtruong03 = uc_YAMAMOTO1.txt_Truong03_1.Text + uc_YAMAMOTO1.txt_Truong03_2.Text;
-                    Global.db.SuaVaLuu_deso_QC_QuanLyDuAn(lb_username1.Text, lb_username2.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
-                            "", uc_YAMAMOTO1.txt_Truong02.Text, txTtruong03, "", uc_YAMAMOTO1.txt_Truong05.Text, uc_YAMAMOTO1.txt_Truong06.Text, uc_YAMAMOTO1.txt_Truong07.Text, uc_YAMAMOTO1.txt_Truong08.Text,
+                    Global.db.SuaVaLuu_deso_QC_NewABC(lb_username1.Text, lb_username2.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
+                            "", uc_YAMAMOTO1.txt_Truong02.Text, txTtruong03, "","", uc_YAMAMOTO1.txt_Truong05.Text, uc_YAMAMOTO1.txt_Truong06.Text, uc_YAMAMOTO1.txt_Truong07.Text, uc_YAMAMOTO1.txt_Truong08.Text,
                             "", "", "", "", uc_YAMAMOTO1.txt_Truong13.Text, uc_YAMAMOTO1.txt_Truong14.Text, uc_YAMAMOTO1.txt_Truong15.Text, uc_YAMAMOTO1.txt_Truong16.Text,
                             "", "", "", "", uc_YAMAMOTO1.txt_Truong21.Text, uc_YAMAMOTO1.txt_Truong22.Text, uc_YAMAMOTO1.txt_Truong23.Text, uc_YAMAMOTO1.txt_Truong24.Text,
                             "", "", "", "", uc_YAMAMOTO1.txt_Truong29.Text, uc_YAMAMOTO1.txt_Truong30.Text, uc_YAMAMOTO1.txt_Truong31.Text, uc_YAMAMOTO1.txt_Truong32.Text,
@@ -1194,13 +1207,13 @@ namespace JEMS.MyForm
                             "", "", "", "", uc_YAMAMOTO1.txt_Truong61.Text, uc_YAMAMOTO1.txt_Truong62.Text, uc_YAMAMOTO1.txt_Truong63.Text, uc_YAMAMOTO1.txt_Truong64.Text,
                             "", "", "", "", uc_YAMAMOTO1.txt_Truong69.Text, uc_YAMAMOTO1.txt_Truong70.Text, uc_YAMAMOTO1.txt_Truong71.Text, uc_YAMAMOTO1.txt_Truong72.Text,
                             "", "", "", "", uc_YAMAMOTO1.txt_Truong77.Text, uc_YAMAMOTO1.txt_Truong78.Text, uc_YAMAMOTO1.txt_Truong79.Text, uc_YAMAMOTO1.txt_Truong80.Text,
-                            "", "", "", "", uc_YAMAMOTO1.txt_Truong85.Text, uc_YAMAMOTO1.txt_Truong86.Text, "", "", "", "", "", "", "", "", "", "", "", "", uc_YAMAMOTO1.CheckQC());
+                            "", "", "", "", uc_YAMAMOTO1.txt_Truong85.Text, uc_YAMAMOTO1.txt_Truong86.Text, "", "", "", "", "", "", "", "", "", "", "", "", uc_YAMAMOTO1.CheckQC(), uc_YAMAMOTO1.CheckABC());
                 }
                 else if (tabcontrol_DeSo1.SelectedTabPage == tp_YASUDA_DeSo1)
                 {
                     string txTtruong03 = uc_YASUDA1.txt_Truong03_1.Text + uc_YASUDA1.txt_Truong03_2.Text;
-                    Global.db.SuaVaLuu_deso_QC_QuanLyDuAn(lb_username1.Text, lb_username2.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
-                            uc_YASUDA1.txt_Truong0.Text, uc_YASUDA1.txt_Truong02.Text, txTtruong03, "", uc_YASUDA1.txt_Truong05.Text, uc_YASUDA1.txt_Truong06.Text, uc_YASUDA1.txt_Truong07.Text, uc_YASUDA1.txt_Truong08.Text,
+                    Global.db.SuaVaLuu_deso_QC_NewABC(lb_username1.Text, lb_username2.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
+                            uc_YASUDA1.txt_Truong0.Text, uc_YASUDA1.txt_Truong02.Text, txTtruong03,"", "", uc_YASUDA1.txt_Truong05.Text, uc_YASUDA1.txt_Truong06.Text, uc_YASUDA1.txt_Truong07.Text, uc_YASUDA1.txt_Truong08.Text,
                             "", "", "", uc_YASUDA1.txt_Truong12.Text, uc_YASUDA1.txt_Truong13.Text, uc_YASUDA1.txt_Truong14.Text, uc_YASUDA1.txt_Truong15.Text, uc_YASUDA1.txt_Truong16.Text,
                             "", "", "", uc_YASUDA1.txt_Truong20.Text, uc_YASUDA1.txt_Truong21.Text, uc_YASUDA1.txt_Truong22.Text, uc_YASUDA1.txt_Truong23.Text, uc_YASUDA1.txt_Truong24.Text,
                             "", "", "", uc_YASUDA1.txt_Truong28.Text, uc_YASUDA1.txt_Truong29.Text, uc_YASUDA1.txt_Truong30.Text, uc_YASUDA1.txt_Truong31.Text, uc_YASUDA1.txt_Truong32.Text,
@@ -1210,11 +1223,11 @@ namespace JEMS.MyForm
                             "", "", "", uc_YASUDA1.txt_Truong60.Text, uc_YASUDA1.txt_Truong61.Text, uc_YASUDA1.txt_Truong62.Text, uc_YASUDA1.txt_Truong63.Text, uc_YASUDA1.txt_Truong64.Text,
                             "", "", "", uc_YASUDA1.txt_Truong68.Text, uc_YASUDA1.txt_Truong69.Text, uc_YASUDA1.txt_Truong70.Text, uc_YASUDA1.txt_Truong71.Text, uc_YASUDA1.txt_Truong72.Text,
                             "", "", "", uc_YASUDA1.txt_Truong76.Text, uc_YASUDA1.txt_Truong77.Text, uc_YASUDA1.txt_Truong78.Text, uc_YASUDA1.txt_Truong79.Text, uc_YASUDA1.txt_Truong80.Text,
-                            "", "", "", uc_YASUDA1.txt_Truong84.Text, uc_YASUDA1.txt_Truong85.Text,"", uc_YASUDA1.txt_Truong87.Text, "", "", "", uc_YASUDA1.txt_Truong92.Text, "", "", "", "", "", "", "", uc_YASUDA1.CheckQC());
+                            "", "", "", uc_YASUDA1.txt_Truong84.Text, uc_YASUDA1.txt_Truong85.Text,"", uc_YASUDA1.txt_Truong87.Text, "", "", "", uc_YASUDA1.txt_Truong92.Text, "", "", "", "", "", "", "", uc_YASUDA1.CheckQC(), uc_YASUDA1.CheckABC());
                 }
                 else if (tabcontrol_DeSo1.SelectedTabPage == tp_AEON_DeSo1)
                 {
-                    Global.db.SuaVaLuu_deso_QC_QuanLyDuAn_New(lb_username1.Text, lb_username2.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
+                    Global.db.SuaVaLuu_deso_QC_NewABC(lb_username1.Text, lb_username2.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
                             "", uc_AEON1.txt_Truong02.Text, uc_AEON1.txt_Truong03_1.Text, uc_AEON1.txt_Truong03_2.Text, uc_AEON1.txt_Truong04.Text, uc_AEON1.txt_Truong05.Text, uc_AEON1.txt_Truong06.Text, uc_AEON1.txt_Truong07.Text, uc_AEON1.txt_Truong08.Text,
                             "", "", "", "", uc_AEON1.txt_Truong13.Text, uc_AEON1.txt_Truong14.Text, uc_AEON1.txt_Truong15.Text, uc_AEON1.txt_Truong16.Text,
                             "", "", "", "", uc_AEON1.txt_Truong21.Text, uc_AEON1.txt_Truong22.Text, uc_AEON1.txt_Truong23.Text, uc_AEON1.txt_Truong24.Text,
@@ -1225,7 +1238,7 @@ namespace JEMS.MyForm
                             "", "", "", "", uc_AEON1.txt_Truong61.Text, uc_AEON1.txt_Truong62.Text, uc_AEON1.txt_Truong63.Text, uc_AEON1.txt_Truong64.Text,
                             "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "",
-                            "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", uc_AEON1.CheckQC());
+                            "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", uc_AEON1.CheckQC(), uc_AEON1.CheckABC());
                 }
                 ResetData();
 
@@ -1257,8 +1270,8 @@ namespace JEMS.MyForm
                 if (tabcontrol_DeSo2.SelectedTabPage == tp_ASAHI_DeSo2)
                 {
                     string txTtruong03 = uc_ASAHI2.txt_Truong03_1.Text + uc_ASAHI2.txt_Truong03_2.Text;
-                    Global.db.SuaVaLuu_deso_QC_QuanLyDuAn(lb_username2.Text, lb_username1.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
-                            uc_ASAHI2.txt_Truong0.Text, uc_ASAHI2.txt_Truong02.Text, txTtruong03, "", uc_ASAHI2.txt_Truong05.Text, uc_ASAHI2.txt_Truong06.Text, "", uc_ASAHI2.txt_Truong08.Text,
+                    Global.db.SuaVaLuu_deso_QC_NewABC(lb_username2.Text, lb_username1.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
+                            uc_ASAHI2.txt_Truong0.Text, uc_ASAHI2.txt_Truong02.Text, txTtruong03,"", "", uc_ASAHI2.txt_Truong05.Text, uc_ASAHI2.txt_Truong06.Text, "", uc_ASAHI2.txt_Truong08.Text,
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
@@ -1267,13 +1280,13 @@ namespace JEMS.MyForm
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", uc_ASAHI2.txt_Truong85.Text, "", "", "",
-                            "", "", "", "", "", "", "", "", "", "", uc_ASAHI2.CheckQC());
+                            "", "", "", "", "", "", "", "", "", "", uc_ASAHI2.CheckQC(), uc_ASAHI2.CheckABC());
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_EIZEN_DeSo2)
                 {
                     string txTtruong03 = uc_EZIEN2.txt_Truong03_1.Text + uc_EZIEN2.txt_Truong03_2.Text;
-                    Global.db.SuaVaLuu_deso_QC_QuanLyDuAn(lb_username2.Text, lb_username1.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
-                            uc_EZIEN2.txt_Truong0.Text, uc_EZIEN2.txt_Truong02.Text, txTtruong03, "", uc_EZIEN2.txt_Truong05.Text, uc_EZIEN2.txt_Truong06.Text, uc_EZIEN2.txt_Truong07.Text, uc_EZIEN2.txt_Truong08.Text,
+                    Global.db.SuaVaLuu_deso_QC_NewABC(lb_username2.Text, lb_username1.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
+                            uc_EZIEN2.txt_Truong0.Text, uc_EZIEN2.txt_Truong02.Text, txTtruong03, "","", uc_EZIEN2.txt_Truong05.Text, uc_EZIEN2.txt_Truong06.Text, uc_EZIEN2.txt_Truong07.Text, uc_EZIEN2.txt_Truong08.Text,
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
@@ -1282,13 +1295,13 @@ namespace JEMS.MyForm
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", uc_EZIEN2.txt_Truong85.Text, uc_EZIEN2.txt_Truong86.Text, "", "",
-                            "", "", "", "", "", "", "", "", "", "", uc_EZIEN2.CheckQC());
+                            "", "", "", "", "", "", "", "", "", "", uc_EZIEN2.CheckQC(), uc_EZIEN2.CheckABC());
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_YAMAMOTO_DeSo2)
                 {
                     string txTtruong03 = uc_YAMAMOTO2.txt_Truong03_1.Text + uc_YAMAMOTO2.txt_Truong03_2.Text;
-                    Global.db.SuaVaLuu_deso_QC_QuanLyDuAn(lb_username2.Text, lb_username1.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
-                            "", uc_YAMAMOTO2.txt_Truong02.Text, txTtruong03, "", uc_YAMAMOTO2.txt_Truong05.Text, uc_YAMAMOTO2.txt_Truong06.Text, uc_YAMAMOTO2.txt_Truong07.Text, uc_YAMAMOTO2.txt_Truong08.Text,
+                    Global.db.SuaVaLuu_deso_QC_NewABC(lb_username2.Text, lb_username1.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
+                            "", uc_YAMAMOTO2.txt_Truong02.Text, txTtruong03, "","", uc_YAMAMOTO2.txt_Truong05.Text, uc_YAMAMOTO2.txt_Truong06.Text, uc_YAMAMOTO2.txt_Truong07.Text, uc_YAMAMOTO2.txt_Truong08.Text,
                             "", "", "", "", uc_YAMAMOTO2.txt_Truong13.Text, uc_YAMAMOTO2.txt_Truong14.Text, uc_YAMAMOTO2.txt_Truong15.Text, uc_YAMAMOTO2.txt_Truong16.Text,
                             "", "", "", "", uc_YAMAMOTO2.txt_Truong21.Text, uc_YAMAMOTO2.txt_Truong22.Text, uc_YAMAMOTO2.txt_Truong23.Text, uc_YAMAMOTO2.txt_Truong24.Text,
                             "", "", "", "", uc_YAMAMOTO2.txt_Truong29.Text, uc_YAMAMOTO2.txt_Truong30.Text, uc_YAMAMOTO2.txt_Truong31.Text, uc_YAMAMOTO2.txt_Truong32.Text,
@@ -1298,13 +1311,13 @@ namespace JEMS.MyForm
                             "", "", "", "", uc_YAMAMOTO2.txt_Truong61.Text, uc_YAMAMOTO2.txt_Truong62.Text, uc_YAMAMOTO2.txt_Truong63.Text, uc_YAMAMOTO2.txt_Truong64.Text,
                             "", "", "", "", uc_YAMAMOTO2.txt_Truong69.Text, uc_YAMAMOTO2.txt_Truong70.Text, uc_YAMAMOTO2.txt_Truong71.Text, uc_YAMAMOTO2.txt_Truong72.Text,
                             "", "", "", "", uc_YAMAMOTO2.txt_Truong77.Text, uc_YAMAMOTO2.txt_Truong78.Text, uc_YAMAMOTO2.txt_Truong79.Text, uc_YAMAMOTO2.txt_Truong80.Text,
-                            "", "", "", "", uc_YAMAMOTO2.txt_Truong85.Text, uc_YAMAMOTO2.txt_Truong86.Text, "", "", "", "", "", "", "", "", "", "", "", "", uc_YAMAMOTO2.CheckQC());
+                            "", "", "", "", uc_YAMAMOTO2.txt_Truong85.Text, uc_YAMAMOTO2.txt_Truong86.Text, "", "", "", "", "", "", "", "", "", "", "", "", uc_YAMAMOTO2.CheckQC(), uc_YAMAMOTO2.CheckABC());
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_YASUDA_DeSo2)
                 {
                     string txTtruong03 = uc_YASUDA2.txt_Truong03_1.Text + uc_YASUDA2.txt_Truong03_2.Text;
-                    Global.db.SuaVaLuu_deso_QC_QuanLyDuAn(lb_username2.Text, lb_username1.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
-                            uc_YASUDA2.txt_Truong0.Text, uc_YASUDA2.txt_Truong02.Text, txTtruong03, "", uc_YASUDA2.txt_Truong05.Text, uc_YASUDA2.txt_Truong06.Text, uc_YASUDA2.txt_Truong07.Text, uc_YASUDA2.txt_Truong08.Text,
+                    Global.db.SuaVaLuu_deso_QC_NewABC(lb_username2.Text, lb_username1.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
+                            uc_YASUDA2.txt_Truong0.Text, uc_YASUDA2.txt_Truong02.Text, txTtruong03, "","", uc_YASUDA2.txt_Truong05.Text, uc_YASUDA2.txt_Truong06.Text, uc_YASUDA2.txt_Truong07.Text, uc_YASUDA2.txt_Truong08.Text,
                             "", "", "", uc_YASUDA2.txt_Truong12.Text, uc_YASUDA2.txt_Truong13.Text, uc_YASUDA2.txt_Truong14.Text, uc_YASUDA2.txt_Truong15.Text, uc_YASUDA2.txt_Truong16.Text,
                             "", "", "", uc_YASUDA2.txt_Truong20.Text, uc_YASUDA2.txt_Truong21.Text, uc_YASUDA2.txt_Truong22.Text, uc_YASUDA2.txt_Truong23.Text, uc_YASUDA2.txt_Truong24.Text,
                             "", "", "", uc_YASUDA2.txt_Truong28.Text, uc_YASUDA2.txt_Truong29.Text, uc_YASUDA2.txt_Truong30.Text, uc_YASUDA2.txt_Truong31.Text, uc_YASUDA2.txt_Truong32.Text,
@@ -1314,11 +1327,11 @@ namespace JEMS.MyForm
                             "", "", "", uc_YASUDA2.txt_Truong60.Text, uc_YASUDA2.txt_Truong61.Text, uc_YASUDA2.txt_Truong62.Text, uc_YASUDA2.txt_Truong63.Text, uc_YASUDA2.txt_Truong64.Text,
                             "", "", "", uc_YASUDA2.txt_Truong68.Text, uc_YASUDA2.txt_Truong69.Text, uc_YASUDA2.txt_Truong70.Text, uc_YASUDA2.txt_Truong71.Text, uc_YASUDA2.txt_Truong72.Text,
                             "", "", "", uc_YASUDA2.txt_Truong76.Text, uc_YASUDA2.txt_Truong77.Text, uc_YASUDA2.txt_Truong78.Text, uc_YASUDA2.txt_Truong79.Text, uc_YASUDA2.txt_Truong80.Text,
-                            "", "", "", uc_YASUDA2.txt_Truong84.Text, uc_YASUDA2.txt_Truong85.Text, "", uc_YASUDA2.txt_Truong87.Text, "", "", "", uc_YASUDA2.txt_Truong92.Text, "", "", "", "", "", "", "", uc_YASUDA2.CheckQC());
+                            "", "", "", uc_YASUDA2.txt_Truong84.Text, uc_YASUDA2.txt_Truong85.Text, "", uc_YASUDA2.txt_Truong87.Text, "", "", "", uc_YASUDA2.txt_Truong92.Text, "", "", "", "", "", "", "", uc_YASUDA2.CheckQC(), uc_YASUDA2.CheckABC());
                 }
                 else if (tabcontrol_DeSo2.SelectedTabPage == tp_AEON_DeSo2)
                 {
-                    Global.db.SuaVaLuu_deso_QC_QuanLyDuAn_New(lb_username2.Text, lb_username1.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
+                    Global.db.SuaVaLuu_deso_QC_NewABC(lb_username2.Text, lb_username1.Text, lb_Image.Text, Global.StrBatch, Global.StrUsername,
                             "", uc_AEON2.txt_Truong02.Text, uc_AEON2.txt_Truong03_1.Text, uc_AEON2.txt_Truong03_2.Text, uc_AEON2.txt_Truong04.Text, uc_AEON2.txt_Truong05.Text, uc_AEON2.txt_Truong06.Text, uc_AEON2.txt_Truong07.Text, uc_AEON2.txt_Truong08.Text,
                             "", "", "", "", uc_AEON2.txt_Truong13.Text, uc_AEON2.txt_Truong14.Text, uc_AEON2.txt_Truong15.Text, uc_AEON2.txt_Truong16.Text,
                             "", "", "", "", uc_AEON2.txt_Truong21.Text, uc_AEON2.txt_Truong22.Text, uc_AEON2.txt_Truong23.Text, uc_AEON2.txt_Truong24.Text,
@@ -1329,7 +1342,7 @@ namespace JEMS.MyForm
                             "", "", "", "", uc_AEON2.txt_Truong61.Text, uc_AEON2.txt_Truong62.Text, uc_AEON2.txt_Truong63.Text, uc_AEON2.txt_Truong64.Text,
                             "", "", "", "", "", "", "", "",
                             "", "", "", "", "", "", "", "",
-                            "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", uc_AEON2.CheckQC());
+                            "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", uc_AEON2.CheckQC(), uc_AEON2.CheckABC());
                 }
                 ResetData();
 

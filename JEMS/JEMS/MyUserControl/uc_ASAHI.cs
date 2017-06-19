@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
@@ -61,6 +62,7 @@ namespace JEMS.MyUserControl
 
 
             chk_qc.Checked = false;
+            chk_abc.Checked = false;
             txt_Truong02.Focus();
         }
 
@@ -92,6 +94,31 @@ namespace JEMS.MyUserControl
                 (txt_Truong05.Text == "" && (txt_Truong06.Text != "" || txt_Truong08.Text != "")) ||
                 (txt_Truong05.Text != "" && (txt_Truong06.Text == "" && txt_Truong08.Text == "")) ||
                 chk_qc.Checked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool RegexString(string input)
+        {
+            bool r = false;
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (Regex.IsMatch(input[i].ToString(), @"^[a-zA-Z]+$"))
+                {
+                    r = true;
+                    break;
+                }
+            }
+            return r;
+        }
+        public bool CheckABC()
+        {
+            if (RegexString(txt_Truong05.Text) || chk_abc.Checked)
             {
                 return true;
             }
@@ -255,7 +282,7 @@ namespace JEMS.MyUserControl
                 txtTruong03 = "?";
             //Save Data
             
-            Global.db.Insert_ASAHI_QuanLyDuAn(idImage, Global.StrBatch, Global.StrUsername,txt_Truong0.Text,txt_Truong02.Text,txtTruong03,txt_Truong05.Text,txt_Truong06.Text,txt_Truong08.Text,txt_Truong85.Text, CheckQC());
+            Global.db.Insert_ASAHI_NewABC(idImage, Global.StrBatch, Global.StrUsername,txt_Truong0.Text,txt_Truong02.Text,txtTruong03,txt_Truong05.Text,txt_Truong06.Text,txt_Truong08.Text,txt_Truong85.Text, CheckQC(),CheckABC());
         }
 
         private void chk_qc_CheckedChanged(object sender, EventArgs e)
@@ -265,6 +292,12 @@ namespace JEMS.MyUserControl
         }
 
         private void txt_Truong08_EditValueChanged(object sender, EventArgs e)
+        {
+            if (Changed != null)
+                Changed(sender, e);
+        }
+
+        private void chk_abc_CheckedChanged(object sender, EventArgs e)
         {
             if (Changed != null)
                 Changed(sender, e);

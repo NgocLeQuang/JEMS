@@ -46,6 +46,7 @@
             this.chk_qc = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.lb_user = new DevExpress.XtraEditors.LabelControl();
+            this.chk_abc = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong02.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_2.Properties)).BeginInit();
@@ -55,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong0.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_qc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_abc.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -163,7 +165,7 @@
             // 
             this.txt_Truong05.Location = new System.Drawing.Point(27, 32);
             this.txt_Truong05.Name = "txt_Truong05";
-            this.txt_Truong05.Properties.Mask.EditMask = "[0-9?●]+";
+            this.txt_Truong05.Properties.Mask.EditMask = "[0-9a-zA-Z?●]+";
             this.txt_Truong05.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_Truong05.Size = new System.Drawing.Size(85, 20);
             this.txt_Truong05.TabIndex = 2;
@@ -252,10 +254,20 @@
             this.lb_user.TabIndex = 11;
             this.lb_user.Text = "                   .";
             // 
+            // chk_abc
+            // 
+            this.chk_abc.Location = new System.Drawing.Point(244, 5);
+            this.chk_abc.Name = "chk_abc";
+            this.chk_abc.Properties.Caption = "ABC";
+            this.chk_abc.Size = new System.Drawing.Size(45, 19);
+            this.chk_abc.TabIndex = 12;
+            this.chk_abc.CheckedChanged += new System.EventHandler(this.chk_abc_CheckedChanged);
+            // 
             // uc_ASAHI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chk_abc);
             this.Controls.Add(this.lb_user);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.chk_qc);
@@ -274,7 +286,7 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Name = "uc_ASAHI1";
+            this.Name = "uc_ASAHI";
             this.Size = new System.Drawing.Size(340, 183);
             this.Load += new System.EventHandler(this.uc_ASAHI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong02.Properties)).EndInit();
@@ -286,6 +298,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong08.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong0.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_qc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_abc.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,5 +324,6 @@
         public DevExpress.XtraEditors.CheckEdit chk_qc;
         public DevExpress.XtraEditors.LabelControl labelControl8;
         public DevExpress.XtraEditors.LabelControl lb_user;
+        public DevExpress.XtraEditors.CheckEdit chk_abc;
     }
 }

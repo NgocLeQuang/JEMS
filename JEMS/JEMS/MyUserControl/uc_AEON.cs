@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
@@ -160,6 +161,7 @@ namespace JEMS.MyUserControl
 
 
             chk_qc.Checked = false;
+            chk_abc.Checked = false;
             txt_Truong02.Focus();
         }
 
@@ -268,6 +270,43 @@ namespace JEMS.MyUserControl
                 return false;
             }
         }
+
+
+        public bool RegexString(string input)
+        {
+            bool r = false;
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (Regex.IsMatch(input[i].ToString(), @"^[a-zA-Z]+$"))
+                {
+                    r = true;
+                    break;
+                }
+            }
+            return r;
+        }
+
+
+        public bool CheckABC()
+        {
+            if (RegexString(txt_Truong05.Text) ||
+                RegexString(txt_Truong13.Text) ||
+                RegexString(txt_Truong21.Text) ||
+                RegexString(txt_Truong29.Text) ||
+                RegexString(txt_Truong37.Text) ||
+                RegexString(txt_Truong45.Text) ||
+                RegexString(txt_Truong53.Text) ||
+                RegexString(txt_Truong61.Text) ||
+                chk_abc.Checked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void txt_Truong02_EditValueChanged(object sender, EventArgs e)
         {
             if (txt_Truong02.Text.IndexOf('?') >= 0)
@@ -625,7 +664,7 @@ namespace JEMS.MyUserControl
         public void SaveData_AEON(string idImage)
         {
             //Save Data
-            Global.db.Insert_AEON_QuanLyDuAn(idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txt_Truong03_1.Text , txt_Truong03_2.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text,
+            Global.db.Insert_AEON_NewABC(idImage, Global.StrBatch, Global.StrUsername, txt_Truong02.Text, txt_Truong03_1.Text , txt_Truong03_2.Text, txt_Truong04.Text, txt_Truong05.Text, txt_Truong06.Text, txt_Truong07.Text, txt_Truong08.Text,
                                              txt_Truong13.Text, txt_Truong14.Text, txt_Truong15.Text, txt_Truong16.Text,
                                              txt_Truong21.Text, txt_Truong22.Text, txt_Truong23.Text, txt_Truong24.Text,
                                              txt_Truong29.Text, txt_Truong30.Text, txt_Truong31.Text, txt_Truong32.Text,
@@ -633,7 +672,7 @@ namespace JEMS.MyUserControl
                                              txt_Truong45.Text, txt_Truong46.Text, txt_Truong47.Text, txt_Truong48.Text,
                                              txt_Truong53.Text, txt_Truong54.Text, txt_Truong55.Text, txt_Truong56.Text,
                                              txt_Truong61.Text, txt_Truong62.Text, txt_Truong63.Text, txt_Truong64.Text,
-                                             CheckQC());
+                                             CheckQC(),CheckABC());
         }
 
 
