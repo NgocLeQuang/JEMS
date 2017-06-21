@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -157,9 +153,7 @@ namespace JEMS.MyUserControl
             txt_Truong62.ForeColor = Color.Black;
             txt_Truong63.ForeColor = Color.Black;
             txt_Truong64.ForeColor = Color.Black;
-
-
-
+            
             chk_qc.Checked = false;
             chk_abc.Checked = false;
             txt_Truong02.Focus();
@@ -277,6 +271,10 @@ namespace JEMS.MyUserControl
             bool r = false;
             for (int i = 0; i < input.Length; i++)
             {
+                if (i==3 & input[i].ToString()=="f")
+                {
+                    continue;
+                }
                 if (Regex.IsMatch(input[i].ToString(), @"^[a-zA-Z]+$"))
                 {
                     r = true;
@@ -397,8 +395,7 @@ namespace JEMS.MyUserControl
         }
         private void Set_txtLengColumn4(object sender, EventArgs e, TextEdit tb)
         {
-            if (Changed != null)
-                Changed(sender, e);
+            Changed?.Invoke(sender, e);
         }
 
         private void txt_Truong04_EditValueChanged(object sender, EventArgs e)
@@ -674,13 +671,7 @@ namespace JEMS.MyUserControl
                                              txt_Truong61.Text, txt_Truong62.Text, txt_Truong63.Text, txt_Truong64.Text,
                                              CheckQC(),CheckABC());
         }
-
-
-
-
-
-
-
+        
         public void LoadData(tbl_DeSo_Backup data)
         {
             lb_user.Text = data.UserName;

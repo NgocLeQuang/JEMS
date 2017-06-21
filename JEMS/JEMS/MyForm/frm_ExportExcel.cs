@@ -17,9 +17,9 @@ namespace JEMS.MyForm
             InitializeComponent();
         }
 
-        private String getcharacter(int n, String str)
+        private string getcharacter(int n, string str)
         {
-            String kq = "";
+            string kq = "";
             for (int i = 1; i <= n; i++)
             {
                 kq = kq.Insert(kq.Length, str);
@@ -28,7 +28,7 @@ namespace JEMS.MyForm
             return kq;
         }
 
-        private String ThemKyTubatKyPhiatruoc(String input, int iByte, string str)
+        private string ThemKyTubatKyPhiatruoc(string input, int iByte, string str)
         {
             if (input.Length >= iByte)
                 return input.Substring(input.Length - iByte, iByte);
@@ -70,8 +70,7 @@ namespace JEMS.MyForm
                 MessageBox.Show("Batch này chưa nhập xong. Vui lòng nhập xong batch trước khi ExportExcel.");
                 return;
             }
-        
-
+            
             var userMissimage = (from w in Global.db.tbl_MissImage_DESOs where w.fBatchName == cbb_Batch.Text && w.Submit==0 select w.UserName).ToList();
             string sss = "";
             foreach (var item in userMissimage)
@@ -2173,7 +2172,6 @@ namespace JEMS.MyForm
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-
                     int ii = Convert.ToInt32(dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().IndexOf(".").ToString() : "0");
                     wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().Substring(0, ii) : "";   //tên ảnh
                     wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : "";   //truong 02
