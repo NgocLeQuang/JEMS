@@ -415,7 +415,7 @@ namespace JEMS.MyForm
                     uc_ASAHI2.chk_qc.Checked = true;
                 if (deso[1].CheckABC == true)
                     uc_ASAHI2.chk_abc.Checked = true;
-                uc_ASAHI1.txt_Truong02.Focus();
+                uc_ASAHI1.txt_Truong05.Focus();
 
             }
             else if (Global.LoaiPhieu == "EIZEN")
@@ -468,7 +468,7 @@ namespace JEMS.MyForm
                 if (deso[1].CheckABC == true)
                     uc_EZIEN2.chk_abc.Checked = true;
 
-                uc_EZIEN1.txt_Truong02.Focus();
+                uc_EZIEN1.txt_Truong05.Focus();
             }
             else if (Global.LoaiPhieu == "YAMAMOTO")
             {
@@ -591,9 +591,8 @@ namespace JEMS.MyForm
                     uc_YAMAMOTO2.chk_qc.Checked = true;
                 if (deso[1].CheckABC == true)
                     uc_YAMAMOTO2.chk_abc.Checked = true;
+                uc_YAMAMOTO1.txt_Truong05.Focus();
 
-
-                uc_YAMAMOTO1.txt_Truong02.Focus();
             }
             else if (Global.LoaiPhieu == "YASUDA")
             {
@@ -742,7 +741,7 @@ namespace JEMS.MyForm
                 if (deso[1].CheckABC == true)
                     uc_YASUDA2.chk_abc.Checked = true;
 
-                uc_YASUDA1.txt_Truong02.Focus();
+                uc_YASUDA1.txt_Truong05.Focus();
             }
 
             else if (Global.LoaiPhieu == "AEON")
@@ -832,7 +831,7 @@ namespace JEMS.MyForm
                     uc_AEON2.chk_qc.Checked = true;
                 if (deso[1].CheckABC == true)
                     uc_AEON2.chk_abc.Checked = true;
-                uc_AEON1.txt_Truong02.Focus();
+                uc_AEON1.txt_Truong05.Focus();
             }
 
 

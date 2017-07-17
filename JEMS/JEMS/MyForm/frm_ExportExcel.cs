@@ -30,12 +30,15 @@ namespace JEMS.MyForm
 
         private string ThemKyTubatKyPhiatruoc(string input, int iByte, string str)
         {
-            if (input.Length >= iByte)
-                return input.Substring(input.Length - iByte, iByte);
+            //if (input.Length >= iByte)
+            //    return input.Substring(input.Length - iByte, iByte);
 
+            //return input.Insert(0, getcharacter(iByte - input.Length, str));
+            if (string.IsNullOrEmpty(input)|| input == "*"|| input == "●"|| input.Length >= iByte)
+                return input;
             return input.Insert(0, getcharacter(iByte - input.Length, str));
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             cbb_Batch.Items.Clear();
@@ -320,7 +323,7 @@ namespace JEMS.MyForm
             }
         }
 
-        public bool TableToExcel_ASAHI(String strfilename)
+        public bool TableToExcel_ASAHI(string strfilename)
         {
             try
             {
@@ -342,11 +345,11 @@ namespace JEMS.MyForm
                     wrksheet.Cells[h, 8] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";   //08
                     wrksheet.Cells[h, 85] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";  //85
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CG" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CG" + (h-1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -377,7 +380,7 @@ namespace JEMS.MyForm
             }          
         }
 
-        public bool TableToExcel_ASAHI_QC(String strfilename)
+        public bool TableToExcel_ASAHI_QC(string strfilename)
         {
             try
             {
@@ -400,11 +403,11 @@ namespace JEMS.MyForm
                     wrksheet.Cells[h, 8] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : ""; //08
                     wrksheet.Cells[h, 85] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : ""; //85
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CG" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CG" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -436,7 +439,7 @@ namespace JEMS.MyForm
             }
         }
 
-        public bool TableToExcel_ASAHI_ABC(String strfilename)
+        public bool TableToExcel_ASAHI_ABC(string strfilename)
         {
             try
             {
@@ -459,11 +462,11 @@ namespace JEMS.MyForm
                     wrksheet.Cells[h, 8] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : ""; //08
                     wrksheet.Cells[h, 85] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : ""; //85
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CG" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CG" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -496,7 +499,7 @@ namespace JEMS.MyForm
         }
 
         //
-        public bool TableToExcel_EIZEN(String strfilename)
+        public bool TableToExcel_EIZEN(string strfilename)
         {
             try
             {
@@ -613,11 +616,11 @@ namespace JEMS.MyForm
 
                     wrksheet.Cells[h, 86] = Truong_86;  //86
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CH" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CH" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -648,7 +651,7 @@ namespace JEMS.MyForm
             }
         }
 
-        public bool TableToExcel_EIZEN_QC(String strfilename)
+        public bool TableToExcel_EIZEN_QC(string strfilename)
         {
             try
             {
@@ -763,11 +766,11 @@ namespace JEMS.MyForm
                     }
                     wrksheet.Cells[h, 86] = Truong_86;  //86
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CH" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CH" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -798,7 +801,7 @@ namespace JEMS.MyForm
             }
         }
         
-        public bool TableToExcel_EIZEN_ABC(String strfilename)
+        public bool TableToExcel_EIZEN_ABC(string strfilename)
         {
             try
             {
@@ -913,11 +916,11 @@ namespace JEMS.MyForm
                     }
                     wrksheet.Cells[h, 86] = Truong_86;  //86
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CH" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CH" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -949,7 +952,7 @@ namespace JEMS.MyForm
         }
 
         //
-        public bool TableToExcel_YAMAMOTO(String strfilename)
+        public bool TableToExcel_YAMAMOTO(string strfilename)
         {
             try
             {
@@ -1177,11 +1180,11 @@ namespace JEMS.MyForm
 
                     wrksheet.Cells[h, 86] = Truong_86;  //86
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CH" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CH" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -1212,7 +1215,7 @@ namespace JEMS.MyForm
             }
         }
 
-        public bool TableToExcel_YAMAMOTO_QC(String strfilename){
+        public bool TableToExcel_YAMAMOTO_QC(string strfilename){
             try
             {
                 dataGridView1.DataSource = null;
@@ -1440,11 +1443,11 @@ namespace JEMS.MyForm
 
                     wrksheet.Cells[h, 86] = Truong_86;  //86
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CH" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CH" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -1475,7 +1478,7 @@ namespace JEMS.MyForm
             }
         }
         
-        public bool TableToExcel_YAMAMOTO_ABC(String strfilename)
+        public bool TableToExcel_YAMAMOTO_ABC(string strfilename)
         {
             try
             {
@@ -1551,7 +1554,7 @@ namespace JEMS.MyForm
 
                     wrksheet.Cells[h, 85] = dr.Cells[84].Value != null ? dr.Cells[84].Value.ToString() : "";  //85
 
-                    string Truong_86 = "";
+                    string truong86 = "";
                     if (!string.IsNullOrEmpty(dr.Cells[85].Value != null ? dr.Cells[85].Value.ToString() : ""))
                     {
                         for (int i = 0; i < dr.Cells[85].Value.ToString().Length; i++)
@@ -1562,67 +1565,67 @@ namespace JEMS.MyForm
                                 switch (temp)
                                 {
                                     case "A":
-                                        Truong_86 += "燃え殻" + "、";
+                                        truong86 += "燃え殻" + "、";
                                         break;
                                     case "B":
-                                        Truong_86 += "汚泥" + "、";
+                                        truong86 += "汚泥" + "、";
                                         break;
                                     case "C":
-                                        Truong_86 += "廃油" + "、";
+                                        truong86 += "廃油" + "、";
                                         break;
                                     case "D":
-                                        Truong_86 += "廃酸" + "、";
+                                        truong86 += "廃酸" + "、";
                                         break;
                                     case "E":
-                                        Truong_86 += "廃アルカリ" + "、";
+                                        truong86 += "廃アルカリ" + "、";
                                         break;
                                     case "F":
-                                        Truong_86 += "廃プラ" + "、";
+                                        truong86 += "廃プラ" + "、";
                                         break;
                                     case "G":
-                                        Truong_86 += "紙くず" + "、";
+                                        truong86 += "紙くず" + "、";
                                         break;
                                     case "H":
-                                        Truong_86 += "木くず" + "、";
+                                        truong86 += "木くず" + "、";
                                         break;
                                     case "I":
-                                        Truong_86 += "繊維くず" + "、";
+                                        truong86 += "繊維くず" + "、";
                                         break;
                                     case "J":
-                                        Truong_86 += "動植物性残さ" + "、";
+                                        truong86 += "動植物性残さ" + "、";
                                         break;
                                     case "K":
-                                        Truong_86 += "ゴムくず" + "、";
+                                        truong86 += "ゴムくず" + "、";
                                         break;
                                     case "L":
-                                        Truong_86 += "金属くず" + "、";
+                                        truong86 += "金属くず" + "、";
                                         break;
                                     case "M":
-                                        Truong_86 += "ガラコン陶" + "、";
+                                        truong86 += "ガラコン陶" + "、";
                                         break;
                                     case "N":
-                                        Truong_86 += "鉱さい" + "、";
+                                        truong86 += "鉱さい" + "、";
                                         break;
                                     case "O":
-                                        Truong_86 += "がれき類" + "、";
+                                        truong86 += "がれき類" + "、";
                                         break;
                                     case "P":
-                                        Truong_86 += "動物の糞尿" + "、";
+                                        truong86 += "動物の糞尿" + "、";
                                         break;
                                     case "Q":
-                                        Truong_86 += "動物の死体" + "、";
+                                        truong86 += "動物の死体" + "、";
                                         break;
                                     case "R":
-                                        Truong_86 += "ばいじん" + "、";
+                                        truong86 += "ばいじん" + "、";
                                         break;
                                     case "S":
-                                        Truong_86 += "動物性不要物" + "、";
+                                        truong86 += "動物性不要物" + "、";
                                         break;
                                     case "●":
-                                        Truong_86 += "●" + "、";
+                                        truong86 += "●" + "、";
                                         break;
                                     case "?":
-                                        Truong_86 += "?" + "、";
+                                        truong86 += "?" + "、";
                                         break;
                                     default:
                                         break;
@@ -1633,67 +1636,67 @@ namespace JEMS.MyForm
                                 switch (temp)
                                 {
                                     case "A":
-                                        Truong_86 += "燃え殻";
+                                        truong86 += "燃え殻";
                                         break;
                                     case "B":
-                                        Truong_86 += "汚泥";
+                                        truong86 += "汚泥";
                                         break;
                                     case "C":
-                                        Truong_86 += "廃油";
+                                        truong86 += "廃油";
                                         break;
                                     case "D":
-                                        Truong_86 += "廃酸";
+                                        truong86 += "廃酸";
                                         break;
                                     case "E":
-                                        Truong_86 += "廃アルカリ";
+                                        truong86 += "廃アルカリ";
                                         break;
                                     case "F":
-                                        Truong_86 += "廃プラ";
+                                        truong86 += "廃プラ";
                                         break;
                                     case "G":
-                                        Truong_86 += "紙くず";
+                                        truong86 += "紙くず";
                                         break;
                                     case "H":
-                                        Truong_86 += "木くず";
+                                        truong86 += "木くず";
                                         break;
                                     case "I":
-                                        Truong_86 += "繊維くず";
+                                        truong86 += "繊維くず";
                                         break;
                                     case "J":
-                                        Truong_86 += "動植物性残さ";
+                                        truong86 += "動植物性残さ";
                                         break;
                                     case "K":
-                                        Truong_86 += "ゴムくず";
+                                        truong86 += "ゴムくず";
                                         break;
                                     case "L":
-                                        Truong_86 += "金属くず";
+                                        truong86 += "金属くず";
                                         break;
                                     case "M":
-                                        Truong_86 += "ガラコン陶";
+                                        truong86 += "ガラコン陶";
                                         break;
                                     case "N":
-                                        Truong_86 += "鉱さい";
+                                        truong86 += "鉱さい";
                                         break;
                                     case "O":
-                                        Truong_86 += "がれき類";
+                                        truong86 += "がれき類";
                                         break;
                                     case "P":
-                                        Truong_86 += "動物の糞尿";
+                                        truong86 += "動物の糞尿";
                                         break;
                                     case "Q":
-                                        Truong_86 += "動物の死体";
+                                        truong86 += "動物の死体";
                                         break;
                                     case "R":
-                                        Truong_86 += "ばいじん";
+                                        truong86 += "ばいじん";
                                         break;
                                     case "S":
-                                        Truong_86 += "動物性不要物";
+                                        truong86 += "動物性不要物";
                                         break;
                                     case "●":
-                                        Truong_86 += "●";
+                                        truong86 += "●";
                                         break;
                                     case "?":
-                                        Truong_86 += "?";
+                                        truong86 += "?";
                                         break;
                                     default:
                                         break;
@@ -1702,13 +1705,13 @@ namespace JEMS.MyForm
                         }
                     }
 
-                    wrksheet.Cells[h, 86] = Truong_86;  //86
+                    wrksheet.Cells[h, 86] = truong86;  //86
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CH" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CH" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -1740,7 +1743,7 @@ namespace JEMS.MyForm
         }
 
         //
-        public bool TableToExcel_YASUDA(String strfilename){
+        public bool TableToExcel_YASUDA(string strfilename){
             try
             {
                 dataGridView1.DataSource = null;
@@ -1826,7 +1829,7 @@ namespace JEMS.MyForm
                     wrksheet.Cells[h, 85] = dr.Cells[84].Value != null ? dr.Cells[84].Value.ToString() : "";  //85
 
 
-                    string Truong_87 = "";
+                    string truong87 = "";
                     if (!string.IsNullOrEmpty(dr.Cells[86].Value != null ? dr.Cells[86].Value.ToString() : ""))
                     {
                         for (int i = 0; i < dr.Cells[86].Value.ToString().Length; i++)
@@ -1837,34 +1840,34 @@ namespace JEMS.MyForm
                                 switch (temp)
                                 {
                                     case "A":
-                                        Truong_87 += "廃プラ" + "、";
+                                        truong87 += "廃プラ" + "、";
                                         break;
                                     case "B":
-                                        Truong_87 += "ゴムくず" + "、";
+                                        truong87 += "ゴムくず" + "、";
                                         break;
                                     case "C":
-                                        Truong_87 += "金属くず" + "、";
+                                        truong87 += "金属くず" + "、";
                                         break;
                                     case "D":
-                                        Truong_87 += "ガラコン陶" + "、";
+                                        truong87 += "ガラコン陶" + "、";
                                         break;
                                     case "E":
-                                        Truong_87 += "がれき類" + "、";
+                                        truong87 += "がれき類" + "、";
                                         break;
                                     case "K":
-                                        Truong_87 += "紙くず" + "、";
+                                        truong87 += "紙くず" + "、";
                                         break;
                                     case "L":
-                                        Truong_87 += "木くず" + "、";
+                                        truong87 += "木くず" + "、";
                                         break;
                                     case "M":
-                                        Truong_87 += "繊維くず" + "、";
+                                        truong87 += "繊維くず" + "、";
                                         break;
                                     case "●":
-                                        Truong_87 += "●" + "、";
+                                        truong87 += "●" + "、";
                                         break;
                                     case "?":
-                                        Truong_87 += "?" + "、";
+                                        truong87 += "?" + "、";
                                         break;
                                     default:
                                         break;
@@ -1875,34 +1878,34 @@ namespace JEMS.MyForm
                                 switch (temp)
                                 {
                                     case "A":
-                                        Truong_87 += "廃プラ";
+                                        truong87 += "廃プラ";
                                         break;
                                     case "B":
-                                        Truong_87 += "ゴムくず";
+                                        truong87 += "ゴムくず";
                                         break;
                                     case "C":
-                                        Truong_87 += "金属くず";
+                                        truong87 += "金属くず";
                                         break;
                                     case "D":
-                                        Truong_87 += "ガラコン陶";
+                                        truong87 += "ガラコン陶";
                                         break;
                                     case "E":
-                                        Truong_87 += "がれき類";
+                                        truong87 += "がれき類";
                                         break;
                                     case "K":
-                                        Truong_87 += "紙くず";
+                                        truong87 += "紙くず";
                                         break;
                                     case "L":
-                                        Truong_87 += "木くず";
+                                        truong87 += "木くず";
                                         break;
                                     case "M":
-                                        Truong_87 += "繊維くず";
+                                        truong87 += "繊維くず";
                                         break;
                                     case "●":
-                                        Truong_87 += "●";
+                                        truong87 += "●";
                                         break;
                                     case "?":
-                                        Truong_87 += "?";
+                                        truong87 += "?";
                                         break;
                                     default:
                                         break;
@@ -1911,14 +1914,14 @@ namespace JEMS.MyForm
                         }
                     }
 
-                    wrksheet.Cells[h, 87] = Truong_87;  //87
-                    wrksheet.Cells[h, 92] = dr.Cells[90].Value != null ? dr.Cells[90].Value.ToString() : "";  //91
+                    wrksheet.Cells[h, 87] = truong87;  //87
+                    wrksheet.Cells[h, 92] = ThemKyTubatKyPhiatruoc(dr.Cells[90].Value != null ? dr.Cells[90].Value.ToString() : "", 6, "0");  //91
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CN" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CN" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -1949,7 +1952,7 @@ namespace JEMS.MyForm
             }
         }
         
-        public bool TableToExcel_YASUDA_QC(String strfilename)
+        public bool TableToExcel_YASUDA_QC(string strfilename)
         {
             try
             {
@@ -1957,7 +1960,6 @@ namespace JEMS.MyForm
                 dataGridView1.DataSource = Global.db.ExportExcel_YAMAMOTO_QC(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
                 Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-                Sheets _sheet = book.Sheets;
                 Worksheet wrksheet = (Worksheet)book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
@@ -2123,13 +2125,13 @@ namespace JEMS.MyForm
 
                     wrksheet.Cells[h, 87] = Truong_87;  //87
 
-                    wrksheet.Cells[h, 92] = dr.Cells[90].Value != null ? dr.Cells[90].Value.ToString() : "";  //91
+                    wrksheet.Cells[h, 92] = ThemKyTubatKyPhiatruoc(dr.Cells[90].Value != null ? dr.Cells[90].Value.ToString() : "",6,"0");  //91
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CN" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CN" + (h-1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -2159,7 +2161,7 @@ namespace JEMS.MyForm
             }
         }
 
-        public bool TableToExcel_YASUDA_ABC(String strfilename)
+        public bool TableToExcel_YASUDA_ABC(string strfilename)
         {
             try
             {
@@ -2167,7 +2169,6 @@ namespace JEMS.MyForm
                 dataGridView1.DataSource = Global.db.ExportExcel_YAMAMOTO_ABC(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
                 Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
-                Sheets _sheet = book.Sheets;
                 Worksheet wrksheet = (Worksheet)book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
@@ -2245,7 +2246,7 @@ namespace JEMS.MyForm
                     wrksheet.Cells[h, 85] = dr.Cells[84].Value != null ? dr.Cells[84].Value.ToString() : "";  //85
 
 
-                    string Truong_87 = "";
+                    string truong87 = "";
                     if (!string.IsNullOrEmpty(dr.Cells[86].Value != null ? dr.Cells[86].Value.ToString() : ""))
                     {
                         for (int i = 0; i < dr.Cells[86].Value.ToString().Length; i++)
@@ -2256,34 +2257,34 @@ namespace JEMS.MyForm
                                 switch (temp)
                                 {
                                     case "A":
-                                        Truong_87 += "廃プラ" + "、";
+                                        truong87 += "廃プラ" + "、";
                                         break;
                                     case "B":
-                                        Truong_87 += "ゴムくず" + "、";
+                                        truong87 += "ゴムくず" + "、";
                                         break;
                                     case "C":
-                                        Truong_87 += "金属くず" + "、";
+                                        truong87 += "金属くず" + "、";
                                         break;
                                     case "D":
-                                        Truong_87 += "ガラコン陶" + "、";
+                                        truong87 += "ガラコン陶" + "、";
                                         break;
                                     case "E":
-                                        Truong_87 += "がれき類" + "、";
+                                        truong87 += "がれき類" + "、";
                                         break;
                                     case "K":
-                                        Truong_87 += "紙くず" + "、";
+                                        truong87 += "紙くず" + "、";
                                         break;
                                     case "L":
-                                        Truong_87 += "木くず" + "、";
+                                        truong87 += "木くず" + "、";
                                         break;
                                     case "M":
-                                        Truong_87 += "繊維くず" + "、";
+                                        truong87 += "繊維くず" + "、";
                                         break;
                                     case "●":
-                                        Truong_87 += "●" + "、";
+                                        truong87 += "●" + "、";
                                         break;
                                     case "?":
-                                        Truong_87 += "?" + "、";
+                                        truong87 += "?" + "、";
                                         break;
                                     default:
                                         break;
@@ -2294,34 +2295,34 @@ namespace JEMS.MyForm
                                 switch (temp)
                                 {
                                     case "A":
-                                        Truong_87 += "廃プラ";
+                                        truong87 += "廃プラ";
                                         break;
                                     case "B":
-                                        Truong_87 += "ゴムくず";
+                                        truong87 += "ゴムくず";
                                         break;
                                     case "C":
-                                        Truong_87 += "金属くず";
+                                        truong87 += "金属くず";
                                         break;
                                     case "D":
-                                        Truong_87 += "ガラコン陶";
+                                        truong87 += "ガラコン陶";
                                         break;
                                     case "E":
-                                        Truong_87 += "がれき類";
+                                        truong87 += "がれき類";
                                         break;
                                     case "K":
-                                        Truong_87 += "紙くず";
+                                        truong87 += "紙くず";
                                         break;
                                     case "L":
-                                        Truong_87 += "木くず";
+                                        truong87 += "木くず";
                                         break;
                                     case "M":
-                                        Truong_87 += "繊維くず";
+                                        truong87 += "繊維くず";
                                         break;
                                     case "●":
-                                        Truong_87 += "●";
+                                        truong87 += "●";
                                         break;
                                     case "?":
-                                        Truong_87 += "?";
+                                        truong87 += "?";
                                         break;
                                     default:
                                         break;
@@ -2330,15 +2331,15 @@ namespace JEMS.MyForm
                         }
                     }
 
-                    wrksheet.Cells[h, 87] = Truong_87;  //87
+                    wrksheet.Cells[h, 87] = truong87;  //87
 
-                    wrksheet.Cells[h, 92] = dr.Cells[90].Value != null ? dr.Cells[90].Value.ToString() : "";  //91
+                    wrksheet.Cells[h, 92] = ThemKyTubatKyPhiatruoc(dr.Cells[90].Value != null ? dr.Cells[90].Value.ToString() : "",6,"0");  //91
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CN" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CN" + (h-1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -2423,7 +2424,7 @@ namespace JEMS.MyForm
             }
         }
 
-        public bool TableToExcel_AEON(String strfilename)
+        public bool TableToExcel_AEON(string strfilename)
         {
             try
             {
@@ -2494,11 +2495,11 @@ namespace JEMS.MyForm
                     wrksheet.Cells[h, 64] = ChonGiaTri(dr.Cells[64].Value != null ? dr.Cells[64].Value.ToString() : "");
 
                     
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CH" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CH" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -2529,30 +2530,23 @@ namespace JEMS.MyForm
             }
         }
 
-        public bool TableToExcel_AEON_QC(String strfilename)
+        public bool TableToExcel_AEON_QC(string strfilename)
         {
             try
             {
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Global.db.ExportExcel_AEON_QC(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
-                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "",
-                    true, false, 0, true, false, false);
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
                 Sheets _sheet = book.Sheets;
                 Worksheet wrksheet = (Worksheet) book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    int ii =
-                        Convert.ToInt32(dr.Cells[0].Value != null
-                            ? dr.Cells[0].Value.ToString().IndexOf(".").ToString()
-                            : "0");
-                    string truong_03 = (dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "") +
-                                       (dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "");
+                    int ii = Convert.ToInt32(dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().IndexOf(".").ToString() : "0");
+                    string truong_03 = (dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "") + (dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "");
 
-                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null
-                        ? dr.Cells[0].Value.ToString().Substring(0, ii)
-                        : ""; //tên ảnh
+                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().Substring(0, ii) : ""; //tên ảnh
                     wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : ""; //truong 02
                     wrksheet.Cells[h, 3] = truong_03; //03
                     if ((dr.Cells[4].Value != null ? dr.Cells[4].Value.ToString() : "") == "1") //04
@@ -2612,11 +2606,11 @@ namespace JEMS.MyForm
                     wrksheet.Cells[h, 64] = ChonGiaTri(dr.Cells[64].Value != null ? dr.Cells[64].Value.ToString() : "");
 
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CH" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CH" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";
@@ -2647,30 +2641,22 @@ namespace JEMS.MyForm
             }
         }
 
-        public bool TableToExcel_AEON_ABC(String strfilename)
+        public bool TableToExcel_AEON_ABC(string strfilename)
         {
             try
             {
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = Global.db.ExportExcel_AEON_ABC(cbb_Batch.Text);
                 Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
-                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "",
-                    true, false, 0, true, false, false);
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
                 Sheets _sheet = book.Sheets;
                 Worksheet wrksheet = (Worksheet)book.ActiveSheet;
                 int h = 3;
                 foreach (DataGridViewRow dr in dataGridView1.Rows)
                 {
-                    int ii =
-                        Convert.ToInt32(dr.Cells[0].Value != null
-                            ? dr.Cells[0].Value.ToString().IndexOf(".").ToString()
-                            : "0");
-                    string truong_03 = (dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "") +
-                                       (dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "");
-
-                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null
-                        ? dr.Cells[0].Value.ToString().Substring(0, ii)
-                        : ""; //tên ảnh
+                    int ii =Convert.ToInt32(dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().IndexOf(".").ToString() : "0");
+                    string truong_03 = (dr.Cells[2].Value != null ? dr.Cells[2].Value.ToString() : "") + (dr.Cells[3].Value != null ? dr.Cells[3].Value.ToString() : "");
+                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().Substring(0, ii): ""; //tên ảnh
                     wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : ""; //truong 02
                     wrksheet.Cells[h, 3] = truong_03; //03
                     if ((dr.Cells[4].Value != null ? dr.Cells[4].Value.ToString() : "") == "1") //04
@@ -2730,11 +2716,11 @@ namespace JEMS.MyForm
                     wrksheet.Cells[h, 64] = ChonGiaTri(dr.Cells[64].Value != null ? dr.Cells[64].Value.ToString() : "");
 
 
-                    lb_SoDong.Text = (h - 2).ToString() + "/" + dataGridView1.Rows.Count.ToString();
-                    Range rowHead = wrksheet.get_Range("A3", "CH" + h);
-                    rowHead.Borders.LineStyle = Constants.xlSolid;
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
                     h++;
                 }
+                Range rowHead = wrksheet.get_Range("A3", "CH" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {
                     string savePath = "";

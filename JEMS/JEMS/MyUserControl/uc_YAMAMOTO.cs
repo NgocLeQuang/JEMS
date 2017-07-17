@@ -903,5 +903,66 @@ namespace JEMS.MyUserControl
             }
         }
 
+        private void txt_Truong02_Leave(object sender, EventArgs e)
+        {
+            //if (!string.IsNullOrEmpty(txt_Truong02.Text))
+            //{
+            //    string tempYear = DateTime.Now.Year.ToString().Substring(2, 2);
+            //    string tempMonth = DateTime.Now.Month.ToString();
+            //    string tempDay = DateTime.Now.Day.ToString();
+            //    if (tempMonth.Length < 2)
+            //        tempMonth = "0" + tempMonth;
+            //    if (tempDay.Length < 2)
+            //        tempDay = "0" + tempDay;
+            //    string temp = tempYear + tempMonth + tempDay;
+            //    if (temp != txt_Truong02.Text)
+            //    {
+            //        txt_Truong02.BackColor = Color.Red;
+            //        txt_Truong02.ForeColor = Color.White;
+            //    }
+            //    else
+            //    {
+            //        txt_Truong02.BackColor = Color.White;
+            //        txt_Truong02.ForeColor = Color.Black;
+            //    }
+
+            //}
+            try
+            {
+                if (txt_Truong02.Text.Length != 6)
+                    return;
+                string tempYear = "20" + txt_Truong02.Text.Substring(0, 2) + "/";
+                string tempMonth = txt_Truong02.Text.Substring(2, 2) + "/";
+                string tempDay = txt_Truong02.Text.Substring(4, 2);
+
+                string tempYearNow = DateTime.Now.Year + "/";
+                string tempMonthNow = DateTime.Now.Month + "/";
+                string tempDayNow = DateTime.Now.Day.ToString();
+
+                if (tempMonthNow.Length < 3)
+                    tempMonthNow = "0" + tempMonthNow;
+                if (tempDayNow.Length < 2)
+                    tempDayNow = "0" + tempDayNow;
+
+                DateTime tempDate = DateTime.Parse(tempYear + tempMonth + tempDay + " 00:00:00");
+                DateTime tempDateNow = DateTime.Parse(tempYearNow + tempMonthNow + tempDayNow + " 00:00:00");
+
+                if (tempDate > tempDateNow)
+                {
+                    txt_Truong02.BackColor = Color.Red;
+                    txt_Truong02.ForeColor = Color.White;
+                }
+                else
+                {
+                    txt_Truong02.BackColor = Color.White;
+                    txt_Truong02.ForeColor = Color.Black;
+                }
+            }
+            catch (Exception)
+            {
+                txt_Truong02.BackColor = Color.Red;
+                txt_Truong02.ForeColor = Color.White;
+            }
+        }
     }
 }

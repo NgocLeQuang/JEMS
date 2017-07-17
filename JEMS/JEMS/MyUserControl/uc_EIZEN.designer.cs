@@ -85,6 +85,7 @@
             this.txt_Truong02.Size = new System.Drawing.Size(153, 20);
             this.txt_Truong02.TabIndex = 1;
             this.txt_Truong02.EditValueChanged += new System.EventHandler(this.txt_Truong02_EditValueChanged);
+            this.txt_Truong02.Leave += new System.EventHandler(this.txt_Truong02_Leave);
             // 
             // txt_Truong03_1
             // 

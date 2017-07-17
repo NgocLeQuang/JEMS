@@ -402,7 +402,7 @@ namespace JEMS.MyForm
                 uc_ASAHI2.txt_Truong85.Text = deso[1].Truong_85;
                 if (deso[1].CheckABC == true)
                     uc_ASAHI2.chk_abc.Checked = true;
-                uc_ASAHI1.txt_Truong02.Focus();
+                uc_ASAHI1.txt_Truong05.Focus();
 
             }
             else if (Global.LoaiPhieu == "EIZEN")
@@ -452,7 +452,7 @@ namespace JEMS.MyForm
                 uc_EZIEN2.txt_Truong86.Text = deso[1].Truong_86;
                 if (deso[1].CheckABC == true)
                     uc_EZIEN2.chk_abc.Checked = true;
-                uc_EZIEN1.txt_Truong02.Focus();
+                uc_EZIEN1.txt_Truong05.Focus();
             }
             else if (Global.LoaiPhieu == "YAMAMOTO")
             {
@@ -570,7 +570,7 @@ namespace JEMS.MyForm
                 uc_YAMAMOTO2.txt_Truong86.Text = deso[1].Truong_86;
                 if (deso[1].CheckABC == true)
                     uc_YAMAMOTO2.chk_abc.Checked = true;
-                uc_YAMAMOTO1.txt_Truong02.Focus();
+                uc_YAMAMOTO1.txt_Truong05.Focus();
             }
             else if (Global.LoaiPhieu == "YASUDA")
             {
@@ -713,7 +713,7 @@ namespace JEMS.MyForm
                 uc_YASUDA2.txt_Truong92.Text = deso[1].Truong_91;
                 if (deso[1].CheckABC == true)
                     uc_YASUDA2.chk_abc.Checked = true;
-                uc_YASUDA1.txt_Truong02.Focus();
+                uc_YASUDA1.txt_Truong05.Focus();
             }
             else if (Global.LoaiPhieu == "AEON")
             {
@@ -798,7 +798,7 @@ namespace JEMS.MyForm
                 uc_AEON2.txt_Truong64.Text = deso[1].Truong_64;
                 if (deso[1].CheckABC == true)
                     uc_AEON2.chk_abc.Checked = true;
-                uc_AEON1.txt_Truong02.Focus();
+                uc_AEON1.txt_Truong05.Focus();
             }
 
             Compare_TextBox(uc_ASAHI1.txt_Truong02, uc_ASAHI2.txt_Truong02);
@@ -864,9 +864,7 @@ namespace JEMS.MyForm
             Compare_TextBox(uc_YAMAMOTO1.txt_Truong80, uc_YAMAMOTO2.txt_Truong80);
             Compare_TextBox(uc_YAMAMOTO1.txt_Truong85, uc_YAMAMOTO2.txt_Truong85);
             Compare_TextBox(uc_YAMAMOTO1.txt_Truong86, uc_YAMAMOTO2.txt_Truong86);
-
-
-
+            
 
             Compare_TextBox(uc_YASUDA1.txt_Truong02, uc_YASUDA2.txt_Truong02);
             Compare_TextBox(uc_YASUDA1.txt_Truong03_1, uc_YASUDA2.txt_Truong03_1);
