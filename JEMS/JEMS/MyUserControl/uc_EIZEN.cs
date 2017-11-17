@@ -301,9 +301,9 @@ namespace JEMS.MyUserControl
         private void txt_Truong86_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (nonNumberEntered == false)
-            {
-                e.Handled = true;
+            { e.Handled = true;
             }
+               
         }
 
         private void uc_ASAHI_Load(object sender, EventArgs e)
