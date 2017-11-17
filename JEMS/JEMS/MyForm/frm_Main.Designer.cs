@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btn_logout = new DevExpress.XtraBars.BarButtonItem();
@@ -45,13 +44,13 @@
             this.btn_tiendo = new DevExpress.XtraBars.BarButtonItem();
             this.btn_xuatexcel = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Zoomimage = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Feedback = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Feedback = new DevExpress.XtraBars.BarButtonItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.lb_SoHinhLamDuoc = new DevExpress.XtraEditors.LabelControl();
             this.lb_SoHinhConLai = new DevExpress.XtraEditors.LabelControl();
@@ -65,7 +64,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.pn_input = new DevExpress.XtraEditors.PanelControl();
             this.tabControl_Main = new DevExpress.XtraTab.XtraTabControl();
             this.tp_Asahi_Main = new DevExpress.XtraTab.XtraTabPage();
             this.uc_ASAHI1 = new JEMS.MyUserControl.uc_ASAHI();
@@ -77,16 +76,19 @@
             this.uc_YASUDA1 = new JEMS.MyUserControl.uc_YASUDA();
             this.tp_AEON_Main = new DevExpress.XtraTab.XtraTabPage();
             this.uc_AEON1 = new JEMS.MyUserControl.uc_AEON();
+            this.tp_TAIYO_Main = new DevExpress.XtraTab.XtraTabPage();
+            this.uc_TAIYO1 = new JEMS.MyUserControl.uc_TAIYO();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.btn_Pause = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Submit_Logout = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Start_Submit = new DevExpress.XtraEditors.SimpleButton();
             this.uc_PictureBox1 = new JEMS.MyUserControl.uc_PictureBox();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pn_input)).BeginInit();
+            this.pn_input.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl_Main)).BeginInit();
             this.tabControl_Main.SuspendLayout();
             this.tp_Asahi_Main.SuspendLayout();
@@ -94,8 +96,11 @@
             this.tp_YAMAMOTO_Main.SuspendLayout();
             this.tp_YASUDA_Main.SuspendLayout();
             this.tp_AEON_Main.SuspendLayout();
+            this.tp_TAIYO_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // barManager1
@@ -244,13 +249,6 @@
             this.btn_Zoomimage.Name = "btn_Zoomimage";
             this.btn_Zoomimage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Zoomimage_ItemClick);
             // 
-            // btn_Feedback
-            // 
-            this.btn_Feedback.Caption = "Feedback";
-            this.btn_Feedback.Id = 17;
-            this.btn_Feedback.Name = "btn_Feedback";
-            this.btn_Feedback.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Feedback_ItemClick);
-            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -293,6 +291,13 @@
             // 
             this.barButtonItem6.Id = 9;
             this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // btn_Feedback
+            // 
+            this.btn_Feedback.Caption = "Feedback";
+            this.btn_Feedback.Id = 17;
+            this.btn_Feedback.Name = "btn_Feedback";
+            this.btn_Feedback.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Feedback_ItemClick);
             // 
             // panelControl1
             // 
@@ -416,15 +421,15 @@
             this.labelControl1.TabIndex = 12;
             this.labelControl1.Text = "Batch:";
             // 
-            // panelControl2
+            // pn_input
             // 
-            this.panelControl2.Controls.Add(this.tabControl_Main);
-            this.panelControl2.Controls.Add(this.panelControl3);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl2.Location = new System.Drawing.Point(862, 53);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(438, 592);
-            this.panelControl2.TabIndex = 5;
+            this.pn_input.Controls.Add(this.tabControl_Main);
+            this.pn_input.Controls.Add(this.panelControl3);
+            this.pn_input.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_input.Location = new System.Drawing.Point(0, 0);
+            this.pn_input.Name = "pn_input";
+            this.pn_input.Size = new System.Drawing.Size(305, 592);
+            this.pn_input.TabIndex = 5;
             // 
             // tabControl_Main
             // 
@@ -432,20 +437,21 @@
             this.tabControl_Main.Location = new System.Drawing.Point(2, 2);
             this.tabControl_Main.Name = "tabControl_Main";
             this.tabControl_Main.SelectedTabPage = this.tp_Asahi_Main;
-            this.tabControl_Main.Size = new System.Drawing.Size(434, 558);
+            this.tabControl_Main.Size = new System.Drawing.Size(301, 558);
             this.tabControl_Main.TabIndex = 1;
             this.tabControl_Main.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tp_Asahi_Main,
             this.tp_EIZEN_Main,
             this.tp_YAMAMOTO_Main,
             this.tp_YASUDA_Main,
-            this.tp_AEON_Main});
+            this.tp_AEON_Main,
+            this.tp_TAIYO_Main});
             // 
             // tp_Asahi_Main
             // 
             this.tp_Asahi_Main.Controls.Add(this.uc_ASAHI1);
             this.tp_Asahi_Main.Name = "tp_Asahi_Main";
-            this.tp_Asahi_Main.Size = new System.Drawing.Size(428, 530);
+            this.tp_Asahi_Main.Size = new System.Drawing.Size(263, 530);
             this.tp_Asahi_Main.Text = "ASAHI";
             // 
             // uc_ASAHI1
@@ -454,14 +460,14 @@
             this.uc_ASAHI1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_ASAHI1.Location = new System.Drawing.Point(0, 0);
             this.uc_ASAHI1.Name = "uc_ASAHI1";
-            this.uc_ASAHI1.Size = new System.Drawing.Size(428, 530);
+            this.uc_ASAHI1.Size = new System.Drawing.Size(263, 530);
             this.uc_ASAHI1.TabIndex = 0;
             // 
             // tp_EIZEN_Main
             // 
             this.tp_EIZEN_Main.Controls.Add(this.uc_EZIEN1);
             this.tp_EIZEN_Main.Name = "tp_EIZEN_Main";
-            this.tp_EIZEN_Main.Size = new System.Drawing.Size(428, 530);
+            this.tp_EIZEN_Main.Size = new System.Drawing.Size(263, 530);
             this.tp_EIZEN_Main.Text = "EIZEN";
             // 
             // uc_EZIEN1
@@ -471,14 +477,14 @@
             this.uc_EZIEN1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_EZIEN1.Location = new System.Drawing.Point(0, 0);
             this.uc_EZIEN1.Name = "uc_EZIEN1";
-            this.uc_EZIEN1.Size = new System.Drawing.Size(428, 530);
+            this.uc_EZIEN1.Size = new System.Drawing.Size(263, 530);
             this.uc_EZIEN1.TabIndex = 0;
             // 
             // tp_YAMAMOTO_Main
             // 
             this.tp_YAMAMOTO_Main.Controls.Add(this.uc_YAMAMOTO4);
             this.tp_YAMAMOTO_Main.Name = "tp_YAMAMOTO_Main";
-            this.tp_YAMAMOTO_Main.Size = new System.Drawing.Size(428, 530);
+            this.tp_YAMAMOTO_Main.Size = new System.Drawing.Size(453, 530);
             this.tp_YAMAMOTO_Main.Text = "YAMAMOTO";
             // 
             // uc_YAMAMOTO4
@@ -488,14 +494,14 @@
             this.uc_YAMAMOTO4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_YAMAMOTO4.Location = new System.Drawing.Point(0, 0);
             this.uc_YAMAMOTO4.Name = "uc_YAMAMOTO4";
-            this.uc_YAMAMOTO4.Size = new System.Drawing.Size(428, 530);
+            this.uc_YAMAMOTO4.Size = new System.Drawing.Size(453, 530);
             this.uc_YAMAMOTO4.TabIndex = 3;
             // 
             // tp_YASUDA_Main
             // 
             this.tp_YASUDA_Main.Controls.Add(this.uc_YASUDA1);
             this.tp_YASUDA_Main.Name = "tp_YASUDA_Main";
-            this.tp_YASUDA_Main.Size = new System.Drawing.Size(428, 530);
+            this.tp_YASUDA_Main.Size = new System.Drawing.Size(453, 530);
             this.tp_YASUDA_Main.Text = "YASUDA";
             // 
             // uc_YASUDA1
@@ -505,14 +511,14 @@
             this.uc_YASUDA1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_YASUDA1.Location = new System.Drawing.Point(0, 0);
             this.uc_YASUDA1.Name = "uc_YASUDA1";
-            this.uc_YASUDA1.Size = new System.Drawing.Size(428, 530);
+            this.uc_YASUDA1.Size = new System.Drawing.Size(453, 530);
             this.uc_YASUDA1.TabIndex = 0;
             // 
             // tp_AEON_Main
             // 
             this.tp_AEON_Main.Controls.Add(this.uc_AEON1);
             this.tp_AEON_Main.Name = "tp_AEON_Main";
-            this.tp_AEON_Main.Size = new System.Drawing.Size(428, 530);
+            this.tp_AEON_Main.Size = new System.Drawing.Size(453, 530);
             this.tp_AEON_Main.Text = "AEON";
             // 
             // uc_AEON1
@@ -523,8 +529,26 @@
             this.uc_AEON1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_AEON1.Location = new System.Drawing.Point(0, 0);
             this.uc_AEON1.Name = "uc_AEON1";
-            this.uc_AEON1.Size = new System.Drawing.Size(428, 530);
+            this.uc_AEON1.Size = new System.Drawing.Size(453, 530);
             this.uc_AEON1.TabIndex = 0;
+            // 
+            // tp_TAIYO_Main
+            // 
+            this.tp_TAIYO_Main.Controls.Add(this.uc_TAIYO1);
+            this.tp_TAIYO_Main.Name = "tp_TAIYO_Main";
+            this.tp_TAIYO_Main.Size = new System.Drawing.Size(295, 530);
+            this.tp_TAIYO_Main.Text = "TAIYO";
+            // 
+            // uc_TAIYO1
+            // 
+            this.uc_TAIYO1.AutoScroll = true;
+            this.uc_TAIYO1.AutoSize = true;
+            this.uc_TAIYO1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_TAIYO1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_TAIYO1.Location = new System.Drawing.Point(0, 0);
+            this.uc_TAIYO1.Name = "uc_TAIYO1";
+            this.uc_TAIYO1.Size = new System.Drawing.Size(295, 530);
+            this.uc_TAIYO1.TabIndex = 0;
             // 
             // panelControl3
             // 
@@ -534,12 +558,12 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl3.Location = new System.Drawing.Point(2, 560);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(434, 30);
+            this.panelControl3.Size = new System.Drawing.Size(301, 30);
             this.panelControl3.TabIndex = 0;
             // 
             // btn_Pause
             // 
-            this.btn_Pause.Location = new System.Drawing.Point(315, 4);
+            this.btn_Pause.Location = new System.Drawing.Point(169, 4);
             this.btn_Pause.Name = "btn_Pause";
             this.btn_Pause.Size = new System.Drawing.Size(95, 23);
             this.btn_Pause.TabIndex = 11;
@@ -548,7 +572,7 @@
             // 
             // btn_Submit_Logout
             // 
-            this.btn_Submit_Logout.Location = new System.Drawing.Point(199, 5);
+            this.btn_Submit_Logout.Location = new System.Drawing.Point(76, 5);
             this.btn_Submit_Logout.Name = "btn_Submit_Logout";
             this.btn_Submit_Logout.Size = new System.Drawing.Size(90, 21);
             this.btn_Submit_Logout.TabIndex = 1;
@@ -557,9 +581,9 @@
             // 
             // btn_Start_Submit
             // 
-            this.btn_Start_Submit.Location = new System.Drawing.Point(69, 5);
+            this.btn_Start_Submit.Location = new System.Drawing.Point(9, 5);
             this.btn_Start_Submit.Name = "btn_Start_Submit";
-            this.btn_Start_Submit.Size = new System.Drawing.Size(90, 21);
+            this.btn_Start_Submit.Size = new System.Drawing.Size(62, 21);
             this.btn_Start_Submit.TabIndex = 2;
             this.btn_Start_Submit.Text = "Start";
             this.btn_Start_Submit.Click += new System.EventHandler(this.btn_Start_Submit_Click);
@@ -567,16 +591,30 @@
             // uc_PictureBox1
             // 
             this.uc_PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_PictureBox1.Location = new System.Drawing.Point(0, 53);
+            this.uc_PictureBox1.Location = new System.Drawing.Point(0, 0);
             this.uc_PictureBox1.Name = "uc_PictureBox1";
-            this.uc_PictureBox1.Size = new System.Drawing.Size(862, 592);
+            this.uc_PictureBox1.Size = new System.Drawing.Size(990, 592);
             this.uc_PictureBox1.TabIndex = 6;
+            // 
+            // splitContainerControl1
+            // 
+            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 53);
+            this.splitContainerControl1.Name = "splitContainerControl1";
+            this.splitContainerControl1.Panel1.Controls.Add(this.uc_PictureBox1);
+            this.splitContainerControl1.Panel1.Text = "Panel1";
+            this.splitContainerControl1.Panel2.Controls.Add(this.pn_input);
+            this.splitContainerControl1.Panel2.Text = "Panel2";
+            this.splitContainerControl1.Size = new System.Drawing.Size(1300, 592);
+            this.splitContainerControl1.SplitterPosition = 305;
+            this.splitContainerControl1.TabIndex = 11;
+            this.splitContainerControl1.Text = "splitContainerControl1";
             // 
             // frm_Main
             // 
             this.ClientSize = new System.Drawing.Size(1300, 645);
-            this.Controls.Add(this.uc_PictureBox1);
-            this.Controls.Add(this.panelControl2);
+            this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -595,8 +633,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pn_input)).EndInit();
+            this.pn_input.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl_Main)).EndInit();
             this.tabControl_Main.ResumeLayout(false);
             this.tp_Asahi_Main.ResumeLayout(false);
@@ -608,8 +646,12 @@
             this.tp_YASUDA_Main.PerformLayout();
             this.tp_AEON_Main.ResumeLayout(false);
             this.tp_AEON_Main.PerformLayout();
+            this.tp_TAIYO_Main.ResumeLayout(false);
+            this.tp_TAIYO_Main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
+            this.splitContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -635,7 +677,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_xuatexcel;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.PanelControl pn_input;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private JEMS.MyUserControl.uc_PictureBox uc_PictureBox1;
         private DevExpress.XtraEditors.PanelControl panelControl3;
@@ -669,6 +711,9 @@
         private DevExpress.XtraTab.XtraTabPage tp_AEON_Main;
         private MyUserControl.uc_AEON uc_AEON1;
         private DevExpress.XtraBars.BarButtonItem btn_Feedback;
+        private DevExpress.XtraTab.XtraTabPage tp_TAIYO_Main;
+        private MyUserControl.uc_TAIYO uc_TAIYO1;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
     }
 }
 

@@ -36,7 +36,7 @@ namespace JEMS
                 a.lb_user_window.Text = "Tài khoản window:";
                 a.lb_ip.Text = "Địa chỉ IP :";
                 a.grb_2.Text = "Thông Tin Tài Khoản Đăng Nhập";
-                a.lb_username.Text = "Tên đăng nhập :";
+                a.lb_username.Text = "Tài khoản :";
                 a.lb_password.Text = "Mật khẩu :";
                 a.lb_role.Text = "Vai trò :";
                 a.lb_date.Text = "Ngày: ";
@@ -45,7 +45,7 @@ namespace JEMS
                 a.btn_thoat.Text = "Thoát";
                 a.chb_hienthi.Text = "Hiển Thị";
                 a.chb_luu.Text = "Lưu";
-                a.lb_version.Text = @"1.2.7";
+                a.lb_version.Text = @"1.3.4";
                 a.UrlUpdateVersion = @"\\10.10.10.254\DE_Viet\2017\JEMS\Tools";
                 a.LoginEvent += a_LoginEvent;
                 a.ButtonLoginEven += a_ButtonLoginEven;

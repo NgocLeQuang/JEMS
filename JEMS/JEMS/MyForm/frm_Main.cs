@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
@@ -51,7 +52,6 @@ namespace JEMS.MyForm
                         {
                             uc_PictureBox1.imageBox1.Image = Resources.svn_deleted;
                             return "Error";
-
                         }
                     }
                     catch (Exception i)
@@ -80,6 +80,8 @@ namespace JEMS.MyForm
                     uc_YASUDA1.txt_Truong02.Focus();
                 else if (tabControl_Main.SelectedTabPage == tp_AEON_Main)
                     uc_AEON1.txt_Truong02.Focus();
+                else if (tabControl_Main.SelectedTabPage == tp_TAIYO_Main)
+                    uc_TAIYO1.txt_Truong02.Focus();
             }
             return "OK";
         }
@@ -88,39 +90,54 @@ namespace JEMS.MyForm
         {
             try
             {
-                Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.fLoaiPhieu).FirstOrDefault();
+                Global.FreeTime = 0;
                 lb_IdImage.Text = "";
-                lb_fBatchName.Text = Global.StrBatch;
-                lb_UserName.Text = Global.StrUsername;
-                lb_TongSoHinh.Text = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.idimage).Count().ToString();
-                lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images
-                                        where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch && (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "")
-                                        select w.idimage).Count().ToString();
-                lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs
-                                         where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
-                                         select w.IdImage).Count().ToString();
+                btn_Submit_Logout.Enabled = false;
 
                 tp_AEON_Main.PageVisible = false;
                 tp_Asahi_Main.PageVisible = false;
                 tp_EIZEN_Main.PageVisible = false;
                 tp_YAMAMOTO_Main.PageVisible = false;
                 tp_YASUDA_Main.PageVisible = false;
+                tp_TAIYO_Main.PageVisible = false;
 
                 menu_quanly.Enabled = false;
+                lb_fBatchName.Text = Global.StrBatch;
+                lb_UserName.Text = Global.StrUsername;
+
+                Global.LoaiPhieu = (from w in Global.db.tbl_Batches where w.fBatchName == Global.StrBatch select w.fLoaiPhieu).FirstOrDefault();
 
                 if (Global.StrRole == "DESO")
                 {
                     if (Global.LoaiPhieu == "ASAHI")
+                    {
                         tp_Asahi_Main.PageVisible = true;
+                        splitContainerControl1.SplitterPosition = 350;
+                    }
                     else if (Global.LoaiPhieu == "EIZEN")
+                    {
                         tp_EIZEN_Main.PageVisible = true;
+                        splitContainerControl1.SplitterPosition = 360;
+                    }
                     else if (Global.LoaiPhieu == "YAMAMOTO")
+                    {
                         tp_YAMAMOTO_Main.PageVisible = true;
+                        splitContainerControl1.SplitterPosition = 380;
+                    }
                     else if (Global.LoaiPhieu == "YASUDA")
+                    {
                         tp_YASUDA_Main.PageVisible = true;
+                        splitContainerControl1.SplitterPosition = 350;
+                    }
+                    else if (Global.LoaiPhieu == "TAIYO")
+                    {
+                        tp_TAIYO_Main.PageVisible = true;
+                        splitContainerControl1.SplitterPosition = 270;
+                    }
                     else if (Global.LoaiPhieu == "AEON")
                     {
                         tp_AEON_Main.PageVisible = true;
+                        splitContainerControl1.SplitterPosition = 393;
                         uc_AEON1.txt_Truong05.GotFocus += Txt_Truong02_GotFocus;
                         uc_AEON1.txt_Truong05.Leave += Txt_Truong02_Leave;
                         uc_AEON1.txt_Truong13.GotFocus += Txt_Truong02_GotFocus;
@@ -145,13 +162,20 @@ namespace JEMS.MyForm
                     btn_Submit_Logout.Enabled = false;
                     menu_quanly.Enabled = true;
                 }
+                
+                lb_TongSoHinh.Text = (from w in Global.db.tbl_Images where w.fbatchname == Global.StrBatch select w.idimage).Count().ToString();
+                lb_SoHinhConLai.Text = (from w in Global.db.tbl_Images
+                                        where w.ReadImageDESo < 2 && w.fbatchname == Global.StrBatch && (w.UserNameDESo != Global.StrUsername || w.UserNameDESo == null || w.UserNameDESo == "")
+                                        select w.idimage).Count().ToString();
+                lb_SoHinhLamDuoc.Text = (from w in Global.db.tbl_MissImage_DESOs
+                                         where w.UserName == Global.StrUsername && w.fBatchName == Global.StrBatch
+                                         select w.IdImage).Count().ToString();
                 setValue();
             }
             catch (Exception i)
             {
                 MessageBox.Show("Lỗi Load Main: " + i.Message);
             }
-
         }
 
         private void Txt_Truong02_Leave(object sender, EventArgs e)
@@ -213,8 +237,9 @@ namespace JEMS.MyForm
                     uc_EZIEN1.ResetData();
                     uc_YAMAMOTO4.ResetData();
                     uc_YASUDA1.ResetData();
+                    uc_TAIYO1.ResetData();
                     btn_Start_Submit.Text = "Submit";
-                    btn_Submit_Logout.Visible = true;
+                    btn_Submit_Logout.Enabled = true;
                 }
                 else
                 {
@@ -224,7 +249,7 @@ namespace JEMS.MyForm
                         {
                             if (uc_ASAHI1.IsEmpty())
                             {
-                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
                                     return;
                             }
                             uc_ASAHI1.SaveData_ASAHI(lb_IdImage.Text);
@@ -233,7 +258,7 @@ namespace JEMS.MyForm
                         {
                             if (uc_EZIEN1.IsEmpty())
                             {
-                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
                                     return;
                             }
                             uc_EZIEN1.SaveData_EIZEN(lb_IdImage.Text);
@@ -242,7 +267,7 @@ namespace JEMS.MyForm
                         {
                             if (uc_YAMAMOTO4.IsEmpty())
                             {
-                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
                                     return;
                             }
                             uc_YAMAMOTO4.SaveData_YAMAMOTO(lb_IdImage.Text);
@@ -252,7 +277,7 @@ namespace JEMS.MyForm
                         {
                             if (uc_YASUDA1.IsEmpty())
                             {
-                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
                                     return;
                             }
 
@@ -262,11 +287,21 @@ namespace JEMS.MyForm
                         {
                             if (uc_AEON1.IsEmpty())
                             {
-                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
                                     return;
                             }
 
                             uc_AEON1.SaveData_AEON(lb_IdImage.Text);
+                        }
+                        else if (tabControl_Main.SelectedTabPage == tp_TAIYO_Main)
+                        {
+                            if (uc_TAIYO1.IsEmpty())
+                            {
+                                if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
+                                    return;
+                            }
+
+                            uc_TAIYO1.SaveData_TAIYO(lb_IdImage.Text);
                         }
 
                         uc_AEON1.ResetData();
@@ -274,6 +309,7 @@ namespace JEMS.MyForm
                         uc_EZIEN1.ResetData();
                         uc_YAMAMOTO4.ResetData();
                         uc_YASUDA1.ResetData();
+                        uc_TAIYO1.ResetData();
                     }
                     string temp = GetImage();
                     if (temp == "NULL")
@@ -316,7 +352,7 @@ namespace JEMS.MyForm
                     {
                         if (uc_ASAHI1.IsEmpty())
                         {
-                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
                                 return;
                         }
                         uc_ASAHI1.SaveData_ASAHI(lb_IdImage.Text);
@@ -325,7 +361,7 @@ namespace JEMS.MyForm
                     {
                         if (uc_EZIEN1.IsEmpty())
                         {
-                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
                                 return;
                         }
                         uc_EZIEN1.SaveData_EIZEN(lb_IdImage.Text);
@@ -334,7 +370,7 @@ namespace JEMS.MyForm
                     {
                         if (uc_YAMAMOTO4.IsEmpty())
                         {
-                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
                                 return;
                         }
                         uc_YAMAMOTO4.SaveData_YAMAMOTO(lb_IdImage.Text);
@@ -344,7 +380,7 @@ namespace JEMS.MyForm
                     {
                         if (uc_YASUDA1.IsEmpty())
                         {
-                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
                                 return;
                         }
 
@@ -354,11 +390,21 @@ namespace JEMS.MyForm
                     {
                         if (uc_AEON1.IsEmpty())
                         {
-                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
                                 return;
                         }
 
                         uc_AEON1.SaveData_AEON(lb_IdImage.Text);
+                    }
+                    else if (tabControl_Main.SelectedTabPage == tp_TAIYO_Main)
+                    {
+                        if (uc_TAIYO1.IsEmpty())
+                        {
+                            if (MessageBox.Show("Bạn đang để trống 1 hoặc nhiều trường. Bạn có muốn submit không? \r\nYes = Submit và chuyển qua hình khác<Nhấn Enter>\r\nNo = nhập lại trường trống cho hình này.<nhấn phím N>", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
+                                return;
+                        }
+
+                        uc_TAIYO1.SaveData_TAIYO(lb_IdImage.Text);
                     }
                 }
                 btn_logout_ItemClick(null, null);
@@ -415,6 +461,8 @@ namespace JEMS.MyForm
                     uc_YAMAMOTO4.txt_Truong03_1.Focus();
                 else if (tabControl_Main.SelectedTabPage == tp_YASUDA_Main)
                     uc_YASUDA1.txt_Truong03_1.Focus();
+                else if (tabControl_Main.SelectedTabPage == tp_TAIYO_Main)
+                    uc_TAIYO1.txt_Truong03_1.Focus();
             }
             if (e.KeyCode == Keys.Down && _Flag)
             {

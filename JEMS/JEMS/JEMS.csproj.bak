@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JEMS</RootNamespace>
-    <AssemblyName>JEMS</AssemblyName>
+    <AssemblyName>JEMS 1.3.1</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,43 +36,43 @@
     <ApplicationIcon>logoicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v16.1" />
-    <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.BonusSkins.v16.2" />
+    <Reference Include="DevExpress.Charts.v16.2.Core, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\TimeCard\TimeCard\TimeCard\bin\Debug\DevExpress.Charts.v16.1.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Data.v16.1" />
-    <Reference Include="DevExpress.Utils.v16.1" />
-    <Reference Include="DevExpress.Sparkline.v16.1.Core" />
-    <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Data.v16.2" />
+    <Reference Include="DevExpress.Utils.v16.2" />
+    <Reference Include="DevExpress.Sparkline.v16.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\TimeCard\TimeCard\TimeCard\bin\Debug\DevExpress.XtraCharts.v16.1.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v16.1.UI, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraCharts.v16.2.UI, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\TimeCard\TimeCard\TimeCard\bin\Debug\DevExpress.XtraCharts.v16.1.UI.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v16.1.Wizard, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraCharts.v16.2.Wizard, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\TimeCard\TimeCard\TimeCard\bin\Debug\DevExpress.XtraCharts.v16.1.Wizard.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v16.1" />
-    <Reference Include="DevExpress.Printing.v16.1.Core" />
-    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraEditors.v16.2" />
+    <Reference Include="DevExpress.Printing.v16.2.Core" />
+    <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DuAnBaoCaoLuong\BaoCaoLuong2017\BaoCaoLuong2017\bin\Debug\DevExpress.XtraGrid.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="ImageGlass.ImageBox">
       <HintPath>MyForm\ImageGlass.ImageBox.dll</HintPath>
     </Reference>
     <Reference Include="LibraryLogin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DuAnBaoCaoLuong\BaoCaoLuong2017\BaoCaoLuong2017\bin\Debug\LibraryLogin.dll</HintPath>
+      <HintPath>MyForm\LibraryLogin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel">
-      <HintPath>MyForm\Microsoft.Office.Interop.Excel.dll</HintPath>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>MyForm\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -98,6 +98,12 @@
       <DependentUpon>DataJEMS.dbml</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="MyForm\frm_Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\frm_Feedback.designer.cs">
+      <DependentUpon>frm_Feedback.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm\frm_ChangeZoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,7 +149,7 @@
     <Compile Include="MyForm\frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MyForm\frm_Main.Designer.cs">
+    <Compile Include="MyForm\frm_Main.designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="MyForm\frm_ManagerBatch.cs">
@@ -170,17 +176,47 @@
     <Compile Include="MyForm\frm_User.designer.cs">
       <DependentUpon>frm_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControl\uc_EIZEN_Feedback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_EIZEN_Feedback.designer.cs">
+      <DependentUpon>uc_EIZEN_Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_ASAHI_Feedback_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_ASAHI_Feedback_Item.designer.cs">
+      <DependentUpon>uc_ASAHI_Feedback_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControl\uc_ASAHI.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControl\uc_ASAHI.Designer.cs">
       <DependentUpon>uc_ASAHI.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyUserControl\uc_EZIEN.cs">
+    <Compile Include="MyUserControl\uc_AEON_Feedback.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyUserControl\uc_EZIEN.designer.cs">
-      <DependentUpon>uc_EZIEN.cs</DependentUpon>
+    <Compile Include="MyUserControl\uc_AEON_Feedback.designer.cs">
+      <DependentUpon>uc_AEON_Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_EIZEN_Feedback_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_EIZEN_Feedback_Item.designer.cs">
+      <DependentUpon>uc_EIZEN_Feedback_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_EIZEN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_EIZEN.designer.cs">
+      <DependentUpon>uc_EIZEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_ASAHI_Feedback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_ASAHI_Feedback.designer.cs">
+      <DependentUpon>uc_ASAHI_Feedback.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControl\uc_PictureBox.cs">
       <SubType>UserControl</SubType>
@@ -188,11 +224,23 @@
     <Compile Include="MyUserControl\uc_PictureBox.designer.cs">
       <DependentUpon>uc_PictureBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControl\uc_AEON.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_AEON.designer.cs">
+      <DependentUpon>uc_AEON.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyUserControl\uc_YAMAMOTO.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MyUserControl\uc_YAMAMOTO.designer.cs">
       <DependentUpon>uc_YAMAMOTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyUserControl\uc_TAIYO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyUserControl\uc_TAIYO.designer.cs">
+      <DependentUpon>uc_TAIYO.cs</DependentUpon>
     </Compile>
     <Compile Include="MyUserControl\uc_YASUDA.cs">
       <SubType>UserControl</SubType>
@@ -208,12 +256,15 @@
       <LastGenOutput>DataBPO.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataJEMS.dbml.layout">
-      <DependentUpon>DataJEMS.dbml</DependentUpon>
-    </None>
     <None Include="DataBPO.dbml.layout">
       <DependentUpon>DataBPO.dbml</DependentUpon>
     </None>
+    <None Include="DataJEMS.dbml.layout">
+      <DependentUpon>DataJEMS.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="MyForm\frm_Feedback.resx">
+      <DependentUpon>frm_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm\frm_ChangeZoom.resx">
       <DependentUpon>frm_ChangeZoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,14 +304,35 @@
     <EmbeddedResource Include="MyUserControl\uc_ASAHI.resx">
       <DependentUpon>uc_ASAHI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyUserControl\uc_EZIEN.resx">
-      <DependentUpon>uc_EZIEN.cs</DependentUpon>
+    <EmbeddedResource Include="MyUserControl\uc_EIZEN_Feedback.resx">
+      <DependentUpon>uc_EIZEN_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_ASAHI_Feedback_Item.resx">
+      <DependentUpon>uc_ASAHI_Feedback_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_AEON_Feedback.resx">
+      <DependentUpon>uc_AEON_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_EIZEN_Feedback_Item.resx">
+      <DependentUpon>uc_EIZEN_Feedback_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_EIZEN.resx">
+      <DependentUpon>uc_EIZEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_ASAHI_Feedback.resx">
+      <DependentUpon>uc_ASAHI_Feedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\uc_PictureBox.resx">
       <DependentUpon>uc_PictureBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_AEON.resx">
+      <DependentUpon>uc_AEON.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\uc_YAMAMOTO.resx">
       <DependentUpon>uc_YAMAMOTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyUserControl\uc_TAIYO.resx">
+      <DependentUpon>uc_TAIYO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyUserControl\uc_YASUDA.resx">
       <DependentUpon>uc_YASUDA.cs</DependentUpon>
@@ -292,8 +364,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ExportExcel_AEON.xlsx" />
     <None Include="Resources\ExportExcel_ASAHI.xlsx" />
     <None Include="Resources\ExportExcel_EIZEN.xlsx" />
+    <None Include="Resources\ExportExcel_TAIYO.xlsx" />
     <None Include="Resources\ExportExcel_YAMAMOTO.xlsx" />
     <None Include="Resources\ExportExcel_YASUDA.xlsx" />
     <None Include="Resources\Productivity.xls" />

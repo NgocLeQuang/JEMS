@@ -363,6 +363,7 @@
             this.labelControl7.Size = new System.Drawing.Size(10, 13);
             this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "0.";
+            this.labelControl7.Click += new System.EventHandler(this.labelControl7_Click);
             // 
             // txt_Truong0
             // 
@@ -1639,7 +1640,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "uc_YASUDA";
-            this.Size = new System.Drawing.Size(350, 403);
+            this.Size = new System.Drawing.Size(352, 403);
             this.Load += new System.EventHandler(this.uc_ASAHI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong02.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Truong03_1.Properties)).EndInit();

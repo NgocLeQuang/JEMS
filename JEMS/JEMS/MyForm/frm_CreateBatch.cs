@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace JEMS.MyForm
@@ -52,6 +53,12 @@ namespace JEMS.MyForm
 
         private void btn_CreateBatch_Click(object sender, EventArgs e)
         {
+            if (backgroundWorker1.IsBusy)
+            {
+                MessageBox.Show("Quá trình tạo batch đang diễn ra, Bạn hãy chờ quá trình tạo batch kết thúc mới tiếp tục tạo batch mới !");
+                return;
+            }
+            lb_SobatchHoanThanh.Text = "";
             Global.db_BPO.UpdateTimeLastRequest(Global.Strtoken);
             backgroundWorker1.RunWorkerAsync();
         }
@@ -61,6 +68,7 @@ namespace JEMS.MyForm
             if (!string.IsNullOrEmpty(txt_BatchName.Text))
             {
                 _multi = false;
+                
                 txt_PathFolder.Enabled = false;
                 btn_Browser.Enabled = false;
             }
@@ -76,6 +84,7 @@ namespace JEMS.MyForm
             if (!string.IsNullOrEmpty(txt_PathFolder.Text))
             {
                 _multi = true;
+                
                 txt_BatchName.Enabled = false;
                 txt_ImagePath.Enabled = false;
                 btn_BrowserImage.Enabled = false;
@@ -104,6 +113,7 @@ namespace JEMS.MyForm
             txt_LoaiPhieu.Items.Add(new { Text = "EIZEN", Value = "EIZEN" });
             txt_LoaiPhieu.Items.Add(new { Text = "YAMAMOTO", Value = "YAMAMOTO" });
             txt_LoaiPhieu.Items.Add(new { Text = "YASUDA", Value = "YASUDA" });
+            txt_LoaiPhieu.Items.Add(new { Text = "TAIYO", Value = "TAIYO" });
             txt_LoaiPhieu.SelectedIndex = 0;
 
             cbb_loaithoigian.DisplayMember = "Text";
@@ -134,11 +144,11 @@ namespace JEMS.MyForm
 
         private void UpLoadSingle()
         {
-            progressBarControl1.EditValue = 0;
-            progressBarControl1.Properties.Step = 1;
-            progressBarControl1.Properties.PercentView = true;
-            progressBarControl1.Properties.Maximum = _lFileNames.Length;
-            progressBarControl1.Properties.Minimum = 0;
+            progressBar1.Step = 1;
+            progressBar1.Value = 1;
+            progressBar1.Maximum = _lFileNames.Length;
+            progressBar1.Minimum = 0;
+            ModifyProgressBarColor.SetState(progressBar1, 1);
             var batch = (from w in Global.db.tbl_Batches.Where(w => w.fBatchName == txt_BatchName.Text)select w.fBatchName).FirstOrDefault();
             if (!string.IsNullOrEmpty(txt_ImagePath.Text))
             {
@@ -253,96 +263,115 @@ namespace JEMS.MyForm
 
                 string des = temp + @"\" + Path.GetFileName(fi.ToString());
                 fi.CopyTo(des);
-                progressBarControl1.PerformStep();
-                progressBarControl1.Update();
+                progressBar1.PerformStep();
             }
             MessageBox.Show("Tạo batch mới thành công!");
-            progressBarControl1.EditValue = 0;
-            txt_BatchName.Text = "";txt_ImagePath.Text = "";
+            txt_BatchName.Text = "";
+            txt_ImagePath.Text = "";
             lb_SoLuongHinh.Text = "";
             txt_LoaiPhieu.SelectedIndex = 0;
 
         }
+
+
+       
+
         private void UpLoadMulti()
         {
+            btn_Browser.Enabled = false;
+            txt_PathFolder.Enabled = false;
+            txt_Location.Enabled = false;
             List<string> lStrBath = new List<string>();
             lStrBath.AddRange(Directory.GetDirectories(txt_PathFolder.Text));
-            progressBarControl1.EditValue = 0;
-            progressBarControl1.Properties.Step = 1;
-            progressBarControl1.Properties.PercentView = true;
-            progressBarControl1.Properties.Maximum = lStrBath.Count;
-            progressBarControl1.Properties.Minimum = 0;
-
-            foreach (string item in lStrBath)
+            int countBatchExists = 0;
+            string listBatchExxists = "";
+            for (int i = 0; i < lStrBath.Count; i++)
             {
+                var batchExists = (from w in Global.db.tbl_Batches where w.fBatchName == new DirectoryInfo(lStrBath[i]).Name select w.fBatchName).ToList();
+                if (batchExists.Count > 0)
+                {
+                    countBatchExists += 1;
+                    listBatchExxists += batchExists[0] + "\r\n";
+                }
+            }
+            if (countBatchExists>0)
+            {
+                MessageBox.Show("Batch đã tồn tại :\r\n" + listBatchExxists);
+                btn_Browser.Enabled = true;
+                txt_PathFolder.Enabled = true;
+                txt_Location.Enabled = true;
+                return;
+            }
+            int n = 0;
+            foreach (string itemBatch in lStrBath)
+            {
+                string batchName = "", loaiPhieu = "", pathPicture = "";
+                int m = 0;
+                batchName = new DirectoryInfo(itemBatch).Name;
+                if (batchName.IndexOf("AEON", StringComparison.Ordinal) >= 0 || batchName.IndexOf("aeon", StringComparison.Ordinal) >= 0)
+                {
+                    loaiPhieu = "AEON";
+                }
+                else if (batchName.IndexOf("ASAHI", StringComparison.Ordinal) >= 0 || batchName.IndexOf("asahi", StringComparison.Ordinal) >= 0)
+                {
+                    loaiPhieu = "ASAHI";
+                }
+                else if (batchName.IndexOf("EIZEN", StringComparison.Ordinal) >= 0 || batchName.IndexOf("eizen", StringComparison.Ordinal) >= 0)
+                {
+                    loaiPhieu = "EIZEN";
+                }
+                else if (batchName.IndexOf("YAMAMOTO", StringComparison.Ordinal) >= 0 || batchName.IndexOf("yamamoto", StringComparison.Ordinal) >= 0)
+                {
+                    loaiPhieu = "YAMAMOTO";
+                }
+                else if (batchName.IndexOf("YASUDA", StringComparison.Ordinal) >= 0 || batchName.IndexOf("yasuda", StringComparison.Ordinal) >= 0)
+                {
+                    loaiPhieu = "YASUDA";
+                }
+                else if (batchName.IndexOf("TAIYO", StringComparison.Ordinal) >= 0 || batchName.IndexOf("taiyo", StringComparison.Ordinal) >= 0)
+                {
+                    loaiPhieu = "TAIYO";
+                }
+                else
+                {
+                    continue;
+                }
+
+                n += 1;
+                lb_SobatchHoanThanh.Text = n + @" :";
+
+                pathPicture = itemBatch + @"\入力画像";
                 var fBatch = new tbl_Batch
-                {fBatchName = new DirectoryInfo(item).Name,
+                {
+                    fBatchName = batchName,
                     fUserCreate = txt_UserCreate.Text,
                     fDateCreated = DateTime.Now,
-                    fPathPicture = item,
+                    fPathPicture = pathPicture,
                     fLocation = txt_Location.Text,
-                    fSoLuongAnh = Directory.GetFiles(item).Length.ToString()
-
+                    fSoLuongAnh = Directory.GetFiles(pathPicture).Length.ToString(),
+                    fLoaiPhieu = loaiPhieu
                 };
                 Global.db.tbl_Batches.InsertOnSubmit(fBatch);
                 Global.db.SubmitChanges();
-
-
-                //DateTime timeStart = new DateTime(dateEdit_ngaybatdau.DateTime.Year,
-                //                                 dateEdit_ngaybatdau.DateTime.Month,
-                //                                 dateEdit_ngaybatdau.DateTime.Day,
-                //                                 timeEdit_ngaybatdau.Time.Hour,
-                //                                 timeEdit_ngaybatdau.Time.Minute,
-                //                                 timeEdit_ngaybatdau.Time.Second);
-                //DateTime timeEnd = new DateTime(dateEdit_ngayketthuc.DateTime.Year,
-                //                                    dateEdit_ngayketthuc.DateTime.Month,
-                //                                    dateEdit_ngayketthuc.DateTime.Day,
-                //                                    timeEdit_ngayketthuc.Time.Hour,
-                //                                    timeEdit_ngayketthuc.Time.Minute,
-                //                                    timeEdit_ngayketthuc.Time.Second);
-                //int timeNotificationdeadline = 0;
-                //if (cbb_loaithoigian.Text == "Ngày")
-                //{
-                //    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 24 * 60);
-                //}
-                //else if (cbb_loaithoigian.Text == "Giờ")
-                //{
-                //    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value * 60);
-                //}
-                //else if (cbb_loaithoigian.Text == "Phút")
-                //{
-                //    timeNotificationdeadline = Convert.ToInt32(nud_thoigiandeadline.Value);
-                //}
-                //var fBatchEntry = new tbl_Batch_Entry()
-                //{
-                //    fIDProject = Global.StrIdProject,
-                //    fBatchName = txt_BatchName.Text,
-                //    fUserCreate = txt_UserCreate.Text,
-                //    fDateCreated = DateTime.Now,
-                //    fPathPicture = txt_ImagePath.Text,
-                //    fLocation = txt_Location.Text,
-                //    fSoLuongAnh = soluonghinh.ToString(),
-                //    fLoaiPhieu = txt_LoaiPhieu.Text,
-                //    fTimeStart = timeStart,
-                //    fTimeEnd = timeEnd,
-                //    fDeadlineNotificationTime = timeNotificationdeadline
-                //};
-                //Global.db_BPO.tbl_Batch_Entries.InsertOnSubmit(fBatchEntry);
-                //Global.db.SubmitChanges();
-
-
-                string searchFolder = txt_PathFolder.Text + "\\" + new DirectoryInfo(item).Name;
-                var filters = new String[] { "jpg", "jpeg", "png", "gif", "tiff", "bmp" };
-                string[] tmp = GetFilesFrom(searchFolder, filters, false);
-                string temp = Global.StrPath + "\\" + new DirectoryInfo(item).Name;
-                Directory.CreateDirectory(temp);
+                
+                var filters = new String[] { "jpg", "jpeg", "png", "gif", "tif", "bmp" };
+                string[] pathImageLocation = GetFilesFrom(pathPicture, filters, false);
+                string pathImageServer = Global.StrPath + "\\" + new DirectoryInfo(itemBatch).Name;
+                Directory.CreateDirectory(pathImageServer);
                 string imageJPG = "";
-                foreach (string i in tmp)
+
+                progressBar1.Step = 1;
+                progressBar1.Value = 1;
+                progressBar1.Maximum = pathImageLocation.Length;
+                progressBar1.Minimum = 0;
+                ModifyProgressBarColor.SetState(progressBar1, 1);
+
+                foreach (string i in pathImageLocation)
                 {
                     FileInfo fi = new FileInfo(i);
                     tbl_Image tempImage = new tbl_Image
                     {
-                        fbatchname = new DirectoryInfo(item).Name,
+                        fbatchname = batchName,
                         idimage = Path.GetFileName(fi.ToString()),
                         ReadImageDESo = 0,
                         CheckedDESo = 0,
@@ -350,40 +379,45 @@ namespace JEMS.MyForm
                         TienDoDESO = "Hình chưa nhập",
                         CheckQC = false
                     };
+                    
                     Global.db.tbl_Images.InsertOnSubmit(tempImage);
                     Global.db.SubmitChanges();
+                    //tbl_TienDo tempTblTienDo = new tbl_TienDo
+                    //{
+                    //    IDProject = "JEMS",
+                    //    fBatchName = txt_BatchName.Text,
+                    //    Idimage = Path.GetFileName(fi.ToString()),
+                    //    TienDoDeSo = "Hình chưa nhập",
+                    //    UserCheckDeSo = "",
+                    //    DateCreate = DateTime.Now
+                    //};
+                    //Global.db_BPO.tbl_TienDos.InsertOnSubmit(tempTblTienDo);
+                    //Global.db_BPO.SubmitChanges();
 
-                    tbl_TienDo tempTblTienDo = new tbl_TienDo
-                    {
-                        IDProject = "JEMS",
-                        fBatchName = txt_BatchName.Text,
-                        Idimage = Path.GetFileName(fi.ToString()),
-                        TienDoDeSo = "Hình chưa nhập",
-                        UserCheckDeSo = "",
-                        DateCreate = DateTime.Now
-                    };
-                    Global.db_BPO.tbl_TienDos.InsertOnSubmit(tempTblTienDo);
-                    Global.db_BPO.SubmitChanges();
-
-                    string des = temp + @"\" + Path.GetFileName(fi.ToString());
+                    string des = pathImageServer + @"\" + Path.GetFileName(fi.ToString());
                     fi.CopyTo(des);
-                    progressBarControl1.PerformStep();
-                    progressBarControl1.Update();
+                    m += 1;
+                    lb_SoImageDaHoanThanh.Text = m + @"/" + pathImageLocation.Length;
+                    progressBar1.PerformStep();
                 }
-                progressBarControl1.PerformStep();
-                progressBarControl1.Update();
             }
-            MessageBox.Show("Tạo batch mới thành công!");
-            progressBarControl1.EditValue = 0;
+            MessageBox.Show(@"Tạo batch mới thành công!");
             txt_BatchName.Text = "";
             txt_ImagePath.Text = "";
             lb_SoLuongHinh.Text = "";
+            txt_PathFolder.Text = "";
             txt_LoaiPhieu.SelectedIndex = 0;
+
+            //btn_CreateBatch.Enabled = true;
+            btn_Browser.Enabled = true;
+            txt_PathFolder.Enabled = true;
+            txt_Location.Enabled = true;
         }
+
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_LoaiPhieu.Text))
+            if (string.IsNullOrEmpty(txt_LoaiPhieu.Text) && _multi==false)
             {
                 MessageBox.Show("Vui lòng chọn loại phiếu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -394,16 +428,27 @@ namespace JEMS.MyForm
             }
             if (_multi)
             {
+                lb_SobatchHoanThanh.Text = "";
+                lb_SoImageDaHoanThanh.Text = "";
+                label1.Visible = true;
+                lb_SobatchHoanThanh.Visible = true;
+                lb_SoImageDaHoanThanh.Visible = true;
                 UpLoadMulti();
             }
             else
             {
+                lb_SobatchHoanThanh.Text = "";
+                lb_SoImageDaHoanThanh.Text = "";
+                label1.Visible = false;
+                lb_SobatchHoanThanh.Visible = false;
+                lb_SoImageDaHoanThanh.Visible = false;
                 UpLoadSingle();
             }
         }
 
         private void frm_CreateBatch_FormClosed(object sender, FormClosedEventArgs e)
         {
+            
         }
         private bool closePending;
 
@@ -411,13 +456,9 @@ namespace JEMS.MyForm
         {
             if (backgroundWorker1.IsBusy)
             {
-                closePending = true;
-                backgroundWorker1.CancelAsync();
+                MessageBox.Show("Quá trình tạo batch đang diễn ra, Bạn hãy chờ quá trình tạo batch kết thúc!");
                 e.Cancel = true;
-                this.Enabled = false;   // or this.Hide()
-                return;
             }
-            base.OnFormClosing(e);
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -427,6 +468,7 @@ namespace JEMS.MyForm
         }
 
         private bool flag = false;
+
         //public void HandlingTimeWork()
         //{
         //    try
@@ -621,6 +663,20 @@ namespace JEMS.MyForm
         private void cbb_loaithoigian_SelectedIndexChanged(object sender, EventArgs e)
         {
             //nud_thoigiandeadline_ValueChanged(null, null);
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+    public static class ModifyProgressBarColor
+    {
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
+        static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr w, IntPtr l);
+        public static void SetState(this ProgressBar pBar, int state)
+        {
+            SendMessage(pBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
         }
     }
 }

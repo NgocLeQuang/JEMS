@@ -93,6 +93,16 @@ namespace JEMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] ExportExcel_TAIYO {
+            get {
+                object obj = ResourceManager.GetObject("ExportExcel_TAIYO", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] ExportExcel_YAMAMOTO {
             get {
                 object obj = ResourceManager.GetObject("ExportExcel_YAMAMOTO", resourceCulture);

@@ -106,6 +106,7 @@ namespace JEMS.MyUserControl
                 txt_Truong86.Text.IndexOf('?') >= 0 || txt_Truong86.Text.IndexOf('●') >= 0 ||
                 (txt_Truong05.Text == "" && (txt_Truong06.Text != "" || txt_Truong07.Text != "" || txt_Truong08.Text != "")) ||
                 (txt_Truong05.Text != "" && (txt_Truong06.Text == "" && txt_Truong07.Text == "" && txt_Truong08.Text == "")) ||
+                (txt_Truong02.Text != txt_Truong0.Text) ||
                 chk_qc.Checked)
             {
                 return true;

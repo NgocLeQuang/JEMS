@@ -93,7 +93,6 @@ namespace JEMS.MyForm
 
             //Username = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Username") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Username").ToString() : "";
             //grouplevel = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Group_Level") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Group_Level").ToString() : "";
-            //Password = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Password") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Password").ToString() : "";
             //roleid = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IDRole") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IDRole").ToString() : "";
             //idnhanvien = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FullName") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FullName").ToString() : "";
 
@@ -106,6 +105,21 @@ namespace JEMS.MyForm
             //cbb_idrole.DisplayMember = "RoleName";
             //cbb_idrole.ValueMember = "RoleID";
             //cbb_idrole.SelectedValue = roleid;
+        }
+
+        private void gridView1_RowCellDefaultAlignment(object sender, DevExpress.XtraGrid.Views.Base.RowCellAlignmentEventArgs e)
+        {
+            try
+            {
+                txt_username.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Username") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Username").ToString() : "";
+                txt_grouplevel.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Group_Level") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Group_Level").ToString() : "";
+                cbb_idrole.SelectedValue = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IDRole") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IDRole").ToString() : "";
+                txt_FullName.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FullName") != null ? gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "FullName").ToString() : "";
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
     }
 }

@@ -42,7 +42,7 @@ namespace JEMS.MyForm
         private void Form1_Load(object sender, EventArgs e)
         {
             cbb_Batch.Items.Clear();
-            var result = from w in Global.db.tbl_Batches
+            var result = from w in Global.db.tbl_Batches orderby  w.fDateCreated ascending 
                          select w.fBatchName;
 
             if (result.Count() > 0)
@@ -236,7 +236,47 @@ namespace JEMS.MyForm
                 }
                 TableToExcel_YAMAMOTO_ABC(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_YAMAMOTO_ABC.xlsx");
             }
+            else if (LoaiPhieu == "TAIYO")
+            {
+                //EXport Excel TAIYO
 
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_TAIYO.xlsx"))
+                {
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_TAIYO.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_TAIYO.xlsx"), Properties.Resources.ExportExcel_TAIYO);
+                }
+                else
+                {
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_TAIYO.xlsx"), Properties.Resources.ExportExcel_TAIYO);
+                }
+                TableToExcel_TAIYO(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_TAIYO.xlsx");
+
+                //EXport Excel TAIYO_QC
+
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_TAIYO_QC.xlsx"))
+                {
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_TAIYO_QC.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_TAIYO_QC.xlsx"), Properties.Resources.ExportExcel_TAIYO);
+                }
+                else
+                {
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_TAIYO_QC.xlsx"), Properties.Resources.ExportExcel_TAIYO);
+                }
+                TableToExcel_TAIYO_QC(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_TAIYO_QC.xlsx");
+
+                //EXport Excel TAIYO_ABC
+
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_TAIYO_ABC.xlsx"))
+                {
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_TAIYO_ABC.xlsx");
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_TAIYO_ABC.xlsx"), Properties.Resources.ExportExcel_TAIYO);
+                }
+                else
+                {
+                    File.WriteAllBytes((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/ExportExcel_TAIYO_ABC.xlsx"), Properties.Resources.ExportExcel_TAIYO);
+                }
+                TableToExcel_TAIYO_ABC(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExportExcel_TAIYO_ABC.xlsx");
+            }
             else if (LoaiPhieu == "YASUDA")
             {
                 //EXport Excel YASUDA
@@ -2720,6 +2760,768 @@ namespace JEMS.MyForm
                     h++;
                 }
                 Range rowHead = wrksheet.get_Range("A3", "CH" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
+                if (dataGridView1.Rows.Count >= 1)
+                {
+                    string savePath = "";
+                    saveFileDialog1.Title = "Save Excel Files";
+                    saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
+                    saveFileDialog1.FileName = cbb_Batch.Text + "_排出運搬";
+                    saveFileDialog1.RestoreDirectory = true;
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        book.SaveCopyAs(saveFileDialog1.FileName);
+                        book.Saved = true;
+                        savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                        App.Quit();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi xuất excel!");
+                        return false;
+                    }
+                    Process.Start(savePath);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+
+        //
+
+        public bool TableToExcel_TAIYO(string strfilename)
+        {
+            //try
+            //{
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = Global.db.ExportExcel_TAIYO(cbb_Batch.Text);
+                Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
+                int h = 3;
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                {
+                    int ii = Convert.ToInt32(dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().IndexOf(".").ToString() : "0");
+                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().Substring(0, ii) : "";   //tên ảnh
+                    wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : "";   //truong 02
+                    wrksheet.Cells[h, 3] = dr.Cells[2].Value +""+dr.Cells[3].Value+"";    //03
+                    wrksheet.Cells[h, 5] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";   //05
+                    wrksheet.Cells[h, 6] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";   //06
+                    wrksheet.Cells[h, 7] = dr.Cells[7].Value != null ? dr.Cells[7].Value.ToString() : "";   //07
+
+
+                    wrksheet.Cells[h, 13] = dr.Cells[13].Value != null ? dr.Cells[13].Value.ToString() : "";
+                    wrksheet.Cells[h, 14] = dr.Cells[14].Value != null ? dr.Cells[14].Value.ToString() : "";
+                    wrksheet.Cells[h, 15] = dr.Cells[15].Value != null ? dr.Cells[15].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 21] = dr.Cells[21].Value != null ? dr.Cells[21].Value.ToString() : "";
+                    wrksheet.Cells[h, 22] = dr.Cells[22].Value != null ? dr.Cells[22].Value.ToString() : "";
+                    wrksheet.Cells[h, 23] = dr.Cells[23].Value != null ? dr.Cells[23].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 29] = dr.Cells[29].Value != null ? dr.Cells[29].Value.ToString() : "";
+                    wrksheet.Cells[h, 30] = dr.Cells[30].Value != null ? dr.Cells[30].Value.ToString() : "";
+                    wrksheet.Cells[h, 31] = dr.Cells[31].Value != null ? dr.Cells[31].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 37] = dr.Cells[37].Value != null ? dr.Cells[37].Value.ToString() : "";
+                    wrksheet.Cells[h, 38] = dr.Cells[38].Value != null ? dr.Cells[38].Value.ToString() : "";
+                    wrksheet.Cells[h, 39] = dr.Cells[39].Value != null ? dr.Cells[39].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 45] = dr.Cells[45].Value != null ? dr.Cells[45].Value.ToString() : "";
+                    wrksheet.Cells[h, 46] = dr.Cells[46].Value != null ? dr.Cells[46].Value.ToString() : "";
+                    wrksheet.Cells[h, 47] = dr.Cells[47].Value != null ? dr.Cells[47].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 53] = dr.Cells[53].Value != null ? dr.Cells[53].Value.ToString() : "";
+                    wrksheet.Cells[h, 54] = dr.Cells[54].Value != null ? dr.Cells[54].Value.ToString() : "";
+                    wrksheet.Cells[h, 55] = dr.Cells[55].Value != null ? dr.Cells[55].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 61] = dr.Cells[61].Value != null ? dr.Cells[61].Value.ToString() : "";
+                    wrksheet.Cells[h, 62] = dr.Cells[62].Value != null ? dr.Cells[62].Value.ToString() : "";
+                    wrksheet.Cells[h, 63] = dr.Cells[63].Value != null ? dr.Cells[63].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 69] = dr.Cells[69].Value != null ? dr.Cells[69].Value.ToString() : "";
+                    wrksheet.Cells[h, 70] = dr.Cells[70].Value != null ? dr.Cells[70].Value.ToString() : "";
+                    wrksheet.Cells[h, 71] = dr.Cells[71].Value != null ? dr.Cells[71].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 77] = dr.Cells[77].Value != null ? dr.Cells[77].Value.ToString() : "";
+                    wrksheet.Cells[h, 78] = dr.Cells[78].Value != null ? dr.Cells[78].Value.ToString() : "";
+                    wrksheet.Cells[h, 79] = dr.Cells[79].Value != null ? dr.Cells[79].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 85] = dr.Cells[85].Value != null ? dr.Cells[85].Value.ToString() : "";  //85
+
+                    string truong86 = "";
+                    if (!string.IsNullOrEmpty(dr.Cells[86].Value != null ? dr.Cells[86].Value.ToString() : ""))
+                    {
+                        for (int i = 0; i < dr.Cells[86].Value.ToString().Length; i++)
+                        {
+                            string temp = dr.Cells[86].Value.ToString().Substring(i, 1);
+                            if (i < dr.Cells[86].Value.ToString().Length - 1)
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        truong86 += "燃え殻" + "、";
+                                        break;
+                                    case "B":
+                                        truong86 += "汚泥" + "、";
+                                        break;
+                                    case "C":
+                                        truong86 += "廃油" + "、";
+                                        break;
+                                    case "D":
+                                        truong86 += "廃酸" + "、";
+                                        break;
+                                    case "E":
+                                        truong86 += "廃アルカリ" + "、";
+                                        break;
+                                    case "F":
+                                        truong86 += "廃プラ類" + "、";
+                                        break;
+                                    case "G":
+                                        truong86 += "紙くず" + "、";
+                                        break;
+                                    case "H":
+                                        truong86 += "木くず" + "、";
+                                        break;
+                                    case "I":
+                                        truong86 += "繊維くず" + "、";
+                                        break;
+                                    case "J":
+                                        truong86 += "動物性残渣" + "、";
+                                        break;
+                                    case "K":
+                                        truong86 += "ゴムくず" + "、";
+                                        break;
+                                    case "L":
+                                        truong86 += "金属くず" + "、";
+                                        break;
+                                    case "M":
+                                        truong86 += "ガラコン陶" + "、";
+                                        break;
+                                    case "N":
+                                        truong86 += "鉱さい" + "、";
+                                        break;
+                                    case "O":
+                                        truong86 += "瓦礫類" + "、";
+                                        break;
+                                    case "P":
+                                        truong86 += "動物の糞尿" + "、";
+                                        break;
+                                    case "Q":
+                                        truong86 += "動物の死体" + "、";
+                                        break;
+                                    case "R":
+                                        truong86 += "ばいじん" + "、";
+                                        break;
+                                    case "S":
+                                        truong86 += "動物性不要物" + "、";
+                                        break;
+                                    case "●":
+                                        truong86 += "●" + "、";
+                                        break;
+                                    case "?":
+                                        truong86 += "?" + "、";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        truong86 += "燃え殻";
+                                        break;
+                                    case "B":
+                                        truong86 += "汚泥";
+                                        break;
+                                    case "C":
+                                        truong86 += "廃油";
+                                        break;
+                                    case "D":
+                                        truong86 += "廃酸";
+                                        break;
+                                    case "E":
+                                        truong86 += "廃アルカリ";
+                                        break;
+                                    case "F":
+                                        truong86 += "廃プラ類";
+                                        break;
+                                    case "G":
+                                        truong86 += "紙くず";
+                                        break;
+                                    case "H":
+                                        truong86 += "木くず";
+                                        break;
+                                    case "I":
+                                        truong86 += "繊維くず";
+                                        break;
+                                    case "J":
+                                        truong86 += "動物性残渣";
+                                        break;
+                                    case "K":
+                                        truong86 += "ゴムくず";
+                                        break;
+                                    case "L":
+                                        truong86 += "金属くず";
+                                        break;
+                                    case "M":
+                                        truong86 += "ガラコン陶";
+                                        break;
+                                    case "N":
+                                        truong86 += "鉱さい";
+                                        break;
+                                    case "O":
+                                        truong86 += "瓦礫類";
+                                        break;
+                                    case "P":
+                                        truong86 += "動物の糞尿";
+                                        break;
+                                    case "Q":
+                                        truong86 += "動物の死体";
+                                        break;
+                                    case "R":
+                                        truong86 += "ばいじん";
+                                        break;
+                                    case "S":
+                                        truong86 += "動物性不要物";
+                                        break;
+                                    case "●":
+                                        truong86 += "●";
+                                        break;
+                                    case "?":
+                                        truong86 += "?";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+
+                    wrksheet.Cells[h, 86] = truong86;  //86
+
+                    wrksheet.Cells[h, 92] = dr.Cells[91].Value + "" + dr.Cells[93].Value + "";  //92
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
+                    h++;
+                }
+                Range rowHead = wrksheet.get_Range("A3", "CN" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
+                if (dataGridView1.Rows.Count >= 1)
+                {
+                    string savePath = "";
+                    saveFileDialog1.Title = "Save Excel Files";
+                    saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
+                    saveFileDialog1.FileName = cbb_Batch.Text;
+                    saveFileDialog1.RestoreDirectory = true;
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        book.SaveCopyAs(saveFileDialog1.FileName);
+                        book.Saved = true;
+                        savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                        App.Quit();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi xuất excel!");
+                        return false;
+                    }
+                    Process.Start(savePath);
+                }
+                return true;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //    return false;
+            //}
+        }
+
+        public bool TableToExcel_TAIYO_QC(string strfilename)
+        {
+            try
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = Global.db.ExportExcel_TAIYO_QC(cbb_Batch.Text);
+                Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
+                int h = 3;
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                {
+                    int ii = Convert.ToInt32(dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().IndexOf(".").ToString() : "0");
+                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().Substring(0, ii) : "";   //tên ảnh
+                    wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : "";   //truong 02
+                    wrksheet.Cells[h, 3] = dr.Cells[2].Value + "" + dr.Cells[3].Value + "";    //03
+                    wrksheet.Cells[h, 5] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";   //05
+                    wrksheet.Cells[h, 6] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";   //06
+                    wrksheet.Cells[h, 7] = dr.Cells[7].Value != null ? dr.Cells[7].Value.ToString() : "";   //07
+
+
+                    wrksheet.Cells[h, 13] = dr.Cells[13].Value != null ? dr.Cells[13].Value.ToString() : "";
+                    wrksheet.Cells[h, 14] = dr.Cells[14].Value != null ? dr.Cells[14].Value.ToString() : "";
+                    wrksheet.Cells[h, 15] = dr.Cells[15].Value != null ? dr.Cells[15].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 21] = dr.Cells[21].Value != null ? dr.Cells[21].Value.ToString() : "";
+                    wrksheet.Cells[h, 22] = dr.Cells[22].Value != null ? dr.Cells[22].Value.ToString() : "";
+                    wrksheet.Cells[h, 23] = dr.Cells[23].Value != null ? dr.Cells[23].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 29] = dr.Cells[29].Value != null ? dr.Cells[29].Value.ToString() : "";
+                    wrksheet.Cells[h, 30] = dr.Cells[30].Value != null ? dr.Cells[30].Value.ToString() : "";
+                    wrksheet.Cells[h, 31] = dr.Cells[31].Value != null ? dr.Cells[31].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 37] = dr.Cells[37].Value != null ? dr.Cells[37].Value.ToString() : "";
+                    wrksheet.Cells[h, 38] = dr.Cells[38].Value != null ? dr.Cells[38].Value.ToString() : "";
+                    wrksheet.Cells[h, 39] = dr.Cells[39].Value != null ? dr.Cells[39].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 45] = dr.Cells[45].Value != null ? dr.Cells[45].Value.ToString() : "";
+                    wrksheet.Cells[h, 46] = dr.Cells[46].Value != null ? dr.Cells[46].Value.ToString() : "";
+                    wrksheet.Cells[h, 47] = dr.Cells[47].Value != null ? dr.Cells[47].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 53] = dr.Cells[53].Value != null ? dr.Cells[53].Value.ToString() : "";
+                    wrksheet.Cells[h, 54] = dr.Cells[54].Value != null ? dr.Cells[54].Value.ToString() : "";
+                    wrksheet.Cells[h, 55] = dr.Cells[55].Value != null ? dr.Cells[55].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 61] = dr.Cells[61].Value != null ? dr.Cells[61].Value.ToString() : "";
+                    wrksheet.Cells[h, 62] = dr.Cells[62].Value != null ? dr.Cells[62].Value.ToString() : "";
+                    wrksheet.Cells[h, 63] = dr.Cells[63].Value != null ? dr.Cells[63].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 69] = dr.Cells[69].Value != null ? dr.Cells[69].Value.ToString() : "";
+                    wrksheet.Cells[h, 70] = dr.Cells[70].Value != null ? dr.Cells[70].Value.ToString() : "";
+                    wrksheet.Cells[h, 71] = dr.Cells[71].Value != null ? dr.Cells[71].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 77] = dr.Cells[77].Value != null ? dr.Cells[77].Value.ToString() : "";
+                    wrksheet.Cells[h, 78] = dr.Cells[78].Value != null ? dr.Cells[78].Value.ToString() : "";
+                    wrksheet.Cells[h, 79] = dr.Cells[79].Value != null ? dr.Cells[79].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 85] = dr.Cells[85].Value != null ? dr.Cells[85].Value.ToString() : "";  //85
+
+                    string truong86 = "";
+                    if (!string.IsNullOrEmpty(dr.Cells[86].Value != null ? dr.Cells[86].Value.ToString() : ""))
+                    {
+                        for (int i = 0; i < dr.Cells[86].Value.ToString().Length; i++)
+                        {
+                            string temp = dr.Cells[86].Value.ToString().Substring(i, 1);
+                            if (i < dr.Cells[86].Value.ToString().Length - 1)
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        truong86 += "燃え殻" + "、";
+                                        break;
+                                    case "B":
+                                        truong86 += "汚泥" + "、";
+                                        break;
+                                    case "C":
+                                        truong86 += "廃油" + "、";
+                                        break;
+                                    case "D":
+                                        truong86 += "廃酸" + "、";
+                                        break;
+                                    case "E":
+                                        truong86 += "廃アルカリ" + "、";
+                                        break;
+                                    case "F":
+                                        truong86 += "廃プラ類" + "、";
+                                        break;
+                                    case "G":
+                                        truong86 += "紙くず" + "、";
+                                        break;
+                                    case "H":
+                                        truong86 += "木くず" + "、";
+                                        break;
+                                    case "I":
+                                        truong86 += "繊維くず" + "、";
+                                        break;
+                                    case "J":
+                                        truong86 += "動物性残渣" + "、";
+                                        break;
+                                    case "K":
+                                        truong86 += "ゴムくず" + "、";
+                                        break;
+                                    case "L":
+                                        truong86 += "金属くず" + "、";
+                                        break;
+                                    case "M":
+                                        truong86 += "ガラコン陶" + "、";
+                                        break;
+                                    case "N":
+                                        truong86 += "鉱さい" + "、";
+                                        break;
+                                    case "O":
+                                        truong86 += "瓦礫類" + "、";
+                                        break;
+                                    case "P":
+                                        truong86 += "動物の糞尿" + "、";
+                                        break;
+                                    case "Q":
+                                        truong86 += "動物の死体" + "、";
+                                        break;
+                                    case "R":
+                                        truong86 += "ばいじん" + "、";
+                                        break;
+                                    case "S":
+                                        truong86 += "動物性不要物" + "、";
+                                        break;
+                                    case "●":
+                                        truong86 += "●" + "、";
+                                        break;
+                                    case "?":
+                                        truong86 += "?" + "、";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        truong86 += "燃え殻";
+                                        break;
+                                    case "B":
+                                        truong86 += "汚泥";
+                                        break;
+                                    case "C":
+                                        truong86 += "廃油";
+                                        break;
+                                    case "D":
+                                        truong86 += "廃酸";
+                                        break;
+                                    case "E":
+                                        truong86 += "廃アルカリ";
+                                        break;
+                                    case "F":
+                                        truong86 += "廃プラ類";
+                                        break;
+                                    case "G":
+                                        truong86 += "紙くず";
+                                        break;
+                                    case "H":
+                                        truong86 += "木くず";
+                                        break;
+                                    case "I":
+                                        truong86 += "繊維くず";
+                                        break;
+                                    case "J":
+                                        truong86 += "動物性残渣";
+                                        break;
+                                    case "K":
+                                        truong86 += "ゴムくず";
+                                        break;
+                                    case "L":
+                                        truong86 += "金属くず";
+                                        break;
+                                    case "M":
+                                        truong86 += "ガラコン陶";
+                                        break;
+                                    case "N":
+                                        truong86 += "鉱さい";
+                                        break;
+                                    case "O":
+                                        truong86 += "瓦礫類";
+                                        break;
+                                    case "P":
+                                        truong86 += "動物の糞尿";
+                                        break;
+                                    case "Q":
+                                        truong86 += "動物の死体";
+                                        break;
+                                    case "R":
+                                        truong86 += "ばいじん";
+                                        break;
+                                    case "S":
+                                        truong86 += "動物性不要物";
+                                        break;
+                                    case "●":
+                                        truong86 += "●";
+                                        break;
+                                    case "?":
+                                        truong86 += "?";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+
+                    wrksheet.Cells[h, 86] = truong86;  //86
+
+                    wrksheet.Cells[h, 92] = dr.Cells[91].Value + "" + dr.Cells[93].Value + "";  //92
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
+                    h++;
+                }
+                Range rowHead = wrksheet.get_Range("A3", "CN" + (h - 1));
+                rowHead.Borders.LineStyle = Constants.xlSolid;
+                if (dataGridView1.Rows.Count >= 1)
+                {
+                    string savePath = "";
+                    saveFileDialog1.Title = "Save Excel Files";
+                    saveFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx";
+                    saveFileDialog1.FileName = cbb_Batch.Text + "_QC";
+                    saveFileDialog1.RestoreDirectory = true;
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        book.SaveCopyAs(saveFileDialog1.FileName);
+                        book.Saved = true;
+                        savePath = Path.GetDirectoryName(saveFileDialog1.FileName);
+                        App.Quit();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi khi xuất excel!");
+                        return false;
+                    }
+                    Process.Start(savePath);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public bool TableToExcel_TAIYO_ABC(string strfilename)
+        {
+            try
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = Global.db.ExportExcel_TAIYO_ABC(cbb_Batch.Text);
+                Microsoft.Office.Interop.Excel.Application App = new Microsoft.Office.Interop.Excel.Application();
+                Workbook book = App.Workbooks.Open(strfilename, 0, true, 5, "", "", false, XlPlatform.xlWindows, "", true, false, 0, true, false, false);
+                Worksheet wrksheet = (Worksheet)book.ActiveSheet;
+                int h = 3;
+                foreach (DataGridViewRow dr in dataGridView1.Rows)
+                {
+                    int ii = Convert.ToInt32(dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().IndexOf(".").ToString() : "0");
+                    wrksheet.Cells[h, 1] = dr.Cells[0].Value != null ? dr.Cells[0].Value.ToString().Substring(0, ii) : "";   //tên ảnh
+                    wrksheet.Cells[h, 2] = dr.Cells[1].Value != null ? dr.Cells[1].Value.ToString() : "";   //truong 02
+                    wrksheet.Cells[h, 3] = dr.Cells[2].Value + "" + dr.Cells[3].Value + "";    //03
+                    wrksheet.Cells[h, 5] = dr.Cells[5].Value != null ? dr.Cells[5].Value.ToString() : "";   //05
+                    wrksheet.Cells[h, 6] = dr.Cells[6].Value != null ? dr.Cells[6].Value.ToString() : "";   //06
+                    wrksheet.Cells[h, 7] = dr.Cells[7].Value != null ? dr.Cells[7].Value.ToString() : "";   //07
+
+
+                    wrksheet.Cells[h, 13] = dr.Cells[13].Value != null ? dr.Cells[13].Value.ToString() : "";
+                    wrksheet.Cells[h, 14] = dr.Cells[14].Value != null ? dr.Cells[14].Value.ToString() : "";
+                    wrksheet.Cells[h, 15] = dr.Cells[15].Value != null ? dr.Cells[15].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 21] = dr.Cells[21].Value != null ? dr.Cells[21].Value.ToString() : "";
+                    wrksheet.Cells[h, 22] = dr.Cells[22].Value != null ? dr.Cells[22].Value.ToString() : "";
+                    wrksheet.Cells[h, 23] = dr.Cells[23].Value != null ? dr.Cells[23].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 29] = dr.Cells[29].Value != null ? dr.Cells[29].Value.ToString() : "";
+                    wrksheet.Cells[h, 30] = dr.Cells[30].Value != null ? dr.Cells[30].Value.ToString() : "";
+                    wrksheet.Cells[h, 31] = dr.Cells[31].Value != null ? dr.Cells[31].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 37] = dr.Cells[37].Value != null ? dr.Cells[37].Value.ToString() : "";
+                    wrksheet.Cells[h, 38] = dr.Cells[38].Value != null ? dr.Cells[38].Value.ToString() : "";
+                    wrksheet.Cells[h, 39] = dr.Cells[39].Value != null ? dr.Cells[39].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 45] = dr.Cells[45].Value != null ? dr.Cells[45].Value.ToString() : "";
+                    wrksheet.Cells[h, 46] = dr.Cells[46].Value != null ? dr.Cells[46].Value.ToString() : "";
+                    wrksheet.Cells[h, 47] = dr.Cells[47].Value != null ? dr.Cells[47].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 53] = dr.Cells[53].Value != null ? dr.Cells[53].Value.ToString() : "";
+                    wrksheet.Cells[h, 54] = dr.Cells[54].Value != null ? dr.Cells[54].Value.ToString() : "";
+                    wrksheet.Cells[h, 55] = dr.Cells[55].Value != null ? dr.Cells[55].Value.ToString() : "";
+
+                    wrksheet.Cells[h, 61] = dr.Cells[61].Value != null ? dr.Cells[61].Value.ToString() : "";
+                    wrksheet.Cells[h, 62] = dr.Cells[62].Value != null ? dr.Cells[62].Value.ToString() : "";
+                    wrksheet.Cells[h, 63] = dr.Cells[63].Value != null ? dr.Cells[63].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 69] = dr.Cells[69].Value != null ? dr.Cells[69].Value.ToString() : "";
+                    wrksheet.Cells[h, 70] = dr.Cells[70].Value != null ? dr.Cells[70].Value.ToString() : "";
+                    wrksheet.Cells[h, 71] = dr.Cells[71].Value != null ? dr.Cells[71].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 77] = dr.Cells[77].Value != null ? dr.Cells[77].Value.ToString() : "";
+                    wrksheet.Cells[h, 78] = dr.Cells[78].Value != null ? dr.Cells[78].Value.ToString() : "";
+                    wrksheet.Cells[h, 79] = dr.Cells[79].Value != null ? dr.Cells[79].Value.ToString() : "";
+
+
+                    wrksheet.Cells[h, 85] = dr.Cells[85].Value != null ? dr.Cells[85].Value.ToString() : "";  //85
+
+                    string truong86 = "";
+                    if (!string.IsNullOrEmpty(dr.Cells[86].Value != null ? dr.Cells[86].Value.ToString() : ""))
+                    {
+                        for (int i = 0; i < dr.Cells[86].Value.ToString().Length; i++)
+                        {
+                            string temp = dr.Cells[86].Value.ToString().Substring(i, 1);
+                            if (i < dr.Cells[86].Value.ToString().Length - 1)
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        truong86 += "燃え殻" + "、";
+                                        break;
+                                    case "B":
+                                        truong86 += "汚泥" + "、";
+                                        break;
+                                    case "C":
+                                        truong86 += "廃油" + "、";
+                                        break;
+                                    case "D":
+                                        truong86 += "廃酸" + "、";
+                                        break;
+                                    case "E":
+                                        truong86 += "廃アルカリ" + "、";
+                                        break;
+                                    case "F":
+                                        truong86 += "廃プラ類" + "、";
+                                        break;
+                                    case "G":
+                                        truong86 += "紙くず" + "、";
+                                        break;
+                                    case "H":
+                                        truong86 += "木くず" + "、";
+                                        break;
+                                    case "I":
+                                        truong86 += "繊維くず" + "、";
+                                        break;
+                                    case "J":
+                                        truong86 += "動物性残渣" + "、";
+                                        break;
+                                    case "K":
+                                        truong86 += "ゴムくず" + "、";
+                                        break;
+                                    case "L":
+                                        truong86 += "金属くず" + "、";
+                                        break;
+                                    case "M":
+                                        truong86 += "ガラコン陶" + "、";
+                                        break;
+                                    case "N":
+                                        truong86 += "鉱さい" + "、";
+                                        break;
+                                    case "O":
+                                        truong86 += "瓦礫類" + "、";
+                                        break;
+                                    case "P":
+                                        truong86 += "動物の糞尿" + "、";
+                                        break;
+                                    case "Q":
+                                        truong86 += "動物の死体" + "、";
+                                        break;
+                                    case "R":
+                                        truong86 += "ばいじん" + "、";
+                                        break;
+                                    case "S":
+                                        truong86 += "動物性不要物" + "、";
+                                        break;
+                                    case "●":
+                                        truong86 += "●" + "、";
+                                        break;
+                                    case "?":
+                                        truong86 += "?" + "、";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            else
+                            {
+                                switch (temp)
+                                {
+                                    case "A":
+                                        truong86 += "燃え殻";
+                                        break;
+                                    case "B":
+                                        truong86 += "汚泥";
+                                        break;
+                                    case "C":
+                                        truong86 += "廃油";
+                                        break;
+                                    case "D":
+                                        truong86 += "廃酸";
+                                        break;
+                                    case "E":
+                                        truong86 += "廃アルカリ";
+                                        break;
+                                    case "F":
+                                        truong86 += "廃プラ類";
+                                        break;
+                                    case "G":
+                                        truong86 += "紙くず";
+                                        break;
+                                    case "H":
+                                        truong86 += "木くず";
+                                        break;
+                                    case "I":
+                                        truong86 += "繊維くず";
+                                        break;
+                                    case "J":
+                                        truong86 += "動物性残渣";
+                                        break;
+                                    case "K":
+                                        truong86 += "ゴムくず";
+                                        break;
+                                    case "L":
+                                        truong86 += "金属くず";
+                                        break;
+                                    case "M":
+                                        truong86 += "ガラコン陶";
+                                        break;
+                                    case "N":
+                                        truong86 += "鉱さい";
+                                        break;
+                                    case "O":
+                                        truong86 += "瓦礫類";
+                                        break;
+                                    case "P":
+                                        truong86 += "動物の糞尿";
+                                        break;
+                                    case "Q":
+                                        truong86 += "動物の死体";
+                                        break;
+                                    case "R":
+                                        truong86 += "ばいじん";
+                                        break;
+                                    case "S":
+                                        truong86 += "動物性不要物";
+                                        break;
+                                    case "●":
+                                        truong86 += "●";
+                                        break;
+                                    case "?":
+                                        truong86 += "?";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }
+
+                    wrksheet.Cells[h, 86] = truong86;  //86
+
+                    wrksheet.Cells[h, 92] = dr.Cells[91].Value + "" + dr.Cells[93].Value + "";  //92
+                    lb_SoDong.Text = (h - 2) + @"/" + dataGridView1.Rows.Count;
+                    h++;
+                }
+                Range rowHead = wrksheet.get_Range("A3", "CN" + (h - 1));
                 rowHead.Borders.LineStyle = Constants.xlSolid;
                 if (dataGridView1.Rows.Count >= 1)
                 {

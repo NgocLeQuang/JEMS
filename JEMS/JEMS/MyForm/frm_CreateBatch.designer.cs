@@ -45,7 +45,6 @@
             this.btn_Browser = new DevExpress.XtraEditors.SimpleButton();
             this.btn_BrowserImage = new DevExpress.XtraEditors.SimpleButton();
             this.btn_CreateBatch = new DevExpress.XtraEditors.SimpleButton();
-            this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -68,13 +67,17 @@
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.cbb_loaithoigian = new System.Windows.Forms.ComboBox();
             this.lb_status = new DevExpress.XtraEditors.LabelControl();
+            this.lb_SobatchHoanThanh = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lb_SoImageDaHoanThanh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txt_BatchName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PathFolder.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Location.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_UserCreate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_DateCreate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ImagePath.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_ngaybatdau.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_ngaybatdau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeEdit_ngaybatdau.Properties)).BeginInit();
@@ -85,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_sogiolam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sophutlam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_thoigiandeadline)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -214,21 +218,12 @@
             // 
             // btn_CreateBatch
             // 
-            this.btn_CreateBatch.Location = new System.Drawing.Point(221, 474);
+            this.btn_CreateBatch.Location = new System.Drawing.Point(221, 486);
             this.btn_CreateBatch.Name = "btn_CreateBatch";
             this.btn_CreateBatch.Size = new System.Drawing.Size(164, 44);
             this.btn_CreateBatch.TabIndex = 4;
             this.btn_CreateBatch.Text = "Tạo Batch";
             this.btn_CreateBatch.Click += new System.EventHandler(this.btn_CreateBatch_Click);
-            // 
-            // progressBarControl1
-            // 
-            this.progressBarControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBarControl1.Location = new System.Drawing.Point(0, 531);
-            this.progressBarControl1.Name = "progressBarControl1";
-            this.progressBarControl1.Properties.Step = 1;
-            this.progressBarControl1.Size = new System.Drawing.Size(632, 40);
-            this.progressBarControl1.TabIndex = 5;
             // 
             // backgroundWorker1
             // 
@@ -453,11 +448,62 @@
             this.lb_status.TabIndex = 12;
             this.lb_status.Text = "labelControl16";
             // 
+            // lb_SobatchHoanThanh
+            // 
+            this.lb_SobatchHoanThanh.AutoSize = true;
+            this.lb_SobatchHoanThanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SobatchHoanThanh.Location = new System.Drawing.Point(85, 506);
+            this.lb_SobatchHoanThanh.Name = "lb_SobatchHoanThanh";
+            this.lb_SobatchHoanThanh.Size = new System.Drawing.Size(0, 16);
+            this.lb_SobatchHoanThanh.TabIndex = 13;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.progressBar1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 546);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(632, 25);
+            this.panel1.TabIndex = 14;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.Color.White;
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.progressBar1.Location = new System.Drawing.Point(0, 0);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(632, 25);
+            this.progressBar1.TabIndex = 1;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 506);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 16);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Batch Số :";
+            // 
+            // lb_SoImageDaHoanThanh
+            // 
+            this.lb_SoImageDaHoanThanh.AutoSize = true;
+            this.lb_SoImageDaHoanThanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SoImageDaHoanThanh.Location = new System.Drawing.Point(103, 506);
+            this.lb_SoImageDaHoanThanh.Name = "lb_SoImageDaHoanThanh";
+            this.lb_SoImageDaHoanThanh.Size = new System.Drawing.Size(0, 16);
+            this.lb_SoImageDaHoanThanh.TabIndex = 16;
+            // 
             // frm_CreateBatch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 571);
+            this.Controls.Add(this.lb_SoImageDaHoanThanh);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lb_SobatchHoanThanh);
             this.Controls.Add(this.lb_status);
             this.Controls.Add(this.cbb_loaithoigian);
             this.Controls.Add(this.nud_sophutlam);
@@ -470,7 +516,6 @@
             this.Controls.Add(this.dateEdit_ngaybatdau);
             this.Controls.Add(this.txt_LoaiPhieu);
             this.Controls.Add(this.lb_SoLuongHinh);
-            this.Controls.Add(this.progressBarControl1);
             this.Controls.Add(this.btn_CreateBatch);
             this.Controls.Add(this.btn_BrowserImage);
             this.Controls.Add(this.btn_Browser);
@@ -509,7 +554,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_UserCreate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_DateCreate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ImagePath.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_ngaybatdau.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_ngaybatdau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeEdit_ngaybatdau.Properties)).EndInit();
@@ -520,6 +564,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_sogiolam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_sophutlam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_thoigiandeadline)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,7 +588,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_Browser;
         private DevExpress.XtraEditors.SimpleButton btn_BrowserImage;
         private DevExpress.XtraEditors.SimpleButton btn_CreateBatch;
-        private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private DevExpress.XtraEditors.LabelControl labelControl8;
@@ -566,5 +610,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private System.Windows.Forms.ComboBox cbb_loaithoigian;
         private DevExpress.XtraEditors.LabelControl lb_status;
+        private System.Windows.Forms.Label lb_SobatchHoanThanh;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_SoImageDaHoanThanh;
     }
 }

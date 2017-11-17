@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_delete.Buttons" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="editorButtonImageOptions1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVDhPjVBbTgJBEBw0yEuiRqIfEFazrrIxC9GQmHAd
+        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAEaSURBVDhPjVBbTgJBEBw0yEuiRqIfEFazrrIxC9GQmHAd
         7sA3x+JmJDMfRfcw3ezqzMZKah8zVdUPI9gbA2b4TSKq4wPstp5tIVGdHm4y4GeaDFHd6gH4nlx0/DiM
         DWxFF1+PwPr5T4iaqztgMYR963mPaiTEVffAkoLWTxqiZq5MZlf0m2aBhNhyfK7E3bCRuaTgWOXf0JDF
         CPi8JSMFpdpOQUIcmVAS29qOQQPeB96MjwFcfvP/6vWZXdHzZtAbJY0UFhvkTag5bFtmZtrXLpATS9pN

@@ -371,6 +371,7 @@ namespace JEMS.MyUserControl
                 (txt_Truong69.Text != "" && (txt_Truong70.Text == "" && txt_Truong71.Text == "" /*&& txt_Truong72.Text == ""*/)) ||
                 (txt_Truong77.Text == "" && (txt_Truong78.Text != "" || txt_Truong79.Text != "" /*|| txt_Truong80.Text != ""*/)) ||
                 (txt_Truong77.Text != "" && (txt_Truong78.Text == "" && txt_Truong79.Text == "" /*&& txt_Truong80.Text == ""*/)) ||
+                (txt_Truong02.Text != txt_Truong0.Text)||
                 chk_qc.Checked)
             {
                 return true;
@@ -1114,5 +1115,10 @@ namespace JEMS.MyUserControl
                 txt_Truong02.BackColor = Color.Red;
                 txt_Truong02.ForeColor = Color.White;
             }}
+
+        private void labelControl7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

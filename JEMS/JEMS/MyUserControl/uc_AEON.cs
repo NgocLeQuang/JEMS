@@ -328,7 +328,17 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong03_1.Text.IndexOf('?') >= 0)
                 txt_Truong03_1.Text = "?";
-            
+            if ((txt_Truong03_1.Text.Length > 13|| txt_Truong03_1.Text.Length < 6) && txt_Truong03_1.Text != "" && txt_Truong03_1.Text != "?" && txt_Truong03_1.Text.IndexOf('●') < 0)
+            {
+                txt_Truong03_1.BackColor = Color.Red;
+                txt_Truong03_1.ForeColor = Color.White;
+            }
+            else
+            {
+                txt_Truong03_1.BackColor = Color.White;
+                txt_Truong03_1.ForeColor = Color.Black;
+
+            }
             if (Changed != null)
                 Changed(sender, e);
         }
@@ -337,7 +347,17 @@ namespace JEMS.MyUserControl
         {
             if (txt_Truong03_2.Text.IndexOf('?') >= 0)
                 txt_Truong03_2.Text = "?";
-           
+            if (txt_Truong03_2.Text.Length > 4 && txt_Truong03_2.Text != "" && txt_Truong03_2.Text != "?" && txt_Truong03_2.Text.IndexOf('●') < 0)
+            {
+                txt_Truong03_2.BackColor = Color.Red;
+                txt_Truong03_2.ForeColor = Color.White;
+            }
+            else
+            {
+                txt_Truong03_2.BackColor = Color.White;
+                txt_Truong03_2.ForeColor = Color.Black;
+
+            }
             if (Changed != null)
                 Changed(sender, e);
         }
@@ -363,7 +383,7 @@ namespace JEMS.MyUserControl
         {
             if (tb.Text.IndexOf('?') >= 0)
                 tb.Text = "?";
-            if ((tb.Text.Length > 4) && tb.Text != "" && tb.Text != "?" && tb.Text.IndexOf('●') < 0)
+            if ((tb.Text.Length > 5) && tb.Text != "" && tb.Text != "?" && tb.Text.IndexOf('●') < 0)
             {
                 tb.BackColor = Color.Red;
                 tb.ForeColor = Color.White;
